@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "project mtmc": {
+      "commandName": "Project",
+      "sqlDebugging": false,
+      "nativeDebugging": false,
+      "jsWebView2Debugging": false,
+      "hotReloadEnabled": false
+    }
+  }
+}
