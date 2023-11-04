@@ -46,6 +46,10 @@ Public Class Form5
     Private Function HashPassword(password As String) As String
         Throw New NotImplementedException()
     End Function
+
+    Private Sub usrid_TextChanged(sender As Object, e As EventArgs) Handles usrid.TextChanged
+
+    End Sub
 End Class
 
 

@@ -11,7 +11,7 @@ Imports System.Data.SqlTypes
 
 
 
-Public Class Form2
+Public Class Outward
     Dim conn As New OleDbConnection
     Dim cmd As New OleDbCommand
     Dim dt As New DataTable
@@ -26,16 +26,16 @@ Public Class Form2
 
     End Sub
 
-    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
+    Private Sub Label1_Click(sender As Object, e As EventArgs)
 
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        dte.Clear()
+    Private Sub Button2_Click(sender As Object, e As EventArgs)
+        Dte.Clear()
         inwrd.Clear()
         frm.Clear()
         matrl.Clear()
-        dept.Clear()
+        Dept.Clear()
         bill.Clear()
         dc.Clear()
         desgn.Clear()
@@ -57,13 +57,13 @@ Public Class Form2
 
     End Sub
 
-    Private Sub btnCreateDatabase_Click(sender As Object, e As System.EventArgs) Handles save.Click
+    Private Sub btnCreateDatabase_Click(sender As Object, e As System.EventArgs)
         Try
             conn.Open()
             cmd = conn.CreateCommand()
             cmd.CommandType = CommandType.Text
             cmd.CommandText = "INSERT INTO Table1([INWARD_NO], [Date], [FROM],[MATERIAL_FOR_TO], [DEPT_PROCESS], [BILL_NO_DATE],[DC_NO_DATE], [No_Of_Packages_Unites], [Vehicle_No],[Returnable_or_Non_Returnable], [Name_Designation_Of_The_Person_Reciving_The_Metrials], [Security_Name],[Remarks]) 
-                               VALUES (" & inwrd.Text & ",'" & dte.Text & "', '" & frm.Text & "','" & matrl.Text & "','" & dept.Text & "','" & bill.Text & "','" & dc.Text & "','" & pack.Text & "','" & vech.Text & "','" & ret.Text & "','" & desgn.Text & "','" & sec.Text & "','" & remrks.Text & "')"
+                               VALUES (" & inwrd.Text & ",'" & Dte.Text & "', '" & frm.Text & "','" & matrl.Text & "','" & Dept.Text & "','" & bill.Text & "','" & dc.Text & "','" & pack.Text & "','" & vech.Text & "','" & ret.Text & "','" & desgn.Text & "','" & sec.Text & "','" & remrks.Text & "')"
             cmd.ExecuteNonQuery()
             conn.Close()
 
@@ -84,7 +84,7 @@ Public Class Form2
 
     End Sub
 
-    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles dte.TextChanged
+    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs)
 
     End Sub
 
@@ -92,7 +92,7 @@ Public Class Form2
 
     End Sub
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+    Private Sub Button3_Click(sender As Object, e As EventArgs)
 
         If MessageBox.Show("Are you sure you want to Update this record?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
             Try
@@ -102,8 +102,8 @@ Public Class Form2
 
                 Dim updateClauses As New List(Of String)
 
-                If Not String.IsNullOrEmpty(dte.Text) Then
-                    updateClauses.Add("[DATE] = '" & dte.Text & "'")
+                If Not String.IsNullOrEmpty(Dte.Text) Then
+                    updateClauses.Add("[DATE] = '" & Dte.Text & "'")
                 End If
 
 
@@ -115,8 +115,8 @@ Public Class Form2
                     updateClauses.Add("[MATERIAL_FOR_TO] = '" & matrl.Text & "'")
                 End If
 
-                If Not String.IsNullOrEmpty(dept.Text) Then
-                    updateClauses.Add("[DEPT_PROCESS] = '" & dept.Text & "'")
+                If Not String.IsNullOrEmpty(Dept.Text) Then
+                    updateClauses.Add("[DEPT_PROCESS] = '" & Dept.Text & "'")
                 End If
 
                 If Not String.IsNullOrEmpty(bill.Text) Then
@@ -140,8 +140,8 @@ Public Class Form2
                     updateClauses.Add("[Returnable_or_Non_Returnable] = '" & ret.Text & "'")
                 End If
 
-                If Not String.IsNullOrEmpty(dept.Text) Then
-                    updateClauses.Add("[Name_Designation_Of_The_Person_Reciving_The_Metrials] = '" & dept.Text & "'")
+                If Not String.IsNullOrEmpty(Dept.Text) Then
+                    updateClauses.Add("[Name_Designation_Of_The_Person_Reciving_The_Metrials] = '" & Dept.Text & "'")
                 End If
 
 
@@ -174,7 +174,7 @@ Public Class Form2
 
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
         Try
             Using conn As New OleDbConnection(connectionString)
                 conn.Open()
@@ -203,6 +203,10 @@ Public Class Form2
         Catch ex As Exception
             MessageBox.Show("Error: " & ex.Message)
         End Try
+
+    End Sub
+
+    Private Sub Label1_Click_1(sender As Object, e As EventArgs) Handles From.Click
 
     End Sub
 End Class
