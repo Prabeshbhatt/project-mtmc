@@ -48,20 +48,20 @@ Partial Class Form6
         ' 
         ' Button2
         ' 
-        Button2.Location = New Point(534, 387)
+        Button2.Location = New Point(520, 387)
         Button2.Name = "Button2"
         Button2.Size = New Size(112, 34)
         Button2.TabIndex = 37
-        Button2.Text = "Button2"
+        Button2.Text = "View"
         Button2.UseVisualStyleBackColor = True
         ' 
         ' Button1
         ' 
-        Button1.Location = New Point(389, 387)
+        Button1.Location = New Point(384, 387)
         Button1.Name = "Button1"
         Button1.Size = New Size(112, 34)
         Button1.TabIndex = 36
-        Button1.Text = "Button1"
+        Button1.Text = "Save"
         Button1.UseVisualStyleBackColor = True
         ' 
         ' TextBox9
@@ -247,7 +247,7 @@ Partial Class Form6
         ClientSize = New Size(844, 478)
         Controls.Add(Panel1)
         Name = "Form6"
-        Text = "Form6"
+        Text = "Inward Form(user)"
         Panel1.ResumeLayout(False)
         Panel1.PerformLayout()
         ResumeLayout(False)
