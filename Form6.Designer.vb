@@ -22,7 +22,8 @@ Partial Class Form6
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Panel1 = New Panel()
+        Button2 = New Button()
+        Button1 = New Button()
         TextBox9 = New TextBox()
         TextBox8 = New TextBox()
         TextBox7 = New TextBox()
@@ -40,38 +41,28 @@ Partial Class Form6
         Label4 = New Label()
         Label3 = New Label()
         Label2 = New Label()
+        Panel1 = New Panel()
         Label1 = New Label()
-        Button1 = New Button()
-        Button2 = New Button()
         Panel1.SuspendLayout()
         SuspendLayout()
         ' 
-        ' Panel1
+        ' Button2
         ' 
-        Panel1.Controls.Add(Button2)
-        Panel1.Controls.Add(Button1)
-        Panel1.Controls.Add(TextBox9)
-        Panel1.Controls.Add(TextBox8)
-        Panel1.Controls.Add(TextBox7)
-        Panel1.Controls.Add(TextBox6)
-        Panel1.Controls.Add(TextBox5)
-        Panel1.Controls.Add(TextBox4)
-        Panel1.Controls.Add(TextBox3)
-        Panel1.Controls.Add(TextBox2)
-        Panel1.Controls.Add(TextBox1)
-        Panel1.Controls.Add(Label9)
-        Panel1.Controls.Add(Label8)
-        Panel1.Controls.Add(Label7)
-        Panel1.Controls.Add(Label6)
-        Panel1.Controls.Add(Label5)
-        Panel1.Controls.Add(Label4)
-        Panel1.Controls.Add(Label3)
-        Panel1.Controls.Add(Label2)
-        Panel1.Controls.Add(Label1)
-        Panel1.Location = New Point(12, 12)
-        Panel1.Name = "Panel1"
-        Panel1.Size = New Size(728, 446)
-        Panel1.TabIndex = 0
+        Button2.Location = New Point(534, 387)
+        Button2.Name = "Button2"
+        Button2.Size = New Size(112, 34)
+        Button2.TabIndex = 37
+        Button2.Text = "Button2"
+        Button2.UseVisualStyleBackColor = True
+        ' 
+        ' Button1
+        ' 
+        Button1.Location = New Point(389, 387)
+        Button1.Name = "Button1"
+        Button1.Size = New Size(112, 34)
+        Button1.TabIndex = 36
+        Button1.Text = "Button1"
+        Button1.UseVisualStyleBackColor = True
         ' 
         ' TextBox9
         ' 
@@ -212,6 +203,33 @@ Partial Class Form6
         Label2.TabIndex = 19
         Label2.Text = "Party name"
         ' 
+        ' Panel1
+        ' 
+        Panel1.Controls.Add(Button2)
+        Panel1.Controls.Add(Button1)
+        Panel1.Controls.Add(TextBox9)
+        Panel1.Controls.Add(TextBox8)
+        Panel1.Controls.Add(TextBox7)
+        Panel1.Controls.Add(TextBox6)
+        Panel1.Controls.Add(TextBox5)
+        Panel1.Controls.Add(TextBox4)
+        Panel1.Controls.Add(TextBox3)
+        Panel1.Controls.Add(TextBox2)
+        Panel1.Controls.Add(TextBox1)
+        Panel1.Controls.Add(Label9)
+        Panel1.Controls.Add(Label8)
+        Panel1.Controls.Add(Label7)
+        Panel1.Controls.Add(Label6)
+        Panel1.Controls.Add(Label5)
+        Panel1.Controls.Add(Label4)
+        Panel1.Controls.Add(Label3)
+        Panel1.Controls.Add(Label2)
+        Panel1.Controls.Add(Label1)
+        Panel1.Location = New Point(58, 16)
+        Panel1.Name = "Panel1"
+        Panel1.Size = New Size(728, 446)
+        Panel1.TabIndex = 1
+        ' 
         ' Label1
         ' 
         Label1.AccessibleRole = AccessibleRole.IpAddress
@@ -221,24 +239,6 @@ Partial Class Form6
         Label1.Size = New Size(201, 31)
         Label1.TabIndex = 18
         Label1.Text = "Sl. no."
-        ' 
-        ' Button1
-        ' 
-        Button1.Location = New Point(389, 387)
-        Button1.Name = "Button1"
-        Button1.Size = New Size(112, 34)
-        Button1.TabIndex = 36
-        Button1.Text = "Button1"
-        Button1.UseVisualStyleBackColor = True
-        ' 
-        ' Button2
-        ' 
-        Button2.Location = New Point(534, 387)
-        Button2.Name = "Button2"
-        Button2.Size = New Size(112, 34)
-        Button2.TabIndex = 37
-        Button2.Text = "Button2"
-        Button2.UseVisualStyleBackColor = True
         ' 
         ' Form6
         ' 
@@ -253,7 +253,8 @@ Partial Class Form6
         ResumeLayout(False)
     End Sub
 
-    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Button2 As Button
+    Friend WithEvents Button1 As Button
     Friend WithEvents TextBox9 As TextBox
     Friend WithEvents TextBox8 As TextBox
     Friend WithEvents TextBox7 As TextBox
@@ -271,7 +272,6 @@ Partial Class Form6
     Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
+    Friend WithEvents Panel1 As Panel
     Friend WithEvents Label1 As Label
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button1 As Button
 End Class
