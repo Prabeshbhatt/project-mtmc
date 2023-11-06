@@ -25,9 +25,9 @@ Partial Class Outward
         Panel2 = New Panel()
         TextBox1 = New TextBox()
         From = New Label()
-        Button1 = New Button()
-        Button3 = New Button()
-        Button2 = New Button()
+        BtnDlt = New Button()
+        Btnupdt = New Button()
+        Btnrst = New Button()
         Btnsave = New Button()
         RtrnDte = New TextBox()
         GtPssType = New TextBox()
@@ -54,9 +54,9 @@ Partial Class Outward
         ' 
         Panel2.Controls.Add(TextBox1)
         Panel2.Controls.Add(From)
-        Panel2.Controls.Add(Button1)
-        Panel2.Controls.Add(Button3)
-        Panel2.Controls.Add(Button2)
+        Panel2.Controls.Add(BtnDlt)
+        Panel2.Controls.Add(Btnupdt)
+        Panel2.Controls.Add(Btnrst)
         Panel2.Controls.Add(Btnsave)
         Panel2.Controls.Add(RtrnDte)
         Panel2.Controls.Add(GtPssType)
@@ -98,35 +98,35 @@ Partial Class Outward
         From.TabIndex = 40
         From.Text = "From"
         ' 
-        ' Button1
+        ' BtnDlt
         ' 
-        Button1.Font = New Font("Times New Roman", 10F, FontStyle.Bold, GraphicsUnit.Point)
-        Button1.Location = New Point(204, 410)
-        Button1.Name = "Button1"
-        Button1.Size = New Size(112, 34)
-        Button1.TabIndex = 39
-        Button1.Text = "DELETE"
-        Button1.UseVisualStyleBackColor = True
+        BtnDlt.Font = New Font("Times New Roman", 10F, FontStyle.Bold, GraphicsUnit.Point)
+        BtnDlt.Location = New Point(204, 410)
+        BtnDlt.Name = "BtnDlt"
+        BtnDlt.Size = New Size(112, 34)
+        BtnDlt.TabIndex = 39
+        BtnDlt.Text = "DELETE"
+        BtnDlt.UseVisualStyleBackColor = True
         ' 
-        ' Button3
+        ' Btnupdt
         ' 
-        Button3.Font = New Font("Times New Roman", 10F, FontStyle.Bold, GraphicsUnit.Point)
-        Button3.Location = New Point(347, 411)
-        Button3.Name = "Button3"
-        Button3.Size = New Size(112, 34)
-        Button3.TabIndex = 38
-        Button3.Text = "UPDATE"
-        Button3.UseVisualStyleBackColor = True
+        Btnupdt.Font = New Font("Times New Roman", 10F, FontStyle.Bold, GraphicsUnit.Point)
+        Btnupdt.Location = New Point(347, 411)
+        Btnupdt.Name = "Btnupdt"
+        Btnupdt.Size = New Size(112, 34)
+        Btnupdt.TabIndex = 38
+        Btnupdt.Text = "UPDATE"
+        Btnupdt.UseVisualStyleBackColor = True
         ' 
-        ' Button2
+        ' Btnrst
         ' 
-        Button2.Font = New Font("Times New Roman", 9F, FontStyle.Bold, GraphicsUnit.Point)
-        Button2.Location = New Point(487, 411)
-        Button2.Name = "Button2"
-        Button2.Size = New Size(112, 34)
-        Button2.TabIndex = 37
-        Button2.Text = "RESET"
-        Button2.UseVisualStyleBackColor = True
+        Btnrst.Font = New Font("Times New Roman", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        Btnrst.Location = New Point(487, 411)
+        Btnrst.Name = "Btnrst"
+        Btnrst.Size = New Size(112, 34)
+        Btnrst.TabIndex = 37
+        Btnrst.Text = "RESET"
+        Btnrst.UseVisualStyleBackColor = True
         ' 
         ' Btnsave
         ' 
@@ -301,9 +301,9 @@ Partial Class Outward
     End Sub
 
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Button2 As Button
+    Friend WithEvents BtnDlt As Button
+    Friend WithEvents Btnupdt As Button
+    Friend WithEvents Btnrst As Button
     Friend WithEvents Btnsave As Button
     Friend WithEvents RtrnDte As TextBox
     Friend WithEvents GtPssType As TextBox
