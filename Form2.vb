@@ -17,7 +17,7 @@ Public Class Outward
     Dim dt As New DataTable
     Dim da As New OleDbDataAdapter(cmd)
     Private bitmap As Bitmap
-    Dim connectionString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\MTMC\Downloads\prabesh .net\no preview\project mtmc\sample.accdb;"
+    Dim connectionString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\MTMC\Desktop\FinalDB.accdb;"
     Dim connection As New OleDbConnection(connectionString)
 
 
@@ -49,7 +49,7 @@ Public Class Outward
     End Sub
 
     Private Sub Form2_Load(sender As Object, e As System.EventArgs) Handles MyBase.Load
-        conn.ConnectionString = "Provider = Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\MTMC\Downloads\prabesh .net\no preview\project mtmc\sample.accdb;"
+        conn.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\MTMC\Desktop\FinalDB.accdb;"
         Dim connection As New OleDbConnection(connectionString)
 
         ' Set the connection string before opening the connection
