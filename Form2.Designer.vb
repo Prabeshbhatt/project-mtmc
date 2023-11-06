@@ -28,7 +28,7 @@ Partial Class Outward
         Button1 = New Button()
         Button3 = New Button()
         Button2 = New Button()
-        save = New Button()
+        Btnsave = New Button()
         RtrnDte = New TextBox()
         GtPssType = New TextBox()
         TextBox12 = New TextBox()
@@ -57,7 +57,7 @@ Partial Class Outward
         Panel2.Controls.Add(Button1)
         Panel2.Controls.Add(Button3)
         Panel2.Controls.Add(Button2)
-        Panel2.Controls.Add(save)
+        Panel2.Controls.Add(Btnsave)
         Panel2.Controls.Add(RtrnDte)
         Panel2.Controls.Add(GtPssType)
         Panel2.Controls.Add(TextBox12)
@@ -128,15 +128,15 @@ Partial Class Outward
         Button2.Text = "RESET"
         Button2.UseVisualStyleBackColor = True
         ' 
-        ' save
+        ' Btnsave
         ' 
-        save.Font = New Font("Times New Roman", 9F, FontStyle.Bold, GraphicsUnit.Point)
-        save.Location = New Point(625, 411)
-        save.Name = "save"
-        save.Size = New Size(112, 34)
-        save.TabIndex = 36
-        save.Text = "SAVE"
-        save.UseVisualStyleBackColor = True
+        Btnsave.Font = New Font("Times New Roman", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        Btnsave.Location = New Point(625, 411)
+        Btnsave.Name = "Btnsave"
+        Btnsave.Size = New Size(112, 34)
+        Btnsave.TabIndex = 36
+        Btnsave.Text = "SAVE"
+        Btnsave.UseVisualStyleBackColor = True
         ' 
         ' RtrnDte
         ' 
@@ -304,7 +304,7 @@ Partial Class Outward
     Friend WithEvents Button1 As Button
     Friend WithEvents Button3 As Button
     Friend WithEvents Button2 As Button
-    Friend WithEvents save As Button
+    Friend WithEvents Btnsave As Button
     Friend WithEvents RtrnDte As TextBox
     Friend WithEvents GtPssType As TextBox
     Friend WithEvents TextBox12 As TextBox

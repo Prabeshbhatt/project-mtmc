@@ -209,4 +209,8 @@ Public Class Outward
     Private Sub Label1_Click_1(sender As Object, e As EventArgs) Handles From.Click
 
     End Sub
+
+    Private Sub Btnsave_Click(sender As Object, e As EventArgs) Handles Btnsave.Click
+
+    End Sub
 End Class
