@@ -34,7 +34,7 @@ Partial Class Form1
         IncidentReportToolStripMenuItem = New ToolStripMenuItem()
         LostFoundToolStripMenuItem = New ToolStripMenuItem()
         WorkPermitToolStripMenuItem = New ToolStripMenuItem()
-        lgn = New Button()
+        Lgn = New Button()
         MenuStrip1.SuspendLayout()
         SuspendLayout()
         ' 
@@ -76,7 +76,7 @@ Partial Class Form1
         ' 
         GatePassToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {InwardToolStripMenuItem, OutwardToolStripMenuItem})
         GatePassToolStripMenuItem.Name = "GatePassToolStripMenuItem"
-        GatePassToolStripMenuItem.Size = New Size(270, 34)
+        GatePassToolStripMenuItem.Size = New Size(196, 34)
         GatePassToolStripMenuItem.Text = "Gate Pass"
         ' 
         ' InwardToolStripMenuItem
@@ -126,14 +126,14 @@ Partial Class Form1
         WorkPermitToolStripMenuItem.Size = New Size(152, 27)
         WorkPermitToolStripMenuItem.Text = "Patrolling Path"
         ' 
-        ' lgn
+        ' Lgn
         ' 
-        lgn.Location = New Point(12, 274)
-        lgn.Name = "lgn"
-        lgn.Size = New Size(112, 34)
-        lgn.TabIndex = 1
-        lgn.Text = "login"
-        lgn.UseVisualStyleBackColor = True
+        Lgn.Location = New Point(12, 274)
+        Lgn.Name = "Lgn"
+        Lgn.Size = New Size(112, 34)
+        Lgn.TabIndex = 1
+        Lgn.Text = "login"
+        Lgn.UseVisualStyleBackColor = True
         ' 
         ' Form1
         ' 
@@ -141,7 +141,7 @@ Partial Class Form1
         AutoScaleMode = AutoScaleMode.Font
         BackColor = SystemColors.ButtonHighlight
         ClientSize = New Size(1024, 433)
-        Controls.Add(lgn)
+        Controls.Add(Lgn)
         Controls.Add(MenuStrip1)
         DoubleBuffered = True
         MainMenuStrip = MenuStrip1
@@ -165,5 +165,5 @@ Partial Class Form1
     Friend WithEvents WorkPermitToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents RGPToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents RGPToolStripMenuItem1 As ToolStripMenuItem
-    Friend WithEvents lgn As Button
+    Friend WithEvents Lgn As Button
 End Class

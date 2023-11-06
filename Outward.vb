@@ -20,10 +20,6 @@ Public Class Outward
 
     Private Sub Outward_Load(sender As Object, e As System.EventArgs) Handles MyBase.Load
         conn.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\MTMC\New folder\project-mtmc\FinalDB.accdb;"
-        Dim connection As New OleDbConnection(connectionString)
-
-        ' Set the connection string before opening the connection
-        connection.Open()
 
     End Sub
 
@@ -35,7 +31,8 @@ Public Class Outward
             conn.Open()
             cmd = conn.CreateCommand()
             cmd.CommandType = CommandType.Text
-            cmd.CommandText = "INSERT INTO OUTWARD_FORM ([ID] , [Name], [DOB], [Designation], [Workdays], [Dept]) VALUES (" & TextID.Text & ", '" & TextName.Text & "', '" & TextDOB.Text & "','" & TextDesign.Text & "'," & Textworkdays.Text & ",'" & TextDept.Text & "')"
+            cmd.CommandText = "INSERT INTO OUTWARD_FORM ([SL NO] , [GATE PASS NO], [MATERIAL], [QUANTITY], [DEPT], [DATE], [TO], [FROM], [GATE PASS TYPE], [RETURN DATE]) 
+VALUES (" & SlNoText.Text & ", '" & GtPss.Text & "', '" & Mtrl.Text & "'," & Qty.Text & "," & Dpt.Text & ",'" & Dte.Text & "','" & Totext.Text & "','" & Fromtxt.Text & "','" & GtPssType.Text & "','" & RtrnDte.Text & "')"
             cmd.ExecuteNonQuery()
             conn.Close()
 
@@ -53,7 +50,7 @@ Public Class Outward
                 conn.Open()
                 cmd = conn.CreateCommand()
                 cmd.CommandType = CommandType.Text
-                cmd.CommandText = "DELETE FROM Sample WHERE [ID] = " & TextID.Text & ""
+                cmd.CommandText = "DELETE FROM FORWARD_FORM WHERE [GATE PASS NO] = " & GtPssNo.Text & ""
                 cmd.ExecuteNonQuery()
                 conn.Close()
 
@@ -81,58 +78,49 @@ Public Class Outward
 
                 Dim updateClauses As New List(Of String)
 
+                If Not String.IsNullOrEmpty(SlNoText.Text) Then
+                    updateClauses.Add("[SL NO] = " & SlNoText.Text & "")
+                End If
+                If Not String.IsNullOrEmpty(GtPss.Text) Then
+                    updateClauses.Add("[GATE PASS NO] = '" & GtPss.Text & "'")
+                End If
+
+                If Not String.IsNullOrEmpty(Mtrl.Text) Then
+                    updateClauses.Add("[MATERIAL] = '" & Mtrl.Text & "'")
+                End If
+
+                If Not String.IsNullOrEmpty(Qty.Text) Then
+                    updateClauses.Add("[QUANTITY] = '" & Qty.Text & "'")
+                End If
+
+                If Not String.IsNullOrEmpty(Dpt.Text) Then
+                    updateClauses.Add("[DEPT] = " & Dpt.Text)
+                End If
+
                 If Not String.IsNullOrEmpty(Dte.Text) Then
                     updateClauses.Add("[DATE] = '" & Dte.Text & "'")
                 End If
-                If Not String.IsNullOrEmpty(frm.Text) Then
-                    updateClauses.Add("[FROM] = '" & frm.Text & "'")
+
+
+                If Not String.IsNullOrEmpty(Totext.Text) Then
+                    updateClauses.Add("[TO] = '" & Totext.Text & "'")
                 End If
 
-                If Not String.IsNullOrEmpty(matrl.Text) Then
-                    updateClauses.Add("[MATERIAL_FOR_TO] = '" & matrl.Text & "'")
+                If Not String.IsNullOrEmpty(Fromtxt.Text) Then
+                    updateClauses.Add("[FROM] = '" & Fromtxt.Text & "'")
                 End If
 
-                If Not String.IsNullOrEmpty(Dept.Text) Then
-                    updateClauses.Add("[DEPT_PROCESS] = '" & Dept.Text & "'")
+                If Not String.IsNullOrEmpty(GtPssType.Text) Then
+                    updateClauses.Add("[GATE PASS TYPE] = '" & GtPssType.Text & "'")
                 End If
 
-                If Not String.IsNullOrEmpty(bill.Text) Then
-                    updateClauses.Add("[BILL_NO_PROCESS] = " & bill.Text)
-                End If
-
-                If Not String.IsNullOrEmpty(dc.Text) Then
-                    updateClauses.Add("[DC_NO_DATE] = '" & dc.Text & "'")
-                End If
-
-
-                If Not String.IsNullOrEmpty(pack.Text) Then
-                    updateClauses.Add("[No_Of_Packages_Unites] = '" & pack.Text & "'")
-                End If
-
-                If Not String.IsNullOrEmpty(vech.Text) Then
-                    updateClauses.Add("[Vehicle_No] = '" & vech.Text & "'")
-                End If
-
-                If Not String.IsNullOrEmpty(ret.Text) Then
-                    updateClauses.Add("[Returnable_or_Non_Returnable] = '" & ret.Text & "'")
-                End If
-
-                If Not String.IsNullOrEmpty(Dept.Text) Then
-                    updateClauses.Add("[Name_Designation_Of_The_Person_Reciving_The_Metrials] = '" & Dept.Text & "'")
-                End If
-
-
-                If Not String.IsNullOrEmpty(sec.Text) Then
-                    updateClauses.Add("[Security_Name] = '" & sec.Text & "'")
-                End If
-
-                If Not String.IsNullOrEmpty(remrks.Text) Then
-                    updateClauses.Add("[Remarks] = '" & remrks.Text & "'")
+                If Not String.IsNullOrEmpty(RtrnDte.Text) Then
+                    updateClauses.Add("[RETURN DATE] = '" & RtrnDte.Text & "'")
                 End If
 
                 Dim updateClause As String = String.Join(", ", updateClauses)
                 If updateClause <> "" Then
-                    cmd.CommandText = "UPDATE Table1 SET " & updateClause & " WHERE [INWARD_NO] = " & inwrd.Text & ""
+                    cmd.CommandText = "UPDATE FORWARD_FORM SET " & updateClause & " WHERE [GATE PASS NO] = " & GtPss.Text & ""
                     cmd.ExecuteNonQuery()
                     MessageBox.Show("Data updated successfully.")
                 Else
@@ -150,6 +138,46 @@ Public Class Outward
     End Sub
 
     Private Sub Panel2_Paint(sender As Object, e As PaintEventArgs) Handles Panel2.Paint
+
+    End Sub
+
+    Private Sub SlNoText_TextChanged(sender As Object, e As EventArgs) Handles SlNoText.TextChanged
+
+    End Sub
+
+    Private Sub GtPss_TextChanged(sender As Object, e As EventArgs) Handles GtPss.TextChanged
+
+    End Sub
+
+    Private Sub Mtrl_TextChanged(sender As Object, e As EventArgs) Handles Mtrl.TextChanged
+
+    End Sub
+
+    Private Sub Qty_TextChanged(sender As Object, e As EventArgs) Handles Qty.TextChanged
+
+    End Sub
+
+    Private Sub Dpt_TextChanged(sender As Object, e As EventArgs) Handles Dpt.TextChanged
+
+    End Sub
+
+    Private Sub Dte_TextChanged(sender As Object, e As EventArgs) Handles Dte.TextChanged
+
+    End Sub
+
+    Private Sub Totext_TextChanged(sender As Object, e As EventArgs) Handles Totext.TextChanged
+
+    End Sub
+
+    Private Sub Fromtxt_TextChanged(sender As Object, e As EventArgs) Handles Fromtxt.TextChanged
+
+    End Sub
+
+    Private Sub GtPssType_TextChanged(sender As Object, e As EventArgs) Handles GtPssType.TextChanged
+
+    End Sub
+
+    Private Sub RtrnDte_TextChanged(sender As Object, e As EventArgs) Handles RtrnDte.TextChanged
 
     End Sub
 End Class

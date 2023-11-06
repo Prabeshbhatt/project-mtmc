@@ -23,7 +23,7 @@ Partial Class Outward
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Panel2 = New Panel()
-        TextBox1 = New TextBox()
+        Fromtxt = New TextBox()
         From = New Label()
         BtnDlt = New Button()
         Btnupdt = New Button()
@@ -31,13 +31,13 @@ Partial Class Outward
         Btnsave = New Button()
         RtrnDte = New TextBox()
         GtPssType = New TextBox()
-        TextBox12 = New TextBox()
+        Totext = New TextBox()
         Dte = New TextBox()
         Dpt = New TextBox()
         Qty = New TextBox()
         Mtrl = New TextBox()
         GtPss = New TextBox()
-        TextBox18 = New TextBox()
+        SlNoText = New TextBox()
         Label10 = New Label()
         PType = New Label()
         tolbl = New Label()
@@ -52,7 +52,7 @@ Partial Class Outward
         ' 
         ' Panel2
         ' 
-        Panel2.Controls.Add(TextBox1)
+        Panel2.Controls.Add(Fromtxt)
         Panel2.Controls.Add(From)
         Panel2.Controls.Add(BtnDlt)
         Panel2.Controls.Add(Btnupdt)
@@ -60,13 +60,13 @@ Partial Class Outward
         Panel2.Controls.Add(Btnsave)
         Panel2.Controls.Add(RtrnDte)
         Panel2.Controls.Add(GtPssType)
-        Panel2.Controls.Add(TextBox12)
+        Panel2.Controls.Add(Totext)
         Panel2.Controls.Add(Dte)
         Panel2.Controls.Add(Dpt)
         Panel2.Controls.Add(Qty)
         Panel2.Controls.Add(Mtrl)
         Panel2.Controls.Add(GtPss)
-        Panel2.Controls.Add(TextBox18)
+        Panel2.Controls.Add(SlNoText)
         Panel2.Controls.Add(Label10)
         Panel2.Controls.Add(PType)
         Panel2.Controls.Add(tolbl)
@@ -81,12 +81,12 @@ Partial Class Outward
         Panel2.Size = New Size(758, 466)
         Panel2.TabIndex = 19
         ' 
-        ' TextBox1
+        ' Fromtxt
         ' 
-        TextBox1.Location = New Point(530, 246)
-        TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(207, 31)
-        TextBox1.TabIndex = 41
+        Fromtxt.Location = New Point(530, 246)
+        Fromtxt.Name = "Fromtxt"
+        Fromtxt.Size = New Size(207, 31)
+        Fromtxt.TabIndex = 41
         ' 
         ' From
         ' 
@@ -152,12 +152,12 @@ Partial Class Outward
         GtPssType.Size = New Size(372, 31)
         GtPssType.TabIndex = 34
         ' 
-        ' TextBox12
+        ' Totext
         ' 
-        TextBox12.Location = New Point(134, 243)
-        TextBox12.Name = "TextBox12"
-        TextBox12.Size = New Size(207, 31)
-        TextBox12.TabIndex = 33
+        Totext.Location = New Point(134, 243)
+        Totext.Name = "Totext"
+        Totext.Size = New Size(207, 31)
+        Totext.TabIndex = 33
         ' 
         ' Dte
         ' 
@@ -194,12 +194,12 @@ Partial Class Outward
         GtPss.Size = New Size(372, 31)
         GtPss.TabIndex = 28
         ' 
-        ' TextBox18
+        ' SlNoText
         ' 
-        TextBox18.Location = New Point(260, 29)
-        TextBox18.Name = "TextBox18"
-        TextBox18.Size = New Size(372, 31)
-        TextBox18.TabIndex = 27
+        SlNoText.Location = New Point(260, 29)
+        SlNoText.Name = "SlNoText"
+        SlNoText.Size = New Size(372, 31)
+        SlNoText.TabIndex = 27
         ' 
         ' Label10
         ' 
@@ -307,13 +307,13 @@ Partial Class Outward
     Friend WithEvents Btnsave As Button
     Friend WithEvents RtrnDte As TextBox
     Friend WithEvents GtPssType As TextBox
-    Friend WithEvents TextBox12 As TextBox
+    Friend WithEvents Totext As TextBox
     Friend WithEvents Dte As TextBox
     Friend WithEvents Dpt As TextBox
     Friend WithEvents Qty As TextBox
     Friend WithEvents Mtrl As TextBox
     Friend WithEvents GtPss As TextBox
-    Friend WithEvents TextBox18 As TextBox
+    Friend WithEvents SlNoText As TextBox
     Friend WithEvents Label10 As Label
     Friend WithEvents PType As Label
     Friend WithEvents tolbl As Label
@@ -323,6 +323,6 @@ Partial Class Outward
     Friend WithEvents Materl As Label
     Friend WithEvents GtPssNo As Label
     Friend WithEvents SlNo As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents Fromtxt As TextBox
     Friend WithEvents From As Label
 End Class
