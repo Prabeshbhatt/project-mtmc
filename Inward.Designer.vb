@@ -43,6 +43,7 @@ Partial Class Inward
         Label2 = New Label()
         Panel1 = New Panel()
         Label1 = New Label()
+        Button3 = New Button()
         Panel1.SuspendLayout()
         SuspendLayout()
         ' 
@@ -205,6 +206,7 @@ Partial Class Inward
         ' 
         ' Panel1
         ' 
+        Panel1.Controls.Add(Button3)
         Panel1.Controls.Add(Button2)
         Panel1.Controls.Add(Button1)
         Panel1.Controls.Add(TextBox9)
@@ -240,6 +242,15 @@ Partial Class Inward
         Label1.TabIndex = 18
         Label1.Text = "Sl. no."
         ' 
+        ' Button3
+        ' 
+        Button3.Location = New Point(244, 387)
+        Button3.Name = "Button3"
+        Button3.Size = New Size(112, 34)
+        Button3.TabIndex = 38
+        Button3.Text = "Button3"
+        Button3.UseVisualStyleBackColor = True
+        ' 
         ' Inward
         ' 
         AutoScaleDimensions = New SizeF(10F, 25F)
@@ -274,4 +285,5 @@ Partial Class Inward
     Friend WithEvents Label2 As Label
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label1 As Label
+    Friend WithEvents Button3 As Button
 End Class
