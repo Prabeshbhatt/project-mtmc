@@ -26,14 +26,13 @@ Partial Class Form1
         DeploymentToolStripMenuItem = New ToolStripMenuItem()
         CourierToolStripMenuItem = New ToolStripMenuItem()
         MetrialMovementToolStripMenuItem = New ToolStripMenuItem()
-        GatePassToolStripMenuItem = New ToolStripMenuItem()
         INWARDToolStripMenuItem = New ToolStripMenuItem()
+        OUTWARDToolStripMenuItem = New ToolStripMenuItem()
+        RGPNRGPToolStripMenuItem = New ToolStripMenuItem()
         IncidentReportToolStripMenuItem = New ToolStripMenuItem()
         LostFoundToolStripMenuItem = New ToolStripMenuItem()
         WorkPermitToolStripMenuItem = New ToolStripMenuItem()
         Lgn = New Button()
-        OUTWARDToolStripMenuItem = New ToolStripMenuItem()
-        RGPNRGPToolStripMenuItem = New ToolStripMenuItem()
         MenuStrip1.SuspendLayout()
         SuspendLayout()
         ' 
@@ -65,24 +64,30 @@ Partial Class Form1
         ' 
         ' MetrialMovementToolStripMenuItem
         ' 
-        MetrialMovementToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {GatePassToolStripMenuItem})
+        MetrialMovementToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {INWARDToolStripMenuItem, OUTWARDToolStripMenuItem})
         MetrialMovementToolStripMenuItem.Font = New Font("Times New Roman", 10F, FontStyle.Bold, GraphicsUnit.Point)
         MetrialMovementToolStripMenuItem.Name = "MetrialMovementToolStripMenuItem"
         MetrialMovementToolStripMenuItem.Size = New Size(184, 28)
         MetrialMovementToolStripMenuItem.Text = "Metrial Movement"
-        ' 
-        ' GatePassToolStripMenuItem
-        ' 
-        GatePassToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {INWARDToolStripMenuItem, OUTWARDToolStripMenuItem})
-        GatePassToolStripMenuItem.Name = "GatePassToolStripMenuItem"
-        GatePassToolStripMenuItem.Size = New Size(270, 34)
-        GatePassToolStripMenuItem.Text = "Gate Pass"
         ' 
         ' INWARDToolStripMenuItem
         ' 
         INWARDToolStripMenuItem.Name = "INWARDToolStripMenuItem"
         INWARDToolStripMenuItem.Size = New Size(270, 34)
         INWARDToolStripMenuItem.Text = "INWARD"
+        ' 
+        ' OUTWARDToolStripMenuItem
+        ' 
+        OUTWARDToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {RGPNRGPToolStripMenuItem})
+        OUTWARDToolStripMenuItem.Name = "OUTWARDToolStripMenuItem"
+        OUTWARDToolStripMenuItem.Size = New Size(270, 34)
+        OUTWARDToolStripMenuItem.Text = "OUTWARD"
+        ' 
+        ' RGPNRGPToolStripMenuItem
+        ' 
+        RGPNRGPToolStripMenuItem.Name = "RGPNRGPToolStripMenuItem"
+        RGPNRGPToolStripMenuItem.Size = New Size(270, 34)
+        RGPNRGPToolStripMenuItem.Text = "RGP & NRGP"
         ' 
         ' IncidentReportToolStripMenuItem
         ' 
@@ -114,19 +119,6 @@ Partial Class Form1
         Lgn.Text = "login"
         Lgn.UseVisualStyleBackColor = True
         ' 
-        ' OUTWARDToolStripMenuItem
-        ' 
-        OUTWARDToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {RGPNRGPToolStripMenuItem})
-        OUTWARDToolStripMenuItem.Name = "OUTWARDToolStripMenuItem"
-        OUTWARDToolStripMenuItem.Size = New Size(270, 34)
-        OUTWARDToolStripMenuItem.Text = "OUTWARD"
-        ' 
-        ' RGPNRGPToolStripMenuItem
-        ' 
-        RGPNRGPToolStripMenuItem.Name = "RGPNRGPToolStripMenuItem"
-        RGPNRGPToolStripMenuItem.Size = New Size(270, 34)
-        RGPNRGPToolStripMenuItem.Text = "RGP and NRGP"
-        ' 
         ' Form1
         ' 
         AutoScaleDimensions = New SizeF(10F, 25F)
@@ -149,7 +141,6 @@ Partial Class Form1
     Friend WithEvents DeploymentToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CourierToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents MetrialMovementToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents GatePassToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents IncidentReportToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents LostFoundToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents WorkPermitToolStripMenuItem As ToolStripMenuItem
