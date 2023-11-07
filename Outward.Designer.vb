@@ -76,7 +76,7 @@ Partial Class Outward
         Panel2.Controls.Add(Materl)
         Panel2.Controls.Add(GtPssNo)
         Panel2.Controls.Add(SlNo)
-        Panel2.Location = New Point(268, 99)
+        Panel2.Location = New Point(92, 60)
         Panel2.Name = "Panel2"
         Panel2.Size = New Size(758, 466)
         Panel2.TabIndex = 19
@@ -291,7 +291,7 @@ Partial Class Outward
         ' 
         AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1265, 644)
+        ClientSize = New Size(947, 596)
         Controls.Add(Panel2)
         Name = "Outward"
         Text = "Outward"

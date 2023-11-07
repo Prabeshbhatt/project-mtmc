@@ -23,15 +23,15 @@ Public Class Outward
     Private Sub Btnsave_Click(sender As Object, e As EventArgs) Handles Btnsave.Click
 
         conn.Open()
-            cmd = conn.CreateCommand()
-            cmd.CommandType = CommandType.Text
+        cmd = conn.CreateCommand()
+        cmd.CommandType = CommandType.Text
         cmd.CommandText = "INSERT INTO OUTWARD_FORM ([SL NO] , [GATE PASS NO], [MATERIAL], [QUANTITY], [DEPT], [DATE], [TO], [FROM], [GATE PASS TYPE], [RETURN DATE]) 
             VALUES (" & SlNoText.Text & ", " & GtPss.Text & ", '" & Mtrl.Text & "'," & Qty.Text & ",'" & Dpt.Text & "','" & Dte.Text & "','" & Totext.Text & "','" & Fromtxt.Text & "','" & GtPssType.Text & "','" & RtrnDte.Text & "')"
         cmd.ExecuteNonQuery()
-            conn.Close()
+        conn.Close()
 
-            MessageBox.Show("Data inserted successfully.")
-            conn.Close()
+        MessageBox.Show("Data inserted successfully.")
+        conn.Close()
 
     End Sub
 

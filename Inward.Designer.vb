@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Form6
+Partial Class Inward
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -240,13 +240,13 @@ Partial Class Form6
         Label1.TabIndex = 18
         Label1.Text = "Sl. no."
         ' 
-        ' Form6
+        ' Inward
         ' 
         AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(844, 478)
         Controls.Add(Panel1)
-        Name = "Form6"
+        Name = "Inward"
         Text = "Inward Form(user)"
         Panel1.ResumeLayout(False)
         Panel1.PerformLayout()
