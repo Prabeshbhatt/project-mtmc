@@ -15,32 +15,23 @@ Public Class Outward
     Private bitmap As Bitmap
 
 
-
-
-
     Private Sub Outward_Load(sender As Object, e As System.EventArgs) Handles MyBase.Load
         conn.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\MTMC\New folder\project-mtmc\FinalDB.accdb;"
 
     End Sub
 
-
-
-
     Private Sub Btnsave_Click(sender As Object, e As EventArgs) Handles Btnsave.Click
-        Try
-            conn.Open()
+
+        conn.Open()
             cmd = conn.CreateCommand()
             cmd.CommandType = CommandType.Text
-            cmd.CommandText = "INSERT INTO OUTWARD_FORM ([SL NO] , [GATE PASS NO], [MATERIAL], [QUANTITY], [DEPT], [DATE], [TO], [FROM], [GATE PASS TYPE], [RETURN DATE]) 
-VALUES (" & SlNoText.Text & ", '" & GtPss.Text & "', '" & Mtrl.Text & "'," & Qty.Text & "," & Dpt.Text & ",'" & Dte.Text & "','" & Totext.Text & "','" & Fromtxt.Text & "','" & GtPssType.Text & "','" & RtrnDte.Text & "')"
-            cmd.ExecuteNonQuery()
+        cmd.CommandText = "INSERT INTO OUTWARD_FORM ([SL NO] , [GATE PASS NO], [MATERIAL], [QUANTITY], [DEPT], [DATE], [TO], [FROM], [GATE PASS TYPE], [RETURN DATE]) 
+            VALUES (" & SlNoText.Text & ", " & GtPss.Text & ", '" & Mtrl.Text & "'," & Qty.Text & ",'" & Dpt.Text & "','" & Dte.Text & "','" & Totext.Text & "','" & Fromtxt.Text & "','" & GtPssType.Text & "','" & RtrnDte.Text & "')"
+        cmd.ExecuteNonQuery()
             conn.Close()
 
             MessageBox.Show("Data inserted successfully.")
-        Catch ex As Exception
-            MessageBox.Show("Try Again")
             conn.Close()
-        End Try
 
     End Sub
 
@@ -50,7 +41,7 @@ VALUES (" & SlNoText.Text & ", '" & GtPss.Text & "', '" & Mtrl.Text & "'," & Qty
                 conn.Open()
                 cmd = conn.CreateCommand()
                 cmd.CommandType = CommandType.Text
-                cmd.CommandText = "DELETE FROM FORWARD_FORM WHERE [GATE PASS NO] = " & GtPssNo.Text & ""
+                cmd.CommandText = "DELETE FROM OUTWARD_FORM WHERE [GATE PASS NO] = " & GtPss.Text & ""
                 cmd.ExecuteNonQuery()
                 conn.Close()
 
@@ -66,7 +57,16 @@ VALUES (" & SlNoText.Text & ", '" & GtPss.Text & "', '" & Mtrl.Text & "'," & Qty
     End Sub
 
     Private Sub Btnrst_Click(sender As Object, e As EventArgs) Handles Btnrst.Click
-
+        SlNoText.Clear()
+        GtPss.Clear()
+        Mtrl.Clear()
+        Qty.Clear()
+        Dpt.Clear()
+        Dte.Clear()
+        Totext.Clear()
+        Fromtxt.Clear()
+        GtPssType.Clear()
+        RtrnDte.Clear()
     End Sub
 
     Private Sub Btnupdt_Click(sender As Object, e As EventArgs) Handles Btnupdt.Click
@@ -82,7 +82,7 @@ VALUES (" & SlNoText.Text & ", '" & GtPss.Text & "', '" & Mtrl.Text & "'," & Qty
                     updateClauses.Add("[SL NO] = " & SlNoText.Text & "")
                 End If
                 If Not String.IsNullOrEmpty(GtPss.Text) Then
-                    updateClauses.Add("[GATE PASS NO] = '" & GtPss.Text & "'")
+                    updateClauses.Add("[GATE PASS NO] = " & GtPss.Text & "")
                 End If
 
                 If Not String.IsNullOrEmpty(Mtrl.Text) Then
@@ -90,11 +90,11 @@ VALUES (" & SlNoText.Text & ", '" & GtPss.Text & "', '" & Mtrl.Text & "'," & Qty
                 End If
 
                 If Not String.IsNullOrEmpty(Qty.Text) Then
-                    updateClauses.Add("[QUANTITY] = '" & Qty.Text & "'")
+                    updateClauses.Add("[QUANTITY] = " & Qty.Text & "")
                 End If
 
                 If Not String.IsNullOrEmpty(Dpt.Text) Then
-                    updateClauses.Add("[DEPT] = " & Dpt.Text)
+                    updateClauses.Add("[DEPT] = '" & Dpt.Text & "'")
                 End If
 
                 If Not String.IsNullOrEmpty(Dte.Text) Then
@@ -120,7 +120,7 @@ VALUES (" & SlNoText.Text & ", '" & GtPss.Text & "', '" & Mtrl.Text & "'," & Qty
 
                 Dim updateClause As String = String.Join(", ", updateClauses)
                 If updateClause <> "" Then
-                    cmd.CommandText = "UPDATE FORWARD_FORM SET " & updateClause & " WHERE [GATE PASS NO] = " & GtPss.Text & ""
+                    cmd.CommandText = "UPDATE OUTWARD_FORM SET " & updateClause & " WHERE [GATE PASS NO] = " & GtPss.Text & ""
                     cmd.ExecuteNonQuery()
                     MessageBox.Show("Data updated successfully.")
                 Else
