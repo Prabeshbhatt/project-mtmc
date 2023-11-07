@@ -1,8 +1,6 @@
 ﻿Public Class Form1
     Private Sub RGPToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RGPToolStripMenuItem.Click
-        Dim SecondForm As New Inward
 
-        SecondForm.Show()
     End Sub
 
 
@@ -24,5 +22,17 @@
 
     Private Sub OutwardToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OutwardToolStripMenuItem.Click
 
+    End Sub
+
+    Private Sub INWARDToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles INWARDToolStripMenuItem.Click
+        Dim SecondForm As New Inward
+
+        SecondForm.Show()
+    End Sub
+
+    Private Sub RGPNRGPToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RGPNRGPToolStripMenuItem.Click
+        Dim SecondForm As New Outward
+
+        SecondForm.Show()
     End Sub
 End Class
