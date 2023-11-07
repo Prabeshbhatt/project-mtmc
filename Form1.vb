@@ -20,17 +20,29 @@
         SecondForm.Show()
     End Sub
 
-    Private Sub OutwardToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OutwardToolStripMenuItem.Click
+    Private Sub OutwardToolStripMenuItem_Click(sender As Object, e As EventArgs)
 
     End Sub
 
-    Private Sub INWARDToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles INWARDToolStripMenuItem.Click
+    Private Sub INWARDToolStripMenuItem_Click(sender As Object, e As EventArgs)
         Dim SecondForm As New Inward
 
         SecondForm.Show()
     End Sub
 
-    Private Sub RGPNRGPToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RGPNRGPToolStripMenuItem.Click
+    Private Sub RGPNRGPToolStripMenuItem_Click(sender As Object, e As EventArgs)
+        Dim SecondForm As New Outward
+
+        SecondForm.Show()
+    End Sub
+
+    Private Sub INWARDToolStripMenuItem_Click_1(sender As Object, e As EventArgs) Handles INWARDToolStripMenuItem.Click
+        Dim SecondForm As New Inward
+
+        SecondForm.Show()
+    End Sub
+
+    Private Sub RGPNRGPToolStripMenuItem_Click_1(sender As Object, e As EventArgs) Handles RGPNRGPToolStripMenuItem.Click
         Dim SecondForm As New Outward
 
         SecondForm.Show()
