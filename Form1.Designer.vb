@@ -73,14 +73,14 @@ Partial Class Form1
         ' INWARDToolStripMenuItem
         ' 
         INWARDToolStripMenuItem.Name = "INWARDToolStripMenuItem"
-        INWARDToolStripMenuItem.Size = New Size(270, 34)
+        INWARDToolStripMenuItem.Size = New Size(212, 34)
         INWARDToolStripMenuItem.Text = "INWARD"
         ' 
         ' OUTWARDToolStripMenuItem
         ' 
         OUTWARDToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {RGPNRGPToolStripMenuItem})
         OUTWARDToolStripMenuItem.Name = "OUTWARDToolStripMenuItem"
-        OUTWARDToolStripMenuItem.Size = New Size(270, 34)
+        OUTWARDToolStripMenuItem.Size = New Size(212, 34)
         OUTWARDToolStripMenuItem.Text = "OUTWARD"
         ' 
         ' RGPNRGPToolStripMenuItem
