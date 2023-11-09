@@ -41,8 +41,8 @@ Partial Class Inward
         Label3 = New Label()
         Label2 = New Label()
         Panel1 = New Panel()
-        Label1 = New Label()
         DateTimePicker1 = New DateTimePicker()
+        Label1 = New Label()
         Panel1.SuspendLayout()
         SuspendLayout()
         ' 
@@ -223,6 +223,13 @@ Partial Class Inward
         Panel1.Size = New Size(775, 446)
         Panel1.TabIndex = 1
         ' 
+        ' DateTimePicker1
+        ' 
+        DateTimePicker1.Location = New Point(260, 207)
+        DateTimePicker1.Name = "DateTimePicker1"
+        DateTimePicker1.Size = New Size(372, 31)
+        DateTimePicker1.TabIndex = 38
+        ' 
         ' Label1
         ' 
         Label1.AccessibleRole = AccessibleRole.IpAddress
@@ -232,13 +239,6 @@ Partial Class Inward
         Label1.Size = New Size(201, 31)
         Label1.TabIndex = 18
         Label1.Text = "Sl. no."
-        ' 
-        ' DateTimePicker1
-        ' 
-        DateTimePicker1.Location = New Point(260, 207)
-        DateTimePicker1.Name = "DateTimePicker1"
-        DateTimePicker1.Size = New Size(372, 31)
-        DateTimePicker1.TabIndex = 38
         ' 
         ' Inward
         ' 
