@@ -68,7 +68,7 @@ Partial Class Form1
         MetrialMovementToolStripMenuItem.Font = New Font("Times New Roman", 10F, FontStyle.Bold, GraphicsUnit.Point)
         MetrialMovementToolStripMenuItem.Name = "MetrialMovementToolStripMenuItem"
         MetrialMovementToolStripMenuItem.Size = New Size(184, 28)
-        MetrialMovementToolStripMenuItem.Text = "Metrial Movement"
+        MetrialMovementToolStripMenuItem.Text = "Matrial Movement"
         ' 
         ' INWARDToolStripMenuItem
         ' 
@@ -86,7 +86,7 @@ Partial Class Form1
         ' RGPNRGPToolStripMenuItem
         ' 
         RGPNRGPToolStripMenuItem.Name = "RGPNRGPToolStripMenuItem"
-        RGPNRGPToolStripMenuItem.Size = New Size(270, 34)
+        RGPNRGPToolStripMenuItem.Size = New Size(217, 34)
         RGPNRGPToolStripMenuItem.Text = "RGP & NRGP"
         ' 
         ' IncidentReportToolStripMenuItem
