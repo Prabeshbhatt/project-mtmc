@@ -27,7 +27,6 @@ Partial Class Inward
         TextBox9 = New TextBox()
         TextBox8 = New TextBox()
         TextBox7 = New TextBox()
-        TextBox6 = New TextBox()
         TextBox5 = New TextBox()
         TextBox4 = New TextBox()
         TextBox3 = New TextBox()
@@ -43,7 +42,7 @@ Partial Class Inward
         Label2 = New Label()
         Panel1 = New Panel()
         Label1 = New Label()
-        Button3 = New Button()
+        DateTimePicker1 = New DateTimePicker()
         Panel1.SuspendLayout()
         SuspendLayout()
         ' 
@@ -85,13 +84,6 @@ Partial Class Inward
         TextBox7.Name = "TextBox7"
         TextBox7.Size = New Size(372, 31)
         TextBox7.TabIndex = 33
-        ' 
-        ' TextBox6
-        ' 
-        TextBox6.Location = New Point(260, 207)
-        TextBox6.Name = "TextBox6"
-        TextBox6.Size = New Size(372, 31)
-        TextBox6.TabIndex = 32
         ' 
         ' TextBox5
         ' 
@@ -206,13 +198,12 @@ Partial Class Inward
         ' 
         ' Panel1
         ' 
-        Panel1.Controls.Add(Button3)
+        Panel1.Controls.Add(DateTimePicker1)
         Panel1.Controls.Add(Button2)
         Panel1.Controls.Add(Button1)
         Panel1.Controls.Add(TextBox9)
         Panel1.Controls.Add(TextBox8)
         Panel1.Controls.Add(TextBox7)
-        Panel1.Controls.Add(TextBox6)
         Panel1.Controls.Add(TextBox5)
         Panel1.Controls.Add(TextBox4)
         Panel1.Controls.Add(TextBox3)
@@ -227,9 +218,9 @@ Partial Class Inward
         Panel1.Controls.Add(Label3)
         Panel1.Controls.Add(Label2)
         Panel1.Controls.Add(Label1)
-        Panel1.Location = New Point(58, 16)
+        Panel1.Location = New Point(28, 16)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(728, 446)
+        Panel1.Size = New Size(775, 446)
         Panel1.TabIndex = 1
         ' 
         ' Label1
@@ -242,14 +233,12 @@ Partial Class Inward
         Label1.TabIndex = 18
         Label1.Text = "Sl. no."
         ' 
-        ' Button3
+        ' DateTimePicker1
         ' 
-        Button3.Location = New Point(261, 387)
-        Button3.Name = "Button3"
-        Button3.Size = New Size(112, 34)
-        Button3.TabIndex = 38
-        Button3.Text = "Button3"
-        Button3.UseVisualStyleBackColor = True
+        DateTimePicker1.Location = New Point(260, 207)
+        DateTimePicker1.Name = "DateTimePicker1"
+        DateTimePicker1.Size = New Size(372, 31)
+        DateTimePicker1.TabIndex = 38
         ' 
         ' Inward
         ' 
@@ -269,7 +258,6 @@ Partial Class Inward
     Friend WithEvents TextBox9 As TextBox
     Friend WithEvents TextBox8 As TextBox
     Friend WithEvents TextBox7 As TextBox
-    Friend WithEvents TextBox6 As TextBox
     Friend WithEvents TextBox5 As TextBox
     Friend WithEvents TextBox4 As TextBox
     Friend WithEvents TextBox3 As TextBox
@@ -285,5 +273,5 @@ Partial Class Inward
     Friend WithEvents Label2 As Label
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label1 As Label
-    Friend WithEvents Button3 As Button
+    Friend WithEvents DateTimePicker1 As DateTimePicker
 End Class
