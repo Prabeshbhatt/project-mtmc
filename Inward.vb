@@ -38,6 +38,14 @@ Public Class Inward
             MessageBox.Show("Error: " & ex.Message)
             conn.Close()
         End Try
+        TextBox1.Clear()
+        TextBox2.Clear()
+        TextBox3.Clear()
+        TextBox4.Clear()
+        TextBox5.Clear()
+        TextBox7.Clear()
+        TextBox8.Clear()
+        TextBox9.Clear()
 
     End Sub
 End Class
