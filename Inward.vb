@@ -29,7 +29,7 @@ Public Class Inward
             conn.Open()
             cmd = conn.CreateCommand()
             cmd.CommandType = CommandType.Text
-            cmd.CommandText = "INSERT INTO INWARD_FORM ([SL NO], [PARTY NAME], [MATERIAL MOVEMENT],[QUANTITY],[CHALLAN NO],[DATE],[IN TIME],[REMARKS],[SIGNATURE]) VALUES (" & TextBox1.Text & ", '" & TextBox2.Text & "', '" & TextBox3.Text & "'," & TextBox4.Text & "," & TextBox5.Text & ",'" & DateTimePicker1.Text & "','" & TextBox7.Text & "','" & TextBox8.Text & "','" & TextBox9.Text & "' )"
+            cmd.CommandText = "INSERT INTO Table1 ([Sl no],[Party Name],[Material],[Quantity],[Challan_No],[Date],[In Time],[Remark],[Signature]) VALUES (" & TextBox1.Text & ", '" & TextBox2.Text & "', '" & TextBox3.Text & "'," & TextBox4.Text & "," & TextBox5.Text & ",'" & DateTimePicker1.Text & "','" & TextBox7.Text & "','" & TextBox8.Text & "','" & TextBox9.Text & "' )"
             cmd.ExecuteNonQuery()
             conn.Close()
 
