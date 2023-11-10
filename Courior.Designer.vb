@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Courier
+Partial Class VISITORS
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -26,7 +26,6 @@ Partial Class Courier
         From = New Label()
         BtnDlt = New Button()
         Btnupdt = New Button()
-        Btnrst = New Button()
         Btnsave = New Button()
         nhrs = New TextBox()
         tper = New TextBox()
@@ -72,32 +71,22 @@ Partial Class Courier
         ' BtnDlt
         ' 
         BtnDlt.Font = New Font("Times New Roman", 10F, FontStyle.Bold, GraphicsUnit.Point)
-        BtnDlt.Location = New Point(204, 410)
+        BtnDlt.Location = New Point(339, 410)
         BtnDlt.Name = "BtnDlt"
         BtnDlt.Size = New Size(112, 34)
         BtnDlt.TabIndex = 39
-        BtnDlt.Text = "DELETE"
+        BtnDlt.Text = "UPDATE"
         BtnDlt.UseVisualStyleBackColor = True
         ' 
         ' Btnupdt
         ' 
         Btnupdt.Font = New Font("Times New Roman", 10F, FontStyle.Bold, GraphicsUnit.Point)
-        Btnupdt.Location = New Point(347, 411)
+        Btnupdt.Location = New Point(482, 411)
         Btnupdt.Name = "Btnupdt"
         Btnupdt.Size = New Size(112, 34)
         Btnupdt.TabIndex = 38
-        Btnupdt.Text = "UPDATE"
+        Btnupdt.Text = "DELETE"
         Btnupdt.UseVisualStyleBackColor = True
-        ' 
-        ' Btnrst
-        ' 
-        Btnrst.Font = New Font("Times New Roman", 9F, FontStyle.Bold, GraphicsUnit.Point)
-        Btnrst.Location = New Point(487, 411)
-        Btnrst.Name = "Btnrst"
-        Btnrst.Size = New Size(112, 34)
-        Btnrst.TabIndex = 37
-        Btnrst.Text = "RESET"
-        Btnrst.UseVisualStyleBackColor = True
         ' 
         ' Btnsave
         ' 
@@ -167,7 +156,6 @@ Partial Class Courier
         Panel2.Controls.Add(From)
         Panel2.Controls.Add(BtnDlt)
         Panel2.Controls.Add(Btnupdt)
-        Panel2.Controls.Add(Btnrst)
         Panel2.Controls.Add(Btnsave)
         Panel2.Controls.Add(nhrs)
         Panel2.Controls.Add(tper)
@@ -308,14 +296,14 @@ Partial Class Courier
         IDNUM.TabIndex = 18
         IDNUM.Text = "ID NUMBER"
         ' 
-        ' Courier
+        ' VISITORS
         ' 
         AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1026, 533)
         Controls.Add(Panel2)
-        Name = "Courier"
-        Text = "Courier"
+        Name = "VISITORS"
+        Text = "VISITORS"
         Panel2.ResumeLayout(False)
         Panel2.PerformLayout()
         ResumeLayout(False)
@@ -325,7 +313,6 @@ Partial Class Courier
     Friend WithEvents From As Label
     Friend WithEvents BtnDlt As Button
     Friend WithEvents Btnupdt As Button
-    Friend WithEvents Btnrst As Button
     Friend WithEvents Btnsave As Button
     Friend WithEvents nhrs As TextBox
     Friend WithEvents tper As TextBox

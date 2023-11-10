@@ -25,7 +25,7 @@
     End Sub
 
     Private Sub CourierToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CourierToolStripMenuItem.Click
-        Dim SecondForm As New Courier
+        Dim SecondForm As New VISITORS
 
         SecondForm.Show()
     End Sub

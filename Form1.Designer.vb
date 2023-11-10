@@ -42,7 +42,7 @@ Partial Class Form1
         MenuStrip1.Items.AddRange(New ToolStripItem() {DeploymentToolStripMenuItem, CourierToolStripMenuItem, MetrialMovementToolStripMenuItem, IncidentReportToolStripMenuItem, LostFoundToolStripMenuItem, WorkPermitToolStripMenuItem})
         MenuStrip1.Location = New Point(0, 0)
         MenuStrip1.Name = "MenuStrip1"
-        MenuStrip1.Size = New Size(1024, 32)
+        MenuStrip1.Size = New Size(997, 31)
         MenuStrip1.TabIndex = 0
         MenuStrip1.Text = "MenuStrip1"
         ' 
@@ -52,22 +52,22 @@ Partial Class Form1
         DeploymentToolStripMenuItem.ForeColor = SystemColors.ControlText
         DeploymentToolStripMenuItem.Name = "DeploymentToolStripMenuItem"
         DeploymentToolStripMenuItem.ShowShortcutKeys = False
-        DeploymentToolStripMenuItem.Size = New Size(127, 28)
+        DeploymentToolStripMenuItem.Size = New Size(127, 27)
         DeploymentToolStripMenuItem.Text = "Deployment"
         ' 
         ' CourierToolStripMenuItem
         ' 
         CourierToolStripMenuItem.Font = New Font("Times New Roman", 10F, FontStyle.Bold, GraphicsUnit.Point)
         CourierToolStripMenuItem.Name = "CourierToolStripMenuItem"
-        CourierToolStripMenuItem.Size = New Size(91, 28)
-        CourierToolStripMenuItem.Text = "Courier"
+        CourierToolStripMenuItem.Size = New Size(298, 27)
+        CourierToolStripMenuItem.Text = "Visitor's/Contractor's/Employee"
         ' 
         ' MetrialMovementToolStripMenuItem
         ' 
         MetrialMovementToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {INWARDToolStripMenuItem, OUTWARDToolStripMenuItem})
         MetrialMovementToolStripMenuItem.Font = New Font("Times New Roman", 10F, FontStyle.Bold, GraphicsUnit.Point)
         MetrialMovementToolStripMenuItem.Name = "MetrialMovementToolStripMenuItem"
-        MetrialMovementToolStripMenuItem.Size = New Size(184, 28)
+        MetrialMovementToolStripMenuItem.Size = New Size(184, 27)
         MetrialMovementToolStripMenuItem.Text = "Matrial Movement"
         ' 
         ' INWARDToolStripMenuItem
@@ -93,21 +93,21 @@ Partial Class Form1
         ' 
         IncidentReportToolStripMenuItem.Font = New Font("Times New Roman", 10F, FontStyle.Bold, GraphicsUnit.Point)
         IncidentReportToolStripMenuItem.Name = "IncidentReportToolStripMenuItem"
-        IncidentReportToolStripMenuItem.Size = New Size(298, 28)
-        IncidentReportToolStripMenuItem.Text = "Visitor's/Contractor's/Employee"
+        IncidentReportToolStripMenuItem.Size = New Size(91, 27)
+        IncidentReportToolStripMenuItem.Text = "Courier"
         ' 
         ' LostFoundToolStripMenuItem
         ' 
         LostFoundToolStripMenuItem.Font = New Font("Times New Roman", 10F, FontStyle.Bold, GraphicsUnit.Point)
         LostFoundToolStripMenuItem.Name = "LostFoundToolStripMenuItem"
-        LostFoundToolStripMenuItem.Size = New Size(115, 28)
+        LostFoundToolStripMenuItem.Size = New Size(115, 27)
         LostFoundToolStripMenuItem.Text = "Lost&Found"
         ' 
         ' WorkPermitToolStripMenuItem
         ' 
         WorkPermitToolStripMenuItem.Font = New Font("Times New Roman", 10F, FontStyle.Bold, GraphicsUnit.Point)
         WorkPermitToolStripMenuItem.Name = "WorkPermitToolStripMenuItem"
-        WorkPermitToolStripMenuItem.Size = New Size(152, 28)
+        WorkPermitToolStripMenuItem.Size = New Size(152, 27)
         WorkPermitToolStripMenuItem.Text = "Patrolling Path"
         ' 
         ' Lgn
@@ -124,7 +124,7 @@ Partial Class Form1
         AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = SystemColors.ButtonHighlight
-        ClientSize = New Size(1024, 433)
+        ClientSize = New Size(997, 433)
         Controls.Add(Lgn)
         Controls.Add(MenuStrip1)
         DoubleBuffered = True
