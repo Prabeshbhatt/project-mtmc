@@ -9,7 +9,7 @@ Public Class VISITORS
     Dim dt As New DataTable
     Dim da As New OleDbDataAdapter(cmd)
     Private bitmap As Bitmap
-    Dim connectionString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\MTMC\source\repos\project-mtmc\project-mtmc\VISITORS.accdb;"
+    Dim connectionString As String = ""
     Dim connection As New OleDbConnection(connectionString)
     Private Sub Btnsave_Click(sender As Object, e As EventArgs) Handles Btnsave.Click
         conn.Open()
