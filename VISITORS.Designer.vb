@@ -24,8 +24,8 @@ Partial Class VISITORS
     Private Sub InitializeComponent()
         outtme = New TextBox()
         From = New Label()
-        BtnDlt = New Button()
-        Btnupdt = New Button()
+        Btnupd = New Button()
+        Btndlte = New Button()
         Btnsave = New Button()
         nhrs = New TextBox()
         tper = New TextBox()
@@ -68,25 +68,25 @@ Partial Class VISITORS
         From.TabIndex = 40
         From.Text = "OUT TIME"
         ' 
-        ' BtnDlt
+        ' Btnupd
         ' 
-        BtnDlt.Font = New Font("Times New Roman", 10F, FontStyle.Bold, GraphicsUnit.Point)
-        BtnDlt.Location = New Point(339, 410)
-        BtnDlt.Name = "BtnDlt"
-        BtnDlt.Size = New Size(112, 34)
-        BtnDlt.TabIndex = 39
-        BtnDlt.Text = "UPDATE"
-        BtnDlt.UseVisualStyleBackColor = True
+        Btnupd.Font = New Font("Times New Roman", 10F, FontStyle.Bold, GraphicsUnit.Point)
+        Btnupd.Location = New Point(339, 410)
+        Btnupd.Name = "Btnupd"
+        Btnupd.Size = New Size(112, 34)
+        Btnupd.TabIndex = 39
+        Btnupd.Text = "UPDATE"
+        Btnupd.UseVisualStyleBackColor = True
         ' 
-        ' Btnupdt
+        ' Btndlte
         ' 
-        Btnupdt.Font = New Font("Times New Roman", 10F, FontStyle.Bold, GraphicsUnit.Point)
-        Btnupdt.Location = New Point(482, 411)
-        Btnupdt.Name = "Btnupdt"
-        Btnupdt.Size = New Size(112, 34)
-        Btnupdt.TabIndex = 38
-        Btnupdt.Text = "DELETE"
-        Btnupdt.UseVisualStyleBackColor = True
+        Btndlte.Font = New Font("Times New Roman", 10F, FontStyle.Bold, GraphicsUnit.Point)
+        Btndlte.Location = New Point(482, 411)
+        Btndlte.Name = "Btndlte"
+        Btndlte.Size = New Size(112, 34)
+        Btndlte.TabIndex = 38
+        Btndlte.Text = "DELETE"
+        Btndlte.UseVisualStyleBackColor = True
         ' 
         ' Btnsave
         ' 
@@ -154,8 +154,8 @@ Partial Class VISITORS
         Panel2.Controls.Add(Label1)
         Panel2.Controls.Add(outtme)
         Panel2.Controls.Add(From)
-        Panel2.Controls.Add(BtnDlt)
-        Panel2.Controls.Add(Btnupdt)
+        Panel2.Controls.Add(Btnupd)
+        Panel2.Controls.Add(Btndlte)
         Panel2.Controls.Add(Btnsave)
         Panel2.Controls.Add(nhrs)
         Panel2.Controls.Add(tper)
@@ -311,8 +311,8 @@ Partial Class VISITORS
 
     Friend WithEvents outtme As TextBox
     Friend WithEvents From As Label
-    Friend WithEvents BtnDlt As Button
-    Friend WithEvents Btnupdt As Button
+    Friend WithEvents Btnupd As Button
+    Friend WithEvents Btndlte As Button
     Friend WithEvents Btnsave As Button
     Friend WithEvents nhrs As TextBox
     Friend WithEvents tper As TextBox
