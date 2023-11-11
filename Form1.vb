@@ -31,8 +31,6 @@
     End Sub
 
     Private Sub IncidentReportToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles IncidentReportToolStripMenuItem.Click
-        Dim SecondForm As New Courier
 
-        SecondForm.Show()
     End Sub
 End Class
