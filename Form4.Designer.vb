@@ -25,12 +25,12 @@ Partial Class Form4
         Dim resources As ComponentModel.ComponentResourceManager = New ComponentModel.ComponentResourceManager(GetType(Form4))
         PictureBox1 = New PictureBox()
         usrid = New TextBox()
-        pass = New TextBox()
+        Psswrd = New TextBox()
         Label1 = New Label()
         Label2 = New Label()
-        Button1 = New Button()
-        Button2 = New Button()
-        Button3 = New Button()
+        Login = New Button()
+        SignUp = New Button()
+        RstPW = New Button()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -52,13 +52,13 @@ Partial Class Form4
         usrid.Size = New Size(261, 46)
         usrid.TabIndex = 1
         ' 
-        ' pass
+        ' Psswrd
         ' 
-        pass.Location = New Point(201, 228)
-        pass.Multiline = True
-        pass.Name = "pass"
-        pass.Size = New Size(261, 46)
-        pass.TabIndex = 2
+        Psswrd.Location = New Point(201, 228)
+        Psswrd.Multiline = True
+        Psswrd.Name = "Psswrd"
+        Psswrd.Size = New Size(261, 46)
+        Psswrd.TabIndex = 2
         ' 
         ' Label1
         ' 
@@ -82,47 +82,47 @@ Partial Class Form4
         Label2.Text = "PASSWORD"
         Label2.TextAlign = ContentAlignment.MiddleCenter
         ' 
-        ' Button1
+        ' Login
         ' 
-        Button1.Font = New Font("Times New Roman", 11F, FontStyle.Bold, GraphicsUnit.Point)
-        Button1.Location = New Point(350, 307)
-        Button1.Name = "Button1"
-        Button1.Size = New Size(112, 34)
-        Button1.TabIndex = 5
-        Button1.Text = "LOGIN"
-        Button1.UseVisualStyleBackColor = True
+        Login.Font = New Font("Times New Roman", 11F, FontStyle.Bold, GraphicsUnit.Point)
+        Login.Location = New Point(350, 307)
+        Login.Name = "Login"
+        Login.Size = New Size(112, 34)
+        Login.TabIndex = 5
+        Login.Text = "LOGIN"
+        Login.UseVisualStyleBackColor = True
         ' 
-        ' Button2
+        ' SignUp
         ' 
-        Button2.Font = New Font("Times New Roman", 11F, FontStyle.Bold, GraphicsUnit.Point)
-        Button2.Location = New Point(222, 307)
-        Button2.Name = "Button2"
-        Button2.Size = New Size(122, 34)
-        Button2.TabIndex = 6
-        Button2.Text = "SIGN_UP"
-        Button2.UseVisualStyleBackColor = True
+        SignUp.Font = New Font("Times New Roman", 11F, FontStyle.Bold, GraphicsUnit.Point)
+        SignUp.Location = New Point(222, 307)
+        SignUp.Name = "SignUp"
+        SignUp.Size = New Size(122, 34)
+        SignUp.TabIndex = 6
+        SignUp.Text = "SIGN_UP"
+        SignUp.UseVisualStyleBackColor = True
         ' 
-        ' Button3
+        ' RstPW
         ' 
-        Button3.Font = New Font("Times New Roman", 11F, FontStyle.Bold, GraphicsUnit.Point)
-        Button3.Location = New Point(222, 359)
-        Button3.Name = "Button3"
-        Button3.Size = New Size(240, 34)
-        Button3.TabIndex = 7
-        Button3.Text = "RESET_PASSWORD"
-        Button3.UseVisualStyleBackColor = True
+        RstPW.Font = New Font("Times New Roman", 11F, FontStyle.Bold, GraphicsUnit.Point)
+        RstPW.Location = New Point(222, 359)
+        RstPW.Name = "RstPW"
+        RstPW.Size = New Size(240, 34)
+        RstPW.TabIndex = 7
+        RstPW.Text = "RESET_PASSWORD"
+        RstPW.UseVisualStyleBackColor = True
         ' 
         ' Form4
         ' 
         AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(528, 450)
-        Controls.Add(Button3)
-        Controls.Add(Button2)
-        Controls.Add(Button1)
+        Controls.Add(RstPW)
+        Controls.Add(SignUp)
+        Controls.Add(Login)
         Controls.Add(Label2)
         Controls.Add(Label1)
-        Controls.Add(pass)
+        Controls.Add(Psswrd)
         Controls.Add(usrid)
         Controls.Add(PictureBox1)
         Name = "Form4"
@@ -134,10 +134,10 @@ Partial Class Form4
 
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents usrid As TextBox
-    Friend WithEvents pass As TextBox
+    Friend WithEvents Psswrd As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button3 As Button
+    Friend WithEvents Login As Button
+    Friend WithEvents SignUp As Button
+    Friend WithEvents RstPW As Button
 End Class
