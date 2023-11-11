@@ -87,6 +87,7 @@ Public Class VISITORS
 
                 ' Use parameterized queries to prevent SQL injection
                 If DateTimePicker1.Value <> Nothing Then
+                    ' Exclude the date column from the update if DateTimePicker1 has a value
                     updateClauses.Add("[DATE] = @Date")
                     cmd.Parameters.AddWithValue("@Date", DateTimePicker1.Value.Date)
                 End If
@@ -95,37 +96,7 @@ Public Class VISITORS
                     updateClauses.Add("[NAME] = '" & nmme.Text & "'")
                 End If
 
-                If Not String.IsNullOrEmpty(addd.Text) Then
-                    updateClauses.Add("[ADDRESS] = '" & addd.Text & "'")
-                End If
-
-                If Not String.IsNullOrEmpty(cntt.Text) Then
-                    updateClauses.Add("[CONTACT NUMBER] = '" & cntt.Text & "'")
-                End If
-
-                If Not String.IsNullOrEmpty(prsnn.Text) Then
-                    updateClauses.Add("[PERSON TO MEET] = '" & prsnn.Text & "'")
-                End If
-
-                If Not String.IsNullOrEmpty(intme.Text) Then
-                    updateClauses.Add("[IN TIME] = '" & intme.Text & "'")
-                End If
-
-                If Not String.IsNullOrEmpty(outtme.Text) Then
-                    updateClauses.Add("[OUT TIME] = '" & outtme.Text & "'")
-                End If
-
-                If Not String.IsNullOrEmpty(tper.Text) Then
-                    updateClauses.Add("[TOTAL PERSON] = '" & tper.Text & "'")
-                End If
-
-                If Not String.IsNullOrEmpty(nhrs.Text) Then
-                    updateClauses.Add("[NO OF HOURS] = '" & nhrs.Text & "'")
-                End If
-
-                If Not String.IsNullOrEmpty(avgg.Text) Then
-                    updateClauses.Add("[AVG TIME SPENT] = '" & avgg.Text & "'")
-                End If
+                ' Add other columns to updateClauses as needed
 
                 Dim updateClause As String = String.Join(", ", updateClauses)
                 If updateClause <> "" Then
@@ -144,5 +115,6 @@ Public Class VISITORS
         Else
             MessageBox.Show("Data Update Rejected")
         End If
+
     End Sub
 End Class
