@@ -12,7 +12,7 @@ Public Class Form4
     Dim connectionString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\MTMC\Downloads\prabesh .net\no preview\project mtmc\sample.accdb;"
     Dim connection As New OleDbConnection(connectionString)
     Private Sub Form4_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim connString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\MTMC\Downloads\prabesh .net\no preview\project mtmc\sample.accdb;Persist Security Info=False;"
+        Dim ConnectionString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\MTMC\Downloads\prabesh .net\no preview\project mtmc\sample.accdb;Persist Security Info=False;"
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -41,7 +41,7 @@ Public Class Form4
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        Dim SecondForm As New Form5
+        Dim SecondForm As New Register
         SecondForm.Show()
     End Sub
 End Class
