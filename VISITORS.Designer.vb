@@ -334,5 +334,5 @@ Partial Class VISITORS
     Friend WithEvents IDNUM As Label
     Friend WithEvents avgg As TextBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents DateTimePicker1 As DateTimePicker
+    Public WithEvents DateTimePicker1 As DateTimePicker
 End Class
