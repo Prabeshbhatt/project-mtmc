@@ -16,7 +16,7 @@ Public Class Outward
 
 
     Private Sub Outward_Load(sender As Object, e As System.EventArgs) Handles MyBase.Load
-        conn.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\New folder\New folder\OutwardDB.accdb"
+        conn.ConnectionString = ""
 
     End Sub
 
