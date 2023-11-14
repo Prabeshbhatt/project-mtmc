@@ -24,7 +24,7 @@ Partial Class Form4
     Private Sub InitializeComponent()
         Dim resources As ComponentModel.ComponentResourceManager = New ComponentModel.ComponentResourceManager(GetType(Form4))
         PictureBox1 = New PictureBox()
-        usrid = New TextBox()
+        RegNo = New TextBox()
         pass = New TextBox()
         Label1 = New Label()
         Label2 = New Label()
@@ -44,13 +44,13 @@ Partial Class Form4
         PictureBox1.TabIndex = 0
         PictureBox1.TabStop = False
         ' 
-        ' usrid
+        ' RegNo
         ' 
-        usrid.Location = New Point(201, 160)
-        usrid.Multiline = True
-        usrid.Name = "usrid"
-        usrid.Size = New Size(261, 46)
-        usrid.TabIndex = 1
+        RegNo.Location = New Point(201, 160)
+        RegNo.Multiline = True
+        RegNo.Name = "RegNo"
+        RegNo.Size = New Size(261, 46)
+        RegNo.TabIndex = 1
         ' 
         ' pass
         ' 
@@ -68,7 +68,7 @@ Partial Class Form4
         Label1.Name = "Label1"
         Label1.Size = New Size(106, 46)
         Label1.TabIndex = 3
-        Label1.Text = "USER_ID"
+        Label1.Text = "REG_NO"
         Label1.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' Label2
@@ -123,7 +123,7 @@ Partial Class Form4
         Controls.Add(Label2)
         Controls.Add(Label1)
         Controls.Add(pass)
-        Controls.Add(usrid)
+        Controls.Add(RegNo)
         Controls.Add(PictureBox1)
         Name = "Form4"
         Text = "LOGIN"
@@ -133,7 +133,7 @@ Partial Class Form4
     End Sub
 
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents usrid As TextBox
+    Friend WithEvents RegNo As TextBox
     Friend WithEvents pass As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label

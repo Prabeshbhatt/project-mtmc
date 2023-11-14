@@ -11,7 +11,7 @@ Public Class Confirm
 
     Dim password As String = ""
     Private Sub Confirm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        conn.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\MTMC\OneDrive - Manipal Academy of Higher Education\Documents\MTMC ADMIN DATA\Security Dept\Register Verification.accdb"
+        conn.ConnectionString = ""
     End Sub
 
     Private Sub Psswrd_TextChanged(sender As Object, e As EventArgs) Handles Psswrd.TextChanged
