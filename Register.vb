@@ -1,7 +1,7 @@
 ﻿Imports System.Configuration
 Imports System.Data.OleDb
 Public Class Register
-    Dim connectionstring As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\New folder\New folder\Register Verification.accdb;"
+    Dim connectionstring As String = ""
     Private Sub Register_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
 
