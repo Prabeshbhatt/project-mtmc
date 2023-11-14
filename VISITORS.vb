@@ -40,7 +40,7 @@ Public Class VISITORS
     End Sub
 
     Private Sub Courior_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        conn.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\MTMC\source\repos\project-mtmc\project-mtmc\VISITORS.accdb;"
+        conn.ConnectionString = ""
 
     End Sub
 
