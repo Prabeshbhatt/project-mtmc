@@ -22,15 +22,15 @@ Partial Class Form4
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As ComponentModel.ComponentResourceManager = New ComponentModel.ComponentResourceManager(GetType(Form4))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form4))
         PictureBox1 = New PictureBox()
         RegNo = New TextBox()
         pass = New TextBox()
         Label1 = New Label()
         Label2 = New Label()
         Button1 = New Button()
-        Button2 = New Button()
-        Button3 = New Button()
+        RegisterLink = New LinkLabel()
+        RstPW = New LinkLabel()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -85,40 +85,40 @@ Partial Class Form4
         ' Button1
         ' 
         Button1.Font = New Font("Times New Roman", 11F, FontStyle.Bold, GraphicsUnit.Point)
-        Button1.Location = New Point(350, 307)
+        Button1.Location = New Point(214, 290)
         Button1.Name = "Button1"
         Button1.Size = New Size(112, 34)
         Button1.TabIndex = 5
         Button1.Text = "LOGIN"
         Button1.UseVisualStyleBackColor = True
         ' 
-        ' Button2
+        ' RegisterLink
         ' 
-        Button2.Font = New Font("Times New Roman", 11F, FontStyle.Bold, GraphicsUnit.Point)
-        Button2.Location = New Point(222, 307)
-        Button2.Name = "Button2"
-        Button2.Size = New Size(122, 34)
-        Button2.TabIndex = 6
-        Button2.Text = "SIGN_UP"
-        Button2.UseVisualStyleBackColor = True
+        RegisterLink.AutoSize = True
+        RegisterLink.Location = New Point(170, 356)
+        RegisterLink.Name = "RegisterLink"
+        RegisterLink.Size = New Size(196, 25)
+        RegisterLink.TabIndex = 8
+        RegisterLink.TabStop = True
+        RegisterLink.Text = "Click To Create Account"
         ' 
-        ' Button3
+        ' RstPW
         ' 
-        Button3.Font = New Font("Times New Roman", 11F, FontStyle.Bold, GraphicsUnit.Point)
-        Button3.Location = New Point(222, 359)
-        Button3.Name = "Button3"
-        Button3.Size = New Size(240, 34)
-        Button3.TabIndex = 7
-        Button3.Text = "RESET_PASSWORD"
-        Button3.UseVisualStyleBackColor = True
+        RstPW.AutoSize = True
+        RstPW.Location = New Point(165, 381)
+        RstPW.Name = "RstPW"
+        RstPW.Size = New Size(201, 25)
+        RstPW.TabIndex = 9
+        RstPW.TabStop = True
+        RstPW.Text = "Forgot Password? Reset"
         ' 
         ' Form4
         ' 
         AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(528, 450)
-        Controls.Add(Button3)
-        Controls.Add(Button2)
+        Controls.Add(RstPW)
+        Controls.Add(RegisterLink)
         Controls.Add(Button1)
         Controls.Add(Label2)
         Controls.Add(Label1)
@@ -138,6 +138,6 @@ Partial Class Form4
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button3 As Button
+    Friend WithEvents RegisterLink As LinkLabel
+    Friend WithEvents RstPW As LinkLabel
 End Class

@@ -27,12 +27,13 @@ Partial Class Register
         Label2 = New Label()
         Vrfy = New Button()
         FullName = New TextBox()
+        Login = New LinkLabel()
         SuspendLayout()
         ' 
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Location = New Point(148, 97)
+        Label1.Location = New Point(264, 97)
         Label1.Name = "Label1"
         Label1.Size = New Size(59, 25)
         Label1.TabIndex = 0
@@ -40,7 +41,7 @@ Partial Class Register
         ' 
         ' RegNo
         ' 
-        RegNo.Location = New Point(285, 174)
+        RegNo.Location = New Point(359, 171)
         RegNo.Name = "RegNo"
         RegNo.Size = New Size(241, 31)
         RegNo.TabIndex = 3
@@ -48,7 +49,7 @@ Partial Class Register
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Location = New Point(87, 177)
+        Label2.Location = New Point(147, 177)
         Label2.Name = "Label2"
         Label2.Size = New Size(176, 25)
         Label2.TabIndex = 2
@@ -56,7 +57,7 @@ Partial Class Register
         ' 
         ' Vrfy
         ' 
-        Vrfy.Location = New Point(269, 264)
+        Vrfy.Location = New Point(346, 252)
         Vrfy.Name = "Vrfy"
         Vrfy.Size = New Size(112, 34)
         Vrfy.TabIndex = 4
@@ -65,16 +66,27 @@ Partial Class Register
         ' 
         ' FullName
         ' 
-        FullName.Location = New Point(285, 97)
+        FullName.Location = New Point(359, 97)
         FullName.Name = "FullName"
         FullName.Size = New Size(241, 31)
         FullName.TabIndex = 5
+        ' 
+        ' Login
+        ' 
+        Login.AutoSize = True
+        Login.Location = New Point(240, 318)
+        Login.Name = "Login"
+        Login.Size = New Size(332, 25)
+        Login.TabIndex = 6
+        Login.TabStop = True
+        Login.Text = "Already have Account? Proceed to Login"
         ' 
         ' Register
         ' 
         AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(800, 450)
+        Controls.Add(Login)
         Controls.Add(FullName)
         Controls.Add(Vrfy)
         Controls.Add(RegNo)
@@ -91,4 +103,5 @@ Partial Class Register
     Friend WithEvents Label2 As Label
     Friend WithEvents Vrfy As Button
     Friend WithEvents FullName As TextBox
+    Friend WithEvents Login As LinkLabel
 End Class

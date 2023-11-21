@@ -35,8 +35,13 @@ Public Class Form4
         End Try
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub RegisterLink_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles RegisterLink.LinkClicked
         Dim SecondForm As New Register
         SecondForm.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub RstPW_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles RstPW.LinkClicked
+
     End Sub
 End Class

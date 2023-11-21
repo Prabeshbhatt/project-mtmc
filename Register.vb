@@ -51,5 +51,11 @@ Public Class Register
 
     End Sub
 
+    Private Sub Login_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles Login.LinkClicked
+        Dim LoginPage As New Form4
+        LoginPage.Show()
+        Me.Hide()
+
+    End Sub
 End Class
 
