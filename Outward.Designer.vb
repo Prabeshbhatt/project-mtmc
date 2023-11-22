@@ -154,7 +154,7 @@ Partial Class Outward
         ' 
         ' Totext
         ' 
-        Totext.Location = New Point(134, 243)
+        Totext.Location = New Point(166, 246)
         Totext.Name = "Totext"
         Totext.Size = New Size(207, 31)
         Totext.TabIndex = 33

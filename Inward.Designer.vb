@@ -57,7 +57,7 @@ Partial Class Inward
         ' 
         ' Button1
         ' 
-        Button1.Location = New Point(384, 387)
+        Button1.Location = New Point(343, 387)
         Button1.Name = "Button1"
         Button1.Size = New Size(112, 34)
         Button1.TabIndex = 36

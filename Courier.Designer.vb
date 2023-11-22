@@ -45,11 +45,17 @@ Partial Class Form2
         Label3 = New Label()
         Label2 = New Label()
         Label1 = New Label()
+        Button3 = New Button()
+        Button4 = New Button()
+        Button5 = New Button()
         Panel1.SuspendLayout()
         SuspendLayout()
         ' 
         ' Panel1
         ' 
+        Panel1.Controls.Add(Button5)
+        Panel1.Controls.Add(Button4)
+        Panel1.Controls.Add(Button3)
         Panel1.Controls.Add(DateTimePicker1)
         Panel1.Controls.Add(Button2)
         Panel1.Controls.Add(Button1)
@@ -86,16 +92,16 @@ Partial Class Form2
         ' 
         ' Button2
         ' 
-        Button2.Location = New Point(600, 404)
+        Button2.Location = New Point(558, 404)
         Button2.Name = "Button2"
         Button2.Size = New Size(112, 34)
         Button2.TabIndex = 22
-        Button2.Text = "Clear"
+        Button2.Text = "View"
         Button2.UseVisualStyleBackColor = True
         ' 
         ' Button1
         ' 
-        Button1.Location = New Point(467, 404)
+        Button1.Location = New Point(440, 404)
         Button1.Name = "Button1"
         Button1.Size = New Size(112, 34)
         Button1.TabIndex = 21
@@ -255,6 +261,33 @@ Partial Class Form2
         Label1.TabIndex = 1
         Label1.Text = "Sl no"
         ' 
+        ' Button3
+        ' 
+        Button3.Location = New Point(676, 404)
+        Button3.Name = "Button3"
+        Button3.Size = New Size(112, 34)
+        Button3.TabIndex = 24
+        Button3.Text = "Download"
+        Button3.UseVisualStyleBackColor = True
+        ' 
+        ' Button4
+        ' 
+        Button4.Location = New Point(322, 404)
+        Button4.Name = "Button4"
+        Button4.Size = New Size(112, 34)
+        Button4.TabIndex = 25
+        Button4.Text = "Delete"
+        Button4.UseVisualStyleBackColor = True
+        ' 
+        ' Button5
+        ' 
+        Button5.Location = New Point(204, 404)
+        Button5.Name = "Button5"
+        Button5.Size = New Size(112, 34)
+        Button5.TabIndex = 26
+        Button5.Text = "Update"
+        Button5.UseVisualStyleBackColor = True
+        ' 
         ' Form2
         ' 
         AutoScaleDimensions = New SizeF(10F, 25F)
@@ -291,4 +324,7 @@ Partial Class Form2
     Friend WithEvents Button2 As Button
     Friend WithEvents Button1 As Button
     Friend WithEvents DateTimePicker1 As DateTimePicker
+    Friend WithEvents Button3 As Button
+    Friend WithEvents Button5 As Button
+    Friend WithEvents Button4 As Button
 End Class
