@@ -23,6 +23,9 @@ Partial Class Form2
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Panel1 = New Panel()
+        Button5 = New Button()
+        Button4 = New Button()
+        Button3 = New Button()
         DateTimePicker1 = New DateTimePicker()
         Button2 = New Button()
         Button1 = New Button()
@@ -45,9 +48,6 @@ Partial Class Form2
         Label3 = New Label()
         Label2 = New Label()
         Label1 = New Label()
-        Button3 = New Button()
-        Button4 = New Button()
-        Button5 = New Button()
         Panel1.SuspendLayout()
         SuspendLayout()
         ' 
@@ -82,6 +82,33 @@ Partial Class Form2
         Panel1.Name = "Panel1"
         Panel1.Size = New Size(799, 450)
         Panel1.TabIndex = 0
+        ' 
+        ' Button5
+        ' 
+        Button5.Location = New Point(204, 404)
+        Button5.Name = "Button5"
+        Button5.Size = New Size(112, 34)
+        Button5.TabIndex = 26
+        Button5.Text = "Update"
+        Button5.UseVisualStyleBackColor = True
+        ' 
+        ' Button4
+        ' 
+        Button4.Location = New Point(322, 404)
+        Button4.Name = "Button4"
+        Button4.Size = New Size(112, 34)
+        Button4.TabIndex = 25
+        Button4.Text = "Delete"
+        Button4.UseVisualStyleBackColor = True
+        ' 
+        ' Button3
+        ' 
+        Button3.Location = New Point(676, 404)
+        Button3.Name = "Button3"
+        Button3.Size = New Size(112, 34)
+        Button3.TabIndex = 24
+        Button3.Text = "Download"
+        Button3.UseVisualStyleBackColor = True
         ' 
         ' DateTimePicker1
         ' 
@@ -260,33 +287,6 @@ Partial Class Form2
         Label1.Size = New Size(100, 36)
         Label1.TabIndex = 1
         Label1.Text = "Sl no"
-        ' 
-        ' Button3
-        ' 
-        Button3.Location = New Point(676, 404)
-        Button3.Name = "Button3"
-        Button3.Size = New Size(112, 34)
-        Button3.TabIndex = 24
-        Button3.Text = "Download"
-        Button3.UseVisualStyleBackColor = True
-        ' 
-        ' Button4
-        ' 
-        Button4.Location = New Point(322, 404)
-        Button4.Name = "Button4"
-        Button4.Size = New Size(112, 34)
-        Button4.TabIndex = 25
-        Button4.Text = "Delete"
-        Button4.UseVisualStyleBackColor = True
-        ' 
-        ' Button5
-        ' 
-        Button5.Location = New Point(204, 404)
-        Button5.Name = "Button5"
-        Button5.Size = New Size(112, 34)
-        Button5.TabIndex = 26
-        Button5.Text = "Update"
-        Button5.UseVisualStyleBackColor = True
         ' 
         ' Form2
         ' 

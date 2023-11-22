@@ -42,10 +42,6 @@ Public Class Form2
         TextBox10.Clear()
     End Sub
 
-    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
-
-    End Sub
-
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
         If MessageBox.Show("Are you sure you want to Update this record?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
             Try
