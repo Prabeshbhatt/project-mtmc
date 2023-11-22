@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Form2
+Partial Class Courier
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -288,13 +288,13 @@ Partial Class Form2
         Label1.TabIndex = 1
         Label1.Text = "Sl no"
         ' 
-        ' Form2
+        ' Courier
         ' 
         AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(800, 450)
         Controls.Add(Panel1)
-        Name = "Form2"
+        Name = "Courier"
         Text = "Courier"
         Panel1.ResumeLayout(False)
         Panel1.PerformLayout()
