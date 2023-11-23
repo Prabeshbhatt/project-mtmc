@@ -33,6 +33,7 @@ Partial Class Form1
         LostFoundToolStripMenuItem = New ToolStripMenuItem()
         WorkPermitToolStripMenuItem = New ToolStripMenuItem()
         Lgn = New Button()
+        Button1 = New Button()
         MenuStrip1.SuspendLayout()
         SuspendLayout()
         ' 
@@ -119,12 +120,22 @@ Partial Class Form1
         Lgn.Text = "login"
         Lgn.UseVisualStyleBackColor = True
         ' 
+        ' Button1
+        ' 
+        Button1.Location = New Point(293, 297)
+        Button1.Name = "Button1"
+        Button1.Size = New Size(112, 34)
+        Button1.TabIndex = 2
+        Button1.Text = "Button1"
+        Button1.UseVisualStyleBackColor = True
+        ' 
         ' Form1
         ' 
         AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = SystemColors.ButtonHighlight
         ClientSize = New Size(997, 433)
+        Controls.Add(Button1)
         Controls.Add(Lgn)
         Controls.Add(MenuStrip1)
         DoubleBuffered = True
@@ -148,4 +159,5 @@ Partial Class Form1
     Friend WithEvents INWARDToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents OUTWARDToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents RGPNRGPToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Button1 As Button
 End Class
