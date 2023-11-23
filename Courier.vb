@@ -4,7 +4,7 @@ Imports System.Runtime.Intrinsics.Arm
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 Imports EnvDTE
 
-Public Class Form2
+Public Class Courier
     Dim conn As New OleDbConnection
     Dim cmd As New OleDbCommand
     Dim dt As New DataTable
@@ -13,7 +13,7 @@ Public Class Form2
     Private bitmap As Bitmap
 
 
-    Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub Courier_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         conn.ConnectionString =
 
     End Sub
