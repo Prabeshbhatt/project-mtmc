@@ -5,7 +5,7 @@
     End Sub
 
     Private Sub Lgn_Click(sender As Object, e As EventArgs) Handles Lgn.Click
-        Dim SecondForm As New Form4
+        Dim SecondForm As New Login
         SecondForm.Show()
     End Sub
 
@@ -29,4 +29,5 @@
 
         SecondForm.Show()
     End Sub
+
 End Class
