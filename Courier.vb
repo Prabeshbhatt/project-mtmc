@@ -55,7 +55,7 @@ Public Class Courier
                     updateClauses.Add("[Sl_no] = " & TextBox1.Text & "")
                 End If
                 If Not String.IsNullOrEmpty(TextBox2.Text) Then
-                    updateClauses.Add("[To] = " & TextBox2.Text & "")
+                    updateClauses.Add("[To] = '" & TextBox2.Text & "'")
                 End If
 
                 If Not String.IsNullOrEmpty(TextBox3.Text) Then
@@ -63,7 +63,7 @@ Public Class Courier
                 End If
 
                 If Not String.IsNullOrEmpty(DateTimePicker1.Text) Then
-                    updateClauses.Add("[Date] = " & DateTimePicker1.Text & "")
+                    updateClauses.Add("[Date] = '" & DateTimePicker1.Text & "'")
                 End If
 
                 If Not String.IsNullOrEmpty(TextBox5.Text) Then
@@ -75,7 +75,7 @@ Public Class Courier
 
 
                 If Not String.IsNullOrEmpty(TextBox7.Text) Then
-                    updateClauses.Add("[Product No] = '" & TextBox7.Text & "'")
+                    updateClauses.Add("[Product No] = " & TextBox7.Text & "")
                 End If
 
                 If Not String.IsNullOrEmpty(TextBox8.Text) Then
