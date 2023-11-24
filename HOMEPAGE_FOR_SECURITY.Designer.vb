@@ -30,6 +30,7 @@ Partial Class HOMEPAGE_FOR_SECURITY
         OutwardToolStripMenuItem = New ToolStripMenuItem()
         Panel3 = New Panel()
         Panel2 = New Panel()
+        Button1 = New Button()
         PictureBox1 = New PictureBox()
         Panel1 = New Panel()
         imagehome = New PictureBox()
@@ -39,7 +40,6 @@ Partial Class HOMEPAGE_FOR_SECURITY
         visit = New Button()
         Deploy = New Button()
         FileSystemWatcher1 = New IO.FileSystemWatcher()
-        Button1 = New Button()
         Panelmenu.SuspendLayout()
         MenuStrip1.SuspendLayout()
         Panel2.SuspendLayout()
@@ -127,6 +127,16 @@ Partial Class HOMEPAGE_FOR_SECURITY
         Panel2.Name = "Panel2"
         Panel2.Size = New Size(955, 56)
         Panel2.TabIndex = 8
+        ' 
+        ' Button1
+        ' 
+        Button1.ForeColor = SystemColors.ActiveCaptionText
+        Button1.Location = New Point(789, 18)
+        Button1.Name = "Button1"
+        Button1.Size = New Size(89, 34)
+        Button1.TabIndex = 3
+        Button1.Text = "Login"
+        Button1.UseVisualStyleBackColor = True
         ' 
         ' PictureBox1
         ' 
@@ -246,16 +256,6 @@ Partial Class HOMEPAGE_FOR_SECURITY
         ' 
         FileSystemWatcher1.EnableRaisingEvents = True
         FileSystemWatcher1.SynchronizingObject = Me
-        ' 
-        ' Button1
-        ' 
-        Button1.ForeColor = SystemColors.ActiveCaptionText
-        Button1.Location = New Point(789, 18)
-        Button1.Name = "Button1"
-        Button1.Size = New Size(89, 34)
-        Button1.TabIndex = 3
-        Button1.Text = "Login"
-        Button1.UseVisualStyleBackColor = True
         ' 
         ' HOMEPAGE_FOR_SECURITY
         ' 
