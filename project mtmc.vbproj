@@ -55,7 +55,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Office.Interop.Access.Dao" Version="15.0.4420.1018" />
     <PackageReference Include="Microsoft.VisualStudio.OLE.Interop" Version="17.8.37221" />
     <PackageReference Include="System.Data.OleDb" Version="8.0.0" />
   </ItemGroup>
