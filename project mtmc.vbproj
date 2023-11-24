@@ -37,6 +37,15 @@
       <Isolated>false</Isolated>
       <EmbedInteropTypes>true</EmbedInteropTypes>
     </COMReference>
+    <COMReference Include="Microsoft.Office.Core">
+      <WrapperTool>tlbimp</WrapperTool>
+      <VersionMinor>8</VersionMinor>
+      <VersionMajor>2</VersionMajor>
+      <Guid>2df8d04c-5bfa-101b-bde5-00aa0044de52</Guid>
+      <Lcid>0</Lcid>
+      <Isolated>false</Isolated>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
 
   <ItemGroup>
@@ -46,8 +55,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Font.Awesome" Version="5.15.4" />
-    <PackageReference Include="FontAwesome" Version="4.7.0" />
     <PackageReference Include="Microsoft.VisualStudio.OLE.Interop" Version="17.8.37221" />
     <PackageReference Include="System.Data.OleDb" Version="8.0.0" />
   </ItemGroup>

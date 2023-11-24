@@ -57,7 +57,7 @@ Partial Class Inward
         ' 
         ' Button1
         ' 
-        Button1.Location = New Point(384, 387)
+        Button1.Location = New Point(343, 387)
         Button1.Name = "Button1"
         Button1.Size = New Size(112, 34)
         Button1.TabIndex = 36
@@ -218,9 +218,9 @@ Partial Class Inward
         Panel1.Controls.Add(Label3)
         Panel1.Controls.Add(Label2)
         Panel1.Controls.Add(Label1)
-        Panel1.Location = New Point(28, 16)
+        Panel1.Location = New Point(0, -1)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(775, 446)
+        Panel1.Size = New Size(844, 478)
         Panel1.TabIndex = 1
         ' 
         ' DateTimePicker1
