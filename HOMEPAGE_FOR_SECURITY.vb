@@ -61,12 +61,6 @@ Public Class HOMEPAGE_FOR_SECURITY
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim newForm As New Login()
 
-        newForm.TopLevel = False
-        newForm.Size = Panel3.ClientSize
-
-
-        Panel3.Controls.Clear()
-        Panel3.Controls.Add(newForm)
 
         newForm.Show()
     End Sub
