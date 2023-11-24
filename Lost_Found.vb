@@ -1,4 +1,5 @@
-﻿Imports System.Data.OleDb
+﻿Imports System.Configuration
+Imports System.Data.OleDb
 
 Public Class Lost_Found
     Dim conn As New OleDbConnection
@@ -10,7 +11,7 @@ Public Class Lost_Found
 
 
     Private Sub Lost_Found_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        conn.ConnectionString =
+        conn.ConnectionString = ""
 
     End Sub
 
