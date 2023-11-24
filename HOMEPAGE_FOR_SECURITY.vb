@@ -1,4 +1,6 @@
 ﻿
+Imports System.Windows.Forms
+
 Public Class HOMEPAGE_FOR_SECURITY
 
     Private currentOption As Integer = 1
@@ -89,6 +91,11 @@ Public Class HOMEPAGE_FOR_SECURITY
         Panel3.Controls.Add(newForm)
 
         newForm.Show()
+    End Sub
+
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+        Dim profileform As New ProfilePage
+        profileform.Show()
     End Sub
 End Class
 
