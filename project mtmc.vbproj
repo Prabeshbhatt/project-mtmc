@@ -46,6 +46,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Font.Awesome" Version="5.15.4" />
+    <PackageReference Include="FontAwesome" Version="4.7.0" />
     <PackageReference Include="Microsoft.VisualStudio.OLE.Interop" Version="17.8.37221" />
     <PackageReference Include="System.Data.OleDb" Version="8.0.0" />
   </ItemGroup>
