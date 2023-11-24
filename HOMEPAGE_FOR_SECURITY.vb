@@ -1,7 +1,8 @@
 ﻿
 Public Class HOMEPAGE_FOR_SECURITY
 
-    Private currentchildform As Form
+    Private currentOption As Integer = 1
+
     Private Sub HOMEPAGE_FOR_SECURITY_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
@@ -29,6 +30,30 @@ Public Class HOMEPAGE_FOR_SECURITY
 
     End Sub
 
-    ' Handle the Resize event of the form
+    Private Sub InwardToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles InwardToolStripMenuItem.Click
+        Dim newForm As New Inward()
+
+        newForm.TopLevel = False
+        newForm.Size = Panel3.ClientSize
+
+
+        Panel3.Controls.Clear()
+        Panel3.Controls.Add(newForm)
+
+        newForm.Show()
+    End Sub
+
+    Private Sub OutwardToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OutwardToolStripMenuItem.Click
+        Dim newForm As New Outward()
+
+        newForm.TopLevel = False
+        newForm.Size = Panel3.ClientSize
+
+
+        Panel3.Controls.Clear()
+        Panel3.Controls.Add(newForm)
+
+        newForm.Show()
+    End Sub
 End Class
 

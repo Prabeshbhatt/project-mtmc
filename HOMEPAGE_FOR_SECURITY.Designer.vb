@@ -24,6 +24,10 @@ Partial Class HOMEPAGE_FOR_SECURITY
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(HOMEPAGE_FOR_SECURITY))
         Panelmenu = New Panel()
+        MenuStrip1 = New MenuStrip()
+        MaterialMovementToolStripMenuItem = New ToolStripMenuItem()
+        InwardToolStripMenuItem = New ToolStripMenuItem()
+        OutwardToolStripMenuItem = New ToolStripMenuItem()
         Panel3 = New Panel()
         Panel2 = New Panel()
         PictureBox1 = New PictureBox()
@@ -33,10 +37,10 @@ Partial Class HOMEPAGE_FOR_SECURITY
         lstfnd = New Button()
         cour = New Button()
         visit = New Button()
-        matrl = New Button()
         Deploy = New Button()
         FileSystemWatcher1 = New IO.FileSystemWatcher()
         Panelmenu.SuspendLayout()
+        MenuStrip1.SuspendLayout()
         Panel2.SuspendLayout()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         CType(imagehome, ComponentModel.ISupportInitialize).BeginInit()
@@ -47,6 +51,7 @@ Partial Class HOMEPAGE_FOR_SECURITY
         ' 
         Panelmenu.AutoSize = True
         Panelmenu.BackColor = Color.FromArgb(CByte(51), CByte(51), CByte(76))
+        Panelmenu.Controls.Add(MenuStrip1)
         Panelmenu.Controls.Add(Panel3)
         Panelmenu.Controls.Add(Panel2)
         Panelmenu.Controls.Add(Panel1)
@@ -55,20 +60,56 @@ Partial Class HOMEPAGE_FOR_SECURITY
         Panelmenu.Controls.Add(lstfnd)
         Panelmenu.Controls.Add(cour)
         Panelmenu.Controls.Add(visit)
-        Panelmenu.Controls.Add(matrl)
         Panelmenu.Controls.Add(Deploy)
         Panelmenu.Dock = DockStyle.Fill
+        Panelmenu.ForeColor = SystemColors.ButtonHighlight
         Panelmenu.Location = New Point(0, 0)
         Panelmenu.Name = "Panelmenu"
         Panelmenu.Size = New Size(1242, 638)
         Panelmenu.TabIndex = 0
+        ' 
+        ' MenuStrip1
+        ' 
+        MenuStrip1.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        MenuStrip1.BackColor = Color.FromArgb(CByte(51), CByte(51), CByte(76))
+        MenuStrip1.Dock = DockStyle.None
+        MenuStrip1.ImageScalingSize = New Size(24, 24)
+        MenuStrip1.Items.AddRange(New ToolStripItem() {MaterialMovementToolStripMenuItem})
+        MenuStrip1.Location = New Point(6, 293)
+        MenuStrip1.Name = "MenuStrip1"
+        MenuStrip1.Size = New Size(188, 33)
+        MenuStrip1.TabIndex = 0
+        MenuStrip1.Text = "Material Movement"
+        ' 
+        ' MaterialMovementToolStripMenuItem
+        ' 
+        MaterialMovementToolStripMenuItem.Checked = True
+        MaterialMovementToolStripMenuItem.CheckState = CheckState.Checked
+        MaterialMovementToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {InwardToolStripMenuItem, OutwardToolStripMenuItem})
+        MaterialMovementToolStripMenuItem.ForeColor = Color.Gainsboro
+        MaterialMovementToolStripMenuItem.Name = "MaterialMovementToolStripMenuItem"
+        MaterialMovementToolStripMenuItem.Size = New Size(182, 29)
+        MaterialMovementToolStripMenuItem.Text = "Material Movement"
+        ' 
+        ' InwardToolStripMenuItem
+        ' 
+        InwardToolStripMenuItem.Name = "InwardToolStripMenuItem"
+        InwardToolStripMenuItem.Size = New Size(183, 34)
+        InwardToolStripMenuItem.Text = "Inward"
+        ' 
+        ' OutwardToolStripMenuItem
+        ' 
+        OutwardToolStripMenuItem.Name = "OutwardToolStripMenuItem"
+        OutwardToolStripMenuItem.Size = New Size(183, 34)
+        OutwardToolStripMenuItem.Text = "Outward"
         ' 
         ' Panel3
         ' 
         Panel3.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         Panel3.AutoSize = True
         Panel3.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(128))
-        Panel3.BackgroundImageLayout = ImageLayout.Center
+        Panel3.BackgroundImageLayout = ImageLayout.None
+        Panel3.ForeColor = SystemColors.ActiveCaptionText
         Panel3.Location = New Point(288, 63)
         Panel3.Name = "Panel3"
         Panel3.Size = New Size(954, 573)
@@ -183,22 +224,6 @@ Partial Class HOMEPAGE_FOR_SECURITY
         visit.TextImageRelation = TextImageRelation.ImageBeforeText
         visit.UseVisualStyleBackColor = True
         ' 
-        ' matrl
-        ' 
-        matrl.FlatAppearance.BorderSize = 0
-        matrl.FlatStyle = FlatStyle.Flat
-        matrl.ForeColor = Color.Gainsboro
-        matrl.ImageAlign = ContentAlignment.MiddleLeft
-        matrl.Location = New Point(6, 294)
-        matrl.Name = "matrl"
-        matrl.Padding = New Padding(12, 0, 0, 0)
-        matrl.Size = New Size(214, 33)
-        matrl.TabIndex = 2
-        matrl.Text = "Matrial Movement"
-        matrl.TextAlign = ContentAlignment.MiddleLeft
-        matrl.TextImageRelation = TextImageRelation.ImageBeforeText
-        matrl.UseVisualStyleBackColor = True
-        ' 
         ' Deploy
         ' 
         Deploy.FlatAppearance.BorderSize = 0
@@ -228,10 +253,13 @@ Partial Class HOMEPAGE_FOR_SECURITY
         BackColor = SystemColors.ButtonHighlight
         ClientSize = New Size(1242, 638)
         Controls.Add(Panelmenu)
+        MainMenuStrip = MenuStrip1
         Name = "HOMEPAGE_FOR_SECURITY"
         Text = "HOMEPAGE_FOR_SECURITY"
         Panelmenu.ResumeLayout(False)
         Panelmenu.PerformLayout()
+        MenuStrip1.ResumeLayout(False)
+        MenuStrip1.PerformLayout()
         Panel2.ResumeLayout(False)
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         CType(imagehome, ComponentModel.ISupportInitialize).EndInit()
@@ -246,11 +274,14 @@ Partial Class HOMEPAGE_FOR_SECURITY
     Friend WithEvents lstfnd As Button
     Friend WithEvents cour As Button
     Friend WithEvents visit As Button
-    Friend WithEvents matrl As Button
     Friend WithEvents FileSystemWatcher1 As IO.FileSystemWatcher
     Friend WithEvents imagehome As PictureBox
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Panel3 As Panel
+    Friend WithEvents MenuStrip1 As MenuStrip
+    Friend WithEvents MaterialMovementToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents InwardToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents OutwardToolStripMenuItem As ToolStripMenuItem
 End Class
