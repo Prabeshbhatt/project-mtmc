@@ -70,5 +70,31 @@ Public Class HOMEPAGE_FOR_SECURITY
 
         newForm.Show()
     End Sub
+
+    Private Sub cour_Click(sender As Object, e As EventArgs) Handles cour.Click
+        Dim newForm As New Courier()
+
+        newForm.TopLevel = False
+        newForm.Size = Panel3.ClientSize
+
+
+        Panel3.Controls.Clear()
+        Panel3.Controls.Add(newForm)
+
+        newForm.Show()
+    End Sub
+
+    Private Sub lstfnd_Click(sender As Object, e As EventArgs) Handles lstfnd.Click
+        Dim newForm As New Lost_Found()
+
+        newForm.TopLevel = False
+        newForm.Size = Panel3.ClientSize
+
+
+        Panel3.Controls.Clear()
+        Panel3.Controls.Add(newForm)
+
+        newForm.Show()
+    End Sub
 End Class
 
