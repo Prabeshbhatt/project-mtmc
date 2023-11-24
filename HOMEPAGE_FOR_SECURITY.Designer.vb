@@ -39,6 +39,7 @@ Partial Class HOMEPAGE_FOR_SECURITY
         visit = New Button()
         Deploy = New Button()
         FileSystemWatcher1 = New IO.FileSystemWatcher()
+        Button1 = New Button()
         Panelmenu.SuspendLayout()
         MenuStrip1.SuspendLayout()
         Panel2.SuspendLayout()
@@ -120,6 +121,7 @@ Partial Class HOMEPAGE_FOR_SECURITY
         Panel2.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
         Panel2.AutoSize = True
         Panel2.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(192))
+        Panel2.Controls.Add(Button1)
         Panel2.Controls.Add(PictureBox1)
         Panel2.Location = New Point(287, 3)
         Panel2.Name = "Panel2"
@@ -245,6 +247,16 @@ Partial Class HOMEPAGE_FOR_SECURITY
         FileSystemWatcher1.EnableRaisingEvents = True
         FileSystemWatcher1.SynchronizingObject = Me
         ' 
+        ' Button1
+        ' 
+        Button1.ForeColor = SystemColors.ActiveCaptionText
+        Button1.Location = New Point(789, 18)
+        Button1.Name = "Button1"
+        Button1.Size = New Size(89, 34)
+        Button1.TabIndex = 3
+        Button1.Text = "Login"
+        Button1.UseVisualStyleBackColor = True
+        ' 
         ' HOMEPAGE_FOR_SECURITY
         ' 
         AutoScaleDimensions = New SizeF(10F, 25F)
@@ -284,4 +296,5 @@ Partial Class HOMEPAGE_FOR_SECURITY
     Friend WithEvents MaterialMovementToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents InwardToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents OutwardToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Button1 As Button
 End Class
