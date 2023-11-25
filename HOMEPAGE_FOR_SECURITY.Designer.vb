@@ -128,6 +128,7 @@ Partial Class HOMEPAGE_FOR_SECURITY
         ' 
         ' Button1
         ' 
+        Button1.Anchor = AnchorStyles.Top Or AnchorStyles.Right
         Button1.ForeColor = SystemColors.ActiveCaptionText
         Button1.Location = New Point(789, 18)
         Button1.Name = "Button1"

@@ -313,6 +313,7 @@ Partial Class VISITORS
         AutoSize = True
         ClientSize = New Size(1323, 634)
         Controls.Add(Panel1)
+        FormBorderStyle = FormBorderStyle.None
         Name = "VISITORS"
         Text = "VISITORS"
         Panel1.ResumeLayout(False)
