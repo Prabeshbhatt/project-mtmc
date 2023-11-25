@@ -55,7 +55,7 @@ Partial Class VISITORS
         ' 
         Panel1.AutoSize = True
         Panel1.AutoSizeMode = AutoSizeMode.GrowAndShrink
-        Panel1.BackColor = SystemColors.ActiveBorder
+        Panel1.BackColor = Color.SkyBlue
         Panel1.Controls.Add(DateTimePicker1)
         Panel1.Controls.Add(avgg)
         Panel1.Controls.Add(Label1)
