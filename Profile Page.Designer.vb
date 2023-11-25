@@ -157,6 +157,7 @@ Partial Class ProfilePage
         BackColor = Color.SkyBlue
         ClientSize = New Size(1126, 617)
         Controls.Add(Panel1)
+        FormBorderStyle = FormBorderStyle.None
         Name = "ProfilePage"
         Text = "ProfilePage"
         Panel1.ResumeLayout(False)
