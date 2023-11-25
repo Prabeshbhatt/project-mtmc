@@ -78,7 +78,7 @@ Partial Class Outward
         Panel2.Controls.Add(Materl)
         Panel2.Controls.Add(GtPssNo)
         Panel2.Controls.Add(SlNo)
-        Panel2.Location = New Point(0, 0)
+        Panel2.Location = New Point(50, 38)
         Panel2.Name = "Panel2"
         Panel2.Size = New Size(954, 573)
         Panel2.TabIndex = 19

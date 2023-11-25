@@ -19,7 +19,7 @@ Public Class Login
 
         Try
             conn.Open()
-            Dim query As String = "SELECT * FROM LoginDB WHERE User_id = @user_id AND Password = @Password"
+            Dim query As String = "SELECT * FROM UserInfo WHERE User_id = @user_id AND Password = @Password"
             Using cmd As New OleDbCommand(query, conn)
                 cmd.Parameters.AddWithValue("@Password", password)
                 Dim reader As OleDbDataReader = cmd.ExecuteReader()

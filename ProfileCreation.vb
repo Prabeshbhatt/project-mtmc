@@ -24,6 +24,9 @@ Public Class ProfileCreation
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim name As String = LName.Text
+        Dim gndr As String = ComboGender.SelectedItem.ToString()
+        Dim number As String = PhoneNo.Text
+        Dim email As String = Eml.Text
         Dim regNo As String = LReg.Text
         Dim password As String = PW.Text
         Dim confirmPassword As String = Cnfrm.Text
@@ -34,17 +37,21 @@ Public Class ProfileCreation
         Dim rank As String = LRank.SelectedItem.ToString()
         Dim recruitmentDate As Date = Recruit.Value
 
+
         ' Check if the password and confirm password match
         If password = confirmPassword Then
             Try
                 conn.Open()
                 cmd = conn.CreateCommand()
                 cmd.CommandType = CommandType.Text
-                cmd.CommandText = "INSERT INTO LoginDB (LName, LRegNo, [Password], Age, Height, Weight, Address, Rank, RecruitmentDate, Profile) 
-                              VALUES (@Name, @RegNo, @Password, @Age, @Height, @Weight, @Address, @Rank, @RecruitmentDate, @Profile)"
+                cmd.CommandText = "INSERT INTO UserInfo (LName, Gender, ContactNo, Email, LRegNo, [Password], Age, Height, Weight, Address, Rank, RecruitmentDate, Profile) 
+                              VALUES (@Name, @Gender, @ContactNo, @Email, @RegNo, @Password, @Age, @Height, @Weight, @Address, @Rank, @RecruitmentDate, @Profile)"
 
                 ' Explicitly add parameters with correct data types
                 cmd.Parameters.Add("@Name", OleDbType.VarChar).Value = name
+                cmd.Parameters.Add("Gender", OleDbType.VarChar).Value = gndr
+                cmd.Parameters.Add("@ContactNo", OleDbType.VarChar).Value = number
+                cmd.Parameters.Add("@Email", OleDbType.VarChar).Value = email
                 cmd.Parameters.Add("@RegNo", OleDbType.VarChar).Value = regNo
                 cmd.Parameters.Add("@Password", OleDbType.VarChar).Value = password
                 cmd.Parameters.Add("@Age", OleDbType.Integer).Value = age
@@ -127,6 +134,30 @@ Public Class ProfileCreation
     End Sub
 
     Private Sub Wght_TextChanged(sender As Object, e As EventArgs) Handles Wght.TextChanged
+
+    End Sub
+
+    Private Sub Label4_Click(sender As Object, e As EventArgs) Handles Label4.Click
+
+    End Sub
+
+    Private Sub Panel2_Paint(sender As Object, e As PaintEventArgs) Handles Panel2.Paint
+
+    End Sub
+
+    Private Sub Label5_Click(sender As Object, e As EventArgs) Handles Label5.Click
+
+    End Sub
+
+    Private Sub ComboGender_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboGender.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub PhoneNo_TextChanged(sender As Object, e As EventArgs) Handles PhoneNo.TextChanged
+
+    End Sub
+
+    Private Sub Eml_TextChanged(sender As Object, e As EventArgs) Handles Eml.TextChanged
 
     End Sub
 End Class
