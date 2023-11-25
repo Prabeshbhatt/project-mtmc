@@ -243,6 +243,7 @@ Partial Class Lost_Found
         BackColor = Color.SkyBlue
         ClientSize = New Size(800, 470)
         Controls.Add(Panel1)
+        FormBorderStyle = FormBorderStyle.None
         Name = "Lost_Found"
         Text = "Lost and Found"
         Panel1.ResumeLayout(False)
