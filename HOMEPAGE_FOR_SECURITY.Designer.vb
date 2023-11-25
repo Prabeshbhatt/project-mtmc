@@ -34,7 +34,6 @@ Partial Class HOMEPAGE_FOR_SECURITY
         PictureBox1 = New PictureBox()
         Panel1 = New Panel()
         imagehome = New PictureBox()
-        patroll = New Button()
         lstfnd = New Button()
         cour = New Button()
         visit = New Button()
@@ -57,7 +56,6 @@ Partial Class HOMEPAGE_FOR_SECURITY
         Panelmenu.Controls.Add(Panel2)
         Panelmenu.Controls.Add(Panel1)
         Panelmenu.Controls.Add(imagehome)
-        Panelmenu.Controls.Add(patroll)
         Panelmenu.Controls.Add(lstfnd)
         Panelmenu.Controls.Add(cour)
         Panelmenu.Controls.Add(visit)
@@ -172,22 +170,6 @@ Partial Class HOMEPAGE_FOR_SECURITY
         imagehome.TabIndex = 2
         imagehome.TabStop = False
         ' 
-        ' patroll
-        ' 
-        patroll.FlatAppearance.BorderSize = 0
-        patroll.FlatStyle = FlatStyle.Flat
-        patroll.ForeColor = Color.Gainsboro
-        patroll.ImageAlign = ContentAlignment.MiddleLeft
-        patroll.Location = New Point(6, 445)
-        patroll.Name = "patroll"
-        patroll.Padding = New Padding(12, 0, 0, 0)
-        patroll.Size = New Size(214, 33)
-        patroll.TabIndex = 6
-        patroll.Text = "Patrolling Path"
-        patroll.TextAlign = ContentAlignment.MiddleLeft
-        patroll.TextImageRelation = TextImageRelation.ImageBeforeText
-        patroll.UseVisualStyleBackColor = True
-        ' 
         ' lstfnd
         ' 
         lstfnd.FlatAppearance.BorderSize = 0
@@ -282,7 +264,6 @@ Partial Class HOMEPAGE_FOR_SECURITY
 
     Friend WithEvents Panelmenu As Panel
     Friend WithEvents Deploy As Button
-    Friend WithEvents patroll As Button
     Friend WithEvents lstfnd As Button
     Friend WithEvents cour As Button
     Friend WithEvents visit As Button
