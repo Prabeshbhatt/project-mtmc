@@ -23,6 +23,10 @@ Partial Class ProfileCreation
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Panel2 = New Panel()
+        Label3 = New Label()
+        Wght = New TextBox()
+        Label2 = New Label()
+        Hght = New TextBox()
         Label1 = New Label()
         Adrss = New TextBox()
         LRank = New ComboBox()
@@ -44,10 +48,6 @@ Partial Class ProfileCreation
         Button1 = New Button()
         PW = New TextBox()
         OpenFileDialog = New OpenFileDialog()
-        Label2 = New Label()
-        Hght = New TextBox()
-        Label3 = New Label()
-        Wght = New TextBox()
         Panel2.SuspendLayout()
         CType(ProfilePic, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
@@ -83,8 +83,47 @@ Partial Class ProfileCreation
         Panel2.Size = New Size(781, 563)
         Panel2.TabIndex = 1
         ' 
+        ' Label3
+        ' 
+        Label3.Anchor = AnchorStyles.None
+        Label3.AutoSize = True
+        Label3.Location = New Point(421, 364)
+        Label3.Name = "Label3"
+        Label3.Size = New Size(68, 25)
+        Label3.TabIndex = 30
+        Label3.Text = "Weight"
+        ' 
+        ' Wght
+        ' 
+        Wght.Anchor = AnchorStyles.None
+        Wght.Location = New Point(494, 358)
+        Wght.Name = "Wght"
+        Wght.Size = New Size(98, 31)
+        Wght.TabIndex = 29
+        Wght.TextAlign = HorizontalAlignment.Center
+        ' 
+        ' Label2
+        ' 
+        Label2.Anchor = AnchorStyles.None
+        Label2.AutoSize = True
+        Label2.Location = New Point(147, 364)
+        Label2.Name = "Label2"
+        Label2.Size = New Size(65, 25)
+        Label2.TabIndex = 28
+        Label2.Text = "Height"
+        ' 
+        ' Hght
+        ' 
+        Hght.Anchor = AnchorStyles.None
+        Hght.Location = New Point(220, 358)
+        Hght.Name = "Hght"
+        Hght.Size = New Size(98, 31)
+        Hght.TabIndex = 27
+        Hght.TextAlign = HorizontalAlignment.Center
+        ' 
         ' Label1
         ' 
+        Label1.Anchor = AnchorStyles.None
         Label1.AutoSize = True
         Label1.Location = New Point(120, 410)
         Label1.Name = "Label1"
@@ -94,6 +133,7 @@ Partial Class ProfileCreation
         ' 
         ' Adrss
         ' 
+        Adrss.Anchor = AnchorStyles.None
         Adrss.Location = New Point(220, 404)
         Adrss.Name = "Adrss"
         Adrss.Size = New Size(372, 31)
@@ -102,6 +142,7 @@ Partial Class ProfileCreation
         ' 
         ' LRank
         ' 
+        LRank.Anchor = AnchorStyles.None
         LRank.FormattingEnabled = True
         LRank.Items.AddRange(New Object() {"ASO", "LSG", "SG", "SS"})
         LRank.Location = New Point(220, 452)
@@ -111,6 +152,7 @@ Partial Class ProfileCreation
         ' 
         ' Title
         ' 
+        Title.Anchor = AnchorStyles.None
         Title.AutoSize = True
         Title.Font = New Font("Segoe UI Black", 14F, FontStyle.Bold Or FontStyle.Underline, GraphicsUnit.Point)
         Title.Location = New Point(274, 22)
@@ -121,6 +163,7 @@ Partial Class ProfileCreation
         ' 
         ' LinkLabel2
         ' 
+        LinkLabel2.Anchor = AnchorStyles.None
         LinkLabel2.AutoSize = True
         LinkLabel2.Location = New Point(541, 282)
         LinkLabel2.Name = "LinkLabel2"
@@ -131,6 +174,7 @@ Partial Class ProfileCreation
         ' 
         ' ProfilePic
         ' 
+        ProfilePic.Anchor = AnchorStyles.None
         ProfilePic.BorderStyle = BorderStyle.Fixed3D
         ProfilePic.Location = New Point(569, 109)
         ProfilePic.Name = "ProfilePic"
@@ -141,6 +185,7 @@ Partial Class ProfileCreation
         ' 
         ' Label8
         ' 
+        Label8.Anchor = AnchorStyles.None
         Label8.AutoSize = True
         Label8.Location = New Point(49, 506)
         Label8.Name = "Label8"
@@ -150,6 +195,7 @@ Partial Class ProfileCreation
         ' 
         ' Label9
         ' 
+        Label9.Anchor = AnchorStyles.None
         Label9.AutoSize = True
         Label9.Location = New Point(140, 460)
         Label9.Name = "Label9"
@@ -159,6 +205,7 @@ Partial Class ProfileCreation
         ' 
         ' Label10
         ' 
+        Label10.Anchor = AnchorStyles.None
         Label10.AutoSize = True
         Label10.Location = New Point(147, 315)
         Label10.Name = "Label10"
@@ -168,6 +215,7 @@ Partial Class ProfileCreation
         ' 
         ' Label11
         ' 
+        Label11.Anchor = AnchorStyles.None
         Label11.AutoSize = True
         Label11.Location = New Point(56, 163)
         Label11.Name = "Label11"
@@ -177,6 +225,7 @@ Partial Class ProfileCreation
         ' 
         ' Label12
         ' 
+        Label12.Anchor = AnchorStyles.None
         Label12.AutoSize = True
         Label12.Location = New Point(132, 115)
         Label12.Name = "Label12"
@@ -186,6 +235,7 @@ Partial Class ProfileCreation
         ' 
         ' Recruit
         ' 
+        Recruit.Anchor = AnchorStyles.None
         Recruit.Location = New Point(220, 501)
         Recruit.Name = "Recruit"
         Recruit.Size = New Size(293, 31)
@@ -193,6 +243,7 @@ Partial Class ProfileCreation
         ' 
         ' LName
         ' 
+        LName.Anchor = AnchorStyles.None
         LName.Location = New Point(220, 109)
         LName.Name = "LName"
         LName.Size = New Size(293, 31)
@@ -201,6 +252,7 @@ Partial Class ProfileCreation
         ' 
         ' LReg
         ' 
+        LReg.Anchor = AnchorStyles.None
         LReg.Location = New Point(220, 160)
         LReg.Name = "LReg"
         LReg.Size = New Size(293, 31)
@@ -209,6 +261,7 @@ Partial Class ProfileCreation
         ' 
         ' LAge
         ' 
+        LAge.Anchor = AnchorStyles.None
         LAge.Location = New Point(220, 309)
         LAge.Name = "LAge"
         LAge.Size = New Size(293, 31)
@@ -217,6 +270,7 @@ Partial Class ProfileCreation
         ' 
         ' Label13
         ' 
+        Label13.Anchor = AnchorStyles.None
         Label13.AutoSize = True
         Label13.Location = New Point(45, 267)
         Label13.Name = "Label13"
@@ -226,6 +280,7 @@ Partial Class ProfileCreation
         ' 
         ' Label14
         ' 
+        Label14.Anchor = AnchorStyles.None
         Label14.AutoSize = True
         Label14.Location = New Point(74, 216)
         Label14.Name = "Label14"
@@ -235,6 +290,7 @@ Partial Class ProfileCreation
         ' 
         ' Cnfrm
         ' 
+        Cnfrm.Anchor = AnchorStyles.None
         Cnfrm.Location = New Point(220, 261)
         Cnfrm.Name = "Cnfrm"
         Cnfrm.PasswordChar = "*"c
@@ -244,6 +300,7 @@ Partial Class ProfileCreation
         ' 
         ' Button1
         ' 
+        Button1.Anchor = AnchorStyles.None
         Button1.Location = New Point(590, 496)
         Button1.Name = "Button1"
         Button1.Size = New Size(124, 46)
@@ -253,6 +310,7 @@ Partial Class ProfileCreation
         ' 
         ' PW
         ' 
+        PW.Anchor = AnchorStyles.None
         PW.Location = New Point(220, 210)
         PW.Name = "PW"
         PW.PasswordChar = "*"c
@@ -263,40 +321,6 @@ Partial Class ProfileCreation
         ' OpenFileDialog
         ' 
         OpenFileDialog.FileName = "OpenFileDialog"
-        ' 
-        ' Label2
-        ' 
-        Label2.AutoSize = True
-        Label2.Location = New Point(147, 364)
-        Label2.Name = "Label2"
-        Label2.Size = New Size(65, 25)
-        Label2.TabIndex = 28
-        Label2.Text = "Height"
-        ' 
-        ' Hght
-        ' 
-        Hght.Location = New Point(220, 358)
-        Hght.Name = "Hght"
-        Hght.Size = New Size(98, 31)
-        Hght.TabIndex = 27
-        Hght.TextAlign = HorizontalAlignment.Center
-        ' 
-        ' Label3
-        ' 
-        Label3.AutoSize = True
-        Label3.Location = New Point(421, 364)
-        Label3.Name = "Label3"
-        Label3.Size = New Size(68, 25)
-        Label3.TabIndex = 30
-        Label3.Text = "Weight"
-        ' 
-        ' Wght
-        ' 
-        Wght.Location = New Point(494, 358)
-        Wght.Name = "Wght"
-        Wght.Size = New Size(98, 31)
-        Wght.TabIndex = 29
-        Wght.TextAlign = HorizontalAlignment.Center
         ' 
         ' ProfileCreation
         ' 

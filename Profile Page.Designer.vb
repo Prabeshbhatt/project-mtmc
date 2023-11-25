@@ -39,6 +39,8 @@ Partial Class ProfilePage
         ' 
         ' Panel1
         ' 
+        Panel1.Anchor = AnchorStyles.None
+        Panel1.BackColor = Color.SkyBlue
         Panel1.Controls.Add(Display)
         Panel1.Controls.Add(PictureBox1)
         Panel1.Controls.Add(Label4)
@@ -49,14 +51,15 @@ Partial Class ProfilePage
         Panel1.Controls.Add(TextBox2)
         Panel1.Controls.Add(Label1)
         Panel1.Controls.Add(TextBox1)
-        Panel1.Location = New Point(0, 0)
+        Panel1.Location = New Point(92, 12)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(802, 527)
+        Panel1.Size = New Size(954, 573)
         Panel1.TabIndex = 0
         ' 
         ' Display
         ' 
-        Display.Location = New Point(395, 78)
+        Display.Anchor = AnchorStyles.None
+        Display.Location = New Point(464, 105)
         Display.Name = "Display"
         Display.Size = New Size(112, 34)
         Display.TabIndex = 18
@@ -65,8 +68,10 @@ Partial Class ProfilePage
         ' 
         ' PictureBox1
         ' 
+        PictureBox1.Anchor = AnchorStyles.None
+        PictureBox1.BackColor = Color.LightCyan
         PictureBox1.BorderStyle = BorderStyle.Fixed3D
-        PictureBox1.Location = New Point(351, 136)
+        PictureBox1.Location = New Point(420, 163)
         PictureBox1.Name = "PictureBox1"
         PictureBox1.Size = New Size(194, 200)
         PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
@@ -75,8 +80,9 @@ Partial Class ProfilePage
         ' 
         ' Label4
         ' 
+        Label4.Anchor = AnchorStyles.None
         Label4.AutoSize = True
-        Label4.Location = New Point(286, 477)
+        Label4.Location = New Point(355, 504)
         Label4.Name = "Label4"
         Label4.Size = New Size(51, 25)
         Label4.TabIndex = 16
@@ -84,8 +90,9 @@ Partial Class ProfilePage
         ' 
         ' Label3
         ' 
+        Label3.Anchor = AnchorStyles.None
         Label3.AutoSize = True
-        Label3.Location = New Point(286, 418)
+        Label3.Location = New Point(355, 445)
         Label3.Name = "Label3"
         Label3.Size = New Size(44, 25)
         Label3.TabIndex = 15
@@ -93,8 +100,9 @@ Partial Class ProfilePage
         ' 
         ' Label2
         ' 
+        Label2.Anchor = AnchorStyles.None
         Label2.AutoSize = True
-        Label2.Location = New Point(286, 357)
+        Label2.Location = New Point(355, 384)
         Label2.Name = "Label2"
         Label2.Size = New Size(59, 25)
         Label2.TabIndex = 14
@@ -102,29 +110,33 @@ Partial Class ProfilePage
         ' 
         ' TextBox4
         ' 
-        TextBox4.Location = New Point(364, 471)
+        TextBox4.Anchor = AnchorStyles.None
+        TextBox4.Location = New Point(433, 498)
         TextBox4.Name = "TextBox4"
         TextBox4.Size = New Size(181, 31)
         TextBox4.TabIndex = 13
         ' 
         ' TextBox3
         ' 
-        TextBox3.Location = New Point(364, 412)
+        TextBox3.Anchor = AnchorStyles.None
+        TextBox3.Location = New Point(433, 439)
         TextBox3.Name = "TextBox3"
         TextBox3.Size = New Size(181, 31)
         TextBox3.TabIndex = 12
         ' 
         ' TextBox2
         ' 
-        TextBox2.Location = New Point(364, 351)
+        TextBox2.Anchor = AnchorStyles.None
+        TextBox2.Location = New Point(433, 378)
         TextBox2.Name = "TextBox2"
         TextBox2.Size = New Size(181, 31)
         TextBox2.TabIndex = 11
         ' 
         ' Label1
         ' 
+        Label1.Anchor = AnchorStyles.None
         Label1.AutoSize = True
-        Label1.Location = New Point(254, 23)
+        Label1.Location = New Point(323, 50)
         Label1.Name = "Label1"
         Label1.Size = New Size(135, 25)
         Label1.TabIndex = 10
@@ -132,7 +144,8 @@ Partial Class ProfilePage
         ' 
         ' TextBox1
         ' 
-        TextBox1.Location = New Point(395, 20)
+        TextBox1.Anchor = AnchorStyles.None
+        TextBox1.Location = New Point(464, 47)
         TextBox1.Name = "TextBox1"
         TextBox1.Size = New Size(150, 31)
         TextBox1.TabIndex = 9
@@ -141,8 +154,10 @@ Partial Class ProfilePage
         ' 
         AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(800, 527)
+        BackColor = Color.SkyBlue
+        ClientSize = New Size(1126, 617)
         Controls.Add(Panel1)
+        FormBorderStyle = FormBorderStyle.None
         Name = "ProfilePage"
         Text = "ProfilePage"
         Panel1.ResumeLayout(False)
