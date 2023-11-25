@@ -39,43 +39,48 @@ Public Class ProfileCreation
 
 
         ' Check if the password and confirm password match
-        If password = confirmPassword Then
-            Try
-                conn.Open()
-                cmd = conn.CreateCommand()
-                cmd.CommandType = CommandType.Text
-                cmd.CommandText = "INSERT INTO UserInfo (LName, Gender, ContactNo, Email, LRegNo, [Password], Age, Height, Weight, Address, Rank, RecruitmentDate, Profile) 
+        If name = "" Or gndr = "" Or number = "" Or email = "" Or regNo = "" Or password = "" Or confirmPassword = "" Or age = "" Or height = "" Or weight = "" Or address = "" Or rank = "" Or recruitmentDate = "" Then
+            MessageBox.Show("Fields Cannot Be Blank")
+        Else
+            If password = confirmPassword Then
+                Try
+                    conn.Open()
+                    cmd = conn.CreateCommand()
+                    cmd.CommandType = CommandType.Text
+                    cmd.CommandText = "INSERT INTO UserInfo (LName, Gender, ContactNo, Email, LRegNo, [Password], Age, Height, Weight, Address, Rank, RecruitmentDate, Profile) 
                               VALUES (@Name, @Gender, @ContactNo, @Email, @RegNo, @Password, @Age, @Height, @Weight, @Address, @Rank, @RecruitmentDate, @Profile)"
 
-                ' Explicitly add parameters with correct data types
-                cmd.Parameters.Add("@Name", OleDbType.VarChar).Value = name
-                cmd.Parameters.Add("Gender", OleDbType.VarChar).Value = gndr
-                cmd.Parameters.Add("@ContactNo", OleDbType.VarChar).Value = number
-                cmd.Parameters.Add("@Email", OleDbType.VarChar).Value = email
-                cmd.Parameters.Add("@RegNo", OleDbType.VarChar).Value = regNo
-                cmd.Parameters.Add("@Password", OleDbType.VarChar).Value = password
-                cmd.Parameters.Add("@Age", OleDbType.Integer).Value = age
-                cmd.Parameters.Add("@Height", OleDbType.Double).Value = height
-                cmd.Parameters.Add("@Weight", OleDbType.Double).Value = weight
-                cmd.Parameters.Add("@Address", OleDbType.VarChar).Value = address
-                cmd.Parameters.Add("@Rank", OleDbType.VarChar).Value = rank
-                cmd.Parameters.Add("@RecruitmentDate", OleDbType.Date).Value = recruitmentDate
+                    ' Explicitly add parameters with correct data types
+                    cmd.Parameters.Add("@Name", OleDbType.VarChar).Value = name
+                    cmd.Parameters.Add("Gender", OleDbType.VarChar).Value = gndr
+                    cmd.Parameters.Add("@ContactNo", OleDbType.VarChar).Value = number
+                    cmd.Parameters.Add("@Email", OleDbType.VarChar).Value = email
+                    cmd.Parameters.Add("@RegNo", OleDbType.VarChar).Value = regNo
+                    cmd.Parameters.Add("@Password", OleDbType.VarChar).Value = password
+                    cmd.Parameters.Add("@Age", OleDbType.Integer).Value = age
+                    cmd.Parameters.Add("@Height", OleDbType.Double).Value = height
+                    cmd.Parameters.Add("@Weight", OleDbType.Double).Value = weight
+                    cmd.Parameters.Add("@Address", OleDbType.VarChar).Value = address
+                    cmd.Parameters.Add("@Rank", OleDbType.VarChar).Value = rank
+                    cmd.Parameters.Add("@RecruitmentDate", OleDbType.Date).Value = recruitmentDate
 
-                ' Read the image file into a byte array and set the parameter value
-                Dim profilePictureData As Byte() = File.ReadAllBytes(OpenFileDialog.FileName)
-                cmd.Parameters.Add("@Profile", OleDbType.VarBinary).Value = profilePictureData
+                    ' Read the image file into a byte array and set the parameter value
+                    Dim profilePictureData As Byte() = File.ReadAllBytes(OpenFileDialog.FileName)
+                    cmd.Parameters.Add("@Profile", OleDbType.VarBinary).Value = profilePictureData
 
-                cmd.ExecuteNonQuery()
-                MessageBox.Show("User registered successfully.")
-            Catch ex As Exception
-                MessageBox.Show("Error: " & ex.Message)
-            Finally
-                conn.Close()
-            End Try
-        Else
-            MessageBox.Show("Passwords do not match.")
-            PW.Clear()
-            Cnfrm.Clear()
+                    cmd.ExecuteNonQuery()
+                    MessageBox.Show("User registered successfully.")
+                    Me.Hide()
+                Catch ex As Exception
+                    MessageBox.Show("Enter The Data Correctly" & ex.Message)
+                Finally
+                    conn.Close()
+                End Try
+            Else
+                MessageBox.Show("Passwords do not match.")
+                PW.Clear()
+                Cnfrm.Clear()
+            End If
         End If
     End Sub
 

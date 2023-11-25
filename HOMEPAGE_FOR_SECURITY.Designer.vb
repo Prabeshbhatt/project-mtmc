@@ -250,6 +250,7 @@ Partial Class HOMEPAGE_FOR_SECURITY
         Controls.Add(Panelmenu)
         MainMenuStrip = MenuStrip1
         Name = "HOMEPAGE_FOR_SECURITY"
+        StartPosition = FormStartPosition.CenterScreen
         Text = "HOMEPAGE_FOR_SECURITY"
         Panelmenu.ResumeLayout(False)
         Panelmenu.PerformLayout()
