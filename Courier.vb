@@ -18,7 +18,7 @@ Public Class Courier
 
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
         Try
             conn.Open()
             cmd = conn.CreateCommand()
@@ -42,7 +42,7 @@ Public Class Courier
         TextBox10.Clear()
     End Sub
 
-    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+    Private Sub Button5_Click(sender As Object, e As EventArgs)
         If MessageBox.Show("Are you sure you want to Update this record?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
             Try
                 conn.Open()
@@ -106,5 +106,78 @@ Public Class Courier
             End Try
         Else MessageBox.Show("Data Update Rejected")
         End If
+    End Sub
+
+
+
+
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs)
+    End Sub
+
+    Private Sub DateTimePicker1_ValueChanged(sender As Object, e As EventArgs)
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs)
+    End Sub
+
+    Private Sub TextBox10_TextChanged(sender As Object, e As EventArgs)
+    End Sub
+
+    Private Sub TextBox9_TextChanged(sender As Object, e As EventArgs)
+    End Sub
+
+    Private Sub TextBox8_TextChanged(sender As Object, e As EventArgs)
+    End Sub
+
+    Private Sub TextBox7_TextChanged(sender As Object, e As EventArgs)
+    End Sub
+
+    Private Sub TextBox6_TextChanged(sender As Object, e As EventArgs)
+    End Sub
+
+    Private Sub TextBox5_TextChanged(sender As Object, e As EventArgs)
+    End Sub
+
+    Private Sub TextBox3_TextChanged(sender As Object, e As EventArgs)
+    End Sub
+
+    Private Sub TextBox2_TextChanged(sender As Object, e As EventArgs)
+    End Sub
+
+    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs)
+    End Sub
+
+    Private Sub Label10_Click(sender As Object, e As EventArgs)
+    End Sub
+
+    Private Sub Label9_Click(sender As Object, e As EventArgs)
+    End Sub
+
+    Private Sub Label8_Click(sender As Object, e As EventArgs)
+    End Sub
+
+    Private Sub Label7_Click(sender As Object, e As EventArgs)
+    End Sub
+
+    Private Sub Label6_Click(sender As Object, e As EventArgs)
+    End Sub
+
+    Private Sub Label5_Click(sender As Object, e As EventArgs)
+    End Sub
+
+    Private Sub Label4_Click(sender As Object, e As EventArgs)
+    End Sub
+
+    Private Sub Label3_Click(sender As Object, e As EventArgs)
+    End Sub
+
+    Private Sub Label2_Click(sender As Object, e As EventArgs)
+    End Sub
+
+    Private Sub Label1_Click(sender As Object, e As EventArgs)
     End Sub
 End Class

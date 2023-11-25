@@ -198,6 +198,7 @@ Partial Class Inward
         ' 
         ' Panel1
         ' 
+        Panel1.BackColor = Color.SkyBlue
         Panel1.Controls.Add(DateTimePicker1)
         Panel1.Controls.Add(Button2)
         Panel1.Controls.Add(Button1)
@@ -244,6 +245,7 @@ Partial Class Inward
         ' 
         AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
+        BackColor = Color.SkyBlue
         ClientSize = New Size(844, 478)
         Controls.Add(Panel1)
         Name = "Inward"
