@@ -95,6 +95,12 @@ Public Class HOMEPAGE_FOR_SECURITY
 
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
         Dim profileform As New ProfilePage
+        profileform.TopLevel = False
+        profileform.Size = Panel3.ClientSize
+
+
+        Panel3.Controls.Clear()
+        Panel3.Controls.Add(profileform)
         profileform.Show()
     End Sub
 End Class
