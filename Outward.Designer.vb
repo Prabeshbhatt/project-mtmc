@@ -317,6 +317,7 @@ Partial Class Outward
         ' 
         AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
+        BackColor = Color.SkyBlue
         ClientSize = New Size(1059, 684)
         Controls.Add(Panel2)
         FormBorderStyle = FormBorderStyle.None

@@ -154,6 +154,7 @@ Partial Class ProfilePage
         ' 
         AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
+        BackColor = Color.SkyBlue
         ClientSize = New Size(1126, 617)
         Controls.Add(Panel1)
         Name = "ProfilePage"
