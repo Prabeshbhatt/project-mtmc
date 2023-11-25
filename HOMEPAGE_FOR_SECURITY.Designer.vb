@@ -106,7 +106,7 @@ Partial Class HOMEPAGE_FOR_SECURITY
         ' 
         Panel3.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         Panel3.AutoSize = True
-        Panel3.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(128))
+        Panel3.BackColor = Color.SkyBlue
         Panel3.BackgroundImageLayout = ImageLayout.None
         Panel3.ForeColor = SystemColors.ActiveCaptionText
         Panel3.Location = New Point(288, 63)
@@ -118,7 +118,7 @@ Partial Class HOMEPAGE_FOR_SECURITY
         ' 
         Panel2.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
         Panel2.AutoSize = True
-        Panel2.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(192))
+        Panel2.BackColor = Color.Navy
         Panel2.Controls.Add(Button1)
         Panel2.Controls.Add(PictureBox1)
         Panel2.Location = New Point(287, 3)
@@ -128,6 +128,7 @@ Partial Class HOMEPAGE_FOR_SECURITY
         ' 
         ' Button1
         ' 
+        Button1.Anchor = AnchorStyles.Top Or AnchorStyles.Right
         Button1.ForeColor = SystemColors.ActiveCaptionText
         Button1.Location = New Point(789, 18)
         Button1.Name = "Button1"
