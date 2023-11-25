@@ -248,6 +248,7 @@ Partial Class Inward
         BackColor = Color.SkyBlue
         ClientSize = New Size(844, 478)
         Controls.Add(Panel1)
+        FormBorderStyle = FormBorderStyle.None
         Name = "Inward"
         Text = "Inward Form(user)"
         Panel1.ResumeLayout(False)
