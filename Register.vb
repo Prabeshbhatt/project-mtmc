@@ -30,7 +30,7 @@ Public Class Register
                 Me.Hide()
 
             Else
-                MessageBox.Show("Reg ID not Recognized")
+                MessageBox.Show("Name or Reg ID not Recognized")
             End If
         End If
 
@@ -62,7 +62,7 @@ Public Class Register
         Dim Result As Boolean = False
         Using connection As New OleDbConnection(connectionstring)
             connection.Open()
-            Dim query As String = "SELECT * FROM LoginDB WHERE LName = @FullName AND LRegNo = @RegNo"
+            Dim query As String = "SELECT * FROM UserInfo WHERE LName = @FullName AND LRegNo = @RegNo"
             Using command As New OleDbCommand(query, connection)
                 command.Parameters.AddWithValue("@FullName", AuthName)
                 command.Parameters.AddWithValue("@RegNo", AuthRegNo)
