@@ -110,9 +110,7 @@ Public Class Courier
 
 
 
-    Private Sub Panel2_Paint(sender As Object, e As PaintEventArgs) Handles Panel2.Paint
 
-    End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
     End Sub
