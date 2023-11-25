@@ -112,7 +112,7 @@ Partial Class Login
         RstPW.TabStop = True
         RstPW.Text = "Forgot Password? Reset"
         ' 
-        ' Form4
+        ' Login
         ' 
         AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
@@ -125,7 +125,8 @@ Partial Class Login
         Controls.Add(pass)
         Controls.Add(RegNo)
         Controls.Add(PictureBox1)
-        Name = "Form4"
+        Name = "Login"
+        StartPosition = FormStartPosition.CenterScreen
         Text = "LOGIN"
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
