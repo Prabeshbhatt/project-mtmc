@@ -62,9 +62,8 @@ Public Class HOMEPAGE_FOR_SECURITY
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim newForm As New Login()
-
-
         newForm.Show()
+        Me.Hide()
     End Sub
 
     Private Sub cour_Click(sender As Object, e As EventArgs) Handles cour.Click
