@@ -46,6 +46,7 @@ Public Class Login
     Private Sub RegisterLink_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles RegisterLink.LinkClicked
         Dim registerform As New Register
         registerform.Show()
+        Me.Hide()
     End Sub
 
     Private Sub RstPW_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles RstPW.LinkClicked
