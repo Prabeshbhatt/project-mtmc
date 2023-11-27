@@ -22,7 +22,7 @@ Partial Class HOMEPAGE_FOR_SECURITY
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(HOMEPAGE_FOR_SECURITY))
+        Dim resources As ComponentModel.ComponentResourceManager = New ComponentModel.ComponentResourceManager(GetType(HOMEPAGE_FOR_SECURITY))
         Panelmenu = New Panel()
         MenuStrip1 = New MenuStrip()
         MaterialMovementToolStripMenuItem = New ToolStripMenuItem()
@@ -34,9 +34,9 @@ Partial Class HOMEPAGE_FOR_SECURITY
         PictureBox1 = New PictureBox()
         Panel1 = New Panel()
         imagehome = New PictureBox()
-        lstfnd = New Button()
-        cour = New Button()
-        visit = New Button()
+        Lstfnd = New Button()
+        Cour = New Button()
+        Visit = New Button()
         Deploy = New Button()
         FileSystemWatcher1 = New IO.FileSystemWatcher()
         Panelmenu.SuspendLayout()
@@ -56,9 +56,9 @@ Partial Class HOMEPAGE_FOR_SECURITY
         Panelmenu.Controls.Add(Panel2)
         Panelmenu.Controls.Add(Panel1)
         Panelmenu.Controls.Add(imagehome)
-        Panelmenu.Controls.Add(lstfnd)
-        Panelmenu.Controls.Add(cour)
-        Panelmenu.Controls.Add(visit)
+        Panelmenu.Controls.Add(Lstfnd)
+        Panelmenu.Controls.Add(Cour)
+        Panelmenu.Controls.Add(Visit)
         Panelmenu.Controls.Add(Deploy)
         Panelmenu.Dock = DockStyle.Fill
         Panelmenu.ForeColor = SystemColors.ButtonHighlight
@@ -171,53 +171,53 @@ Partial Class HOMEPAGE_FOR_SECURITY
         imagehome.TabIndex = 2
         imagehome.TabStop = False
         ' 
-        ' lstfnd
+        ' Lstfnd
         ' 
-        lstfnd.FlatAppearance.BorderSize = 0
-        lstfnd.FlatStyle = FlatStyle.Flat
-        lstfnd.ForeColor = Color.Gainsboro
-        lstfnd.ImageAlign = ContentAlignment.MiddleLeft
-        lstfnd.Location = New Point(6, 396)
-        lstfnd.Name = "lstfnd"
-        lstfnd.Padding = New Padding(12, 0, 0, 0)
-        lstfnd.Size = New Size(214, 33)
-        lstfnd.TabIndex = 5
-        lstfnd.Text = "Lost&Found"
-        lstfnd.TextAlign = ContentAlignment.MiddleLeft
-        lstfnd.TextImageRelation = TextImageRelation.ImageBeforeText
-        lstfnd.UseVisualStyleBackColor = True
+        Lstfnd.FlatAppearance.BorderSize = 0
+        Lstfnd.FlatStyle = FlatStyle.Flat
+        Lstfnd.ForeColor = Color.Gainsboro
+        Lstfnd.ImageAlign = ContentAlignment.MiddleLeft
+        Lstfnd.Location = New Point(6, 396)
+        Lstfnd.Name = "Lstfnd"
+        Lstfnd.Padding = New Padding(12, 0, 0, 0)
+        Lstfnd.Size = New Size(214, 33)
+        Lstfnd.TabIndex = 5
+        Lstfnd.Text = "Lost&Found"
+        Lstfnd.TextAlign = ContentAlignment.MiddleLeft
+        Lstfnd.TextImageRelation = TextImageRelation.ImageBeforeText
+        Lstfnd.UseVisualStyleBackColor = True
         ' 
-        ' cour
+        ' Cour
         ' 
-        cour.FlatAppearance.BorderSize = 0
-        cour.FlatStyle = FlatStyle.Flat
-        cour.ForeColor = Color.Gainsboro
-        cour.ImageAlign = ContentAlignment.MiddleLeft
-        cour.Location = New Point(6, 345)
-        cour.Name = "cour"
-        cour.Padding = New Padding(12, 0, 0, 0)
-        cour.Size = New Size(214, 33)
-        cour.TabIndex = 4
-        cour.Text = "Courier"
-        cour.TextAlign = ContentAlignment.MiddleLeft
-        cour.TextImageRelation = TextImageRelation.ImageBeforeText
-        cour.UseVisualStyleBackColor = True
+        Cour.FlatAppearance.BorderSize = 0
+        Cour.FlatStyle = FlatStyle.Flat
+        Cour.ForeColor = Color.Gainsboro
+        Cour.ImageAlign = ContentAlignment.MiddleLeft
+        Cour.Location = New Point(6, 345)
+        Cour.Name = "Cour"
+        Cour.Padding = New Padding(12, 0, 0, 0)
+        Cour.Size = New Size(214, 33)
+        Cour.TabIndex = 4
+        Cour.Text = "Courier"
+        Cour.TextAlign = ContentAlignment.MiddleLeft
+        Cour.TextImageRelation = TextImageRelation.ImageBeforeText
+        Cour.UseVisualStyleBackColor = True
         ' 
-        ' visit
+        ' Visit
         ' 
-        visit.FlatAppearance.BorderSize = 0
-        visit.FlatStyle = FlatStyle.Flat
-        visit.ForeColor = Color.Gainsboro
-        visit.ImageAlign = ContentAlignment.MiddleLeft
-        visit.Location = New Point(6, 245)
-        visit.Name = "visit"
-        visit.Padding = New Padding(12, 0, 0, 0)
-        visit.Size = New Size(276, 33)
-        visit.TabIndex = 3
-        visit.Text = "Visitor's/Contractor's/Employee"
-        visit.TextAlign = ContentAlignment.MiddleLeft
-        visit.TextImageRelation = TextImageRelation.ImageBeforeText
-        visit.UseVisualStyleBackColor = True
+        Visit.FlatAppearance.BorderSize = 0
+        Visit.FlatStyle = FlatStyle.Flat
+        Visit.ForeColor = Color.Gainsboro
+        Visit.ImageAlign = ContentAlignment.MiddleLeft
+        Visit.Location = New Point(6, 245)
+        Visit.Name = "Visit"
+        Visit.Padding = New Padding(12, 0, 0, 0)
+        Visit.Size = New Size(276, 33)
+        Visit.TabIndex = 3
+        Visit.Text = "Visitor's/Contractor's/Employee"
+        Visit.TextAlign = ContentAlignment.MiddleLeft
+        Visit.TextImageRelation = TextImageRelation.ImageBeforeText
+        Visit.UseVisualStyleBackColor = True
         ' 
         ' Deploy
         ' 
@@ -266,9 +266,9 @@ Partial Class HOMEPAGE_FOR_SECURITY
 
     Friend WithEvents Panelmenu As Panel
     Friend WithEvents Deploy As Button
-    Friend WithEvents lstfnd As Button
-    Friend WithEvents cour As Button
-    Friend WithEvents visit As Button
+    Friend WithEvents Lstfnd As Button
+    Friend WithEvents Cour As Button
+    Friend WithEvents Visit As Button
     Friend WithEvents FileSystemWatcher1 As IO.FileSystemWatcher
     Friend WithEvents imagehome As PictureBox
     Friend WithEvents PictureBox1 As PictureBox

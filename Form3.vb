@@ -10,7 +10,7 @@ Public Class Lost_Found
 
 
     Private Sub Lost_Found_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        conn.ConnectionString = ""
+        conn.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Project MTMC Git\Lost and found_DB.accdb"
 
     End Sub
 
@@ -19,7 +19,7 @@ Public Class Lost_Found
             conn.Open()
             cmd = conn.CreateCommand()
             cmd.CommandType = CommandType.Text
-            cmd.CommandText = "INSERT INTO Table1 ([Sl no],[Material Detail],[Location],[Person Found],[Date],[Quantity],[Handover],[Recieved],[Signature]) VALUES (" & TextBox1.Text & ", '" & TextBox2.Text & "', '" & TextBox3.Text & "','" & TextBox4.Text & "','" & DateTimePicker1.Text & "'," & TextBox5.Text & ",'" & TextBox6.Text & "','" & TextBox7.Text & "','" & TextBox8.Text & "' )"
+            cmd.CommandText = "INSERT INTO Lostnfound ([Sl no],[Material Detail],[Location],[Person Found],[Date],[Quantity],[Handover],[Recieved],[Signature]) VALUES (" & TextBox1.Text & ", '" & TextBox2.Text & "', '" & TextBox3.Text & "','" & TextBox4.Text & "','" & DateTimePicker1.Text & "'," & TextBox5.Text & ",'" & TextBox6.Text & "','" & TextBox7.Text & "','" & TextBox8.Text & "' )"
             cmd.ExecuteNonQuery()
             conn.Close()
 
@@ -31,7 +31,9 @@ Public Class Lost_Found
         TextBox1.Clear()
         TextBox2.Clear()
         TextBox3.Clear()
+        TextBox4.Clear()
         TextBox5.Clear()
+        TextBox6.Clear()
         TextBox7.Clear()
         TextBox8.Clear()
 
@@ -63,7 +65,7 @@ Public Class Lost_Found
 
 
                 If Not String.IsNullOrEmpty(DateTimePicker1.Text) Then
-                    updateClauses.Add("[Date] = " & DateTimePicker1.Text & "")
+                    updateClauses.Add("[Date] = '" & DateTimePicker1.Text & "'")
                 End If
 
                 If Not String.IsNullOrEmpty(TextBox5.Text) Then
@@ -84,7 +86,7 @@ Public Class Lost_Found
 
                 Dim updateClause As String = String.Join(", ", updateClauses)
                 If updateClause <> "" Then
-                    cmd.CommandText = "UPDATE OUTWARD_FORM SET " & updateClause & " WHERE [Product No] = " & TextBox7.Text & ""
+                    cmd.CommandText = "UPDATE Lostnfound SET " & updateClause & " WHERE [Sl no] = " & TextBox1.Text & ""
                     cmd.ExecuteNonQuery()
                     MessageBox.Show("Data updated successfully.")
                 Else

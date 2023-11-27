@@ -9,11 +9,11 @@ Public Class HOMEPAGE_FOR_SECURITY
 
     End Sub
 
-    Private Sub visit_Click(sender As Object, e As EventArgs) Handles visit.Click
-        Dim newForm As New VISITORS()
-
-        newForm.TopLevel = False
-        newForm.Size = Panel3.ClientSize
+    Private Sub Visit_Click(sender As Object, e As EventArgs) Handles Visit.Click
+        Dim newForm As New VISITORS With {
+            .TopLevel = False,
+            .Size = Panel3.ClientSize
+        }
 
 
         Panel3.Controls.Clear()
@@ -33,10 +33,10 @@ Public Class HOMEPAGE_FOR_SECURITY
     End Sub
 
     Private Sub InwardToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles InwardToolStripMenuItem.Click
-        Dim newForm As New Inward()
-
-        newForm.TopLevel = False
-        newForm.Size = Panel3.ClientSize
+        Dim newForm As New Inward With {
+            .TopLevel = False,
+            .Size = Panel3.ClientSize
+        }
 
 
         Panel3.Controls.Clear()
@@ -46,10 +46,10 @@ Public Class HOMEPAGE_FOR_SECURITY
     End Sub
 
     Private Sub OutwardToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OutwardToolStripMenuItem.Click
-        Dim newForm As New Outward()
-
-        newForm.TopLevel = False
-        newForm.Size = Panel3.ClientSize
+        Dim newForm As New Outward With {
+            .TopLevel = False,
+            .Size = Panel3.ClientSize
+        }
 
 
         Panel3.Controls.Clear()
@@ -67,11 +67,11 @@ Public Class HOMEPAGE_FOR_SECURITY
         newForm.Show()
     End Sub
 
-    Private Sub cour_Click(sender As Object, e As EventArgs) Handles cour.Click
-        Dim newForm As New Courier()
-
-        newForm.TopLevel = False
-        newForm.Size = Panel3.ClientSize
+    Private Sub Cour_Click(sender As Object, e As EventArgs) Handles Cour.Click
+        Dim newForm As New Courier With {
+            .TopLevel = False,
+            .Size = Panel3.ClientSize
+        }
 
 
         Panel3.Controls.Clear()
@@ -80,11 +80,11 @@ Public Class HOMEPAGE_FOR_SECURITY
         newForm.Show()
     End Sub
 
-    Private Sub lstfnd_Click(sender As Object, e As EventArgs) Handles lstfnd.Click
-        Dim newForm As New Lost_Found()
-
-        newForm.TopLevel = False
-        newForm.Size = Panel3.ClientSize
+    Private Sub Lstfnd_Click(sender As Object, e As EventArgs) Handles Lstfnd.Click
+        Dim newForm As New Lost_Found With {
+            .TopLevel = False,
+            .Size = Panel3.ClientSize
+        }
 
 
         Panel3.Controls.Clear()
@@ -94,9 +94,10 @@ Public Class HOMEPAGE_FOR_SECURITY
     End Sub
 
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
-        Dim profileform As New ProfilePage
-        profileform.TopLevel = False
-        profileform.Size = Panel3.ClientSize
+        Dim profileform As New ProfilePage With {
+            .TopLevel = False,
+            .Size = Panel3.ClientSize
+        }
 
 
         Panel3.Controls.Clear()
