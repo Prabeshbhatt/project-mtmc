@@ -113,7 +113,7 @@ Partial Class Courier
         ' 
         Button1.Anchor = AnchorStyles.None
         Button1.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
-        Button1.Location = New Point(623, 590)
+        Button1.Location = New Point(622, 590)
         Button1.Name = "Button1"
         Button1.Size = New Size(112, 34)
         Button1.TabIndex = 46
@@ -224,7 +224,7 @@ Partial Class Courier
         ' Label8
         ' 
         Label8.Anchor = AnchorStyles.None
-        Label8.Font = New Font("Segoe UI", 14.0F, FontStyle.Bold, GraphicsUnit.Point)
+        Label8.Font = New Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point)
         Label8.Location = New Point(271, 421)
         Label8.Name = "Label8"
         Label8.Size = New Size(177, 38)
@@ -234,7 +234,7 @@ Partial Class Courier
         ' Label7
         ' 
         Label7.Anchor = AnchorStyles.None
-        Label7.Font = New Font("Segoe UI", 14.0F, FontStyle.Bold, GraphicsUnit.Point)
+        Label7.Font = New Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point)
         Label7.Location = New Point(271, 369)
         Label7.Name = "Label7"
         Label7.Size = New Size(177, 38)

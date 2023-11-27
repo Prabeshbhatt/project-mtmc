@@ -10,7 +10,7 @@ Public Class Lost_Found
 
 
     Private Sub Lost_Found_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        conn.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Project MTMC Git\Lost and found_DB.accdb"
+        conn.ConnectionString = ""
 
     End Sub
 

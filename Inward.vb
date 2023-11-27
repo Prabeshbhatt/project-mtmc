@@ -14,7 +14,7 @@ Public Class Inward
 
 
     Private Sub Inward_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        conn.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Project Mtmc git\Inward_Formdb.accdb"
+        conn.ConnectionString = ""
 
     End Sub
 

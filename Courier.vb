@@ -14,7 +14,7 @@ Public Class Courier
 
 
     Private Sub Courier_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        conn.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Project Mtmc git\Courier_db.accdb"
+        conn.ConnectionString = ""
 
     End Sub
 
