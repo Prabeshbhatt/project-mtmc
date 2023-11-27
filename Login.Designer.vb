@@ -57,6 +57,7 @@ Partial Class Login
         pass.Location = New Point(201, 228)
         pass.Multiline = True
         pass.Name = "pass"
+        pass.PasswordChar = "*"c
         pass.Size = New Size(261, 46)
         pass.TabIndex = 2
         ' 
