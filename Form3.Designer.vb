@@ -223,9 +223,9 @@ Partial Class Lost_Found
         Label2.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
         Label2.Location = New Point(84, 126)
         Label2.Name = "Label2"
-        Label2.Size = New Size(181, 38)
+        Label2.Size = New Size(206, 38)
         Label2.TabIndex = 18
-        Label2.Text = "Material No"
+        Label2.Text = "Material Detail"
         ' 
         ' Label1
         ' 

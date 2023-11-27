@@ -14,7 +14,7 @@ Public Class Inward
 
 
     Private Sub Inward_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        conn.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Project Mtmc git\Inward_Formdb.accdb"
+        conn.ConnectionString = ""
 
     End Sub
 
@@ -47,5 +47,69 @@ Public Class Inward
         TextBox8.Clear()
         TextBox9.Clear()
 
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        If MessageBox.Show("Are you sure you want to Update this record?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
+            Try
+                conn.Open()
+                cmd = conn.CreateCommand()
+                cmd.CommandType = CommandType.Text
+
+                Dim updateClauses As New List(Of String)
+
+                If Not String.IsNullOrEmpty(TextBox1.Text) Then
+                    updateClauses.Add("[Sl no] = " & TextBox1.Text & "")
+                End If
+                If Not String.IsNullOrEmpty(TextBox2.Text) Then
+                    updateClauses.Add("[Party Name] = '" & TextBox2.Text & "'")
+                End If
+
+                If Not String.IsNullOrEmpty(TextBox3.Text) Then
+                    updateClauses.Add("[Material] = '" & TextBox3.Text & "'")
+                End If
+
+                If Not String.IsNullOrEmpty(TextBox4.Text) Then
+                    updateClauses.Add("[Quantity] = " & TextBox4.Text & "")
+                End If
+                If Not String.IsNullOrEmpty(TextBox5.Text) Then
+                    updateClauses.Add("[Challan_No] = " & TextBox5.Text & "")
+                End If
+
+
+                If Not String.IsNullOrEmpty(DateTimePicker1.Text) Then
+                    updateClauses.Add("[Date] = '" & DateTimePicker1.Text & "'")
+                End If
+
+
+                If Not String.IsNullOrEmpty(TextBox7.Text) Then
+                    updateClauses.Add("[In Time] = '" & TextBox7.Text & "'")
+                End If
+
+
+                If Not String.IsNullOrEmpty(TextBox8.Text) Then
+                    updateClauses.Add("[Remark] = '" & TextBox8.Text & "'")
+                End If
+
+                If Not String.IsNullOrEmpty(TextBox9.Text) Then
+                    updateClauses.Add("[Signature] = '" & TextBox9.Text & "'")
+                End If
+
+                Dim updateClause As String = String.Join(", ", updateClauses)
+                If updateClause <> "" Then
+                    cmd.CommandText = "UPDATE Table1 SET " & updateClause & " WHERE [Challan_No] = " & TextBox5.Text & ""
+                    cmd.ExecuteNonQuery()
+                    MessageBox.Show("Data updated successfully.")
+                Else
+                    MessageBox.Show("No fields provided for update.")
+                End If
+
+            Catch ex As Exception
+                MessageBox.Show("Error: " & ex.Message)
+            Finally
+                conn.Close()
+            End Try
+        Else MessageBox.Show("Data Update Rejected")
+        End If
     End Sub
 End Class
