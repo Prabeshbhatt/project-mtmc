@@ -18,30 +18,46 @@ Public Class Login
         Dim password As String = pass.Text
 
         Try
+
             conn.Open()
-            Dim query As String = "SELECT * FROM UserInfo WHERE User_id = @user_id AND Password = @Password"
-            Using cmd As New OleDbCommand(query, conn)
-                cmd.Parameters.AddWithValue("@Password", password)
-                Dim reader As OleDbDataReader = cmd.ExecuteReader()
-                If reader.HasRows Then
-                    MessageBox.Show("Login Successful!")
-                    ' Add code to navigate to the next form or perform other actions upon successful login
-                Else
-                    MessageBox.Show("Invalid Username or Password")
-                End If
-            End Using
+                Dim query As String = "SELECT * FROM UserInfo WHERE LRegNo=@RegNo AND Password = @Password"
+                Using cmd As New OleDbCommand(query, conn)
+                    cmd.Parameters.AddWithValue("@RegNo", Reg_no)
+                    cmd.Parameters.AddWithValue("@Password", password)
+                    Using reader As OleDbDataReader = cmd.ExecuteReader()
+                        If reader.HasRows Then
+                            MessageBox.Show("Login Successful!")
+                            Dim nextform As New HOMEPAGE_FOR_SECURITY
+                            nextform.Show()
+                            Me.Hide()
+                            ' Add code to navigate to the next form or perform other actions upon successful login
+                        Else
+                            MessageBox.Show("Invalid Username or Password")
+                        End If
+                    End Using
+                End Using
+            conn.Close()
         Catch ex As Exception
             MessageBox.Show("Error: " & ex.Message)
         End Try
     End Sub
 
+
     Private Sub RegisterLink_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles RegisterLink.LinkClicked
-        Dim SecondForm As New Register
-        SecondForm.Show()
+        Dim registerform As New Register
+        registerform.Show()
         Me.Hide()
     End Sub
 
     Private Sub RstPW_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles RstPW.LinkClicked
+
+    End Sub
+
+    Private Sub RegNo_TextChanged(sender As Object, e As EventArgs) Handles RegNo.TextChanged
+
+    End Sub
+
+    Private Sub pass_TextChanged(sender As Object, e As EventArgs) Handles pass.TextChanged
 
     End Sub
 End Class
