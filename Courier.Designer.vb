@@ -113,7 +113,7 @@ Partial Class Courier
         ' 
         Button1.Anchor = AnchorStyles.None
         Button1.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
-        Button1.Location = New Point(623, 590)
+        Button1.Location = New Point(622, 590)
         Button1.Name = "Button1"
         Button1.Size = New Size(112, 34)
         Button1.TabIndex = 46
@@ -217,7 +217,7 @@ Partial Class Courier
         Label9.Font = New Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point)
         Label9.Location = New Point(271, 474)
         Label9.Name = "Label9"
-        Label9.Size = New Size(132, 38)
+        Label9.Size = New Size(157, 38)
         Label9.TabIndex = 35
         Label9.Text = "Signature"
         ' 
@@ -237,7 +237,7 @@ Partial Class Courier
         Label7.Font = New Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point)
         Label7.Location = New Point(271, 369)
         Label7.Name = "Label7"
-        Label7.Size = New Size(146, 38)
+        Label7.Size = New Size(177, 38)
         Label7.TabIndex = 33
         Label7.Text = "Product No"
         ' 
