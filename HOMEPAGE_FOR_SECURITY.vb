@@ -46,16 +46,15 @@ Public Class HOMEPAGE_FOR_SECURITY
     End Sub
 
     Private Sub OutwardToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OutwardToolStripMenuItem.Click
-        Dim newForm As New Outward With {
+ Dim newForm As New Outward With {
             .TopLevel = False,
             .Size = Panel3.ClientSize
         }
 
-
         Panel3.Controls.Clear()
-        Panel3.Controls.Add(newForm)
+        Panel3.Controls.Add(outwardform)
 
-        newForm.Show()
+        outwardform.Show()
     End Sub
 
 
