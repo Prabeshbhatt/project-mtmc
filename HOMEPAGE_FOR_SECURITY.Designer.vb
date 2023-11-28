@@ -37,6 +37,7 @@ Partial Class HOMEPAGE_FOR_SECURITY
         ToolStripMenuItem2 = New ToolStripMenuItem()
         Panel3 = New Panel()
         Panel2 = New Panel()
+        PictureBox7 = New PictureBox()
         Button1 = New Button()
         PictureBox1 = New PictureBox()
         Panel1 = New Panel()
@@ -46,7 +47,6 @@ Partial Class HOMEPAGE_FOR_SECURITY
         Visit = New Button()
         Deploy = New Button()
         FileSystemWatcher1 = New IO.FileSystemWatcher()
-        PictureBox7 = New PictureBox()
         Panelmenu.SuspendLayout()
         CType(PictureBox6, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox5, ComponentModel.ISupportInitialize).BeginInit()
@@ -55,10 +55,10 @@ Partial Class HOMEPAGE_FOR_SECURITY
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         MenuStrip1.SuspendLayout()
         Panel2.SuspendLayout()
+        CType(PictureBox7, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         CType(imagehome, ComponentModel.ISupportInitialize).BeginInit()
         CType(FileSystemWatcher1, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox7, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' Panelmenu
@@ -217,6 +217,17 @@ Partial Class HOMEPAGE_FOR_SECURITY
         Panel2.Size = New Size(918, 59)
         Panel2.TabIndex = 8
         ' 
+        ' PictureBox7
+        ' 
+        PictureBox7.BorderStyle = BorderStyle.Fixed3D
+        PictureBox7.Image = CType(resources.GetObject("PictureBox7.Image"), Image)
+        PictureBox7.Location = New Point(7, 21)
+        PictureBox7.Name = "PictureBox7"
+        PictureBox7.Size = New Size(36, 35)
+        PictureBox7.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox7.TabIndex = 4
+        PictureBox7.TabStop = False
+        ' 
         ' Button1
         ' 
         Button1.Anchor = AnchorStyles.Top Or AnchorStyles.Right
@@ -253,12 +264,14 @@ Partial Class HOMEPAGE_FOR_SECURITY
         ' 
         ' imagehome
         ' 
-        imagehome.BorderStyle = BorderStyle.FixedSingle
+        imagehome.BackColor = Color.White
+        imagehome.BackgroundImageLayout = ImageLayout.Zoom
+        imagehome.BorderStyle = BorderStyle.Fixed3D
         imagehome.Image = CType(resources.GetObject("imagehome.Image"), Image)
         imagehome.Location = New Point(0, 0)
         imagehome.Name = "imagehome"
         imagehome.Size = New Size(325, 172)
-        imagehome.SizeMode = PictureBoxSizeMode.StretchImage
+        imagehome.SizeMode = PictureBoxSizeMode.Zoom
         imagehome.TabIndex = 2
         imagehome.TabStop = False
         ' 
@@ -331,17 +344,6 @@ Partial Class HOMEPAGE_FOR_SECURITY
         FileSystemWatcher1.EnableRaisingEvents = True
         FileSystemWatcher1.SynchronizingObject = Me
         ' 
-        ' PictureBox7
-        ' 
-        PictureBox7.BorderStyle = BorderStyle.Fixed3D
-        PictureBox7.Image = CType(resources.GetObject("PictureBox7.Image"), Image)
-        PictureBox7.Location = New Point(7, 21)
-        PictureBox7.Name = "PictureBox7"
-        PictureBox7.Size = New Size(36, 35)
-        PictureBox7.SizeMode = PictureBoxSizeMode.Zoom
-        PictureBox7.TabIndex = 4
-        PictureBox7.TabStop = False
-        ' 
         ' HOMEPAGE_FOR_SECURITY
         ' 
         AutoScaleDimensions = New SizeF(10F, 25F)
@@ -364,10 +366,10 @@ Partial Class HOMEPAGE_FOR_SECURITY
         MenuStrip1.ResumeLayout(False)
         MenuStrip1.PerformLayout()
         Panel2.ResumeLayout(False)
+        CType(PictureBox7, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         CType(imagehome, ComponentModel.ISupportInitialize).EndInit()
         CType(FileSystemWatcher1, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox7, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
