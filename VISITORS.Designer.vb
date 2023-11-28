@@ -113,7 +113,7 @@ Partial Class VISITORS
         ' 
         ' outtme
         ' 
-        outtme.Location = New Point(564, 326)
+        outtme.Location = New Point(553, 323)
         outtme.Name = "outtme"
         outtme.Size = New Size(249, 31)
         outtme.TabIndex = 91
@@ -122,7 +122,7 @@ Partial Class VISITORS
         ' 
         From.AutoSize = True
         From.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
-        From.Location = New Point(413, 325)
+        From.Location = New Point(396, 323)
         From.Name = "From"
         From.Size = New Size(128, 32)
         From.TabIndex = 90
