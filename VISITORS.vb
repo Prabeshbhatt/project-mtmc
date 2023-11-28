@@ -22,10 +22,10 @@ Public Class VISITORS
     End Sub
 
 
-    Private Sub Btnupd_Click(sender As Object, e As EventArgs) Handles Btnupd.Click
+    Private Sub Btnupd_Click(sender As Object, e As EventArgs)
         Try
             Using conn As New OleDbConnection(connectionString)
-                conn.Open()
+                conn.Open
 
                 ' Check if the record exists
                 Dim checkSql = "SELECT COUNT(*) FROM VISITORS WHERE [ID NUMBER] = @idnum"
@@ -40,7 +40,7 @@ Public Class VISITORS
                         Dim deleteSql = "DELETE FROM VISITORS WHERE [ID NUMBER] = @idnum"
                         Using cmd As New OleDbCommand(deleteSql, conn)
                             cmd.Parameters.AddWithValue("@idnum", idno.Text)
-                            cmd.ExecuteNonQuery()
+                            cmd.ExecuteNonQuery
                             MessageBox.Show("Data deleted successfully.")
                         End Using
                     Else
@@ -53,10 +53,10 @@ Public Class VISITORS
         End Try
     End Sub
 
-    Private Sub Btndlte_Click(sender As Object, e As EventArgs) Handles Btndlte.Click
+    Private Sub Btndlte_Click(sender As Object, e As EventArgs)
         If MessageBox.Show("Are you sure you want to Update this record?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
             Try
-                conn.Open()
+                conn.Open
                 cmd = conn.CreateCommand
                 cmd.CommandType = CommandType.Text
 
@@ -78,7 +78,7 @@ Public Class VISITORS
                 Dim updateClause = String.Join(", ", updateClauses)
                 If updateClause <> "" Then
                     cmd.CommandText = "UPDATE VISITORS SET " & updateClause & " WHERE [ID NUMBER] = " & idno.Text
-                    cmd.ExecuteNonQuery()
+                    cmd.ExecuteNonQuery
                     MessageBox.Show("Data updated successfully.")
                 Else
                     MessageBox.Show("No fields provided for update.")
@@ -87,38 +87,38 @@ Public Class VISITORS
             Catch ex As Exception
                 MessageBox.Show("Error: " & ex.Message)
             Finally
-                conn.Close()
+                conn.Close
             End Try
         Else
             MessageBox.Show("Data Update Rejected")
         End If
     End Sub
 
-    Private Sub Btnsave_Click_1(sender As Object, e As EventArgs) Handles Btnsave.Click
-        conn.Open()
+    Private Sub Btnsave_Click_1(sender As Object, e As EventArgs)
+        conn.Open
         cmd = conn.CreateCommand
         cmd.CommandType = CommandType.Text
         cmd.CommandText = "INSERT INTO VISITORS ([ID NUMBER] , [DATE], [NAME], [ADDRESS], [CONTACT NUMBER], [PERSON TO MEET NAME], [IN TIME], [OUT TIME], [TOTAL PERSON], [NO OF HOURS], [AVG TIME SPENT]) 
             VALUES (" & idno.Text & ", '" & DateTimePicker1.Text & "', '" & nmme.Text & "','" & addd.Text & "'," & cntt.Text & ",'" & prsnn.Text & "','" & intme.Text & "','" & outtme.Text & "'," & tper.Text & "," & nhrs.Text & ",'" & avgg.Text & "')"
-        cmd.ExecuteNonQuery()
-        conn.Close()
+        cmd.ExecuteNonQuery
+        conn.Close
 
         MessageBox.Show("Data inserted successfully.")
-        conn.Close()
-        idno.Clear()
-        nhrs.Clear()
-        nmme.Clear()
-        tper.Clear()
-        addd.Clear()
-        cntt.Clear()
-        prsnn.Clear()
-        tper.Clear()
-        avgg.Clear()
-        outtme.Clear()
-        intme.Clear()
+        conn.Close
+        idno.Clear
+        nhrs.Clear
+        nmme.Clear
+        tper.Clear
+        addd.Clear
+        cntt.Clear
+        prsnn.Clear
+        tper.Clear
+        avgg.Clear
+        outtme.Clear
+        intme.Clear
     End Sub
 
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
 
-
-
+    End Sub
 End Class
