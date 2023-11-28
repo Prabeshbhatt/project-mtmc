@@ -46,6 +46,7 @@ Partial Class HOMEPAGE_FOR_SECURITY
         Visit = New Button()
         Deploy = New Button()
         FileSystemWatcher1 = New IO.FileSystemWatcher()
+        PictureBox7 = New PictureBox()
         Panelmenu.SuspendLayout()
         CType(PictureBox6, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox5, ComponentModel.ISupportInitialize).BeginInit()
@@ -57,6 +58,7 @@ Partial Class HOMEPAGE_FOR_SECURITY
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         CType(imagehome, ComponentModel.ISupportInitialize).BeginInit()
         CType(FileSystemWatcher1, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox7, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' Panelmenu
@@ -171,13 +173,13 @@ Partial Class HOMEPAGE_FOR_SECURITY
         ' InwardToolStripMenuItem
         ' 
         InwardToolStripMenuItem.Name = "InwardToolStripMenuItem"
-        InwardToolStripMenuItem.Size = New Size(270, 34)
+        InwardToolStripMenuItem.Size = New Size(183, 34)
         InwardToolStripMenuItem.Text = "Inward"
         ' 
         ' OutwardToolStripMenuItem
         ' 
         OutwardToolStripMenuItem.Name = "OutwardToolStripMenuItem"
-        OutwardToolStripMenuItem.Size = New Size(270, 34)
+        OutwardToolStripMenuItem.Size = New Size(183, 34)
         OutwardToolStripMenuItem.Text = "Outward"
         ' 
         ' ToolStripMenuItem1
@@ -207,11 +209,12 @@ Partial Class HOMEPAGE_FOR_SECURITY
         Panel2.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
         Panel2.AutoSize = True
         Panel2.BackColor = Color.Navy
+        Panel2.Controls.Add(PictureBox7)
         Panel2.Controls.Add(Button1)
         Panel2.Controls.Add(PictureBox1)
         Panel2.Location = New Point(324, 3)
         Panel2.Name = "Panel2"
-        Panel2.Size = New Size(918, 56)
+        Panel2.Size = New Size(918, 59)
         Panel2.TabIndex = 8
         ' 
         ' Button1
@@ -328,6 +331,17 @@ Partial Class HOMEPAGE_FOR_SECURITY
         FileSystemWatcher1.EnableRaisingEvents = True
         FileSystemWatcher1.SynchronizingObject = Me
         ' 
+        ' PictureBox7
+        ' 
+        PictureBox7.BorderStyle = BorderStyle.Fixed3D
+        PictureBox7.Image = CType(resources.GetObject("PictureBox7.Image"), Image)
+        PictureBox7.Location = New Point(7, 21)
+        PictureBox7.Name = "PictureBox7"
+        PictureBox7.Size = New Size(36, 35)
+        PictureBox7.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox7.TabIndex = 4
+        PictureBox7.TabStop = False
+        ' 
         ' HOMEPAGE_FOR_SECURITY
         ' 
         AutoScaleDimensions = New SizeF(10F, 25F)
@@ -353,6 +367,7 @@ Partial Class HOMEPAGE_FOR_SECURITY
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         CType(imagehome, ComponentModel.ISupportInitialize).EndInit()
         CType(FileSystemWatcher1, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox7, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -380,4 +395,5 @@ Partial Class HOMEPAGE_FOR_SECURITY
     Friend WithEvents PictureBox6 As PictureBox
     Friend WithEvents ToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem2 As ToolStripMenuItem
+    Friend WithEvents PictureBox7 As PictureBox
 End Class
