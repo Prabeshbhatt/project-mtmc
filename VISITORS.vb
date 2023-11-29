@@ -21,39 +21,35 @@ Public Class VISITORS
 
     End Sub
 
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
 
-    Private Sub Btnupd_Click(sender As Object, e As EventArgs) Handles Btnupd.Click
-        Try
-            Using conn As New OleDbConnection(connectionString)
-                conn.Open()
-
-                ' Check if the record exists
-                Dim checkSql = "SELECT COUNT(*) FROM VISITORS WHERE [ID NUMBER] = @idnum"
-                Using checkCmd As New OleDbCommand(checkSql, conn)
-                    checkCmd.Parameters.AddWithValue("@idnum", idno.Text)
-                    Dim rowCount = Convert.ToInt32(checkCmd.ExecuteScalar)
-
-                    ' If the record exists, delete it; otherwise, show a message
-                    If MessageBox.Show("Are you sure you want to delete this record?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
-                    End If
-                    If rowCount > 0 Then
-                        Dim deleteSql = "DELETE FROM VISITORS WHERE [ID NUMBER] = @idnum"
-                        Using cmd As New OleDbCommand(deleteSql, conn)
-                            cmd.Parameters.AddWithValue("@idnum", idno.Text)
-                            cmd.ExecuteNonQuery()
-                            MessageBox.Show("Data deleted successfully.")
-                        End Using
-                    Else
-                        MessageBox.Show("Record with ID NUMBER  " & idno.Text & " does not exist.")
-                    End If
-                End Using
-            End Using
-        Catch ex As Exception
-            MessageBox.Show("Error: " & ex.Message)
-        End Try
     End Sub
 
-    Private Sub Btndlte_Click(sender As Object, e As EventArgs) Handles Btndlte.Click
+    Private Sub Btnsave_Click(sender As Object, e As EventArgs) Handles Btnsave.Click
+        conn.Open()
+        cmd = conn.CreateCommand
+        cmd.CommandType = CommandType.Text
+        cmd.CommandText = "INSERT INTO VISITORS ([ID NUMBER] , [DATE], [NAME], [ADDRESS], [CONTACT NUMBER], [PERSON TO MEET NAME], [IN TIME], [OUT TIME], [TOTAL PERSON], [NO OF HOURS], [AVG TIME SPENT]) 
+            VALUES (" & idno.Text & ", '" & DateTimePicker1.Text & "', '" & nmme.Text & "','" & addd.Text & "'," & cntt.Text & ",'" & prsnn.Text & "','" & intme.Text & "','" & outtme.Text & "'," & tper.Text & "," & nhrs.Text & ",'" & avgg.Text & "')"
+        cmd.ExecuteNonQuery()
+        conn.Close()
+
+        MessageBox.Show("Data inserted successfully.")
+        conn.Close()
+        idno.Clear()
+        nhrs.Clear()
+        nmme.Clear()
+        tper.Clear()
+        addd.Clear()
+        cntt.Clear()
+        prsnn.Clear()
+        tper.Clear()
+        avgg.Clear()
+        outtme.Clear()
+        intme.Clear()
+    End Sub
+
+    Private Sub Btndlte_Click_1(sender As Object, e As EventArgs) Handles Btndlte.Click
         If MessageBox.Show("Are you sure you want to Update this record?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
             Try
                 conn.Open()
@@ -94,31 +90,34 @@ Public Class VISITORS
         End If
     End Sub
 
-    Private Sub Btnsave_Click_1(sender As Object, e As EventArgs) Handles Btnsave.Click
-        conn.Open()
-        cmd = conn.CreateCommand
-        cmd.CommandType = CommandType.Text
-        cmd.CommandText = "INSERT INTO VISITORS ([ID NUMBER] , [DATE], [NAME], [ADDRESS], [CONTACT NUMBER], [PERSON TO MEET NAME], [IN TIME], [OUT TIME], [TOTAL PERSON], [NO OF HOURS], [AVG TIME SPENT]) 
-            VALUES (" & idno.Text & ", '" & DateTimePicker1.Text & "', '" & nmme.Text & "','" & addd.Text & "'," & cntt.Text & ",'" & prsnn.Text & "','" & intme.Text & "','" & outtme.Text & "'," & tper.Text & "," & nhrs.Text & ",'" & avgg.Text & "')"
-        cmd.ExecuteNonQuery()
-        conn.Close()
+    Private Sub Btnupd_Click_1(sender As Object, e As EventArgs) Handles Btnupd.Click
+        Try
+            Using conn As New OleDbConnection(connectionString)
+                conn.Open()
 
-        MessageBox.Show("Data inserted successfully.")
-        conn.Close()
-        idno.Clear()
-        nhrs.Clear()
-        nmme.Clear()
-        tper.Clear()
-        addd.Clear()
-        cntt.Clear()
-        prsnn.Clear()
-        tper.Clear()
-        avgg.Clear()
-        outtme.Clear()
-        intme.Clear()
+                ' Check if the record exists
+                Dim checkSql = "SELECT COUNT(*) FROM VISITORS WHERE [ID NUMBER] = @idnum"
+                Using checkCmd As New OleDbCommand(checkSql, conn)
+                    checkCmd.Parameters.AddWithValue("@idnum", idno.Text)
+                    Dim rowCount = Convert.ToInt32(checkCmd.ExecuteScalar)
+
+                    ' If the record exists, delete it; otherwise, show a message
+                    If MessageBox.Show("Are you sure you want to delete this record?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
+                    End If
+                    If rowCount > 0 Then
+                        Dim deleteSql = "DELETE FROM VISITORS WHERE [ID NUMBER] = @idnum"
+                        Using cmd As New OleDbCommand(deleteSql, conn)
+                            cmd.Parameters.AddWithValue("@idnum", idno.Text)
+                            cmd.ExecuteNonQuery()
+                            MessageBox.Show("Data deleted successfully.")
+                        End Using
+                    Else
+                        MessageBox.Show("Record with ID NUMBER  " & idno.Text & " does not exist.")
+                    End If
+                End Using
+            End Using
+        Catch ex As Exception
+            MessageBox.Show("Error: " & ex.Message)
+        End Try
     End Sub
-
-
-
-
 End Class
