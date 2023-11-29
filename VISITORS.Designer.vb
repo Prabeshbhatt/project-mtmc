@@ -81,8 +81,7 @@ Partial Class VISITORS
         Panel1.Controls.Add(Materl)
         Panel1.Controls.Add(GtPssNo)
         Panel1.Controls.Add(IDNUM)
-        Panel1.Dock = DockStyle.Fill
-        Panel1.Location = New Point(0, 0)
+        Panel1.Location = New Point(47, 22)
         Panel1.Name = "Panel1"
         Panel1.Size = New Size(918, 573)
         Panel1.TabIndex = 0
@@ -309,7 +308,8 @@ Partial Class VISITORS
         AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
         AutoSize = True
-        ClientSize = New Size(918, 573)
+        BackColor = Color.SkyBlue
+        ClientSize = New Size(1023, 618)
         Controls.Add(Panel1)
         FormBorderStyle = FormBorderStyle.None
         Name = "VISITORS"
