@@ -26,27 +26,109 @@ Public Class VISITORS
     End Sub
 
     Private Sub Btnsave_Click(sender As Object, e As EventArgs) Handles Btnsave.Click
-        conn.Open()
-        cmd = conn.CreateCommand
-        cmd.CommandType = CommandType.Text
-        cmd.CommandText = "INSERT INTO VISITORS ([ID NUMBER] , [DATE], [NAME], [ADDRESS], [CONTACT NUMBER], [PERSON TO MEET NAME], [IN TIME], [OUT TIME], [TOTAL PERSON], [NO OF HOURS]) 
-            VALUES (" & idno.Text & ", '" & DateTimePicker1.Text & "', '" & nmme.Text & "','" & addd.Text & "'," & cntt.Text & ",'" & prsnn.Text & "','" & intme.Text & "','" & outtme.Text & "'," & tper.Text & "," & nhrs.Text & ")"
-        cmd.ExecuteNonQuery()
-        conn.Close()
-
-        MessageBox.Show("Data inserted successfully.")
-        conn.Close()
-        idno.Clear()
-        nhrs.Clear()
-        nmme.Clear()
-        tper.Clear()
-        addd.Clear()
-        cntt.Clear()
-        prsnn.Clear()
-        tper.Clear()
-        outtme.Clear()
-        intme.Clear()
+        If IsNewUser() Then
+            SaveNewUserDetails()
+        Else
+            SaveExistingUserDetails()
+        End If
     End Sub
+
+    Private Function IsNewUser() As Boolean
+        ' Check if the user is new based on NID existence in the database
+        Try
+            Using conn As New OleDbConnection(connectionString)
+                conn.Open()
+
+                Dim checkSql = "SELECT COUNT(*) FROM VISITORS WHERE [NID] = @nid"
+                Using checkCmd As New OleDbCommand(checkSql, conn)
+                    checkCmd.Parameters.AddWithValue("@nid", NID.Text)
+                    Dim rowCount = Convert.ToInt32(checkCmd.ExecuteScalar)
+
+                    Return rowCount = 0
+                End Using
+            End Using
+        Catch ex As Exception
+            MessageBox.Show("Error: " & ex.Message)
+            Return False
+        End Try
+    End Function
+
+    Private Sub SaveNewUserDetails()
+        Try
+            Using conn As New OleDbConnection(connectionString)
+                conn.Open()
+
+                ' Insert new record for a new user
+                Dim insertSql = "INSERT INTO VISITORS (VISITORS ID, DATE, NAME, NATIONAL ID, ADDRESS, CONTACT NUMBER, SEX, PERSON TO MEENT, IN TIME, OUT TIME, TOTAL PERSON, NO OF HOURS, PURPOSE TO VISIT) " &
+                            "VALUES (@idno, @DateTimePicker1, @nmme, @NID, @addd, @cntt, @sex, @prsnn, @intme, @outtme, @tper, @nhrs, @pov)"
+                Using cmd As New OleDbCommand(insertSql, conn)
+                    ' Add parameters
+                    cmd.Parameters.AddWithValue("@nmme", nmme.Text)
+                    cmd.Parameters.AddWithValue("@nid", NID.Text)
+                    ' Add other parameters as needed
+                    ' ...
+                    ' Determine which radio button is selected
+                    If RadioButton1.Checked Then
+                        cmd.Parameters.AddWithValue("@sex", "Male")
+                    ElseIf RadioButton2.Checked Then
+                        cmd.Parameters.AddWithValue("@sex", "Female")
+                    Else
+                        cmd.Parameters.AddWithValue("@sex", DBNull.Value)
+                    End If
+                    ' Execute the insert command
+                    cmd.ExecuteNonQuery()
+
+                    MessageBox.Show("New user details saved successfully.")
+                End Using
+            End Using
+        Catch ex As Exception
+            MessageBox.Show("Error: " & ex.Message)
+        End Try
+    End Sub
+
+    Private Sub SaveExistingUserDetails()
+        Try
+            Using conn As New OleDbConnection(connectionString)
+                conn.Open()
+
+                ' Check if the user exists based on NID
+                Dim checkSql = "SELECT COUNT(*) FROM VISITORS WHERE [NID] = @nid"
+                Using checkCmd As New OleDbCommand(checkSql, conn)
+                    checkCmd.Parameters.AddWithValue("@nid", NID.Text)
+                    Dim rowCount = Convert.ToInt32(checkCmd.ExecuteScalar)
+
+                    If rowCount > 0 Then
+                        ' User already exists, create a new record with updated details
+                        Dim insertSql = "INSERT INTO VISITORS (VISITORS ID, DATE, NAME, NATIONAL ID, ADDRESS, CONTACT NUMBER, SEX, PERSON TO MEENT, IN TIME, OUT TIME, TOTAL PERSON, NO OF HOURS, PURPOSE TO VISIT) " &
+                                    "VALUES (@idno, @DateTimePicker1, @nmme, @NID, @addd, @cntt, @sex, @prsnn, @intme, @outtme, @tper, @nhrs, @pov)"
+                        Using insertCmd As New OleDbCommand(insertSql, conn)
+                            insertCmd.Parameters.AddWithValue("@nmme", nmme.Text)
+                            insertCmd.Parameters.AddWithValue("@nid", NID.Text)
+                            ' Add other parameters as needed
+                            ' ...   ' Determine which radio button is selected
+                            If RadioButton1.Checked Then
+                                insertCmd.Parameters.AddWithValue("@sex", "Male")
+                            ElseIf RadioButton2.Checked Then
+                                insertCmd.Parameters.AddWithValue("@sex", "Female")
+                            Else
+                                insertCmd.Parameters.AddWithValue("@sex", DBNull.Value)
+                            End If
+
+                            ' Execute the insert command
+                            insertCmd.ExecuteNonQuery()
+
+                            MessageBox.Show("New record created for existing user.")
+                        End Using
+                    Else
+                        MessageBox.Show("User with NID " & NID.Text & " does not exist.")
+                    End If
+                End Using
+            End Using
+        Catch ex As Exception
+            MessageBox.Show("Error: " & ex.Message)
+        End Try
+    End Sub
+
 
     Private Sub Btndlte_Click_1(sender As Object, e As EventArgs) Handles Btndlte.Click
         If MessageBox.Show("Are you sure you want to Update this record?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then

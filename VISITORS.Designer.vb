@@ -109,7 +109,7 @@ Partial Class VISITORS
         ' RadioButton2
         ' 
         RadioButton2.AutoSize = True
-        RadioButton2.Location = New Point(793, 426)
+        RadioButton2.Location = New Point(795, 381)
         RadioButton2.Name = "RadioButton2"
         RadioButton2.Size = New Size(100, 29)
         RadioButton2.TabIndex = 101
@@ -120,7 +120,7 @@ Partial Class VISITORS
         ' RadioButton1
         ' 
         RadioButton1.AutoSize = True
-        RadioButton1.Location = New Point(705, 426)
+        RadioButton1.Location = New Point(707, 381)
         RadioButton1.Name = "RadioButton1"
         RadioButton1.Size = New Size(82, 29)
         RadioButton1.TabIndex = 100
@@ -132,7 +132,7 @@ Partial Class VISITORS
         ' 
         Label1.AutoSize = True
         Label1.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
-        Label1.Location = New Point(645, 426)
+        Label1.Location = New Point(647, 381)
         Label1.Name = "Label1"
         Label1.Size = New Size(44, 25)
         Label1.TabIndex = 99
@@ -263,7 +263,7 @@ Partial Class VISITORS
         ' 
         ' addd
         ' 
-        addd.Location = New Point(708, 310)
+        addd.Location = New Point(710, 265)
         addd.Multiline = True
         addd.Name = "addd"
         addd.Size = New Size(185, 85)
@@ -335,7 +335,7 @@ Partial Class VISITORS
         ' 
         Qtty.AutoSize = True
         Qtty.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
-        Qtty.Location = New Point(596, 345)
+        Qtty.Location = New Point(598, 300)
         Qtty.Name = "Qtty"
         Qtty.Size = New Size(93, 25)
         Qtty.TabIndex = 73
