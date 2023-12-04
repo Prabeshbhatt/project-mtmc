@@ -23,9 +23,15 @@ Partial Class VISITORS
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Panel1 = New Panel()
-        DateTimePicker1 = New DateTimePicker()
-        avgg = New TextBox()
+        PictureBox1 = New PictureBox()
+        RadioButton2 = New RadioButton()
+        RadioButton1 = New RadioButton()
         Label1 = New Label()
+        pov = New TextBox()
+        Label3 = New Label()
+        NID = New TextBox()
+        Label2 = New Label()
+        DateTimePicker1 = New DateTimePicker()
         outtme = New TextBox()
         From = New Label()
         Btnupd = New Button()
@@ -46,9 +52,9 @@ Partial Class VISITORS
         Dept = New Label()
         Qtty = New Label()
         Materl = New Label()
-        GtPssNo = New Label()
         IDNUM = New Label()
         Panel1.SuspendLayout()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' Panel1
@@ -56,9 +62,15 @@ Partial Class VISITORS
         Panel1.AutoSize = True
         Panel1.AutoSizeMode = AutoSizeMode.GrowAndShrink
         Panel1.BackColor = Color.SkyBlue
-        Panel1.Controls.Add(DateTimePicker1)
-        Panel1.Controls.Add(avgg)
+        Panel1.Controls.Add(PictureBox1)
+        Panel1.Controls.Add(RadioButton2)
+        Panel1.Controls.Add(RadioButton1)
         Panel1.Controls.Add(Label1)
+        Panel1.Controls.Add(pov)
+        Panel1.Controls.Add(Label3)
+        Panel1.Controls.Add(NID)
+        Panel1.Controls.Add(Label2)
+        Panel1.Controls.Add(DateTimePicker1)
         Panel1.Controls.Add(outtme)
         Panel1.Controls.Add(From)
         Panel1.Controls.Add(Btnupd)
@@ -79,51 +91,108 @@ Partial Class VISITORS
         Panel1.Controls.Add(Dept)
         Panel1.Controls.Add(Qtty)
         Panel1.Controls.Add(Materl)
-        Panel1.Controls.Add(GtPssNo)
         Panel1.Controls.Add(IDNUM)
         Panel1.Location = New Point(47, 22)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(918, 573)
+        Panel1.Size = New Size(922, 573)
         Panel1.TabIndex = 0
         ' 
-        ' DateTimePicker1
+        ' PictureBox1
         ' 
-        DateTimePicker1.Location = New Point(338, 55)
-        DateTimePicker1.Name = "DateTimePicker1"
-        DateTimePicker1.Size = New Size(231, 31)
-        DateTimePicker1.TabIndex = 94
+        PictureBox1.BackColor = Color.Azure
+        PictureBox1.Location = New Point(708, 65)
+        PictureBox1.Name = "PictureBox1"
+        PictureBox1.Size = New Size(187, 147)
+        PictureBox1.TabIndex = 102
+        PictureBox1.TabStop = False
         ' 
-        ' avgg
+        ' RadioButton2
         ' 
-        avgg.Location = New Point(340, 486)
-        avgg.Name = "avgg"
-        avgg.Size = New Size(231, 31)
-        avgg.TabIndex = 93
+        RadioButton2.AutoSize = True
+        RadioButton2.Location = New Point(793, 426)
+        RadioButton2.Name = "RadioButton2"
+        RadioButton2.Size = New Size(100, 29)
+        RadioButton2.TabIndex = 101
+        RadioButton2.TabStop = True
+        RadioButton2.Text = "FEMALE"
+        RadioButton2.UseVisualStyleBackColor = True
+        ' 
+        ' RadioButton1
+        ' 
+        RadioButton1.AutoSize = True
+        RadioButton1.Location = New Point(705, 426)
+        RadioButton1.Name = "RadioButton1"
+        RadioButton1.Size = New Size(82, 29)
+        RadioButton1.TabIndex = 100
+        RadioButton1.TabStop = True
+        RadioButton1.Text = "MALE"
+        RadioButton1.UseVisualStyleBackColor = True
         ' 
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
-        Label1.Location = New Point(31, 483)
+        Label1.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        Label1.Location = New Point(645, 426)
         Label1.Name = "Label1"
-        Label1.Size = New Size(209, 32)
-        Label1.TabIndex = 92
-        Label1.Text = "AVG TIME SPENT"
+        Label1.Size = New Size(44, 25)
+        Label1.TabIndex = 99
+        Label1.Text = "SEX"
+        ' 
+        ' pov
+        ' 
+        pov.Location = New Point(218, 397)
+        pov.Name = "pov"
+        pov.Size = New Size(186, 31)
+        pov.TabIndex = 98
+        ' 
+        ' Label3
+        ' 
+        Label3.AutoSize = True
+        Label3.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        Label3.Location = New Point(22, 403)
+        Label3.Name = "Label3"
+        Label3.Size = New Size(171, 25)
+        Label3.TabIndex = 97
+        Label3.Text = "PURPOSE OF VISIT"
+        ' 
+        ' NID
+        ' 
+        NID.Location = New Point(218, 136)
+        NID.Name = "NID"
+        NID.Size = New Size(188, 31)
+        NID.TabIndex = 96
+        ' 
+        ' Label2
+        ' 
+        Label2.AutoSize = True
+        Label2.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        Label2.Location = New Point(24, 142)
+        Label2.Name = "Label2"
+        Label2.Size = New Size(129, 25)
+        Label2.TabIndex = 95
+        Label2.Text = "NATIONAL ID"
+        ' 
+        ' DateTimePicker1
+        ' 
+        DateTimePicker1.Location = New Point(676, 19)
+        DateTimePicker1.Name = "DateTimePicker1"
+        DateTimePicker1.Size = New Size(219, 31)
+        DateTimePicker1.TabIndex = 94
         ' 
         ' outtme
         ' 
-        outtme.Location = New Point(553, 323)
+        outtme.Location = New Point(398, 239)
         outtme.Name = "outtme"
-        outtme.Size = New Size(249, 31)
+        outtme.Size = New Size(78, 31)
         outtme.TabIndex = 91
         ' 
         ' From
         ' 
         From.AutoSize = True
-        From.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
-        From.Location = New Point(396, 323)
+        From.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        From.Location = New Point(258, 245)
         From.Name = "From"
-        From.Size = New Size(128, 32)
+        From.Size = New Size(99, 25)
         From.TabIndex = 90
         From.Text = "OUT TIME"
         ' 
@@ -159,149 +228,139 @@ Partial Class VISITORS
         ' 
         ' nhrs
         ' 
-        nhrs.Location = New Point(340, 430)
+        nhrs.Location = New Point(218, 345)
         nhrs.Name = "nhrs"
-        nhrs.Size = New Size(231, 31)
+        nhrs.Size = New Size(186, 31)
         nhrs.TabIndex = 86
         ' 
         ' tper
         ' 
-        tper.Location = New Point(340, 377)
+        tper.Location = New Point(218, 294)
         tper.Name = "tper"
-        tper.Size = New Size(231, 31)
+        tper.Size = New Size(186, 31)
         tper.TabIndex = 85
         ' 
         ' intme
         ' 
-        intme.Location = New Point(161, 323)
+        intme.Location = New Point(136, 242)
         intme.Name = "intme"
-        intme.Size = New Size(218, 31)
+        intme.Size = New Size(81, 31)
         intme.TabIndex = 84
         ' 
         ' prsnn
         ' 
-        prsnn.Location = New Point(340, 275)
+        prsnn.Location = New Point(218, 457)
         prsnn.Name = "prsnn"
-        prsnn.Size = New Size(231, 31)
+        prsnn.Size = New Size(185, 31)
         prsnn.TabIndex = 83
         ' 
         ' cntt
         ' 
-        cntt.Location = New Point(340, 228)
+        cntt.Location = New Point(218, 193)
         cntt.Name = "cntt"
-        cntt.Size = New Size(231, 31)
+        cntt.Size = New Size(186, 31)
         cntt.TabIndex = 82
         ' 
         ' addd
         ' 
-        addd.Location = New Point(338, 154)
+        addd.Location = New Point(708, 310)
         addd.Multiline = True
         addd.Name = "addd"
-        addd.Size = New Size(231, 61)
+        addd.Size = New Size(185, 85)
         addd.TabIndex = 81
         ' 
         ' nmme
         ' 
-        nmme.Location = New Point(338, 107)
+        nmme.Location = New Point(218, 80)
         nmme.Name = "nmme"
-        nmme.Size = New Size(231, 31)
+        nmme.Size = New Size(188, 31)
         nmme.TabIndex = 80
         ' 
         ' idno
         ' 
-        idno.Location = New Point(338, 12)
+        idno.Location = New Point(220, 32)
         idno.Name = "idno"
-        idno.Size = New Size(231, 31)
+        idno.Size = New Size(185, 31)
         idno.TabIndex = 79
         ' 
         ' Label10
         ' 
         Label10.AutoSize = True
-        Label10.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
-        Label10.Location = New Point(31, 427)
+        Label10.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        Label10.Location = New Point(24, 351)
         Label10.Name = "Label10"
-        Label10.Size = New Size(184, 32)
+        Label10.Size = New Size(141, 25)
         Label10.TabIndex = 78
         Label10.Text = "NO OF HOUR'S"
         ' 
         ' PType
         ' 
         PType.AutoSize = True
-        PType.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
-        PType.Location = New Point(31, 374)
+        PType.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        PType.Location = New Point(22, 300)
         PType.Name = "PType"
-        PType.Size = New Size(186, 32)
+        PType.Size = New Size(143, 25)
         PType.TabIndex = 77
         PType.Text = "TOTAL PERSON"
         ' 
         ' tolbl
         ' 
         tolbl.AutoSize = True
-        tolbl.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
-        tolbl.Location = New Point(31, 323)
+        tolbl.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        tolbl.Location = New Point(23, 242)
         tolbl.Name = "tolbl"
-        tolbl.Size = New Size(106, 32)
+        tolbl.Size = New Size(81, 25)
         tolbl.TabIndex = 76
         tolbl.Text = "IN TIME"
         ' 
         ' DteLbl
         ' 
-        DteLbl.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
-        DteLbl.Location = New Point(31, 275)
+        DteLbl.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        DteLbl.Location = New Point(22, 460)
         DteLbl.Name = "DteLbl"
-        DteLbl.Size = New Size(302, 35)
+        DteLbl.Size = New Size(171, 28)
         DteLbl.TabIndex = 75
-        DteLbl.Text = "PERSON TO MEET NAME"
+        DteLbl.Text = "PERSON TO MEET"
         ' 
         ' Dept
         ' 
-        Dept.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
-        Dept.Location = New Point(31, 228)
+        Dept.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        Dept.Location = New Point(23, 193)
         Dept.Name = "Dept"
-        Dept.Size = New Size(242, 31)
+        Dept.Size = New Size(181, 31)
         Dept.TabIndex = 74
         Dept.Text = "CONTACT NUMBER"
         ' 
         ' Qtty
         ' 
         Qtty.AutoSize = True
-        Qtty.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
-        Qtty.Location = New Point(31, 165)
+        Qtty.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        Qtty.Location = New Point(596, 345)
         Qtty.Name = "Qtty"
-        Qtty.Size = New Size(122, 32)
+        Qtty.Size = New Size(93, 25)
         Qtty.TabIndex = 73
         Qtty.Text = "ADDRESS"
         ' 
         ' Materl
         ' 
         Materl.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
-        Materl.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
-        Materl.Location = New Point(31, 107)
+        Materl.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        Materl.Location = New Point(24, 83)
         Materl.Name = "Materl"
-        Materl.Size = New Size(104, 31)
+        Materl.Size = New Size(82, 28)
         Materl.TabIndex = 72
         Materl.Text = "NAME"
-        ' 
-        ' GtPssNo
-        ' 
-        GtPssNo.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
-        GtPssNo.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
-        GtPssNo.Location = New Point(31, 55)
-        GtPssNo.Name = "GtPssNo"
-        GtPssNo.Size = New Size(89, 37)
-        GtPssNo.TabIndex = 71
-        GtPssNo.Text = "DATE"
         ' 
         ' IDNUM
         ' 
         IDNUM.AccessibleRole = AccessibleRole.IpAddress
         IDNUM.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
-        IDNUM.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
-        IDNUM.Location = New Point(31, 9)
+        IDNUM.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        IDNUM.Location = New Point(23, 35)
         IDNUM.Name = "IDNUM"
-        IDNUM.Size = New Size(156, 31)
+        IDNUM.Size = New Size(128, 28)
         IDNUM.TabIndex = 70
-        IDNUM.Text = "ID NUMBER"
+        IDNUM.Text = "VISITORS ID"
         ' 
         ' VISITORS
         ' 
@@ -316,14 +375,13 @@ Partial Class VISITORS
         Text = "VISITORS"
         Panel1.ResumeLayout(False)
         Panel1.PerformLayout()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
 
     Friend WithEvents Panel1 As Panel
     Public WithEvents DateTimePicker1 As DateTimePicker
-    Friend WithEvents avgg As TextBox
-    Friend WithEvents Label1 As Label
     Friend WithEvents outtme As TextBox
     Friend WithEvents From As Label
     Friend WithEvents Btnupd As Button
@@ -344,6 +402,13 @@ Partial Class VISITORS
     Friend WithEvents Dept As Label
     Friend WithEvents Qtty As Label
     Friend WithEvents Materl As Label
-    Friend WithEvents GtPssNo As Label
     Friend WithEvents IDNUM As Label
+    Friend WithEvents NID As TextBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents pov As TextBox
+    Friend WithEvents Label3 As Label
+    Friend WithEvents RadioButton2 As RadioButton
+    Friend WithEvents RadioButton1 As RadioButton
+    Friend WithEvents Label1 As Label
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

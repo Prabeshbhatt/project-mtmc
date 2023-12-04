@@ -29,8 +29,8 @@ Public Class VISITORS
         conn.Open()
         cmd = conn.CreateCommand
         cmd.CommandType = CommandType.Text
-        cmd.CommandText = "INSERT INTO VISITORS ([ID NUMBER] , [DATE], [NAME], [ADDRESS], [CONTACT NUMBER], [PERSON TO MEET NAME], [IN TIME], [OUT TIME], [TOTAL PERSON], [NO OF HOURS], [AVG TIME SPENT]) 
-            VALUES (" & idno.Text & ", '" & DateTimePicker1.Text & "', '" & nmme.Text & "','" & addd.Text & "'," & cntt.Text & ",'" & prsnn.Text & "','" & intme.Text & "','" & outtme.Text & "'," & tper.Text & "," & nhrs.Text & ",'" & avgg.Text & "')"
+        cmd.CommandText = "INSERT INTO VISITORS ([ID NUMBER] , [DATE], [NAME], [ADDRESS], [CONTACT NUMBER], [PERSON TO MEET NAME], [IN TIME], [OUT TIME], [TOTAL PERSON], [NO OF HOURS]) 
+            VALUES (" & idno.Text & ", '" & DateTimePicker1.Text & "', '" & nmme.Text & "','" & addd.Text & "'," & cntt.Text & ",'" & prsnn.Text & "','" & intme.Text & "','" & outtme.Text & "'," & tper.Text & "," & nhrs.Text & ")"
         cmd.ExecuteNonQuery()
         conn.Close()
 
@@ -44,7 +44,6 @@ Public Class VISITORS
         cntt.Clear()
         prsnn.Clear()
         tper.Clear()
-        avgg.Clear()
         outtme.Clear()
         intme.Clear()
     End Sub
