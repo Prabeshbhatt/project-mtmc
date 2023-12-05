@@ -1,4 +1,5 @@
 ﻿Imports System.Data.OleDb
+Imports System.Data.SqlClient
 Imports System.Runtime.Intrinsics.Arm
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock
@@ -26,125 +27,85 @@ Public Class VISITORS
     End Sub
 
     Private Sub Btnsave_Click(sender As Object, e As EventArgs) Handles Btnsave.Click
-        If IsNewUser() Then
-            SaveNewUserDetails()
+        Dim vid As Integer = Convert.ToInt32(idno.Text)
+        Dim dateTimeValue As DateTime = DateTimePicker1.Value
+        Dim name As String = nmme.Text
+        Dim nationalID As String = NID.Text
+        Dim address As String = addd.Text
+        Dim contactNumber As String = cntt.Text
+        Dim sex As String = GetSelectedRadioButtonText()
+        Dim personToMeet As String = prsnn.Text
+        Dim inTime As DateTime = DateTime.Now
+        Dim outTime As DateTime = DateTime.Now.AddHours(1) ' You can modify this as needed
+        Dim porposeToVisit As String = pov.Text
+        Dim totalPersons As Integer
+        If Integer.TryParse(tper.Text, totalPersons) Then
+            If ExistingUserExists(nationalID, address, contactNumber, sex) Then
+                ' Existing user found, save new data
+                SaveNewUser(vid, dateTimeValue, name, nationalID, address, contactNumber, sex, personToMeet, inTime, outTime, totalPersons, porposeToVisit)
+                MessageBox.Show("New user data saved successfully.")
+            Else
+                ' No existing user found, show a message or handle as needed
+                MessageBox.Show("User not found or authentication failed.")
+            End If
         Else
-            SaveExistingUserDetails()
+            MessageBox.Show("Please enter a valid number for Total Persons.")
         End If
     End Sub
 
-    Private Function IsNewUser() As Boolean
-        ' Check if the user is new based on NID existence in the database
-        Try
-            Using conn As New OleDbConnection(connectionString)
-                conn.Open()
-
-                Dim checkSql = "SELECT COUNT(*) FROM VISITORS WHERE [NATIONAL ID] = @nid"
-                Using checkCmd As New OleDbCommand(checkSql, conn)
-                    checkCmd.Parameters.AddWithValue("@nid", NID.Text)
-                    Dim rowCount = Convert.ToInt32(checkCmd.ExecuteScalar)
-
-                    Return rowCount = 0
-                End Using
+    Private Function ExistingUserExists(nationalID As String, address As String, contactNumber As String, sex As String) As Boolean
+        Using conn As New OleDbConnection(connectionString)
+            conn.Open()
+            Dim query As String = "SELECT NationalID FROM VISITORS WHERE NationalID = @NationalID AND Address = @Address AND ContactNumber = @ContactNumber AND Sex = @Sex"
+            Using command As New OleDbCommand(query, conn)
+                command.Parameters.AddWithValue("@NationalID", nationalID)
+                command.Parameters.AddWithValue("@Address", address)
+                command.Parameters.AddWithValue("@ContactNumber", contactNumber)
+                command.Parameters.AddWithValue("@Sex", sex)
+                Return command.ExecuteScalar() IsNot Nothing
             End Using
-        Catch ex As Exception
-            MessageBox.Show("Error: " & ex.Message)
-            Return False
-        End Try
+        End Using
     End Function
 
-    Private Sub SaveNewUserDetails()
-        Try
-            Using conn As New OleDbConnection(connectionString)
-                conn.Open()
-
-                ' Insert new record for a new user
-                Dim insertSql = "INSERT INTO VISITORS ([VISITORS ID], [DATE], [NAME], [NATIONAL ID], [ADDRESS], [CONTACT NUMBER], [SEX], [PERSON TO MEET], [IN TIME], [OUT TIME], [TOTAL PERSON], [NO OF HOURS], [PURPOSE TO VISIT]) " &
-                        "VALUES (@idno, @DateTimePicker1, @nmme, @NID, @addd, @cntt, @sex, @prsnn, @intme, @outtme, @tper, @nhrs, @pov)"
-                Using cmd As New OleDbCommand(insertSql, conn)
-                    ' Add parameters
-                    cmd.Parameters.AddWithValue("@idno", idno.Text)
-                    cmd.Parameters.AddWithValue("@DateTimePicker1", DateTimePicker1.Value)
-                    cmd.Parameters.AddWithValue("@nmme", nmme.Text)
-                    cmd.Parameters.AddWithValue("@NID", NID.Text)
-                    cmd.Parameters.AddWithValue("@addd", addd.Text)
-                    cmd.Parameters.AddWithValue("@cntt", cntt.Text)
-                    ' Determine which radio button is selected
-                    If RadioButton1.Checked Then
-                        cmd.Parameters.AddWithValue("@sex", "Male")
-                    ElseIf RadioButton2.Checked Then
-                        cmd.Parameters.AddWithValue("@sex", "Female")
-                    Else
-                        cmd.Parameters.AddWithValue("@sex", DBNull.Value)
-                    End If
-                    cmd.Parameters.AddWithValue("@prsnn", prsnn.Text)
-                    cmd.Parameters.AddWithValue("@intme", intme.Text)
-                    cmd.Parameters.AddWithValue("@outtme", outtme.Text)
-                    cmd.Parameters.AddWithValue("@tper", tper.Text)
-                    cmd.Parameters.AddWithValue("@nhrs", nhrs.Text)
-                    cmd.Parameters.AddWithValue("@pov", pov.Text)
-
-                    ' Execute the insert command
-                    cmd.ExecuteNonQuery()
-
-                    MessageBox.Show("New user details saved successfully.")
-                End Using
+    Private Sub SaveNewUser(vid As Integer, dateTimeValue As DateTime, name As String, nationalID As String, address As String, contactNumber As String, sex As String, personToMeet As String, inTime As DateTime, outTime As DateTime, totalPersons As Integer, purposeOfVisit As String)
+        Using conn As New OleDbConnection(connectionString)
+            conn.Open()
+            Dim query As String = "INSERT INTO VISITORS (VisitorID, DateTimeValue, Name, NationalID, Address, ContactNumber, Sex, PersonToMeet, InTime, OutTime, TotalPersons, PurposeOfVisit) VALUES (@VisitorID, @DateTimeValue, @Name, @NationalID, @Address, @ContactNumber, @Sex, @PersonToMeet, @InTime, @OutTime, @TotalPersons, @PurposeOfVisit)"
+            Using command As New OleDbCommand(query, conn)
+                command.Parameters.AddWithValue("@VisitorID", vid)
+                command.Parameters.AddWithValue("@DateTimeValue", dateTimeValue)
+                command.Parameters.AddWithValue("@Name", name)
+                command.Parameters.AddWithValue("@NationalID", nationalID)
+                command.Parameters.AddWithValue("@Address", address)
+                command.Parameters.AddWithValue("@ContactNumber", contactNumber)
+                command.Parameters.AddWithValue("@Sex", sex)
+                command.Parameters.AddWithValue("@PersonToMeet", personToMeet)
+                command.Parameters.AddWithValue("@InTime", inTime)
+                command.Parameters.AddWithValue("@OutTime", outTime)
+                command.Parameters.AddWithValue("@TotalPersons", totalPersons)
+                command.Parameters.AddWithValue("@PurposeOfVisit", purposeOfVisit)
+                command.ExecuteNonQuery()
             End Using
-        Catch ex As Exception
-            MessageBox.Show("Error: " & ex.Message)
-        End Try
+        End Using
     End Sub
 
-    Private Sub SaveExistingUserDetails()
-        Try
-            Using conn As New OleDbConnection(connectionString)
-                conn.Open()
+    Private Function GetSelectedRadioButtonText() As String
+        If RadioButton1.Checked Then
+            Return "Male"
+        ElseIf RadioButton2.Checked Then
+            Return "Female"
+        Else
+            Return String.Empty
+        End If
+    End Function
 
-                ' Check if the user exists based on NID
-                Dim checkSql = "SELECT COUNT(*) FROM VISITORS WHERE [NATIONAL ID] = @nid"
-                Using checkCmd As New OleDbCommand(checkSql, conn)
-                    checkCmd.Parameters.AddWithValue("@nid", NID.Text)
-                    Dim rowCount = Convert.ToInt32(checkCmd.ExecuteScalar)
 
-                    If rowCount > 0 Then
-                        ' User already exists, update the existing record
-                        Dim updateSql = "UPDATE VISITORS SET [VISITORS ID] = @idno, [DATE] = @DateTimePicker1, [NAME] = @nmme, [ADDRESS] = @addd, [CONTACT NUMBER] = @cntt, [SEX] = @sex, [PERSON TO MEET] = @prsnn, [IN TIME] = @intme, [OUT TIME] = @outtme, [TOTAL PERSON] = @tper, [NO OF HOURS] = @nhrs, [PURPOSE TO VISIT] = @pov WHERE [NATIONAL ID] = @nid"
-                        Using updateCmd As New OleDbCommand(updateSql, conn)
-                            updateCmd.Parameters.AddWithValue("@idno", idno.Text)
-                            updateCmd.Parameters.AddWithValue("@DateTimePicker1", DateTimePicker1.Value)
-                            updateCmd.Parameters.AddWithValue("@nmme", nmme.Text)
-                            updateCmd.Parameters.AddWithValue("@addd", addd.Text)
-                            updateCmd.Parameters.AddWithValue("@cntt", cntt.Text)
-                            ' Determine which radio button is selected
-                            If RadioButton1.Checked Then
-                                updateCmd.Parameters.AddWithValue("@sex", "Male")
-                            ElseIf RadioButton2.Checked Then
-                                updateCmd.Parameters.AddWithValue("@sex", "Female")
-                            Else
-                                updateCmd.Parameters.AddWithValue("@sex", DBNull.Value)
-                            End If
-                            updateCmd.Parameters.AddWithValue("@prsnn", prsnn.Text)
-                            updateCmd.Parameters.AddWithValue("@intme", intme.Text)
-                            updateCmd.Parameters.AddWithValue("@outtme", outtme.Text)
-                            updateCmd.Parameters.AddWithValue("@tper", tper.Text)
-                            updateCmd.Parameters.AddWithValue("@nhrs", nhrs.Text)
-                            updateCmd.Parameters.AddWithValue("@pov", pov.Text)
-                            updateCmd.Parameters.AddWithValue("@nid", NID.Text)
 
-                            ' Execute the update command
-                            updateCmd.ExecuteNonQuery()
 
-                            MessageBox.Show("Details updated successfully for existing user.")
-                        End Using
-                    Else
-                        MessageBox.Show("User with NID " & NID.Text & " does not exist.")
-                    End If
-                End Using
-            End Using
-        Catch ex As Exception
-            MessageBox.Show("Error: " & ex.Message)
-        End Try
-    End Sub
+
+
+
+
 
 
 

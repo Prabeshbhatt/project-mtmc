@@ -23,7 +23,6 @@ Partial Class VISITORS
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Panel1 = New Panel()
-        PictureBox1 = New PictureBox()
         RadioButton2 = New RadioButton()
         RadioButton1 = New RadioButton()
         Label1 = New Label()
@@ -54,7 +53,6 @@ Partial Class VISITORS
         Materl = New Label()
         IDNUM = New Label()
         Panel1.SuspendLayout()
-        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' Panel1
@@ -62,7 +60,6 @@ Partial Class VISITORS
         Panel1.AutoSize = True
         Panel1.AutoSizeMode = AutoSizeMode.GrowAndShrink
         Panel1.BackColor = Color.SkyBlue
-        Panel1.Controls.Add(PictureBox1)
         Panel1.Controls.Add(RadioButton2)
         Panel1.Controls.Add(RadioButton1)
         Panel1.Controls.Add(Label1)
@@ -96,15 +93,6 @@ Partial Class VISITORS
         Panel1.Name = "Panel1"
         Panel1.Size = New Size(922, 573)
         Panel1.TabIndex = 0
-        ' 
-        ' PictureBox1
-        ' 
-        PictureBox1.BackColor = Color.Azure
-        PictureBox1.Location = New Point(708, 65)
-        PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(187, 147)
-        PictureBox1.TabIndex = 102
-        PictureBox1.TabStop = False
         ' 
         ' RadioButton2
         ' 
@@ -375,7 +363,6 @@ Partial Class VISITORS
         Text = "VISITORS"
         Panel1.ResumeLayout(False)
         Panel1.PerformLayout()
-        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -410,5 +397,4 @@ Partial Class VISITORS
     Friend WithEvents RadioButton2 As RadioButton
     Friend WithEvents RadioButton1 As RadioButton
     Friend WithEvents Label1 As Label
-    Friend WithEvents PictureBox1 As PictureBox
 End Class
