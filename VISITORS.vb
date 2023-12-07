@@ -1,4 +1,5 @@
-﻿Imports System.Data.OleDb
+﻿Imports System.Configuration
+Imports System.Data.OleDb
 Imports System.Data.SqlClient
 Imports System.Runtime.Intrinsics.Arm
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement
@@ -25,79 +26,6 @@ Public Class VISITORS
     Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
 
     End Sub
-
-    Private Sub Btnsave_Click(sender As Object, e As EventArgs) Handles Btnsave.Click
-        Dim vid As Integer = Convert.ToInt32(idno.Text)
-        Dim dateTimeValue As DateTime = DateTimePicker1.Value
-        Dim name As String = nmme.Text
-        Dim nationalID As String = NID.Text
-        Dim address As String = addd.Text
-        Dim contactNumber As String = cntt.Text
-        Dim sex As String = GetSelectedRadioButtonText()
-        Dim personToMeet As String = prsnn.Text
-        Dim inTime As DateTime = DateTime.Now
-        Dim outTime As DateTime = DateTime.Now.AddHours(1) ' You can modify this as needed
-        Dim porposeToVisit As String = pov.Text
-        Dim totalPersons As Integer
-        If Integer.TryParse(tper.Text, totalPersons) Then
-            If ExistingUserExists(nationalID, address, contactNumber, sex) Then
-                ' Existing user found, save new data
-                SaveNewUser(vid, dateTimeValue, name, nationalID, address, contactNumber, sex, personToMeet, inTime, outTime, totalPersons, porposeToVisit)
-                MessageBox.Show("New user data saved successfully.")
-            Else
-                ' No existing user found, show a message or handle as needed
-                MessageBox.Show("User not found or authentication failed.")
-            End If
-        Else
-            MessageBox.Show("Please enter a valid number for Total Persons.")
-        End If
-    End Sub
-
-    Private Function ExistingUserExists(nationalID As String, address As String, contactNumber As String, sex As String) As Boolean
-        Using conn As New OleDbConnection(connectionString)
-            conn.Open()
-            Dim query As String = "SELECT NationalID FROM VISITORS WHERE NationalID = @NationalID AND Address = @Address AND ContactNumber = @ContactNumber AND Sex = @Sex"
-            Using command As New OleDbCommand(query, conn)
-                command.Parameters.AddWithValue("@NationalID", nationalID)
-                command.Parameters.AddWithValue("@Address", address)
-                command.Parameters.AddWithValue("@ContactNumber", contactNumber)
-                command.Parameters.AddWithValue("@Sex", sex)
-                Return command.ExecuteScalar() IsNot Nothing
-            End Using
-        End Using
-    End Function
-
-    Private Sub SaveNewUser(vid As Integer, dateTimeValue As DateTime, name As String, nationalID As String, address As String, contactNumber As String, sex As String, personToMeet As String, inTime As DateTime, outTime As DateTime, totalPersons As Integer, purposeOfVisit As String)
-        Using conn As New OleDbConnection(connectionString)
-            conn.Open()
-            Dim query As String = "INSERT INTO VISITORS (VisitorID, DateTimeValue, Name, NationalID, Address, ContactNumber, Sex, PersonToMeet, InTime, OutTime, TotalPersons, PurposeOfVisit) VALUES (@VisitorID, @DateTimeValue, @Name, @NationalID, @Address, @ContactNumber, @Sex, @PersonToMeet, @InTime, @OutTime, @TotalPersons, @PurposeOfVisit)"
-            Using command As New OleDbCommand(query, conn)
-                command.Parameters.AddWithValue("@VisitorID", vid)
-                command.Parameters.AddWithValue("@DateTimeValue", dateTimeValue)
-                command.Parameters.AddWithValue("@Name", name)
-                command.Parameters.AddWithValue("@NationalID", nationalID)
-                command.Parameters.AddWithValue("@Address", address)
-                command.Parameters.AddWithValue("@ContactNumber", contactNumber)
-                command.Parameters.AddWithValue("@Sex", sex)
-                command.Parameters.AddWithValue("@PersonToMeet", personToMeet)
-                command.Parameters.AddWithValue("@InTime", inTime)
-                command.Parameters.AddWithValue("@OutTime", outTime)
-                command.Parameters.AddWithValue("@TotalPersons", totalPersons)
-                command.Parameters.AddWithValue("@PurposeOfVisit", purposeOfVisit)
-                command.ExecuteNonQuery()
-            End Using
-        End Using
-    End Sub
-
-    Private Function GetSelectedRadioButtonText() As String
-        If RadioButton1.Checked Then
-            Return "Male"
-        ElseIf RadioButton2.Checked Then
-            Return "Female"
-        Else
-            Return String.Empty
-        End If
-    End Function
 
 
 
@@ -181,4 +109,135 @@ Public Class VISITORS
             MessageBox.Show("Error: " & ex.Message)
         End Try
     End Sub
+
+    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles save.Click
+        ' Extract data from form controls
+        Dim vid As Integer = Convert.ToInt32(idno.Text)
+        Dim dateTimeValue As DateTime = DateTimePicker1.Value
+        Dim name As String = nmme.Text
+        Dim nationalID As String = NID.Text
+        Dim contactNumber As String = cntt.Text
+        Dim inTime As DateTime = DateTime.Parse(intme.Text) ' Assuming intme is a TextBox for input
+        Dim outTime As DateTime = DateTime.Parse(outtme.Text) ' Assuming outtme is a TextBox for input
+        Dim totalPersons As Integer = Convert.ToInt32(tper.Text)
+        Dim noofhours As Integer = Convert.ToInt32(nhrs.Text)
+        Dim purposeOfVisit As String = pov.Text
+        Dim personToMeet As String = prsnn.Text
+        Dim address As String = addd.Text
+        Dim sex As String = GetSelectedRadioButtonText()
+
+        ' Validate and save data
+        If ValidateData(name, nationalID) Then
+            ' Check if an existing user with the same details exists
+            If Not ExistingUserExists(nationalID, address, contactNumber, sex) Then
+                ' Save new user
+                SaveNewUser(vid, dateTimeValue, name, nationalID, address, contactNumber, sex, personToMeet, inTime, outTime, totalPersons, noofhours, purposeOfVisit)
+                MessageBox.Show("New user created successfully.")
+            Else
+                ' Duplicate existing user data and save as a new user
+                Dim existingUserData As DataTable = GetExistingUserData(nationalID, address, contactNumber, sex)
+
+                If existingUserData.Rows.Count > 0 Then
+                    ' Duplicate existing user data and save as a new user
+                    Dim existingRow As DataRow = existingUserData.Rows(0)
+                    SaveNewUser(vid, dateTimeValue, name, existingRow("NATIONAL ID").ToString(), existingRow("ADDRESS").ToString(), existingRow("CONTACT NUMBER").ToString(), existingRow("SEX").ToString(), personToMeet, inTime, outTime, totalPersons, noofhours, purposeOfVisit)
+                    MessageBox.Show("Existing user data saved as a new user successfully.")
+                End If
+            End If
+        End If
+    End Sub
+
+
+
+    Private Function ValidateData(name As String, nationalID As String) As Boolean
+        ' Perform any additional validation logic here
+        ' Return True if data is valid, otherwise return False
+        ' You may check if required fields are not empty, format of data is correct, etc.
+        ' For example:
+        If String.IsNullOrWhiteSpace(name) Then
+            MessageBox.Show("Please enter a name.")
+            Return False
+        End If
+
+        If String.IsNullOrWhiteSpace(nationalID) Then
+            MessageBox.Show("Please enter a national ID.")
+            Return False
+        End If
+
+        ' Add more validation as needed
+
+        Return True
+    End Function
+
+    Private Function ExistingUserExists(nationalID As String, address As String, contactNumber As String, sex As String) As Boolean
+        ' Your existing logic for checking if a user with the same details exists
+        ' ...
+
+        ' For example, you may use the provided logic with OleDbConnection and OleDbCommand
+        ' Ensure you adjust the query and parameter names based on your MS Access database schema
+
+        Return False ' Placeholder, replace with actual logic
+    End Function
+
+    Private Function GetExistingUserData(nationalID As String, address As String, contactNumber As String, sex As String) As DataTable
+        ' Your existing logic for getting existing user data
+        ' ...
+
+        ' For example, you may use the provided logic with OleDbConnection and OleDbCommand
+        ' Ensure you adjust the query and parameter names based on your MS Access database schema
+        Dim dataTable As New DataTable()
+        Using conn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C: \Users\MTMC\source\repos\project-mtmc\project-mtmc\VISITORS.accdb;") ' Replace with your actual connection string
+            conn.Open()
+            Dim query As String = "SELECT * FROM VISITORS WHERE [NATIONAL ID] = @NationalID AND [ADDRESS] = @Address AND [CONTACT NUMBER] = @ContactNumber AND [SEX] = @Sex"
+            Using command As New OleDbCommand(query, conn)
+                command.Parameters.AddWithValue("@NationalID", nationalID)
+                command.Parameters.AddWithValue("@Address", address)
+                command.Parameters.AddWithValue("@ContactNumber", contactNumber)
+                command.Parameters.AddWithValue("@Sex", sex)
+                Using adapter As New OleDbDataAdapter(command)
+                    adapter.Fill(dataTable)
+                End Using
+            End Using
+        End Using
+        Return dataTable
+    End Function
+
+    Private Sub SaveNewUser(vid As Integer, dateTimeValue As DateTime, name As String, nationalID As String, address As String, contactNumber As String, sex As String, personToMeet As String, inTime As DateTime, outTime As DateTime, totalPersons As Integer, noofhours As Integer, purposeOfVisit As String)
+        ' Your existing logic for saving a new user
+        ' ...
+
+        ' For example, you may use the provided logic with OleDbConnection and OleDbCommand
+        ' Ensure you adjust the query and parameter names based on your MS Access database schema
+        Using conn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\MTMC\source\repos\project-mtmc\project-mtmc\VISITORS.accdb;") ' Replace with your actual connection string
+            conn.Open()
+            Dim query As String = "INSERT INTO VISITORS ([VISITORS ID], [DATE], [NAME], [NATIONAL ID], [ADDRESS], [CONTACT NUMBER], [SEX], [PERSON TO MEET], [IN TIME], [OUT TIME], [TOTAL PERSON], [NO OF HOURS], [PURPOSE TO VISIT]) VALUES (@VisitorID, @DateTimeValue, @Name, @NationalID, @Address, @ContactNumber, @Sex, @PersonToMeet, @InTime, @OutTime, @TotalPersons, @NoOfHours, @PurposeOfVisit)"
+            Using command As New OleDbCommand(query, conn)
+                command.Parameters.AddWithValue("@VisitorID", vid)
+                command.Parameters.AddWithValue("@DateTimeValue", dateTimeValue)
+                command.Parameters.AddWithValue("@Name", name)
+                command.Parameters.AddWithValue("@NationalID", nationalID)
+                command.Parameters.AddWithValue("@Address", address)
+                command.Parameters.AddWithValue("@ContactNumber", contactNumber)
+                command.Parameters.AddWithValue("@Sex", sex)
+                command.Parameters.AddWithValue("@PersonToMeet", personToMeet)
+                command.Parameters.AddWithValue("@InTime", inTime)
+                command.Parameters.AddWithValue("@OutTime", outTime)
+                command.Parameters.AddWithValue("@TotalPersons", totalPersons)
+                command.Parameters.AddWithValue("@NoOfHours", noofhours)
+                command.Parameters.AddWithValue("@PurposeOfVisit", purposeOfVisit)
+                command.ExecuteNonQuery()
+            End Using
+        End Using
+    End Sub
+
+    Private Function GetSelectedRadioButtonText() As String
+        If RadioButton1.Checked Then
+            Return "Male"
+        ElseIf RadioButton2.Checked Then
+            Return "Female"
+        Else
+            Return String.Empty
+        End If
+    End Function
+
 End Class
