@@ -149,6 +149,7 @@ Public Class VISITORS
 
 
 
+
     Private Function ValidateData(name As String, nationalID As String) As Boolean
         ' Perform any additional validation logic here
         ' Return True if data is valid, otherwise return False
