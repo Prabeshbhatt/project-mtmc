@@ -185,7 +185,7 @@ Partial Class VISITORS
         DateTimePicker1.ShadowDecoration.CustomizableEdges = CustomizableEdges4
         DateTimePicker1.Size = New Size(300, 54)
         DateTimePicker1.TabIndex = 113
-        DateTimePicker1.Value = New Date(2023, 12, 7, 11, 12, 34, 723)
+        DateTimePicker1.Value = New Date(2023, 12, 9, 0, 0, 0, 0)
         ' 
         ' addd
         ' 
