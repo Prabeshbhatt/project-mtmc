@@ -12,6 +12,7 @@ Public Class VISITORS
     Dim da As New OleDbDataAdapter(cmd)
     Private bitmap As Bitmap
     Dim connectionString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\MTMC\source\repos\project-mtmc\project-mtmc\VISITORS.accdb;"
+
     Dim connection As New OleDbConnection(connectionString)
 
     Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
@@ -114,7 +115,7 @@ Public Class VISITORS
         ' For example, you may use the provided logic with OleDbConnection and OleDbCommand
         ' Ensure you adjust the query and parameter names based on your MS Access database schema
         Dim dataTable As New DataTable()
-        Using conn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C: \Users\MTMC\source\repos\project-mtmc\project-mtmc\VISITORS.accdb;") ' Replace with your actual connection string
+        Using conn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\MTMC\source\repos\project-mtmc\project-mtmc\VISITORS.accdb;") ' Replace with your actual connection string
             conn.Open()
             Dim query As String = "SELECT * FROM VISITORS WHERE [NATIONAL ID] = @NationalID AND [ADDRESS] = @Address AND [CONTACT NUMBER] = @ContactNumber AND [SEX] = @Sex"
             Using command As New OleDbCommand(query, conn)
