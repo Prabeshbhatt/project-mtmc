@@ -39,9 +39,8 @@ Public Class ProfileCreation
 
 
         ' Check if the password and confirm password match
-        If name = "" Or gndr = "" Or number = "" Or email = "" Or regNo = "" Or password = "" Or confirmPassword = "" Or age = "" Or height = "" Or weight = "" Or address = "" Or rank = "" Or recruitmentDate = "" Then
-            MessageBox.Show("Fields Cannot Be Blank")
-        ElseIf password = confirmPassword Then
+
+        If password = confirmPassword Then
             Try
                 conn.Open()
                 cmd = conn.CreateCommand()

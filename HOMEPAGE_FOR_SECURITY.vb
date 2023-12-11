@@ -45,16 +45,18 @@ Public Class HOMEPAGE_FOR_SECURITY
         newForm.Show()
     End Sub
 
-    Private Sub OutwardToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OutwardToolStripMenuItem.Click
-        Dim outwardForm As New Outward With {
-            .TopLevel = False,
-            .Size = Panel3.ClientSize
-        }
-
+    Private Sub AddUserControl(userControl As UserControl)
+        userControl.Dock = DockStyle.Fill
         Panel3.Controls.Clear()
-        Panel3.Controls.Add(outwardform)
+        Panel3.Controls.Add(userControl)
+        userControl.BringToFront()
 
-        outwardform.Show()
+    End Sub
+
+    Private Sub OutwardToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OutwardToolStripMenuItem.Click
+        Dim uc As New UC_Outward()
+        AddUserControl(uc)
+
     End Sub
 
 

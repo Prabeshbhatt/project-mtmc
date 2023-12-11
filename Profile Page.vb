@@ -116,5 +116,6 @@ Public Class ProfilePage
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
         Dim SecondForm As New Register
         SecondForm.Show()
+        Me.Hide()
     End Sub
 End Class
