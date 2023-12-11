@@ -91,26 +91,28 @@ Public Class Uc_Visitors
                             Dim existingName As String = reader("NAME").ToString()
 
                             ' Check if any other criteria don't match
-                            If existingContactNumber <> contactNumber OrElse existingSex <> sex OrElse existingAddress <> address OrElse existingName <> name Then
-                                MessageBox.Show("Provided Detials Does Not Match With National Id, Please check Name, Contact number, Address, Sex.")
+                            If existingContactNumber = contactNumber AndAlso existingSex = sex AndAlso existingAddress = address AndAlso existingName = name Then
+                                MessageBox.Show("A existing user found.")
                                 Return True
-                            Else
-
-                                Return False
+                            ElseIf existingContactNumber <> contactNumber OrElse existingSex <> sex OrElse existingAddress <> address OrElse existingName <> name Then
+                                MessageBox.Show("Provided details do not match with National ID. Please check Name, Contact number, Address, Sex.")
+                                Return True
                             End If
-                        Else
-                            ' No matching user with the provided national ID
-                            Return False
                         End If
                     End Using
                 End Using
             End Using
+
+            ' If no matching user found, return false
+            Return False
         Catch ex As Exception
             ' Handle exceptions (e.g., log the error, show a message)
             MessageBox.Show("Error checking existing user: " & ex.Message)
             Return False ' Return false in case of an error
         End Try
     End Function
+
+
 
     Private Function GetExistingUserData(nationalID As String, address As String, contactNumber As String, sex As String) As DataTable
         ' Your existing logic for getting existing user data
