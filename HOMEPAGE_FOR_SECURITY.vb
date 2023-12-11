@@ -10,10 +10,7 @@ Public Class HOMEPAGE_FOR_SECURITY
     End Sub
 
     Private Sub Visit_Click(sender As Object, e As EventArgs) Handles Visit.Click
-        Dim newForm As New VISITORS With {
-            .TopLevel = False,
-            .Size = Panel3.ClientSize
-        }
+        Dim newForm As New Uc_Visitors
 
 
         Panel3.Controls.Clear()
