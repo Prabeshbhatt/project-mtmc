@@ -1,11 +1,11 @@
-﻿Imports System.Configuration
-Imports System.Data.OleDb
+﻿Imports System.Data.OleDb
+Imports System.Configuration
 Imports System.Data.SqlClient
 Imports System.Runtime.Intrinsics.Arm
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock
 
-Public Class VISITORS
+Public Class Uc_Visitors
     Dim conn As New OleDbConnection
     Dim cmd As New OleDbCommand
     Dim dt As New DataTable
@@ -14,12 +14,7 @@ Public Class VISITORS
     Dim connectionString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\MTMC\source\repos\project-mtmc\project-mtmc\VISITORS.accdb;"
 
     Dim connection As New OleDbConnection(connectionString)
-
-    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
-
-    End Sub
-
-    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles save.Click
+    Private Sub save_Click(sender As Object, e As EventArgs) Handles save.Click
         Dim vid As Integer = If(Integer.TryParse(idno.Text, Nothing), Integer.Parse(idno.Text), 0)
         Dim dateTimeValue As DateTime = DateTimePicker1.Value
         Dim name As String = nmme.Text
@@ -166,16 +161,7 @@ Public Class VISITORS
         End If
     End Function
 
-
-
-
-
-
-
-
-
-
-    Private Sub Btndlte_Click_1(sender As Object, e As EventArgs) Handles Btndlte.Click
+    Private Sub Btndlte_Click(sender As Object, e As EventArgs) Handles Btnup.Click
         If MessageBox.Show("Are you sure you want to Update this record?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
             Try
                 conn.Open()
@@ -216,7 +202,7 @@ Public Class VISITORS
         End If
     End Sub
 
-    Private Sub Btnupd_Click_1(sender As Object, e As EventArgs) Handles Btnupd.Click
+    Private Sub Btndt_Click(sender As Object, e As EventArgs) Handles Btndt.Click
         Try
             Using conn As New OleDbConnection(connectionString)
                 conn.Open()
@@ -246,7 +232,4 @@ Public Class VISITORS
             MessageBox.Show("Error: " & ex.Message)
         End Try
     End Sub
-
-
-
 End Class

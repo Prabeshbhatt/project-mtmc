@@ -1,8 +1,8 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class VISITORS
-    Inherits System.Windows.Forms.Form
+Partial Class Uc_Visitors
+    Inherits System.Windows.Forms.UserControl
 
-    'Form overrides dispose to clean up the component list.
+    'UserControl overrides dispose to clean up the component list.
     <System.Diagnostics.DebuggerNonUserCode()> _
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
@@ -48,7 +48,6 @@ Partial Class VISITORS
         Dim CustomizableEdges24 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges25 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges26 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Panel1 = New Panel()
         save = New Guna.UI2.WinForms.Guna2Button()
         RadioButton2 = New Guna.UI2.WinForms.Guna2RadioButton()
         RadioButton1 = New Guna.UI2.WinForms.Guna2RadioButton()
@@ -68,8 +67,8 @@ Partial Class VISITORS
         Label3 = New Label()
         Label2 = New Label()
         From = New Label()
-        Btnupd = New Button()
-        Btndlte = New Button()
+        Btndt = New Button()
+        Btnup = New Button()
         Label10 = New Label()
         PType = New Label()
         tolbl = New Label()
@@ -78,47 +77,9 @@ Partial Class VISITORS
         Qtty = New Label()
         Materl = New Label()
         IDNUM = New Label()
+        Panel1 = New Panel()
         Panel1.SuspendLayout()
         SuspendLayout()
-        ' 
-        ' Panel1
-        ' 
-        Panel1.AutoSize = True
-        Panel1.AutoSizeMode = AutoSizeMode.GrowAndShrink
-        Panel1.BackColor = Color.SkyBlue
-        Panel1.Controls.Add(save)
-        Panel1.Controls.Add(RadioButton2)
-        Panel1.Controls.Add(RadioButton1)
-        Panel1.Controls.Add(DateTimePicker1)
-        Panel1.Controls.Add(addd)
-        Panel1.Controls.Add(prsnn)
-        Panel1.Controls.Add(pov)
-        Panel1.Controls.Add(nhrs)
-        Panel1.Controls.Add(tper)
-        Panel1.Controls.Add(outtme)
-        Panel1.Controls.Add(intme)
-        Panel1.Controls.Add(cntt)
-        Panel1.Controls.Add(NID)
-        Panel1.Controls.Add(nmme)
-        Panel1.Controls.Add(idno)
-        Panel1.Controls.Add(Label1)
-        Panel1.Controls.Add(Label3)
-        Panel1.Controls.Add(Label2)
-        Panel1.Controls.Add(From)
-        Panel1.Controls.Add(Btnupd)
-        Panel1.Controls.Add(Btndlte)
-        Panel1.Controls.Add(Label10)
-        Panel1.Controls.Add(PType)
-        Panel1.Controls.Add(tolbl)
-        Panel1.Controls.Add(DteLbl)
-        Panel1.Controls.Add(Dept)
-        Panel1.Controls.Add(Qtty)
-        Panel1.Controls.Add(Materl)
-        Panel1.Controls.Add(IDNUM)
-        Panel1.Location = New Point(12, 25)
-        Panel1.Name = "Panel1"
-        Panel1.Size = New Size(1009, 573)
-        Panel1.TabIndex = 0
         ' 
         ' save
         ' 
@@ -447,25 +408,25 @@ Partial Class VISITORS
         From.TabIndex = 90
         From.Text = "OUT TIME"
         ' 
-        ' Btnupd
+        ' Btndt
         ' 
-        Btnupd.Font = New Font("Times New Roman", 10F, FontStyle.Bold, GraphicsUnit.Point)
-        Btnupd.Location = New Point(450, 532)
-        Btnupd.Name = "Btnupd"
-        Btnupd.Size = New Size(112, 34)
-        Btnupd.TabIndex = 89
-        Btnupd.Text = "DELETE"
-        Btnupd.UseVisualStyleBackColor = True
+        Btndt.Font = New Font("Times New Roman", 10F, FontStyle.Bold, GraphicsUnit.Point)
+        Btndt.Location = New Point(450, 532)
+        Btndt.Name = "Btndt"
+        Btndt.Size = New Size(112, 34)
+        Btndt.TabIndex = 89
+        Btndt.Text = "DELETE"
+        Btndt.UseVisualStyleBackColor = True
         ' 
-        ' Btndlte
+        ' Btnup
         ' 
-        Btndlte.Font = New Font("Times New Roman", 10F, FontStyle.Bold, GraphicsUnit.Point)
-        Btndlte.Location = New Point(596, 531)
-        Btndlte.Name = "Btndlte"
-        Btndlte.Size = New Size(112, 34)
-        Btndlte.TabIndex = 88
-        Btndlte.Text = "UPDATE"
-        Btndlte.UseVisualStyleBackColor = True
+        Btnup.Font = New Font("Times New Roman", 10F, FontStyle.Bold, GraphicsUnit.Point)
+        Btnup.Location = New Point(596, 531)
+        Btnup.Name = "Btnup"
+        Btnup.Size = New Size(112, 34)
+        Btnup.TabIndex = 88
+        Btnup.Text = "UPDATE"
+        Btnup.UseVisualStyleBackColor = True
         ' 
         ' Label10
         ' 
@@ -531,7 +492,7 @@ Partial Class VISITORS
         Materl.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
         Materl.Location = New Point(24, 83)
         Materl.Name = "Materl"
-        Materl.Size = New Size(169, 28)
+        Materl.Size = New Size(98, 35)
         Materl.TabIndex = 72
         Materl.Text = "NAME"
         ' 
@@ -542,31 +503,83 @@ Partial Class VISITORS
         IDNUM.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
         IDNUM.Location = New Point(23, 35)
         IDNUM.Name = "IDNUM"
-        IDNUM.Size = New Size(215, 28)
+        IDNUM.Size = New Size(186, 28)
         IDNUM.TabIndex = 70
         IDNUM.Text = "VISITORS ID"
         ' 
-        ' VISITORS
+        ' Panel1
+        ' 
+        Panel1.AutoSize = True
+        Panel1.AutoSizeMode = AutoSizeMode.GrowAndShrink
+        Panel1.BackColor = Color.SkyBlue
+        Panel1.Controls.Add(save)
+        Panel1.Controls.Add(RadioButton2)
+        Panel1.Controls.Add(RadioButton1)
+        Panel1.Controls.Add(DateTimePicker1)
+        Panel1.Controls.Add(addd)
+        Panel1.Controls.Add(prsnn)
+        Panel1.Controls.Add(pov)
+        Panel1.Controls.Add(nhrs)
+        Panel1.Controls.Add(tper)
+        Panel1.Controls.Add(outtme)
+        Panel1.Controls.Add(intme)
+        Panel1.Controls.Add(cntt)
+        Panel1.Controls.Add(NID)
+        Panel1.Controls.Add(nmme)
+        Panel1.Controls.Add(idno)
+        Panel1.Controls.Add(Label1)
+        Panel1.Controls.Add(Label3)
+        Panel1.Controls.Add(Label2)
+        Panel1.Controls.Add(From)
+        Panel1.Controls.Add(Btndt)
+        Panel1.Controls.Add(Btnup)
+        Panel1.Controls.Add(Label10)
+        Panel1.Controls.Add(PType)
+        Panel1.Controls.Add(tolbl)
+        Panel1.Controls.Add(DteLbl)
+        Panel1.Controls.Add(Dept)
+        Panel1.Controls.Add(Qtty)
+        Panel1.Controls.Add(Materl)
+        Panel1.Controls.Add(IDNUM)
+        Panel1.Location = New Point(44, 12)
+        Panel1.Name = "Panel1"
+        Panel1.Size = New Size(1009, 639)
+        Panel1.TabIndex = 1
+        ' 
+        ' Uc_Visitors
         ' 
         AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
-        AutoSize = True
-        BackColor = Color.SkyBlue
-        ClientSize = New Size(1041, 624)
         Controls.Add(Panel1)
-        FormBorderStyle = FormBorderStyle.None
-        Name = "VISITORS"
-        Text = "VISITORS"
+        Name = "Uc_Visitors"
+        Size = New Size(1105, 663)
         Panel1.ResumeLayout(False)
         Panel1.PerformLayout()
         ResumeLayout(False)
         PerformLayout()
     End Sub
 
-    Friend WithEvents Panel1 As Panel
+    Friend WithEvents save As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents RadioButton2 As Guna.UI2.WinForms.Guna2RadioButton
+    Friend WithEvents RadioButton1 As Guna.UI2.WinForms.Guna2RadioButton
+    Friend WithEvents DateTimePicker1 As Guna.UI2.WinForms.Guna2DateTimePicker
+    Friend WithEvents addd As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents prsnn As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents pov As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents nhrs As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents tper As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents outtme As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents intme As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents cntt As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents NID As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents nmme As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents idno As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label2 As Label
     Friend WithEvents From As Label
-    Friend WithEvents Btnupd As Button
-    Friend WithEvents Btndlte As Button
+    Friend WithEvents Btndt As Button
+    Friend WithEvents Btnup As Button
     Friend WithEvents Label10 As Label
     Friend WithEvents PType As Label
     Friend WithEvents tolbl As Label
@@ -575,22 +588,6 @@ Partial Class VISITORS
     Friend WithEvents Qtty As Label
     Friend WithEvents Materl As Label
     Friend WithEvents IDNUM As Label
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Label1 As Label
-    Friend WithEvents idno As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents nmme As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents NID As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents cntt As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents outtme As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents intme As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents addd As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents prsnn As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents pov As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents nhrs As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents tper As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents DateTimePicker1 As Guna.UI2.WinForms.Guna2DateTimePicker
-    Friend WithEvents RadioButton2 As Guna.UI2.WinForms.Guna2RadioButton
-    Friend WithEvents RadioButton1 As Guna.UI2.WinForms.Guna2RadioButton
-    Friend WithEvents save As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Panel1 As Panel
+
 End Class
