@@ -141,7 +141,7 @@ Public Class VISITORS
                 command.Parameters.AddWithValue("@Name", OleDbType.WChar).Value = name
                 command.Parameters.AddWithValue("@NationalID", OleDbType.WChar).Value = nationalID
                 command.Parameters.AddWithValue("@Address", OleDbType.WChar).Value = address
-                command.Parameters.AddWithValue("@ContactNumber", OleDbType.WChar).Value = contactNumber
+                command.Parameters.AddWithValue("@ContactNumber", OleDbType.Integer).Value = contactNumber
                 command.Parameters.AddWithValue("@Sex", OleDbType.WChar).Value = sex
                 command.Parameters.AddWithValue("@PersonToMeet", OleDbType.WChar).Value = personToMeet
                 command.Parameters.AddWithValue("@InTime", OleDbType.Date).Value = inTime
