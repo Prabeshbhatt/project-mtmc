@@ -22,7 +22,10 @@ Partial Class Outward
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim CustomizableEdges3 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges4 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Panel2 = New Panel()
+        GunaGtPss = New Guna.UI2.WinForms.Guna2TextBox()
         GtePssType = New ComboBox()
         RtrnDte = New DateTimePicker()
         Dte = New DateTimePicker()
@@ -35,7 +38,6 @@ Partial Class Outward
         Dpt = New TextBox()
         Qty = New TextBox()
         Mtrl = New TextBox()
-        GtPss = New TextBox()
         Label10 = New Label()
         PType = New Label()
         tolbl = New Label()
@@ -51,6 +53,7 @@ Partial Class Outward
         ' 
         Panel2.Anchor = AnchorStyles.None
         Panel2.BackColor = Color.SkyBlue
+        Panel2.Controls.Add(GunaGtPss)
         Panel2.Controls.Add(GtePssType)
         Panel2.Controls.Add(RtrnDte)
         Panel2.Controls.Add(Dte)
@@ -63,7 +66,6 @@ Partial Class Outward
         Panel2.Controls.Add(Dpt)
         Panel2.Controls.Add(Qty)
         Panel2.Controls.Add(Mtrl)
-        Panel2.Controls.Add(GtPss)
         Panel2.Controls.Add(Label10)
         Panel2.Controls.Add(PType)
         Panel2.Controls.Add(tolbl)
@@ -76,6 +78,26 @@ Partial Class Outward
         Panel2.Name = "Panel2"
         Panel2.Size = New Size(954, 573)
         Panel2.TabIndex = 19
+        ' 
+        ' GunaGtPss
+        ' 
+        GunaGtPss.CustomizableEdges = CustomizableEdges3
+        GunaGtPss.DefaultText = ""
+        GunaGtPss.DisabledState.BorderColor = Color.FromArgb(CByte(208), CByte(208), CByte(208))
+        GunaGtPss.DisabledState.FillColor = Color.FromArgb(CByte(226), CByte(226), CByte(226))
+        GunaGtPss.DisabledState.ForeColor = Color.FromArgb(CByte(138), CByte(138), CByte(138))
+        GunaGtPss.DisabledState.PlaceholderForeColor = Color.FromArgb(CByte(138), CByte(138), CByte(138))
+        GunaGtPss.FocusedState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
+        GunaGtPss.Font = New Font("Segoe UI", 9.0F, FontStyle.Regular, GraphicsUnit.Point)
+        GunaGtPss.HoverState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
+        GunaGtPss.Location = New Point(342, 84)
+        GunaGtPss.Name = "GunaGtPss"
+        GunaGtPss.PasswordChar = ChrW(0)
+        GunaGtPss.PlaceholderText = ""
+        GunaGtPss.SelectedText = ""
+        GunaGtPss.ShadowDecoration.CustomizableEdges = CustomizableEdges4
+        GunaGtPss.Size = New Size(372, 39)
+        GunaGtPss.TabIndex = 44
         ' 
         ' GtePssType
         ' 
@@ -112,7 +134,7 @@ Partial Class Outward
         ' 
         From.Anchor = AnchorStyles.None
         From.AutoSize = True
-        From.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        From.Font = New Font("Segoe UI", 12.0F, FontStyle.Bold, GraphicsUnit.Point)
         From.Location = New Point(509, 273)
         From.Name = "From"
         From.Size = New Size(73, 32)
@@ -122,7 +144,7 @@ Partial Class Outward
         ' BtnDlt
         ' 
         BtnDlt.Anchor = AnchorStyles.None
-        BtnDlt.Font = New Font("Times New Roman", 10F, FontStyle.Bold, GraphicsUnit.Point)
+        BtnDlt.Font = New Font("Times New Roman", 10.0F, FontStyle.Bold, GraphicsUnit.Point)
         BtnDlt.Location = New Point(286, 440)
         BtnDlt.Name = "BtnDlt"
         BtnDlt.Size = New Size(112, 34)
@@ -133,7 +155,7 @@ Partial Class Outward
         ' Btnupdt
         ' 
         Btnupdt.Anchor = AnchorStyles.None
-        Btnupdt.Font = New Font("Times New Roman", 10F, FontStyle.Bold, GraphicsUnit.Point)
+        Btnupdt.Font = New Font("Times New Roman", 10.0F, FontStyle.Bold, GraphicsUnit.Point)
         Btnupdt.Location = New Point(429, 441)
         Btnupdt.Name = "Btnupdt"
         Btnupdt.Size = New Size(112, 34)
@@ -144,7 +166,7 @@ Partial Class Outward
         ' Btnsave
         ' 
         Btnsave.Anchor = AnchorStyles.None
-        Btnsave.Font = New Font("Times New Roman", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        Btnsave.Font = New Font("Times New Roman", 9.0F, FontStyle.Bold, GraphicsUnit.Point)
         Btnsave.Location = New Point(572, 440)
         Btnsave.Name = "Btnsave"
         Btnsave.Size = New Size(112, 34)
@@ -184,19 +206,11 @@ Partial Class Outward
         Mtrl.Size = New Size(372, 31)
         Mtrl.TabIndex = 29
         ' 
-        ' GtPss
-        ' 
-        GtPss.Anchor = AnchorStyles.None
-        GtPss.Location = New Point(342, 96)
-        GtPss.Name = "GtPss"
-        GtPss.Size = New Size(372, 31)
-        GtPss.TabIndex = 28
-        ' 
         ' Label10
         ' 
         Label10.Anchor = AnchorStyles.None
         Label10.AutoSize = True
-        Label10.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        Label10.Font = New Font("Segoe UI", 12.0F, FontStyle.Bold, GraphicsUnit.Point)
         Label10.Location = New Point(144, 345)
         Label10.Name = "Label10"
         Label10.Size = New Size(151, 32)
@@ -207,7 +221,7 @@ Partial Class Outward
         ' 
         PType.Anchor = AnchorStyles.None
         PType.AutoSize = True
-        PType.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        PType.Font = New Font("Segoe UI", 12.0F, FontStyle.Bold, GraphicsUnit.Point)
         PType.Location = New Point(144, 311)
         PType.Name = "PType"
         PType.Size = New Size(183, 32)
@@ -218,7 +232,7 @@ Partial Class Outward
         ' 
         tolbl.Anchor = AnchorStyles.None
         tolbl.AutoSize = True
-        tolbl.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        tolbl.Font = New Font("Segoe UI", 12.0F, FontStyle.Bold, GraphicsUnit.Point)
         tolbl.Location = New Point(144, 273)
         tolbl.Name = "tolbl"
         tolbl.Size = New Size(41, 32)
@@ -228,7 +242,7 @@ Partial Class Outward
         ' DteLbl
         ' 
         DteLbl.Anchor = AnchorStyles.None
-        DteLbl.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        DteLbl.Font = New Font("Segoe UI", 12.0F, FontStyle.Bold, GraphicsUnit.Point)
         DteLbl.Location = New Point(144, 238)
         DteLbl.Name = "DteLbl"
         DteLbl.Size = New Size(146, 35)
@@ -238,7 +252,7 @@ Partial Class Outward
         ' Dept
         ' 
         Dept.Anchor = AnchorStyles.None
-        Dept.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        Dept.Font = New Font("Segoe UI", 12.0F, FontStyle.Bold, GraphicsUnit.Point)
         Dept.Location = New Point(144, 201)
         Dept.Name = "Dept"
         Dept.Size = New Size(146, 31)
@@ -249,7 +263,7 @@ Partial Class Outward
         ' 
         Qtty.Anchor = AnchorStyles.None
         Qtty.AutoSize = True
-        Qtty.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        Qtty.Font = New Font("Segoe UI", 12.0F, FontStyle.Bold, GraphicsUnit.Point)
         Qtty.Location = New Point(144, 166)
         Qtty.Name = "Qtty"
         Qtty.Size = New Size(113, 32)
@@ -259,7 +273,7 @@ Partial Class Outward
         ' Materl
         ' 
         Materl.Anchor = AnchorStyles.None
-        Materl.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        Materl.Font = New Font("Segoe UI", 12.0F, FontStyle.Bold, GraphicsUnit.Point)
         Materl.Location = New Point(144, 132)
         Materl.Name = "Materl"
         Materl.Size = New Size(217, 31)
@@ -269,7 +283,7 @@ Partial Class Outward
         ' GtPssNo
         ' 
         GtPssNo.Anchor = AnchorStyles.None
-        GtPssNo.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        GtPssNo.Font = New Font("Segoe UI", 12.0F, FontStyle.Bold, GraphicsUnit.Point)
         GtPssNo.Location = New Point(144, 93)
         GtPssNo.Name = "GtPssNo"
         GtPssNo.Size = New Size(242, 37)
@@ -278,7 +292,7 @@ Partial Class Outward
         ' 
         ' Outward
         ' 
-        AutoScaleDimensions = New SizeF(10F, 25F)
+        AutoScaleDimensions = New SizeF(10.0F, 25.0F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.SkyBlue
         ClientSize = New Size(1059, 684)
@@ -299,7 +313,6 @@ Partial Class Outward
     Friend WithEvents Dpt As TextBox
     Friend WithEvents Qty As TextBox
     Friend WithEvents Mtrl As TextBox
-    Friend WithEvents GtPss As TextBox
     Friend WithEvents Label10 As Label
     Friend WithEvents PType As Label
     Friend WithEvents tolbl As Label
@@ -313,4 +326,5 @@ Partial Class Outward
     Friend WithEvents RtrnDte As DateTimePicker
     Friend WithEvents Dte As DateTimePicker
     Friend WithEvents GtePssType As ComboBox
+    Friend WithEvents GunaGtPss As Guna.UI2.WinForms.Guna2TextBox
 End Class

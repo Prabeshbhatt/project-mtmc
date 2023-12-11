@@ -21,7 +21,7 @@ Public Class Outward
     End Sub
 
     Private Sub Btnsave_Click(sender As Object, e As EventArgs) Handles Btnsave.Click
-        Dim GatePassNo As Integer = GtPss.Text
+        Dim GatePassNo As Integer = GunaGtPss.Text
         Dim material As String = Mtrl.Text
         Dim quantity As Integer = Qty.Text
         Dim department As String = Dpt.Text
@@ -52,7 +52,7 @@ Public Class Outward
         conn.Close()
 
         MessageBox.Show("Data inserted successfully.")
-        GtPss.Clear()
+        GunaGtPss.Clear()
         Mtrl.Clear()
         Qty.Clear()
         Dpt.Clear()
@@ -67,7 +67,7 @@ Public Class Outward
     Private Function Datapresent(GatePassNo As Integer) As Boolean
         Dim Result As Boolean = False
         conn.Open()
-            Dim query As String = "SELECT * FROM OUTWARD_FORM WHERE [GATE PASS NO] = @GatePassNo"
+        Dim query As String = "SELECT * FROM OUTWARD_FORM WHERE [GATE PASS NO] = @GatePassNo"
         Using command As New OleDbCommand(query, conn)
             command.Parameters.AddWithValue("@GatePassNo", GatePassNo)
             Dim reader As OleDbDataReader = command.ExecuteReader()
@@ -79,14 +79,14 @@ Public Class Outward
     End Function
 
     Private Sub BtnDlt_Click(sender As Object, e As EventArgs) Handles BtnDlt.Click
-        Dim GatePassNo As Integer = GtPss.Text
+        Dim GatePassNo As Integer = GunaGtPss.Text
         If Datapresent(GatePassNo) Then
             If MessageBox.Show("Are you sure you want to delete this record?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
                 Try
                     conn.Open()
                     cmd = conn.CreateCommand()
                     cmd.CommandType = CommandType.Text
-                    cmd.CommandText = "DELETE FROM OUTWARD_FORM WHERE [GATE PASS NO] = " & GtPss.Text & ""
+                    cmd.CommandText = "DELETE FROM OUTWARD_FORM WHERE [GATE PASS NO] = " & GunaGtPss.Text & ""
                     cmd.ExecuteNonQuery()
                     conn.Close()
 
@@ -107,7 +107,7 @@ Public Class Outward
     End Sub
 
     Private Sub Btnupdt_Click(sender As Object, e As EventArgs) Handles Btnupdt.Click
-        Dim GatePassNo As Integer = GtPss.Text
+        Dim GatePassNo As Integer = GunaGtPss.Text
         If Datapresent(GatePassNo) Then
             If MessageBox.Show("Are you sure you want to Update this record?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
                 Try
@@ -117,8 +117,8 @@ Public Class Outward
 
                     Dim updateClauses As New List(Of String)
 
-                    If Not String.IsNullOrEmpty(GtPss.Text) Then
-                        updateClauses.Add("[GATE PASS NO] = " & GtPss.Text & "")
+                    If Not String.IsNullOrEmpty(GunaGtPss.Text) Then
+                        updateClauses.Add("[GATE PASS NO] = " & GunaGtPss.Text & "")
                     End If
 
                     If Not String.IsNullOrEmpty(Mtrl.Text) Then
@@ -156,10 +156,10 @@ Public Class Outward
 
                     Dim updateClause As String = String.Join(", ", updateClauses)
                     If updateClause <> "" Then
-                        cmd.CommandText = "UPDATE OUTWARD_FORM SET " & updateClause & " WHERE [GATE PASS NO] = " & GtPss.Text & ""
+                        cmd.CommandText = "UPDATE OUTWARD_FORM SET " & updateClause & " WHERE [GATE PASS NO] = " & GunaGtPss.Text & ""
                         cmd.ExecuteNonQuery()
                         MessageBox.Show("Data updated successfully.")
-                        GtPss.Clear()
+                        GunaGtPss.Clear()
                         Mtrl.Clear()
                         Qty.Clear()
                         Dpt.Clear()
@@ -186,10 +186,6 @@ Public Class Outward
     End Sub
 
     Private Sub Panel2_Paint(sender As Object, e As PaintEventArgs) Handles Panel2.Paint
-
-    End Sub
-
-    Private Sub GtPss_TextChanged(sender As Object, e As EventArgs) Handles GtPss.TextChanged
 
     End Sub
 
@@ -233,6 +229,10 @@ Public Class Outward
     End Sub
 
     Private Sub Label10_Click(sender As Object, e As EventArgs) Handles Label10.Click
+
+    End Sub
+
+    Private Sub Guna2TextBox1_TextChanged(sender As Object, e As EventArgs)
 
     End Sub
 End Class
