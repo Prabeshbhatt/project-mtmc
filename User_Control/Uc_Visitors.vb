@@ -92,7 +92,7 @@ Public Class Uc_Visitors
 
                             ' Check if any other criteria don't match
                             If existingContactNumber = contactNumber AndAlso existingSex = sex AndAlso existingAddress = address AndAlso existingName = name Then
-                                MessageBox.Show("A existing user found.")
+                                MessageBox.Show("A Existing user found.")
                                 Return True
                             ElseIf existingContactNumber <> contactNumber OrElse existingSex <> sex OrElse existingAddress <> address OrElse existingName <> name Then
                                 MessageBox.Show("Provided details do not match with National ID. Please check Name, Contact number, Address, Sex.")
