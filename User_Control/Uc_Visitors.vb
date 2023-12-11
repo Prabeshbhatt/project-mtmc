@@ -20,7 +20,7 @@ Public Class Uc_Visitors
         Dim name As String = nmme.Text
         Dim nationalID As String = NID.Text
         Dim contactNumber As Integer = If(Integer.TryParse(cntt.Text, Nothing), Integer.Parse(cntt.Text), 0)
-        Dim inTime As DateTime = DateTime.Parse(intme.Text) ' Corrected parsing for inTime and outTime
+        Dim inTime As DateTime = DateTime.Parse(intme.Text)
         Dim outTime As DateTime = DateTime.Parse(outtme.Text)
         Dim totalPersons As Integer = If(Integer.TryParse(tper.Text, Nothing), Integer.Parse(tper.Text), 0)
         Dim noofhours As Integer = If(Integer.TryParse(nhrs.Text, Nothing), Integer.Parse(nhrs.Text), 0)
@@ -32,7 +32,7 @@ Public Class Uc_Visitors
         ' Validate and save data
         If ValidateData(name, nationalID) Then
             ' Check if an existing user with the same details exists
-            If Not ExistingUserExists(nationalID, address, contactNumber, sex) Then
+            If Not ExistingUserExists(nationalID, address, contactNumber, sex, name) Then
                 ' Save new user
                 SaveNewUser(vid, dateTimeValue, name, nationalID, address, contactNumber, sex, personToMeet, inTime, outTime, totalPersons, noofhours, purposeOfVisit)
                 MessageBox.Show("New user created successfully.")
@@ -49,9 +49,6 @@ Public Class Uc_Visitors
             End If
         End If
     End Sub
-
-
-
 
     Private Function ValidateData(name As String, nationalID As String) As Boolean
         ' Perform any additional validation logic here
@@ -73,26 +70,39 @@ Public Class Uc_Visitors
         Return True
     End Function
 
-    Private Function ExistingUserExists(nationalID As String, address As String, contactNumber As String, sex As String) As Boolean
+    Private Function ExistingUserExists(nationalID As String, address As String, contactNumber As String, sex As String, name As String) As Boolean
         Try
             Using conn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\MTMC\source\repos\project-mtmc\project-mtmc\VISITORS.accdb;")
                 conn.Open()
 
-                ' Query to check if a user with the same details exists
-                Dim query As String = "SELECT COUNT(*) FROM VISITORS WHERE [NATIONAL ID] = @NationalID AND [ADDRESS] = @Address AND [CONTACT NUMBER] = @ContactNumber AND [SEX] = @Sex"
+                ' Query to check if a user with the same National ID exists
+                Dim query As String = "SELECT * FROM VISITORS WHERE [NATIONAL ID] = @NationalID"
 
                 Using command As New OleDbCommand(query, conn)
                     ' Set parameters
                     command.Parameters.AddWithValue("@NationalID", nationalID)
-                    command.Parameters.AddWithValue("@Address", address)
-                    command.Parameters.AddWithValue("@ContactNumber", contactNumber)
-                    command.Parameters.AddWithValue("@Sex", sex)
+                    ' Execute the query
+                    Using reader As OleDbDataReader = command.ExecuteReader()
+                        ' If there's a matching user, check other criteria
+                        If reader.Read() Then
+                            Dim existingContactNumber As String = reader("CONTACT NUMBER").ToString()
+                            Dim existingSex As String = reader("SEX").ToString()
+                            Dim existingAddress As String = reader("ADDRESS").ToString()
+                            Dim existingName As String = reader("NAME").ToString()
 
-                    ' Execute the query and check if any matching 
-                    Dim rowCount As Integer = Convert.ToInt32(command.ExecuteScalar())
+                            ' Check if any other criteria don't match
+                            If existingContactNumber <> contactNumber OrElse existingSex <> sex OrElse existingAddress <> address OrElse existingName <> name Then
+                                MessageBox.Show("Provided Detials Does Not Match With National Id, Please check Name, Contact number, Address, Sex.")
+                                Return True
+                            Else
 
-                    ' If rowCount is greater than 0, a matching user exists
-                    Return rowCount > 0
+                                Return False
+                            End If
+                        Else
+                            ' No matching user with the provided national ID
+                            Return False
+                        End If
+                    End Using
                 End Using
             End Using
         Catch ex As Exception
@@ -101,7 +111,6 @@ Public Class Uc_Visitors
             Return False ' Return false in case of an error
         End Try
     End Function
-
 
     Private Function GetExistingUserData(nationalID As String, address As String, contactNumber As String, sex As String) As DataTable
         ' Your existing logic for getting existing user data
@@ -149,8 +158,6 @@ Public Class Uc_Visitors
         End Using
     End Sub
 
-
-
     Private Function GetSelectedRadioButtonText() As String
         If RadioButton1.Checked Then
             Return "Male"
@@ -160,6 +167,7 @@ Public Class Uc_Visitors
             Return String.Empty
         End If
     End Function
+
 
     Private Sub Btndlte_Click(sender As Object, e As EventArgs) Handles Btnup.Click
         If MessageBox.Show("Are you sure you want to Update this record?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
