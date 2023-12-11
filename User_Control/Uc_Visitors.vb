@@ -11,7 +11,7 @@ Public Class Uc_Visitors
     Dim dt As New DataTable
     Dim da As New OleDbDataAdapter(cmd)
     Private bitmap As Bitmap
-    Dim connectionString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\MTMC\source\repos\project-mtmc\project-mtmc\VISITORS.accdb;"
+    Dim connectionString As String = ""
 
     Dim connection As New OleDbConnection(connectionString)
     Private Sub save_Click(sender As Object, e As EventArgs) Handles save.Click
@@ -72,7 +72,7 @@ Public Class Uc_Visitors
 
     Private Function ExistingUserExists(nationalID As String, address As String, contactNumber As String, sex As String, name As String) As Boolean
         Try
-            Using conn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\MTMC\source\repos\project-mtmc\project-mtmc\VISITORS.accdb;")
+            Using conn As New OleDbConnection("")
                 conn.Open()
 
                 ' Query to check if a user with the same National ID exists
@@ -121,7 +121,7 @@ Public Class Uc_Visitors
         ' For example, you may use the provided logic with OleDbConnection and OleDbCommand
         ' Ensure you adjust the query and parameter names based on your MS Access database schema
         Dim dataTable As New DataTable()
-        Using conn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\MTMC\source\repos\project-mtmc\project-mtmc\VISITORS.accdb;") ' Replace with your actual connection string
+        Using conn As New OleDbConnection("")
             conn.Open()
             Dim query As String = "SELECT * FROM VISITORS WHERE [NATIONAL ID] = @NationalID AND [ADDRESS] = @Address AND [CONTACT NUMBER] = @ContactNumber AND [SEX] = @Sex"
             Using command As New OleDbCommand(query, conn)
@@ -138,7 +138,7 @@ Public Class Uc_Visitors
     End Function
 
     Private Sub SaveNewUser(vid As Integer, dateTimeValue As DateTime, name As String, nationalID As String, address As String, contactNumber As String, sex As String, personToMeet As String, inTime As DateTime, outTime As DateTime, totalPersons As Integer, noofhours As Integer, purposeOfVisit As String)
-        Using conn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\MTMC\source\repos\project-mtmc\project-mtmc\VISITORS.accdb;")
+        Using conn As New OleDbConnection("")
             conn.Open()
             Dim query As String = "INSERT INTO VISITORS ([VISITORS ID], [DATE], [NAME], [NATIONAL ID], [ADDRESS], [CONTACT NUMBER], [SEX], [PERSON TO MEET], [IN TIME], [OUT TIME], [TOTAL PERSON], [NO OF HOURS], [PURPOSE TO VISIT]) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
             Using command As New OleDbCommand(query, conn)
