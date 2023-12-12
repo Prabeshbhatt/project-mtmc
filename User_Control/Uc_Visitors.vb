@@ -4,6 +4,7 @@ Imports System.Data.SqlClient
 Imports System.Runtime.Intrinsics.Arm
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock
+Imports System.Globalization
 
 Public Class Uc_Visitors
     Dim conn As New OleDbConnection
@@ -28,6 +29,8 @@ Public Class Uc_Visitors
         Dim personToMeet As String = prsnn.Text
         Dim address As String = addd.Text
         Dim sex As String = GetSelectedRadioButtonText()
+
+
 
         ' Validate and save data
         If ValidateData(name, nationalID) Then
@@ -70,7 +73,7 @@ Public Class Uc_Visitors
         Return True
     End Function
 
-    Private Function ExistingUserExists(nationalID As String, address As String, contactNumber As String, sex As String, name As String) As Boolean
+    Private Function ExistingUserExists(nationalID As String, address As String, contactNumber As Integer, sex As String, name As String) As Boolean
         Try
             Using conn As New OleDbConnection("")
                 conn.Open()
@@ -114,7 +117,7 @@ Public Class Uc_Visitors
 
 
 
-    Private Function GetExistingUserData(nationalID As String, address As String, contactNumber As String, sex As String) As DataTable
+    Private Function GetExistingUserData(nationalID As String, address As String, contactNumber As Integer, sex As String) As DataTable
         Dim dataTable As New DataTable()
         Using conn As New OleDbConnection("")
             conn.Open()
@@ -132,10 +135,10 @@ Public Class Uc_Visitors
         Return dataTable
     End Function
 
-    Private Sub SaveNewUser(vid As Integer, dateTimeValue As DateTime, name As String, nationalID As String, address As String, contactNumber As String, sex As String, personToMeet As String, inTime As DateTime, outTime As DateTime, totalPersons As Integer, noofhours As Integer, purposeOfVisit As String)
+    Private Sub SaveNewUser(vid As Integer, dateTimeValue As DateTime, name As String, nationalID As String, address As String, contactNumber As Integer, sex As String, personToMeet As String, inTime As DateTime, outTime As DateTime, totalPersons As Integer, noofhours As Integer, purposeOfVisit As String)
         Using conn As New OleDbConnection("")
             conn.Open()
-            Dim query As String = "INSERT INTO VISITORS ([VISITORS ID], [DATE], [NAME], [NATIONAL ID], [ADDRESS], [CONTACT NUMBER], [SEX], [PERSON TO MEET], [IN TIME], [OUT TIME], [TOTAL PERSON], [NO OF HOURS], [PURPOSE TO VISIT]) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
+            Dim query As String = "INSERT INTO VISITORS ([VISITORS ID], [DATE], [NAME], [NATIONAL ID], [ADDRESS], [CONTACT NUMBER], [SEX], [PERSON TO MEET], [IN TIME], [OUT TIME], [TOTAL PERSON], [NO OF HOURS], [PURPOSE TO VISIT]) VALUES (@VisitorID,@DateTimeValue ,@Name, @NationalID, @Address, @ContactNumber, @Sex, @PersonToMeet, @InTime, @OutTime, @TotalPersons, @NoOfHours, @PurposeOfVisit)"
             Using command As New OleDbCommand(query, conn)
                 command.Parameters.AddWithValue("@VisitorID", OleDbType.Integer).Value = vid
                 command.Parameters.AddWithValue("@DateTimeValue", OleDbType.Date).Value = dateTimeValue
