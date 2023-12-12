@@ -162,4 +162,8 @@ Public Class ProfileCreation
     Private Sub Eml_TextChanged(sender As Object, e As EventArgs) Handles Eml.TextChanged
 
     End Sub
+
+    Private Sub OpenFileDialog_FileOk(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles OpenFileDialog.FileOk
+
+    End Sub
 End Class
