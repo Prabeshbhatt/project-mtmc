@@ -170,70 +170,12 @@ Public Class Uc_Visitors
 
 
 
-    Private Sub Btnupd_Click(sender As Object, e As EventArgs) Handles Btnupd.Click
-        ' Extract data from form controls
-        Dim vid As Integer = If(Integer.TryParse(idno.Text, Nothing), Integer.Parse(idno.Text), 0)
-        Dim dateTimeValue As DateTime = DateTimePicker1.Value
-        Dim name As String = nmme.Text
-        Dim nationalID As String = NID.Text
-        Dim contactNumber As Integer = If(Integer.TryParse(cntt.Text, Nothing), Integer.Parse(cntt.Text), 0)
-        Dim inTime As DateTime = DateTime.Parse(intme.Text)
-        Dim outTime As DateTime = DateTime.Parse(outtme.Text)
-        Dim totalPersons As Integer = If(Integer.TryParse(tper.Text, Nothing), Integer.Parse(tper.Text), 0)
-        Dim noofhours As Integer = If(Integer.TryParse(nhrs.Text, Nothing), Integer.Parse(nhrs.Text), 0)
-        Dim purposeOfVisit As String = pov.Text
-        Dim personToMeet As String = prsnn.Text
-        Dim address As String = addd.Text
-        Dim sex As String = GetSelectedRadioButtonText()
-
-        ' Validate and update data
-        If ValidateData(name, nationalID) Then
-            ' Check if an existing user with the same details exists
-            If ExistingUserExists(nationalID, address, contactNumber, sex, name) Then
-                ' Update user
-                UpdateUser(vid, dateTimeValue, name, nationalID, address, contactNumber, sex, personToMeet, inTime, outTime, totalPersons, noofhours, purposeOfVisit)
-                MessageBox.Show("User data updated successfully.")
-            Else
-                ' No matching user found
-                MessageBox.Show("User with the provided details not found.")
-            End If
-        End If
-    End Sub
 
 
 
-    Private Sub UpdateUser(vid As Integer, dateTimeValue As DateTime, name As String, nationalID As String, address As String, contactNumber As Integer, sex As String, personToMeet As String, inTime As DateTime, outTime As DateTime, totalPersons As Integer, noofhours As Integer, purposeOfVisit As String)
-        Try
-            Using conn As New OleDbConnection("")
-                conn.Open()
 
-                ' Query to update user data
-                Dim query As String = "UPDATE VISITORS SET [DATE] = ?, [NAME] = ?, [ADDRESS] = ?, [CONTACT NUMBER] = ?, [SEX] = ?, [PERSON TO MEET] = ?, [IN TIME] = ?, [OUT TIME] = ?, [TOTAL PERSON] = ?, [NO OF HOURS] = ?, [PURPOSE TO VISIT] = ? WHERE [VISITORS ID] = ?"
 
-                Using command As New OleDbCommand(query, conn)
-                    ' Set parameters
-                    command.Parameters.AddWithValue("@DateTimeValue", OleDbType.Date).Value = dateTimeValue
-                    command.Parameters.AddWithValue("@Name", OleDbType.WChar).Value = name
-                    command.Parameters.AddWithValue("@Address", OleDbType.WChar).Value = address
-                    command.Parameters.AddWithValue("@ContactNumber", OleDbType.Integer).Value = contactNumber
-                    command.Parameters.AddWithValue("@Sex", OleDbType.WChar).Value = sex
-                    command.Parameters.AddWithValue("@PersonToMeet", OleDbType.WChar).Value = personToMeet
-                    command.Parameters.AddWithValue("@InTime", OleDbType.Date).Value = inTime
-                    command.Parameters.AddWithValue("@OutTime", OleDbType.Date).Value = outTime
-                    command.Parameters.AddWithValue("@TotalPersons", OleDbType.Integer).Value = totalPersons
-                    command.Parameters.AddWithValue("@NoOfHours", OleDbType.Integer).Value = noofhours
-                    command.Parameters.AddWithValue("@PurposeOfVisit", OleDbType.WChar).Value = purposeOfVisit
-                    command.Parameters.AddWithValue("@VisitorID", OleDbType.Integer).Value = vid ' Use this parameter for the WHERE clause
 
-                    ' Execute the update query
-                    command.ExecuteNonQuery()
-                End Using
-            End Using
-        Catch ex As Exception
-            ' Handle exceptions (e.g., log the error, show a message)
-            MessageBox.Show("Error updating user: " & ex.Message)
-        End Try
-    End Sub
 
 
 
@@ -313,6 +255,101 @@ Public Class Uc_Visitors
             MessageBox.Show($"Error deleting user: {ex.Message}")
         End Try
     End Sub
+
+    Private Sub Btnupd_Click(sender As Object, e As EventArgs) Handles Btnupd.Click
+        Try
+            ' Get the VISITORS ID from user input or another source during runtime
+            Dim vid As Integer
+            Dim input As String = InputBox("Enter VISITORS ID to update:")
+
+            If Not String.IsNullOrEmpty(input) AndAlso Integer.TryParse(input, vid) Then
+                ' Check if the user with the specified VISITORS ID exists
+                If UserExists(vid) Then
+                    ' Collect updated data from user input or other sources
+                    Dim updatedName As String = InputBox("Enter updated name:")
+                    Dim updatedNationalID As String = InputBox("Enter updated national ID:")
+                    Dim updatedAddress As String = InputBox("Enter updated address:")
+                    Dim updatedContactNumber As Integer
+                    If Not Integer.TryParse(InputBox("Enter updated contact number:"), updatedContactNumber) Then
+                        MessageBox.Show("Invalid input for updated contact number.")
+                        Exit Sub
+                    End If
+                    Dim updatedSex As String = InputBox("Enter updated sex:")
+                    Dim updatedPersonToMeet As String = InputBox("Enter updated person to meet:")
+                    Dim updatedInTime As DateTime
+                    If Not DateTime.TryParse(InputBox("Enter updated in time:"), updatedInTime) Then
+                        MessageBox.Show("Invalid input for updated in time.")
+                        Exit Sub
+                    End If
+                    Dim updatedOutTime As DateTime
+                    If Not DateTime.TryParse(InputBox("Enter updated out time:"), updatedOutTime) Then
+                        MessageBox.Show("Invalid input for updated out time.")
+                        Exit Sub
+                    End If
+                    Dim updatedTotalPersons As Integer
+                    If Not Integer.TryParse(InputBox("Enter updated total persons:"), updatedTotalPersons) Then
+                        MessageBox.Show("Invalid input for updated total persons.")
+                        Exit Sub
+                    End If
+                    Dim updatedNoOfHours As Integer
+                    If Not Integer.TryParse(InputBox("Enter updated no of hours:"), updatedNoOfHours) Then
+                        MessageBox.Show("Invalid input for updated no of hours.")
+                        Exit Sub
+                    End If
+                    Dim updatedPurposeOfVisit As String = InputBox("Enter updated purpose of visit:")
+
+                    ' Call the UpdateUser function with the collected data
+                    UpdateUser(vid, updatedName, updatedNationalID, updatedAddress, updatedContactNumber, updatedSex, updatedPersonToMeet, updatedInTime, updatedOutTime, updatedTotalPersons, updatedNoOfHours, updatedPurposeOfVisit)
+                Else
+                    ' User does not exist
+                    MessageBox.Show($"User with VISITORS ID {vid} does not exist.")
+                End If
+            Else
+                ' Invalid input for VISITORS ID
+                MessageBox.Show("Invalid input for VISITORS ID.")
+            End If
+        Catch ex As Exception
+            MessageBox.Show($"Error during update operation: {ex.Message}")
+        End Try
+    End Sub
+
+    Private Sub UpdateUser(vid As Integer, name As String, nationalID As String, address As String, contactNumber As Integer, sex As String, personToMeet As String, inTime As DateTime, outTime As DateTime, totalPersons As Integer, noofhours As Integer, purposeOfVisit As String)
+        Try
+            ' Use your actual database path and provider
+            Dim connectionString As String = ""
+
+            Using conn As New OleDbConnection(connectionString)
+                conn.Open()
+
+                Dim query As String = "UPDATE VISITORS SET [NAME] = @Name, [NATIONAL ID] = @NationalID, [ADDRESS] = @Address, [CONTACT NUMBER] = @ContactNumber, [SEX] = @Sex, [PERSON TO MEET] = @PersonToMeet, [IN TIME] = @InTime, [OUT TIME] = @OutTime, [TOTAL PERSON] = @TotalPersons, [NO OF HOURS] = @NoOfHours, [PURPOSE TO VISIT] = @PurposeOfVisit WHERE [VISITORS ID] = @VisitorID"
+
+                Using command As New OleDbCommand(query, conn)
+                    ' Set parameters
+                    command.Parameters.AddWithValue("@Name", OleDbType.WChar).Value = name
+                    command.Parameters.AddWithValue("@NationalID", OleDbType.WChar).Value = nationalID
+                    command.Parameters.AddWithValue("@Address", OleDbType.WChar).Value = address
+                    command.Parameters.AddWithValue("@ContactNumber", OleDbType.Integer).Value = contactNumber
+                    command.Parameters.AddWithValue("@Sex", OleDbType.WChar).Value = sex
+                    command.Parameters.AddWithValue("@PersonToMeet", OleDbType.WChar).Value = personToMeet
+                    command.Parameters.AddWithValue("@InTime", OleDbType.Date).Value = inTime
+                    command.Parameters.AddWithValue("@OutTime", OleDbType.Date).Value = outTime
+                    command.Parameters.AddWithValue("@TotalPersons", OleDbType.Integer).Value = totalPersons
+                    command.Parameters.AddWithValue("@NoOfHours", OleDbType.Integer).Value = noofhours
+                    command.Parameters.AddWithValue("@PurposeOfVisit", OleDbType.WChar).Value = purposeOfVisit
+                    command.Parameters.AddWithValue("@VisitorID", OleDbType.Integer).Value = vid
+
+                    ' Execute the UPDATE query
+                    command.ExecuteNonQuery()
+                End Using
+            End Using
+
+            MessageBox.Show($"User with VISITORS ID {vid} updated successfully.")
+        Catch ex As Exception
+            MessageBox.Show($"Error updating user: {ex.Message}")
+        End Try
+    End Sub
+
+
 
 
 End Class
