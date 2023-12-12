@@ -53,7 +53,6 @@ Public Class HOMEPAGE_FOR_SECURITY
     Private Sub OutwardToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OutwardToolStripMenuItem.Click
         Dim uc As New UC_Outward()
         AddUserControl(uc)
-
     End Sub
 
 
