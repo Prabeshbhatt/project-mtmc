@@ -16,7 +16,7 @@ Public Class Uc_Visitors
     Dim connection As New OleDbConnection(connectionString)
     Private Sub save_Click(sender As Object, e As EventArgs) Handles save.Click
         Dim vid As Integer = If(Integer.TryParse(idno.Text, Nothing), Integer.Parse(idno.Text), 0)
-        Dim dateTimeValue As DateTime = DateTimePicker1.Value
+        Dim dateTimeValueStandard As DateTime = DateTimePicker1.Value
         Dim name As String = nmme.Text
         Dim nationalID As String = NID.Text
         Dim contactNumber As Integer = If(Integer.TryParse(cntt.Text, Nothing), Integer.Parse(cntt.Text), 0)
@@ -34,7 +34,7 @@ Public Class Uc_Visitors
             ' Check if an existing user with the same details exists
             If Not ExistingUserExists(nationalID, address, contactNumber, sex, name) Then
                 ' Save new user
-                SaveNewUser(vid, dateTimeValue, name, nationalID, address, contactNumber, sex, personToMeet, inTime, outTime, totalPersons, noofhours, purposeOfVisit)
+                SaveNewUser(vid, dateTimeValueStandard, name, nationalID, address, contactNumber, sex, personToMeet, inTime, outTime, totalPersons, noofhours, purposeOfVisit)
                 MessageBox.Show("New user created successfully.")
             Else
                 ' Duplicate existing user data and save as a new user
@@ -43,7 +43,7 @@ Public Class Uc_Visitors
                 If existingUserData.Rows.Count > 0 Then
                     ' Duplicate existing user data and save as a new user
                     Dim existingRow As DataRow = existingUserData.Rows(0)
-                    SaveNewUser(vid, dateTimeValue, name, existingRow("NATIONAL ID").ToString(), existingRow("ADDRESS").ToString(), Convert.ToInt32(existingRow("CONTACT NUMBER")), existingRow("SEX").ToString(), personToMeet, inTime, outTime, totalPersons, noofhours, purposeOfVisit)
+                    SaveNewUser(vid, dateTimeValueStandard, name, existingRow("NATIONAL ID").ToString(), existingRow("ADDRESS").ToString(), Convert.ToInt32(existingRow("CONTACT NUMBER")), existingRow("SEX").ToString(), personToMeet, inTime, outTime, totalPersons, noofhours, purposeOfVisit)
                     MessageBox.Show("Existing user data saved as a new user successfully.")
                 End If
             End If
@@ -115,11 +115,6 @@ Public Class Uc_Visitors
 
 
     Private Function GetExistingUserData(nationalID As String, address As String, contactNumber As String, sex As String) As DataTable
-        ' Your existing logic for getting existing user data
-        ' ...
-
-        ' For example, you may use the provided logic with OleDbConnection and OleDbCommand
-        ' Ensure you adjust the query and parameter names based on your MS Access database schema
         Dim dataTable As New DataTable()
         Using conn As New OleDbConnection("")
             conn.Open()
@@ -171,46 +166,6 @@ Public Class Uc_Visitors
     End Function
 
 
-    Private Sub Btndlte_Click(sender As Object, e As EventArgs) Handles Btnup.Click
-        If MessageBox.Show("Are you sure you want to Update this record?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
-            Try
-                conn.Open()
-                cmd = conn.CreateCommand
-                cmd.CommandType = CommandType.Text
-
-                Dim updateClauses As New List(Of String)
-
-                ' Use parameterized queries to prevent SQL injection
-                If DateTimePicker1.Value <> Nothing Then
-                    ' Exclude the date column from the update if DateTimePicker1 has a value
-                    updateClauses.Add("[DATE] = @Date")
-                    cmd.Parameters.AddWithValue("@Date", DateTimePicker1.Value.Date)
-                End If
-
-                If Not String.IsNullOrEmpty(nmme.Text) Then
-                    updateClauses.Add("[NAME] = '" & nmme.Text & "'")
-                End If
-
-                ' Add other columns to updateClauses as needed
-
-                Dim updateClause = String.Join(", ", updateClauses)
-                If updateClause <> "" Then
-                    cmd.CommandText = "UPDATE VISITORS SET " & updateClause & " WHERE [ID NUMBER] = " & idno.Text
-                    cmd.ExecuteNonQuery()
-                    MessageBox.Show("Data updated successfully.")
-                Else
-                    MessageBox.Show("No fields provided for update.")
-                End If
-
-            Catch ex As Exception
-                MessageBox.Show("Error: " & ex.Message)
-            Finally
-                conn.Close()
-            End Try
-        Else
-            MessageBox.Show("Data Update Rejected")
-        End If
-    End Sub
 
     Private Sub Btndt_Click(sender As Object, e As EventArgs) Handles Btndt.Click
         Try
@@ -240,6 +195,69 @@ Public Class Uc_Visitors
             End Using
         Catch ex As Exception
             MessageBox.Show("Error: " & ex.Message)
+        End Try
+    End Sub
+
+    Private Sub Btnupd_Click(sender As Object, e As EventArgs) Handles Btnupd.Click
+        ' Extract data from form controls
+        Dim vid As Integer = If(Integer.TryParse(idno.Text, Nothing), Integer.Parse(idno.Text), 0)
+        Dim dateTimeValue As DateTime = DateTimePicker1.Value
+        Dim name As String = nmme.Text
+        Dim nationalID As String = NID.Text
+        Dim contactNumber As Integer = If(Integer.TryParse(cntt.Text, Nothing), Integer.Parse(cntt.Text), 0)
+        Dim inTime As DateTime = DateTime.Parse(intme.Text)
+        Dim outTime As DateTime = DateTime.Parse(outtme.Text)
+        Dim totalPersons As Integer = If(Integer.TryParse(tper.Text, Nothing), Integer.Parse(tper.Text), 0)
+        Dim noofhours As Integer = If(Integer.TryParse(nhrs.Text, Nothing), Integer.Parse(nhrs.Text), 0)
+        Dim purposeOfVisit As String = pov.Text
+        Dim personToMeet As String = prsnn.Text
+        Dim address As String = addd.Text
+        Dim sex As String = GetSelectedRadioButtonText()
+
+        ' Validate and update data
+        If ValidateData(name, nationalID) Then
+            ' Check if an existing user with the same details exists
+            If ExistingUserExists(nationalID, address, contactNumber, sex, name) Then
+                ' Update user
+                UpdateUser(vid, dateTimeValue, name, nationalID, address, contactNumber, sex, personToMeet, inTime, outTime, totalPersons, noofhours, purposeOfVisit)
+                MessageBox.Show("User data updated successfully.")
+            Else
+                ' No matching user found
+                MessageBox.Show("User with the provided details not found.")
+            End If
+        End If
+    End Sub
+
+    Private Sub UpdateUser(vid As Integer, dateTimeValue As DateTime, name As String, nationalID As String, address As String, contactNumber As Integer, sex As String, personToMeet As String, inTime As DateTime, outTime As DateTime, totalPersons As Integer, noofhours As Integer, purposeOfVisit As String)
+        Try
+            Using conn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\MTMC\source\repos\project-mtmc\project-mtmc\DATABASES\VISITORS.accdb")
+                conn.Open()
+
+                ' Query to update user data
+                Dim query As String = "UPDATE VISITORS SET [DATE] = ?, [NAME] = ?, [ADDRESS] = ?, [CONTACT NUMBER] = ?, [SEX] = ?, [PERSON TO MEET] = ?, [IN TIME] = ?, [OUT TIME] = ?, [TOTAL PERSON] = ?, [NO OF HOURS] = ?, [PURPOSE TO VISIT] = ? WHERE [VISITORS ID] = ?"
+
+                Using command As New OleDbCommand(query, conn)
+                    ' Set parameters
+                    command.Parameters.AddWithValue("@DateTimeValue", OleDbType.Date).Value = dateTimeValue
+                    command.Parameters.AddWithValue("@Name", OleDbType.WChar).Value = name
+                    command.Parameters.AddWithValue("@Address", OleDbType.WChar).Value = address
+                    command.Parameters.AddWithValue("@ContactNumber", OleDbType.Integer).Value = contactNumber
+                    command.Parameters.AddWithValue("@Sex", OleDbType.WChar).Value = sex
+                    command.Parameters.AddWithValue("@PersonToMeet", OleDbType.WChar).Value = personToMeet
+                    command.Parameters.AddWithValue("@InTime", OleDbType.Date).Value = inTime
+                    command.Parameters.AddWithValue("@OutTime", OleDbType.Date).Value = outTime
+                    command.Parameters.AddWithValue("@TotalPersons", OleDbType.Integer).Value = totalPersons
+                    command.Parameters.AddWithValue("@NoOfHours", OleDbType.Integer).Value = noofhours
+                    command.Parameters.AddWithValue("@PurposeOfVisit", OleDbType.WChar).Value = purposeOfVisit
+                    command.Parameters.AddWithValue("@VisitorID", OleDbType.Integer).Value = vid ' Use this parameter for the WHERE clause
+
+                    ' Execute the update query
+                    command.ExecuteNonQuery()
+                End Using
+            End Using
+        Catch ex As Exception
+            ' Handle exceptions (e.g., log the error, show a message)
+            MessageBox.Show("Error updating user: " & ex.Message)
         End Try
     End Sub
 End Class
