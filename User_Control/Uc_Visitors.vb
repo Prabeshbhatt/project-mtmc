@@ -167,37 +167,6 @@ Public Class Uc_Visitors
 
 
 
-    Private Sub Btndt_Click(sender As Object, e As EventArgs) Handles Btndt.Click
-        Try
-            Using conn As New OleDbConnection(connectionString)
-                conn.Open()
-
-                ' Check if the record exists
-                Dim checkSql = "SELECT COUNT(*) FROM VISITORS WHERE [ID NUMBER] = @idnum"
-                Using checkCmd As New OleDbCommand(checkSql, conn)
-                    checkCmd.Parameters.AddWithValue("@idnum", idno.Text)
-                    Dim rowCount = Convert.ToInt32(checkCmd.ExecuteScalar)
-
-                    ' If the record exists, delete it; otherwise, show a message
-                    If MessageBox.Show("Are you sure you want to delete this record?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
-                    End If
-                    If rowCount > 0 Then
-                        Dim deleteSql = "DELETE FROM VISITORS WHERE [ID NUMBER] = @idnum"
-                        Using cmd As New OleDbCommand(deleteSql, conn)
-                            cmd.Parameters.AddWithValue("@idnum", idno.Text)
-                            cmd.ExecuteNonQuery()
-                            MessageBox.Show("Data deleted successfully.")
-                        End Using
-                    Else
-                        MessageBox.Show("Record with ID NUMBER  " & idno.Text & " does not exist.")
-                    End If
-                End Using
-            End Using
-        Catch ex As Exception
-            MessageBox.Show("Error: " & ex.Message)
-        End Try
-    End Sub
-
     Private Sub Btnupd_Click(sender As Object, e As EventArgs) Handles Btnupd.Click
         ' Extract data from form controls
         Dim vid As Integer = If(Integer.TryParse(idno.Text, Nothing), Integer.Parse(idno.Text), 0)
@@ -227,6 +196,8 @@ Public Class Uc_Visitors
             End If
         End If
     End Sub
+
+
 
     Private Sub UpdateUser(vid As Integer, dateTimeValue As DateTime, name As String, nationalID As String, address As String, contactNumber As Integer, sex As String, personToMeet As String, inTime As DateTime, outTime As DateTime, totalPersons As Integer, noofhours As Integer, purposeOfVisit As String)
         Try
