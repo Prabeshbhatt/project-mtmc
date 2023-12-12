@@ -138,7 +138,7 @@ Public Class Uc_Visitors
     Private Sub SaveNewUser(vid As Integer, dateTimeValue As DateTime, name As String, nationalID As String, address As String, contactNumber As Integer, sex As String, personToMeet As String, inTime As DateTime, outTime As DateTime, totalPersons As Integer, noofhours As Integer, purposeOfVisit As String)
         Using conn As New OleDbConnection("")
             conn.Open()
-            Dim query As String = "INSERT INTO VISITORS ([VISITORS ID], [DATE], [NAME], [NATIONAL ID], [ADDRESS], [CONTACT NUMBER], [SEX], [PERSON TO MEET], [IN TIME], [OUT TIME], [TOTAL PERSON], [NO OF HOURS], [PURPOSE TO VISIT]) VALUES (@VisitorID,@DateTimeValue ,@Name, @NationalID, @Address, @ContactNumber, @Sex, @PersonToMeet, @InTime, @OutTime, @TotalPersons, @NoOfHours, @PurposeOfVisit)"
+            Dim query As String = "INSERT INTO VISITORS ([VISITORS ID], [DATE], [NAME], [NATIONAL ID], [ADDRESS], [CONTACT NUMBER], [SEX], [PERSON TO MEET], [IN TIME], [OUT TIME], [TOTAL PERSON], [NO OF HOURS], [PURPOSE TO VISIT]) VALUES (@VisitorID, @DateTimeValue ,@Name, @NationalID, @Address, @ContactNumber, @Sex, @PersonToMeet, @InTime, @OutTime, @TotalPersons, @NoOfHours, @PurposeOfVisit)"
             Using command As New OleDbCommand(query, conn)
                 command.Parameters.AddWithValue("@VisitorID", OleDbType.Integer).Value = vid
                 command.Parameters.AddWithValue("@DateTimeValue", OleDbType.Date).Value = dateTimeValue

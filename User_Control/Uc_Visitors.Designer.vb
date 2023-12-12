@@ -551,6 +551,7 @@ Partial Class Uc_Visitors
         DateTimePicker1.Name = "DateTimePicker1"
         DateTimePicker1.Size = New Size(300, 31)
         DateTimePicker1.TabIndex = 117
+        DateTimePicker1.Value = New Date(2023, 12, 12, 0, 0, 0, 0)
         ' 
         ' Uc_Visitors
         ' 
