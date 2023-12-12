@@ -10,4 +10,8 @@
         AddUserControl(uc)
 
     End Sub
+
+    Private Sub MaterialMovementToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MaterialMovementToolStripMenuItem.Click
+
+    End Sub
 End Class

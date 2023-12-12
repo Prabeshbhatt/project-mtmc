@@ -24,14 +24,14 @@ Partial Class Form1
     Private Sub InitializeComponent()
         components = New ComponentModel.Container()
         Dim resources As ComponentModel.ComponentResourceManager = New ComponentModel.ComponentResourceManager(GetType(Form1))
-        Dim CustomizableEdges9 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges10 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges11 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges12 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges13 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges14 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges15 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges16 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges1 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges2 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges3 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges4 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges5 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges6 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges7 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges8 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Guna2BorderlessForm1 = New Guna.UI2.WinForms.Guna2BorderlessForm(components)
         Panel1 = New Panel()
         Button2 = New Button()
@@ -136,7 +136,7 @@ Partial Class Form1
         Guna2Button4.BorderColor = Color.SlateBlue
         Guna2Button4.CheckedState.CustomBorderColor = Color.Red
         Guna2Button4.CustomBorderThickness = New Padding(0, 0, 0, 2)
-        Guna2Button4.CustomizableEdges = CustomizableEdges9
+        Guna2Button4.CustomizableEdges = CustomizableEdges1
         Guna2Button4.DisabledState.BorderColor = Color.DarkGray
         Guna2Button4.DisabledState.CustomBorderColor = Color.DarkGray
         Guna2Button4.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
@@ -147,7 +147,7 @@ Partial Class Form1
         Guna2Button4.HoverState.CustomBorderColor = Color.Red
         Guna2Button4.Location = New Point(619, 2)
         Guna2Button4.Name = "Guna2Button4"
-        Guna2Button4.ShadowDecoration.CustomizableEdges = CustomizableEdges10
+        Guna2Button4.ShadowDecoration.CustomizableEdges = CustomizableEdges2
         Guna2Button4.Size = New Size(209, 68)
         Guna2Button4.TabIndex = 3
         Guna2Button4.Text = "Lost and Found"
@@ -157,7 +157,7 @@ Partial Class Form1
         Guna2Button3.BorderColor = Color.SlateBlue
         Guna2Button3.CheckedState.CustomBorderColor = Color.Red
         Guna2Button3.CustomBorderThickness = New Padding(0, 0, 0, 2)
-        Guna2Button3.CustomizableEdges = CustomizableEdges11
+        Guna2Button3.CustomizableEdges = CustomizableEdges3
         Guna2Button3.DisabledState.BorderColor = Color.DarkGray
         Guna2Button3.DisabledState.CustomBorderColor = Color.DarkGray
         Guna2Button3.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
@@ -168,7 +168,7 @@ Partial Class Form1
         Guna2Button3.HoverState.CustomBorderColor = Color.Red
         Guna2Button3.Location = New Point(414, 3)
         Guna2Button3.Name = "Guna2Button3"
-        Guna2Button3.ShadowDecoration.CustomizableEdges = CustomizableEdges12
+        Guna2Button3.ShadowDecoration.CustomizableEdges = CustomizableEdges4
         Guna2Button3.Size = New Size(209, 68)
         Guna2Button3.TabIndex = 2
         Guna2Button3.Text = "Courier"
@@ -178,7 +178,7 @@ Partial Class Form1
         Guna2Button2.BorderColor = Color.SlateBlue
         Guna2Button2.CheckedState.CustomBorderColor = Color.Red
         Guna2Button2.CustomBorderThickness = New Padding(0, 0, 0, 2)
-        Guna2Button2.CustomizableEdges = CustomizableEdges13
+        Guna2Button2.CustomizableEdges = CustomizableEdges5
         Guna2Button2.DisabledState.BorderColor = Color.DarkGray
         Guna2Button2.DisabledState.CustomBorderColor = Color.DarkGray
         Guna2Button2.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
@@ -189,7 +189,7 @@ Partial Class Form1
         Guna2Button2.HoverState.CustomBorderColor = Color.Red
         Guna2Button2.Location = New Point(215, 3)
         Guna2Button2.Name = "Guna2Button2"
-        Guna2Button2.ShadowDecoration.CustomizableEdges = CustomizableEdges14
+        Guna2Button2.ShadowDecoration.CustomizableEdges = CustomizableEdges6
         Guna2Button2.Size = New Size(209, 68)
         Guna2Button2.TabIndex = 1
         Guna2Button2.Text = "Visitors"
@@ -199,7 +199,7 @@ Partial Class Form1
         Guna2Button1.BorderColor = Color.SlateBlue
         Guna2Button1.CheckedState.CustomBorderColor = Color.Red
         Guna2Button1.CustomBorderThickness = New Padding(0, 0, 0, 2)
-        Guna2Button1.CustomizableEdges = CustomizableEdges15
+        Guna2Button1.CustomizableEdges = CustomizableEdges7
         Guna2Button1.DisabledState.BorderColor = Color.DarkGray
         Guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray
         Guna2Button1.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
@@ -210,7 +210,7 @@ Partial Class Form1
         Guna2Button1.HoverState.CustomBorderColor = Color.Red
         Guna2Button1.Location = New Point(0, 2)
         Guna2Button1.Name = "Guna2Button1"
-        Guna2Button1.ShadowDecoration.CustomizableEdges = CustomizableEdges16
+        Guna2Button1.ShadowDecoration.CustomizableEdges = CustomizableEdges8
         Guna2Button1.Size = New Size(209, 68)
         Guna2Button1.TabIndex = 0
         Guna2Button1.Text = "Deployment"
@@ -224,7 +224,7 @@ Partial Class Form1
         MenuStrip1.Items.AddRange(New ToolStripItem() {MaterialMovementToolStripMenuItem})
         MenuStrip1.Location = New Point(857, 19)
         MenuStrip1.Name = "MenuStrip1"
-        MenuStrip1.Size = New Size(224, 31)
+        MenuStrip1.Size = New Size(404, 32)
         MenuStrip1.TabIndex = 4
         MenuStrip1.Text = "MenuStrip1"
         ' 
@@ -236,7 +236,7 @@ Partial Class Form1
         MaterialMovementToolStripMenuItem.Font = New Font("Century Gothic", 10F, FontStyle.Bold, GraphicsUnit.Point)
         MaterialMovementToolStripMenuItem.ForeColor = Color.White
         MaterialMovementToolStripMenuItem.Name = "MaterialMovementToolStripMenuItem"
-        MaterialMovementToolStripMenuItem.Size = New Size(216, 27)
+        MaterialMovementToolStripMenuItem.Size = New Size(216, 28)
         MaterialMovementToolStripMenuItem.Text = "Material Movement"
         ' 
         ' InwardToolStripMenuItem
@@ -244,7 +244,7 @@ Partial Class Form1
         InwardToolStripMenuItem.BackColor = Color.SlateBlue
         InwardToolStripMenuItem.ForeColor = Color.White
         InwardToolStripMenuItem.Name = "InwardToolStripMenuItem"
-        InwardToolStripMenuItem.Size = New Size(193, 34)
+        InwardToolStripMenuItem.Size = New Size(270, 34)
         InwardToolStripMenuItem.Text = "Inward"
         ' 
         ' OutwardToolStripMenuItem
@@ -252,7 +252,7 @@ Partial Class Form1
         OutwardToolStripMenuItem.BackColor = Color.SlateBlue
         OutwardToolStripMenuItem.ForeColor = Color.White
         OutwardToolStripMenuItem.Name = "OutwardToolStripMenuItem"
-        OutwardToolStripMenuItem.Size = New Size(193, 34)
+        OutwardToolStripMenuItem.Size = New Size(270, 34)
         OutwardToolStripMenuItem.Text = "Outward"
         ' 
         ' Panel3
