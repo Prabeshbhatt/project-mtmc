@@ -230,7 +230,7 @@ Public Class Uc_Visitors
 
     Private Sub UpdateUser(vid As Integer, dateTimeValue As DateTime, name As String, nationalID As String, address As String, contactNumber As Integer, sex As String, personToMeet As String, inTime As DateTime, outTime As DateTime, totalPersons As Integer, noofhours As Integer, purposeOfVisit As String)
         Try
-            Using conn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\MTMC\source\repos\project-mtmc\project-mtmc\DATABASES\VISITORS.accdb")
+            Using conn As New OleDbConnection("")
                 conn.Open()
 
                 ' Query to update user data
