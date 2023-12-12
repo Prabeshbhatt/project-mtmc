@@ -75,6 +75,7 @@ Partial Class Form1
         ' 
         ' Button2
         ' 
+        Button2.Anchor = AnchorStyles.Top Or AnchorStyles.Right
         Button2.BackgroundImage = CType(resources.GetObject("Button2.BackgroundImage"), Image)
         Button2.BackgroundImageLayout = ImageLayout.Zoom
         Button2.FlatStyle = FlatStyle.Flat
@@ -86,6 +87,7 @@ Partial Class Form1
         ' 
         ' Button1
         ' 
+        Button1.Anchor = AnchorStyles.Top Or AnchorStyles.Right
         Button1.BackColor = Color.White
         Button1.BackgroundImage = CType(resources.GetObject("Button1.BackgroundImage"), Image)
         Button1.BackgroundImageLayout = ImageLayout.Zoom
@@ -98,7 +100,7 @@ Partial Class Form1
         ' 
         ' Label1
         ' 
-        Label1.Anchor = AnchorStyles.None
+        Label1.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
         Label1.Font = New Font("Elephant", 15.9999981F, FontStyle.Bold, GraphicsUnit.Point)
         Label1.ForeColor = Color.Coral
         Label1.Location = New Point(285, 6)
@@ -120,6 +122,7 @@ Partial Class Form1
         ' 
         ' Panel2
         ' 
+        Panel2.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
         Panel2.BackColor = Color.SlateBlue
         Panel2.Controls.Add(Guna2Button4)
         Panel2.Controls.Add(Guna2Button3)
@@ -133,6 +136,7 @@ Partial Class Form1
         ' 
         ' Guna2Button4
         ' 
+        Guna2Button4.Anchor = AnchorStyles.Top
         Guna2Button4.BorderColor = Color.SlateBlue
         Guna2Button4.CheckedState.CustomBorderColor = Color.Red
         Guna2Button4.CustomBorderThickness = New Padding(0, 0, 0, 2)
@@ -154,6 +158,7 @@ Partial Class Form1
         ' 
         ' Guna2Button3
         ' 
+        Guna2Button3.Anchor = AnchorStyles.Top
         Guna2Button3.BorderColor = Color.SlateBlue
         Guna2Button3.CheckedState.CustomBorderColor = Color.Red
         Guna2Button3.CustomBorderThickness = New Padding(0, 0, 0, 2)
@@ -175,6 +180,7 @@ Partial Class Form1
         ' 
         ' Guna2Button2
         ' 
+        Guna2Button2.Anchor = AnchorStyles.Top
         Guna2Button2.BorderColor = Color.SlateBlue
         Guna2Button2.CheckedState.CustomBorderColor = Color.Red
         Guna2Button2.CustomBorderThickness = New Padding(0, 0, 0, 2)
@@ -196,6 +202,7 @@ Partial Class Form1
         ' 
         ' Guna2Button1
         ' 
+        Guna2Button1.Anchor = AnchorStyles.Top
         Guna2Button1.BorderColor = Color.SlateBlue
         Guna2Button1.CheckedState.CustomBorderColor = Color.Red
         Guna2Button1.CustomBorderThickness = New Padding(0, 0, 0, 2)
@@ -217,6 +224,7 @@ Partial Class Form1
         ' 
         ' MenuStrip1
         ' 
+        MenuStrip1.Anchor = AnchorStyles.Top
         MenuStrip1.BackColor = Color.SlateBlue
         MenuStrip1.Dock = DockStyle.None
         MenuStrip1.Font = New Font("Century Gothic", 10F, FontStyle.Bold, GraphicsUnit.Point)
@@ -224,7 +232,7 @@ Partial Class Form1
         MenuStrip1.Items.AddRange(New ToolStripItem() {MaterialMovementToolStripMenuItem})
         MenuStrip1.Location = New Point(857, 19)
         MenuStrip1.Name = "MenuStrip1"
-        MenuStrip1.Size = New Size(404, 32)
+        MenuStrip1.Size = New Size(224, 31)
         MenuStrip1.TabIndex = 4
         MenuStrip1.Text = "MenuStrip1"
         ' 
@@ -236,7 +244,7 @@ Partial Class Form1
         MaterialMovementToolStripMenuItem.Font = New Font("Century Gothic", 10F, FontStyle.Bold, GraphicsUnit.Point)
         MaterialMovementToolStripMenuItem.ForeColor = Color.White
         MaterialMovementToolStripMenuItem.Name = "MaterialMovementToolStripMenuItem"
-        MaterialMovementToolStripMenuItem.Size = New Size(216, 28)
+        MaterialMovementToolStripMenuItem.Size = New Size(216, 27)
         MaterialMovementToolStripMenuItem.Text = "Material Movement"
         ' 
         ' InwardToolStripMenuItem
@@ -244,7 +252,7 @@ Partial Class Form1
         InwardToolStripMenuItem.BackColor = Color.SlateBlue
         InwardToolStripMenuItem.ForeColor = Color.White
         InwardToolStripMenuItem.Name = "InwardToolStripMenuItem"
-        InwardToolStripMenuItem.Size = New Size(270, 34)
+        InwardToolStripMenuItem.Size = New Size(193, 34)
         InwardToolStripMenuItem.Text = "Inward"
         ' 
         ' OutwardToolStripMenuItem
@@ -252,7 +260,7 @@ Partial Class Form1
         OutwardToolStripMenuItem.BackColor = Color.SlateBlue
         OutwardToolStripMenuItem.ForeColor = Color.White
         OutwardToolStripMenuItem.Name = "OutwardToolStripMenuItem"
-        OutwardToolStripMenuItem.Size = New Size(270, 34)
+        OutwardToolStripMenuItem.Size = New Size(193, 34)
         OutwardToolStripMenuItem.Text = "Outward"
         ' 
         ' Panel3

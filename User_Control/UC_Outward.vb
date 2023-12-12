@@ -204,4 +204,8 @@ Public Class UC_Outward
     Private Sub GtePssType_SelectedIndexChanged(sender As Object, e As EventArgs) Handles GtePssType.SelectedIndexChanged
 
     End Sub
+
+    Private Sub UC_Outward_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class
