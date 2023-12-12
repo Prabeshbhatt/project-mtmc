@@ -234,4 +234,88 @@ Public Class Uc_Visitors
             MessageBox.Show("Error updating user: " & ex.Message)
         End Try
     End Sub
+
+
+
+    Private Sub Btndlt_Click(sender As Object, e As EventArgs) Handles Btndlt.Click
+        Try
+            ' Get the VISITORS ID from user input or another source during runtime
+            Dim vid As Integer
+            Dim input As String = InputBox("Enter VISITORS ID to delete:")
+
+            If Not String.IsNullOrEmpty(input) AndAlso Integer.TryParse(input, vid) Then
+                ' Check if the user with the specified VISITORS ID exists
+                If UserExists(vid) Then
+                    ' User exists, proceed with deletion
+                    DeleteUser(vid)
+                Else
+                    ' User does not exist
+                    MessageBox.Show($"User with VISITORS ID {vid} does not exist.")
+                End If
+            Else
+                ' Invalid input for VISITORS ID
+                MessageBox.Show("Invalid input for VISITORS ID.")
+            End If
+        Catch ex As Exception
+            MessageBox.Show($"Error during delete operation: {ex.Message}")
+        End Try
+    End Sub
+
+    Private Function UserExists(vid As Integer) As Boolean
+        Try
+            Using conn As New OleDbConnection("")
+                conn.Open()
+
+                ' Use a parameterized SELECT query to check if the user exists
+                Dim query As String = "SELECT COUNT(*) FROM VISITORS WHERE [VISITORS ID] = @VisitorID"
+
+                Using command As New OleDbCommand(query, conn)
+                    ' Set parameter
+                    command.Parameters.AddWithValue("@VisitorID", OleDbType.Integer).Value = vid
+
+                    ' Execute the SELECT query
+                    Dim count As Integer = Convert.ToInt32(command.ExecuteScalar())
+
+                    ' If count is greater than 0, user exists
+                    Return count > 0
+                End Using
+            End Using
+        Catch ex As Exception
+            MessageBox.Show($"Error checking user existence: {ex.Message}")
+            Return False
+        End Try
+    End Function
+
+    Private Sub DeleteUser(vid As Integer)
+        Try
+            ' Check if the user with the specified VISITORS ID exists
+            If UserExists(vid) Then
+                Using conn As New OleDbConnection("")
+                    conn.Open()
+
+                    ' Use a parameterized DELETE query
+                    Dim query As String = "DELETE FROM VISITORS WHERE [VISITORS ID] = @VisitorID"
+
+                    Using command As New OleDbCommand(query, conn)
+                        ' Set parameter
+                        command.Parameters.AddWithValue("@VisitorID", OleDbType.Integer).Value = vid
+
+                        ' Execute the DELETE query
+                        command.ExecuteNonQuery()
+                    End Using
+                End Using
+
+                MessageBox.Show($"User with VISITORS ID {vid} deleted successfully.")
+            Else
+                MessageBox.Show($"User with VISITORS ID {vid} does not exist.")
+            End If
+        Catch ex As Exception
+            MessageBox.Show($"Error deleting user: {ex.Message}")
+        End Try
+    End Sub
+
+
 End Class
+
+
+
