@@ -22,7 +22,7 @@ Partial Class HOMEPAGE_FOR_SECURITY
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(HOMEPAGE_FOR_SECURITY))
+        Dim resources As ComponentModel.ComponentResourceManager = New ComponentModel.ComponentResourceManager(GetType(HOMEPAGE_FOR_SECURITY))
         Panelmenu = New Panel()
         PictureBox6 = New PictureBox()
         PictureBox5 = New PictureBox()
@@ -47,6 +47,7 @@ Partial Class HOMEPAGE_FOR_SECURITY
         Visit = New Button()
         Deploy = New Button()
         FileSystemWatcher1 = New IO.FileSystemWatcher()
+        Button2 = New Button()
         Panelmenu.SuspendLayout()
         CType(PictureBox6, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox5, ComponentModel.ISupportInitialize).BeginInit()
@@ -54,6 +55,7 @@ Partial Class HOMEPAGE_FOR_SECURITY
         CType(PictureBox3, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         MenuStrip1.SuspendLayout()
+        Panel3.SuspendLayout()
         Panel2.SuspendLayout()
         CType(PictureBox7, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
@@ -198,6 +200,7 @@ Partial Class HOMEPAGE_FOR_SECURITY
         Panel3.AutoSize = True
         Panel3.BackColor = Color.SkyBlue
         Panel3.BackgroundImageLayout = ImageLayout.None
+        Panel3.Controls.Add(Button2)
         Panel3.ForeColor = SystemColors.ActiveCaptionText
         Panel3.Location = New Point(324, 63)
         Panel3.Name = "Panel3"
@@ -344,6 +347,15 @@ Partial Class HOMEPAGE_FOR_SECURITY
         FileSystemWatcher1.EnableRaisingEvents = True
         FileSystemWatcher1.SynchronizingObject = Me
         ' 
+        ' Button2
+        ' 
+        Button2.Location = New Point(371, 247)
+        Button2.Name = "Button2"
+        Button2.Size = New Size(112, 34)
+        Button2.TabIndex = 0
+        Button2.Text = "Button2"
+        Button2.UseVisualStyleBackColor = True
+        ' 
         ' HOMEPAGE_FOR_SECURITY
         ' 
         AutoScaleDimensions = New SizeF(10F, 25F)
@@ -365,6 +377,7 @@ Partial Class HOMEPAGE_FOR_SECURITY
         CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
         MenuStrip1.ResumeLayout(False)
         MenuStrip1.PerformLayout()
+        Panel3.ResumeLayout(False)
         Panel2.ResumeLayout(False)
         CType(PictureBox7, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
@@ -398,4 +411,5 @@ Partial Class HOMEPAGE_FOR_SECURITY
     Friend WithEvents ToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem2 As ToolStripMenuItem
     Friend WithEvents PictureBox7 As PictureBox
+    Friend WithEvents Button2 As Button
 End Class
