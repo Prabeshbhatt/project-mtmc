@@ -208,7 +208,7 @@ Public Class Uc_Visitors
                 conn.Open()
 
                 ' Query to update user data
-                Dim query As String = "UPDATE VISITORS SET [DATE] = ?, [NAME] = ?, [ADDRESS] = ?, [CONTACT NUMBER] = ?, [SEX] = ?, [PERSON TO MEET] = ?, [IN TIME] = ?, [OUT TIME] = ?, [TOTAL PERSON] = ?, [NO OF HOURS] = ?, [PURPOSE TO VISIT] = ? WHERE [VISITORS ID] = ?"
+                Dim query As String = "UPDATE VISITORS SET [DATE] = DateTimeValue, [NAME] =Name , [ADDRESS] = Address, [CONTACT NUMBER] = ContactNumber, [SEX] = Sex, [PERSON TO MEET] = PersonToMeet, [IN TIME] = InTime, [OUT TIME] = OutTime, [TOTAL PERSON] = TotalPersons, [NO OF HOURS] = @NoOfHours, [PURPOSE TO VISIT] = PurposeOfVisit WHERE [VISITORS ID] = VisitorID"
 
                 Using command As New OleDbCommand(query, conn)
                     ' Set parameters
