@@ -94,7 +94,6 @@ Public Class UC_Outward
         GtePssType.Text = ""
         RtrnDte.Value = DateTime.Now()
 
-        \
         RaiseEvent SaveButtonClick(Me, EventArgs.Empty)
     End Sub
     Private Function Datapresent(GatePassNo As Integer) As Boolean
@@ -220,11 +219,6 @@ Public Class UC_Outward
 
         ' Close the database connection
         conn.Close()
-    End Sub
-
-
-    Private Sub UC_Outward_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
     End Sub
 
     Private Sub GtePssType_SelectedIndexChanged(sender As Object, e As EventArgs) Handles GtePssType.SelectedIndexChanged
