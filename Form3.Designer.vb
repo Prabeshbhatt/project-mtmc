@@ -48,7 +48,7 @@ Partial Class Lost_Found
         ' 
         ' Panel1
         ' 
-        Panel1.BackColor = Color.SkyBlue
+        Panel1.BackColor = Color.FromArgb(CByte(255), CByte(90), CByte(71))
         Panel1.Controls.Add(Button3)
         Panel1.Controls.Add(Button2)
         Panel1.Controls.Add(Button1)
@@ -69,9 +69,9 @@ Partial Class Lost_Found
         Panel1.Controls.Add(Label3)
         Panel1.Controls.Add(Label2)
         Panel1.Controls.Add(Label1)
-        Panel1.Location = New Point(0, 1)
+        Panel1.Location = New Point(34, 26)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(801, 476)
+        Panel1.Size = New Size(929, 578)
         Panel1.TabIndex = 0
         ' 
         ' Button3
@@ -240,8 +240,8 @@ Partial Class Lost_Found
         ' 
         AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
-        BackColor = Color.SkyBlue
-        ClientSize = New Size(800, 470)
+        BackColor = Color.Indigo
+        ClientSize = New Size(987, 616)
         Controls.Add(Panel1)
         FormBorderStyle = FormBorderStyle.None
         Name = "Lost_Found"
