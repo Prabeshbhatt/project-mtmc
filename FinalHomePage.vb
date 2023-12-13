@@ -1,4 +1,4 @@
-﻿Public Class Form1
+﻿Public Class FinalHomePage
     Private Sub AddUserControl(ByVal userControl As UserControl)
         userControl.Dock = DockStyle.Fill
         Panel3.Controls.Clear()
@@ -45,5 +45,11 @@
     Private Sub InwardToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles InwardToolStripMenuItem.Click
         Dim uc As New Uc_Inward()
         AddUserControl(uc)
+    End Sub
+
+    Private Sub Button2_click(sender As Object, e As EventArgs) Handles Button2.Click
+        Dim profilepage As New ProfilePage
+        profilepage.Show()
+        Me.Hide()
     End Sub
 End Class

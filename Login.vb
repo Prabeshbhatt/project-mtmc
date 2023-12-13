@@ -27,8 +27,8 @@ Public Class Login
                     Using reader As OleDbDataReader = cmd.ExecuteReader()
                         If reader.HasRows Then
                             MessageBox.Show("Login Successful!")
-                            Dim nextform As New HOMEPAGE_FOR_SECURITY
-                            nextform.Show()
+                        Dim nextform As New FinalHomePage
+                        nextform.Show()
                             Me.Hide()
                             ' Add code to navigate to the next form or perform other actions upon successful login
                         Else
