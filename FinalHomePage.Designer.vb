@@ -101,7 +101,7 @@ Partial Class FinalHomePage
         ' Label1
         ' 
         Label1.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
-        Label1.Font = New Font("Elephant", 15.9999981F, FontStyle.Bold, GraphicsUnit.Point)
+        Label1.Font = New Font("Elephant", 18F, FontStyle.Bold, GraphicsUnit.Point)
         Label1.ForeColor = Color.Coral
         Label1.Location = New Point(285, 6)
         Label1.Name = "Label1"
