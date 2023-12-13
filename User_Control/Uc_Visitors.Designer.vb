@@ -95,6 +95,7 @@ Partial Class Uc_Visitors
         save.ForeColor = Color.White
         save.Location = New Point(1081, 637)
         save.Name = "save"
+        save.PressedColor = Color.GhostWhite
         save.ShadowDecoration.CustomizableEdges = CustomizableEdges2
         save.Size = New Size(140, 60)
         save.TabIndex = 116
@@ -539,6 +540,7 @@ Partial Class Uc_Visitors
         Btndlt.ForeColor = Color.White
         Btndlt.Location = New Point(760, 637)
         Btndlt.Name = "Btndlt"
+        Btndlt.PressedColor = Color.GhostWhite
         Btndlt.ShadowDecoration.CustomizableEdges = CustomizableEdges26
         Btndlt.Size = New Size(140, 60)
         Btndlt.TabIndex = 119
@@ -556,6 +558,7 @@ Partial Class Uc_Visitors
         Btnupd.ForeColor = Color.White
         Btnupd.Location = New Point(921, 637)
         Btnupd.Name = "Btnupd"
+        Btnupd.PressedColor = Color.GhostWhite
         Btnupd.ShadowDecoration.CustomizableEdges = CustomizableEdges28
         Btnupd.Size = New Size(140, 60)
         Btnupd.TabIndex = 118
