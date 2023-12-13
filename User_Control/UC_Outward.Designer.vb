@@ -59,7 +59,7 @@ Partial Class UC_Outward
         GtePssType.Font = New Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point)
         GtePssType.FormattingEnabled = True
         GtePssType.Items.AddRange(New Object() {"NRGP", "RGP"})
-        GtePssType.Location = New Point(125, 77)
+        GtePssType.Location = New Point(132, 222)
         GtePssType.Name = "GtePssType"
         GtePssType.Size = New Size(310, 38)
         GtePssType.TabIndex = 64
@@ -68,7 +68,7 @@ Partial Class UC_Outward
         ' 
         RtrnDte.Anchor = AnchorStyles.None
         RtrnDte.Font = New Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point)
-        RtrnDte.Location = New Point(593, 532)
+        RtrnDte.Location = New Point(600, 677)
         RtrnDte.Name = "RtrnDte"
         RtrnDte.Size = New Size(310, 37)
         RtrnDte.TabIndex = 63
@@ -77,7 +77,7 @@ Partial Class UC_Outward
         ' 
         Dte.Anchor = AnchorStyles.None
         Dte.Font = New Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point)
-        Dte.Location = New Point(593, 164)
+        Dte.Location = New Point(600, 309)
         Dte.Name = "Dte"
         Dte.Size = New Size(310, 37)
         Dte.TabIndex = 46
@@ -86,7 +86,7 @@ Partial Class UC_Outward
         ' 
         Fromtxt.Anchor = AnchorStyles.None
         Fromtxt.Font = New Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point)
-        Fromtxt.Location = New Point(593, 249)
+        Fromtxt.Location = New Point(600, 394)
         Fromtxt.Multiline = True
         Fromtxt.Name = "Fromtxt"
         Fromtxt.Size = New Size(310, 140)
@@ -96,7 +96,7 @@ Partial Class UC_Outward
         ' 
         From.Anchor = AnchorStyles.None
         From.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
-        From.Location = New Point(125, 214)
+        From.Location = New Point(132, 359)
         From.Name = "From"
         From.Size = New Size(73, 32)
         From.TabIndex = 61
@@ -106,7 +106,7 @@ Partial Class UC_Outward
         ' 
         BtnDlt.Anchor = AnchorStyles.None
         BtnDlt.Font = New Font("Times New Roman", 14F, FontStyle.Bold, GraphicsUnit.Point)
-        BtnDlt.Location = New Point(604, 762)
+        BtnDlt.Location = New Point(611, 907)
         BtnDlt.Name = "BtnDlt"
         BtnDlt.Size = New Size(140, 60)
         BtnDlt.TabIndex = 60
@@ -117,7 +117,7 @@ Partial Class UC_Outward
         ' 
         Btnupdt.Anchor = AnchorStyles.None
         Btnupdt.Font = New Font("Times New Roman", 14F, FontStyle.Bold, GraphicsUnit.Point)
-        Btnupdt.Location = New Point(424, 762)
+        Btnupdt.Location = New Point(431, 907)
         Btnupdt.Name = "Btnupdt"
         Btnupdt.Size = New Size(140, 60)
         Btnupdt.TabIndex = 59
@@ -128,7 +128,7 @@ Partial Class UC_Outward
         ' 
         Btnsave.Anchor = AnchorStyles.None
         Btnsave.Font = New Font("Times New Roman", 14F, FontStyle.Bold, GraphicsUnit.Point)
-        Btnsave.Location = New Point(240, 762)
+        Btnsave.Location = New Point(247, 907)
         Btnsave.Name = "Btnsave"
         Btnsave.Size = New Size(140, 60)
         Btnsave.TabIndex = 58
@@ -139,7 +139,7 @@ Partial Class UC_Outward
         ' 
         Totext.Anchor = AnchorStyles.None
         Totext.Font = New Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point)
-        Totext.Location = New Point(125, 250)
+        Totext.Location = New Point(132, 395)
         Totext.Multiline = True
         Totext.Name = "Totext"
         Totext.Size = New Size(310, 140)
@@ -149,7 +149,7 @@ Partial Class UC_Outward
         ' 
         Dpt.Anchor = AnchorStyles.None
         Dpt.Font = New Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point)
-        Dpt.Location = New Point(125, 165)
+        Dpt.Location = New Point(132, 310)
         Dpt.Name = "Dpt"
         Dpt.Size = New Size(310, 37)
         Dpt.TabIndex = 56
@@ -158,7 +158,7 @@ Partial Class UC_Outward
         ' 
         Qty.Anchor = AnchorStyles.None
         Qty.Font = New Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point)
-        Qty.Location = New Point(765, 443)
+        Qty.Location = New Point(772, 588)
         Qty.Multiline = True
         Qty.Name = "Qty"
         Qty.Size = New Size(138, 40)
@@ -168,7 +168,7 @@ Partial Class UC_Outward
         ' 
         Mtrl.Anchor = AnchorStyles.None
         Mtrl.Font = New Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point)
-        Mtrl.Location = New Point(125, 442)
+        Mtrl.Location = New Point(132, 587)
         Mtrl.Multiline = True
         Mtrl.Name = "Mtrl"
         Mtrl.Size = New Size(582, 40)
@@ -179,7 +179,7 @@ Partial Class UC_Outward
         Label10.Anchor = AnchorStyles.None
         Label10.AutoSize = True
         Label10.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
-        Label10.Location = New Point(593, 498)
+        Label10.Location = New Point(600, 643)
         Label10.Name = "Label10"
         Label10.Size = New Size(151, 32)
         Label10.TabIndex = 53
@@ -190,7 +190,7 @@ Partial Class UC_Outward
         PType.Anchor = AnchorStyles.None
         PType.AutoSize = True
         PType.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
-        PType.Location = New Point(125, 42)
+        PType.Location = New Point(132, 187)
         PType.Name = "PType"
         PType.Size = New Size(183, 32)
         PType.TabIndex = 52
@@ -201,7 +201,7 @@ Partial Class UC_Outward
         tolbl.Anchor = AnchorStyles.None
         tolbl.AutoSize = True
         tolbl.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
-        tolbl.Location = New Point(593, 214)
+        tolbl.Location = New Point(600, 359)
         tolbl.Name = "tolbl"
         tolbl.Size = New Size(41, 32)
         tolbl.TabIndex = 51
@@ -211,7 +211,7 @@ Partial Class UC_Outward
         ' 
         DteLbl.Anchor = AnchorStyles.None
         DteLbl.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
-        DteLbl.Location = New Point(593, 130)
+        DteLbl.Location = New Point(600, 275)
         DteLbl.Name = "DteLbl"
         DteLbl.Size = New Size(69, 35)
         DteLbl.TabIndex = 50
@@ -221,7 +221,7 @@ Partial Class UC_Outward
         ' 
         Dept.Anchor = AnchorStyles.None
         Dept.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
-        Dept.Location = New Point(125, 131)
+        Dept.Location = New Point(132, 276)
         Dept.Name = "Dept"
         Dept.Size = New Size(70, 31)
         Dept.TabIndex = 49
@@ -232,7 +232,7 @@ Partial Class UC_Outward
         Qtty.Anchor = AnchorStyles.None
         Qtty.AutoSize = True
         Qtty.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
-        Qtty.Location = New Point(765, 408)
+        Qtty.Location = New Point(772, 553)
         Qtty.Name = "Qtty"
         Qtty.Size = New Size(113, 32)
         Qtty.TabIndex = 48
@@ -242,7 +242,7 @@ Partial Class UC_Outward
         ' 
         Materl.Anchor = AnchorStyles.None
         Materl.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
-        Materl.Location = New Point(125, 408)
+        Materl.Location = New Point(132, 553)
         Materl.Name = "Materl"
         Materl.Size = New Size(111, 31)
         Materl.TabIndex = 47
@@ -253,7 +253,7 @@ Partial Class UC_Outward
         ' 
         GtPssNo.Anchor = AnchorStyles.None
         GtPssNo.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
-        GtPssNo.Location = New Point(593, 36)
+        GtPssNo.Location = New Point(600, 181)
         GtPssNo.Name = "GtPssNo"
         GtPssNo.Size = New Size(166, 37)
         GtPssNo.TabIndex = 45
@@ -263,7 +263,7 @@ Partial Class UC_Outward
         ' 
         GtPss.Anchor = AnchorStyles.None
         GtPss.Font = New Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point)
-        GtPss.Location = New Point(593, 77)
+        GtPss.Location = New Point(600, 222)
         GtPss.Multiline = True
         GtPss.Name = "GtPss"
         GtPss.Size = New Size(310, 40)
@@ -273,7 +273,7 @@ Partial Class UC_Outward
         ' 
         Sendr.Anchor = AnchorStyles.None
         Sendr.Font = New Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point)
-        Sendr.Location = New Point(125, 532)
+        Sendr.Location = New Point(132, 677)
         Sendr.Multiline = True
         Sendr.Name = "Sendr"
         Sendr.Size = New Size(310, 40)
@@ -283,7 +283,7 @@ Partial Class UC_Outward
         ' 
         Label1.Anchor = AnchorStyles.None
         Label1.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
-        Label1.Location = New Point(125, 498)
+        Label1.Location = New Point(132, 643)
         Label1.Name = "Label1"
         Label1.Size = New Size(96, 31)
         Label1.TabIndex = 66
@@ -293,7 +293,7 @@ Partial Class UC_Outward
         ' 
         Purpose.Anchor = AnchorStyles.None
         Purpose.Font = New Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point)
-        Purpose.Location = New Point(125, 622)
+        Purpose.Location = New Point(132, 767)
         Purpose.Multiline = True
         Purpose.Name = "Purpose"
         Purpose.Size = New Size(778, 36)
@@ -303,7 +303,7 @@ Partial Class UC_Outward
         ' 
         Label2.Anchor = AnchorStyles.None
         Label2.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
-        Label2.Location = New Point(125, 588)
+        Label2.Location = New Point(132, 733)
         Label2.Name = "Label2"
         Label2.Size = New Size(110, 31)
         Label2.TabIndex = 68
@@ -314,7 +314,7 @@ Partial Class UC_Outward
         ' 
         Vhcle.Anchor = AnchorStyles.None
         Vhcle.Font = New Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point)
-        Vhcle.Location = New Point(125, 699)
+        Vhcle.Location = New Point(132, 844)
         Vhcle.Multiline = True
         Vhcle.Name = "Vhcle"
         Vhcle.Size = New Size(310, 40)
@@ -324,7 +324,7 @@ Partial Class UC_Outward
         ' 
         Label3.Anchor = AnchorStyles.None
         Label3.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
-        Label3.Location = New Point(125, 669)
+        Label3.Location = New Point(132, 814)
         Label3.Name = "Label3"
         Label3.Size = New Size(136, 31)
         Label3.TabIndex = 70
@@ -334,7 +334,7 @@ Partial Class UC_Outward
         ' 
         Drivr.Anchor = AnchorStyles.None
         Drivr.Font = New Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point)
-        Drivr.Location = New Point(593, 702)
+        Drivr.Location = New Point(600, 847)
         Drivr.Multiline = True
         Drivr.Name = "Drivr"
         Drivr.Size = New Size(310, 40)
@@ -344,7 +344,7 @@ Partial Class UC_Outward
         ' 
         Label4.Anchor = AnchorStyles.None
         Label4.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
-        Label4.Location = New Point(593, 669)
+        Label4.Location = New Point(600, 814)
         Label4.Name = "Label4"
         Label4.Size = New Size(90, 31)
         Label4.TabIndex = 72
@@ -384,7 +384,7 @@ Partial Class UC_Outward
         Controls.Add(Materl)
         Controls.Add(GtPssNo)
         Name = "UC_Outward"
-        Size = New Size(1048, 848)
+        Size = New Size(1048, 980)
         ResumeLayout(False)
         PerformLayout()
     End Sub

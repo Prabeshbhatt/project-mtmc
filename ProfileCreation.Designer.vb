@@ -400,6 +400,7 @@ Partial Class ProfileCreation
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(737, 817)
         Controls.Add(Panel2)
+        FormBorderStyle = FormBorderStyle.SizableToolWindow
         Name = "ProfileCreation"
         StartPosition = FormStartPosition.CenterScreen
         Text = "ProfileCreation"

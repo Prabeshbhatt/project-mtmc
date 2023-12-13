@@ -10,14 +10,42 @@ Public Class Uc_Inward
     Private bitmap As Bitmap
 
 
+    Private Function Datapresent(ChallanNo As Integer) As Boolean
+        Dim Result As Boolean = False
+        conn.Open()
+        Dim query As String = "SELECT * FROM Table1 WHERE [Challan_No] = @ChallanNo"
+        Using command As New OleDbCommand(query, conn)
+            command.Parameters.AddWithValue("@ChallanNo", TextBox5.Text)
+            Dim reader As OleDbDataReader = command.ExecuteReader()
+            If reader.HasRows Then
+                Result = True
+            End If
+        End Using
+        conn.Close()
+        Return Result
+    End Function
 
-
-    Private Sub Inward_Load(sender As Object, e As EventArgs)
-        conn.ConnectionString = ""
-
-    End Sub
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-
+        Dim ChallanNo = TextBox5.Text
+        If Datapresent(ChallanNo) Then
+            Try
+                If MessageBox.Show("Are you sure you want to delete this record?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
+                    conn.Open()
+                    cmd = conn.CreateCommand()
+                    cmd.CommandType = CommandType.Text
+                    cmd.CommandText = "DELETE FROM Table1 WHERE [Challan_No] = " & TextBox5.Text & ""
+                    cmd.ExecuteNonQuery()
+                    conn.Close()
+                    MessageBox.Show("Data deleted successfully.")
+                Else
+                    MessageBox.Show("Data Not Deleted")
+                End If
+            Catch ex As Exception
+                MessageBox.Show("Error: " & ex.Message)
+            End Try
+        Else
+            MessageBox.Show("Challan Number Not Found!")
+        End If
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnsve.Click
@@ -109,6 +137,10 @@ Public Class Uc_Inward
     End Sub
 
     Private Sub Uc_Inward_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        conn.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\MTMC PROJECT\DATABASES\Inward_Formdb.accdb"
+    End Sub
+
+    Private Sub TextBox5_TextChanged(sender As Object, e As EventArgs) Handles TextBox5.TextChanged
 
     End Sub
 End Class
