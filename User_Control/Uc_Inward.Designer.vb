@@ -47,6 +47,7 @@ Partial Class Uc_Inward
         ' 
         ' upd
         ' 
+        upd.Anchor = AnchorStyles.None
         upd.Location = New Point(430, 482)
         upd.Name = "upd"
         upd.Size = New Size(112, 34)
@@ -56,6 +57,7 @@ Partial Class Uc_Inward
         ' 
         ' DateTimePicker1
         ' 
+        DateTimePicker1.Anchor = AnchorStyles.None
         DateTimePicker1.Location = New Point(482, 302)
         DateTimePicker1.Name = "DateTimePicker1"
         DateTimePicker1.Size = New Size(372, 31)
@@ -63,6 +65,7 @@ Partial Class Uc_Inward
         ' 
         ' Button2
         ' 
+        Button2.Anchor = AnchorStyles.None
         Button2.Location = New Point(742, 482)
         Button2.Name = "Button2"
         Button2.Size = New Size(112, 34)
@@ -72,6 +75,7 @@ Partial Class Uc_Inward
         ' 
         ' btnsve
         ' 
+        btnsve.Anchor = AnchorStyles.None
         btnsve.Location = New Point(565, 482)
         btnsve.Name = "btnsve"
         btnsve.Size = New Size(112, 34)
@@ -81,6 +85,7 @@ Partial Class Uc_Inward
         ' 
         ' TextBox9
         ' 
+        TextBox9.Anchor = AnchorStyles.None
         TextBox9.Location = New Point(482, 413)
         TextBox9.Name = "TextBox9"
         TextBox9.Size = New Size(372, 31)
@@ -88,6 +93,7 @@ Partial Class Uc_Inward
         ' 
         ' TextBox8
         ' 
+        TextBox8.Anchor = AnchorStyles.None
         TextBox8.Location = New Point(482, 376)
         TextBox8.Name = "TextBox8"
         TextBox8.Size = New Size(372, 31)
@@ -95,6 +101,7 @@ Partial Class Uc_Inward
         ' 
         ' TextBox7
         ' 
+        TextBox7.Anchor = AnchorStyles.None
         TextBox7.Location = New Point(482, 339)
         TextBox7.Name = "TextBox7"
         TextBox7.Size = New Size(372, 31)
@@ -102,6 +109,7 @@ Partial Class Uc_Inward
         ' 
         ' TextBox5
         ' 
+        TextBox5.Anchor = AnchorStyles.None
         TextBox5.Location = New Point(482, 266)
         TextBox5.Name = "TextBox5"
         TextBox5.Size = New Size(372, 31)
@@ -109,6 +117,7 @@ Partial Class Uc_Inward
         ' 
         ' TextBox4
         ' 
+        TextBox4.Anchor = AnchorStyles.None
         TextBox4.Location = New Point(482, 229)
         TextBox4.Name = "TextBox4"
         TextBox4.Size = New Size(372, 31)
@@ -116,6 +125,7 @@ Partial Class Uc_Inward
         ' 
         ' TextBox3
         ' 
+        TextBox3.Anchor = AnchorStyles.None
         TextBox3.Location = New Point(482, 194)
         TextBox3.Name = "TextBox3"
         TextBox3.Size = New Size(372, 31)
@@ -123,6 +133,7 @@ Partial Class Uc_Inward
         ' 
         ' TextBox2
         ' 
+        TextBox2.Anchor = AnchorStyles.None
         TextBox2.Location = New Point(482, 161)
         TextBox2.Name = "TextBox2"
         TextBox2.Size = New Size(372, 31)
@@ -130,6 +141,7 @@ Partial Class Uc_Inward
         ' 
         ' TextBox1
         ' 
+        TextBox1.Anchor = AnchorStyles.None
         TextBox1.Location = New Point(482, 124)
         TextBox1.Name = "TextBox1"
         TextBox1.Size = New Size(372, 31)
@@ -137,6 +149,7 @@ Partial Class Uc_Inward
         ' 
         ' Label9
         ' 
+        Label9.Anchor = AnchorStyles.None
         Label9.AutoSize = True
         Label9.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
         Label9.Location = New Point(284, 410)
@@ -147,6 +160,7 @@ Partial Class Uc_Inward
         ' 
         ' Label8
         ' 
+        Label8.Anchor = AnchorStyles.None
         Label8.AutoSize = True
         Label8.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
         Label8.Location = New Point(284, 376)
@@ -157,6 +171,7 @@ Partial Class Uc_Inward
         ' 
         ' Label7
         ' 
+        Label7.Anchor = AnchorStyles.None
         Label7.AutoSize = True
         Label7.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
         Label7.Location = New Point(284, 338)
@@ -167,6 +182,7 @@ Partial Class Uc_Inward
         ' 
         ' Label6
         ' 
+        Label6.Anchor = AnchorStyles.None
         Label6.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
         Label6.Location = New Point(284, 303)
         Label6.Name = "Label6"
@@ -176,6 +192,7 @@ Partial Class Uc_Inward
         ' 
         ' Label5
         ' 
+        Label5.Anchor = AnchorStyles.None
         Label5.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
         Label5.Location = New Point(284, 266)
         Label5.Name = "Label5"
@@ -185,6 +202,7 @@ Partial Class Uc_Inward
         ' 
         ' Label4
         ' 
+        Label4.Anchor = AnchorStyles.None
         Label4.AutoSize = True
         Label4.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
         Label4.Location = New Point(284, 231)
@@ -195,6 +213,7 @@ Partial Class Uc_Inward
         ' 
         ' Label3
         ' 
+        Label3.Anchor = AnchorStyles.None
         Label3.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
         Label3.Location = New Point(284, 197)
         Label3.Name = "Label3"
@@ -204,6 +223,7 @@ Partial Class Uc_Inward
         ' 
         ' Label2
         ' 
+        Label2.Anchor = AnchorStyles.None
         Label2.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
         Label2.Location = New Point(284, 158)
         Label2.Name = "Label2"
@@ -214,6 +234,7 @@ Partial Class Uc_Inward
         ' Label1
         ' 
         Label1.AccessibleRole = AccessibleRole.IpAddress
+        Label1.Anchor = AnchorStyles.None
         Label1.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
         Label1.Location = New Point(284, 124)
         Label1.Name = "Label1"
