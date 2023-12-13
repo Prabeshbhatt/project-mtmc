@@ -33,7 +33,8 @@ Public Class UC_Outward
     End Sub
 
     ' Handle the Save button click
-    Private Sub Btnsave_Click(sender As Object, e As EventArgs) Handles Btnsave.Click
+    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles Guna2Button1.Click
+
         Dim GatePassNo As Integer = GtPss.Text
         Dim material As String = Mtrl.Text
         Dim quantity As Integer = Qty.Text
@@ -133,7 +134,8 @@ Public Class UC_Outward
         Return Result
     End Function
 
-    Private Sub BtnDlt_Click(sender As Object, e As EventArgs) Handles BtnDlt.Click
+
+    Private Sub Guna2Button3_Click(sender As Object, e As EventArgs) Handles Guna2Button3.Click
         Dim GatePassNo As Integer = GtPss.Text
         If Datapresent(GatePassNo) Then
             Try
@@ -176,7 +178,8 @@ Public Class UC_Outward
     End Sub
 
     ' Handle the Update button click
-    Private Sub Btnupdt_Click(sender As Object, e As EventArgs) Handles Btnupdt.Click
+    Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles Guna2Button2.Click
+
         Dim GatePassNo As Integer = GtPss.Text
         If Datapresent(GatePassNo) Then
             If MessageBox.Show("Are you sure you want to Update this record?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
@@ -184,50 +187,50 @@ Public Class UC_Outward
                     conn.Open()
                     cmd = conn.CreateCommand()
                     cmd.CommandType = CommandType.Text
-                            Dim updateClauses As New List(Of String)
+                    Dim updateClauses As New List(Of String)
 
-                            If Not String.IsNullOrEmpty(GtPss.Text) Then
-                                updateClauses.Add("[GATE PASS NO] = " & GtPss.Text & "")
-                            End If
+                    If Not String.IsNullOrEmpty(GtPss.Text) Then
+                        updateClauses.Add("[GATE PASS NO] = " & GtPss.Text & "")
+                    End If
 
-                            If Not String.IsNullOrEmpty(Mtrl.Text) Then
-                                updateClauses.Add("[MATERIAL] = '" & Mtrl.Text & "'")
-                            End If
+                    If Not String.IsNullOrEmpty(Mtrl.Text) Then
+                        updateClauses.Add("[MATERIAL] = '" & Mtrl.Text & "'")
+                    End If
 
-                            If Not String.IsNullOrEmpty(Qty.Text) Then
-                                updateClauses.Add("[QUANTITY] = " & Qty.Text & "")
-                            End If
+                    If Not String.IsNullOrEmpty(Qty.Text) Then
+                        updateClauses.Add("[QUANTITY] = " & Qty.Text & "")
+                    End If
 
-                            If Not String.IsNullOrEmpty(Dpt.Text) Then
-                                updateClauses.Add("[DEPT] = '" & Dpt.Text & "'")
-                            End If
+                    If Not String.IsNullOrEmpty(Dpt.Text) Then
+                        updateClauses.Add("[DEPT] = '" & Dpt.Text & "'")
+                    End If
 
-                            If Not String.IsNullOrEmpty(Dte.Value) Then
-                                updateClauses.Add("[DATE] = '" & Dte.Value & "'")
-                            End If
+                    If Not String.IsNullOrEmpty(Dte.Value) Then
+                        updateClauses.Add("[DATE] = '" & Dte.Value & "'")
+                    End If
 
 
-                            If Not String.IsNullOrEmpty(Totext.Text) Then
-                                updateClauses.Add("[TO] = '" & Totext.Text & "'")
-                            End If
+                    If Not String.IsNullOrEmpty(Totext.Text) Then
+                        updateClauses.Add("[TO] = '" & Totext.Text & "'")
+                    End If
 
-                            If Not String.IsNullOrEmpty(Fromtxt.Text) Then
-                                updateClauses.Add("[FROM] = '" & Fromtxt.Text & "'")
-                            End If
+                    If Not String.IsNullOrEmpty(Fromtxt.Text) Then
+                        updateClauses.Add("[FROM] = '" & Fromtxt.Text & "'")
+                    End If
 
-                            If Not String.IsNullOrEmpty(GtePssType.SelectedItem) Then
-                                If GtePssType.SelectedItem.ToString() = "NRGP" Then
-                                    updateClauses.Add("[GATE PASS TYPE] = '" & GtePssType.SelectedItem & "'")
-                                ElseIf GtePssType.SelectedItem.ToString() = "RGP" Then
-                                    updateClauses.Add("[GATE PASS TYPE] = '" & GtePssType.SelectedItem & "'")
-                                End If
-                            End If
+                    If Not String.IsNullOrEmpty(GtePssType.SelectedItem) Then
+                        If GtePssType.SelectedItem.ToString() = "NRGP" Then
+                            updateClauses.Add("[GATE PASS TYPE] = '" & GtePssType.SelectedItem & "'")
+                        ElseIf GtePssType.SelectedItem.ToString() = "RGP" Then
+                            updateClauses.Add("[GATE PASS TYPE] = '" & GtePssType.SelectedItem & "'")
+                        End If
+                    End If
 
-                            If Not String.IsNullOrEmpty(RtrnDte.Value) Then
-                                updateClauses.Add("[RETURN DATE] = '" & RtrnDte.Value & "'")
-                            End If
+                    If Not String.IsNullOrEmpty(RtrnDte.Value) Then
+                        updateClauses.Add("[RETURN DATE] = '" & RtrnDte.Value & "'")
+                    End If
 
-                            Dim updateClause As String = String.Join(", ", updateClauses)
+                    Dim updateClause As String = String.Join(", ", updateClauses)
                     If updateClause <> "" Then
                         If GtePssType.SelectedItem.ToString() = "NRGP" Then
                             cmd.CommandText = "UPDATE NRGP_Outward SET " & updateClause & " WHERE [GATE PASS NO] = " & GtPss.Text
