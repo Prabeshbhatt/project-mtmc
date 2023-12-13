@@ -31,4 +31,14 @@
     Private Sub Panel2_Paint(sender As Object, e As PaintEventArgs) Handles Panel2.Paint
 
     End Sub
+
+    Private Sub Guna2Button3_Click(sender As Object, e As EventArgs) Handles Guna2Button3.Click
+        Dim uc As New Uc_courier()
+        AddUserControl(uc)
+    End Sub
+
+    Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles Guna2Button2.Click
+        Dim uc As New Uc_Visitors()
+        AddUserControl(uc)
+    End Sub
 End Class
