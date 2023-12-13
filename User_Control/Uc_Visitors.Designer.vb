@@ -90,6 +90,7 @@ Partial Class Uc_Visitors
         save.DisabledState.CustomBorderColor = Color.DarkGray
         save.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
         save.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
+        save.FillColor = Color.SlateBlue
         save.Font = New Font("Times New Roman", 11F, FontStyle.Bold, GraphicsUnit.Point)
         save.ForeColor = Color.White
         save.Location = New Point(1081, 637)
@@ -533,6 +534,7 @@ Partial Class Uc_Visitors
         Btndlt.DisabledState.CustomBorderColor = Color.DarkGray
         Btndlt.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
         Btndlt.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
+        Btndlt.FillColor = Color.SlateBlue
         Btndlt.Font = New Font("Times New Roman", 11F, FontStyle.Bold, GraphicsUnit.Point)
         Btndlt.ForeColor = Color.White
         Btndlt.Location = New Point(760, 637)
@@ -549,6 +551,7 @@ Partial Class Uc_Visitors
         Btnupd.DisabledState.CustomBorderColor = Color.DarkGray
         Btnupd.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
         Btnupd.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
+        Btnupd.FillColor = Color.SlateBlue
         Btnupd.Font = New Font("Times New Roman", 11F, FontStyle.Bold, GraphicsUnit.Point)
         Btnupd.ForeColor = Color.White
         Btnupd.Location = New Point(921, 637)
