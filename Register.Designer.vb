@@ -127,6 +127,7 @@ Partial Class Register
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(523, 487)
         Controls.Add(Panel1)
+        FormBorderStyle = FormBorderStyle.SizableToolWindow
         Name = "Register"
         StartPosition = FormStartPosition.CenterScreen
         Text = "Register"

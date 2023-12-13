@@ -117,4 +117,26 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="Button1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DAAACwwBP0AiyAAAA5xJREFUaEPtlttP02Achkm8NPpveMkNiScUxDAYDnaAgrhTNwHRgYASgcBU8ICK
+        RjEBo8GzcdCtHcegwTMx0Wsv/GPa5PUr+akztpYPd6iGJ3kuvn59+73turZFm/zP+J9ie+AJttLw3yKQ
+        hqdRQreQ1HpEGZW0+d9AnIPPk0TYMQ2PrldCS3AOLpq2N6KiCV5ZC1UlVHemXklrEdNqFe32g5CidRyW
+        te7vhmXEaCr/hOfhqVcQqJ5GrZENEiJiGjW0+xoBGT2Z++hjmsovYXbPe2X4HQm4/qQgQYwocFKsyC+j
+        O3NeH9NU/ojI8PokLVj1XD20HoUZhEVZXftj+1NaV+acPl47aL4QFbjZreF3JuDkkT2hQtF5HAzK6Mzc
+        ro/p0Lknym4bT1Jrdkhq9UZsZH/2I7IWy9zml7X8nEBURp0vhabqJBx/oysJZ+Y4MJuHpxB7ktQKrLxT
+        QmW2DaZxgpbJDRH2Qmqag8Cu3MFcGFJwnJbKPnr5BgUCu1IVuTKooJ2Wyy4RRXX5Ump9zbR6IJcKM1rj
+        0TTKadnscIy9PY8o8LkklOVDtpbQOo8yWv7viC2jqpl9ItSksD+fBpfhO7mCUqqxMU69QGVoAXUuBaWF
+        MLoET/877KY6fAy+RkVkCa7aFPYW0pZFuOMrnCdx4T0quhJaU9uE6jt+W2sqpHqHLva2H17vLzH2FuX9
+        zxAcvITOS+cwcvEsRgvp5fMYHhxF51AC4tgH7KSaxlz7jN297MsyfhEdY/24N96HxfFevCqorMP1AdyN
+        X0bHgILGG6soprq/Mv4J24feoS42iTp21udYeGGiHdpEG1BQWQe9i95J7zbyER4J2EK1fzL1FduGV1Hb
+        cwveq3GM3D6N5clWwA7qXfROerfRT3AbnoDO/S8onpxFdOoObj6+gjcPzwB2UO+id5pI4yi70DuorjVz
+        xwA7SHX4edEH2EGqw89KHLCDVIeflwOAHaQ6/Cz3AnaQ6vCz1AXYQarDz0IMsINUh59Z9ibkNd2KPRT/
+        DaUNpUYZKynOjxIFeKWoKUYZKynKTyoI8EpRU4wyVlKUH6kZ4JWiphhlrKQoP9MNAK8UNcUoYyVF+Xnu
+        BnilqClGGSspys+zQwCvFDXFKGMlRfl54gB4pagpRhkrKcrPowqAV4qaYpSxkqL8PNgH8EpRU4wyVlKU
+        n6ldAK8UNcUoYyVF+blXglUm1uvdEnygqClsv6wfc5NNNkxR0TfsTX5N8SYpuwAAAABJRU5ErkJggg==
+</value>
+  </data>
 </root>
