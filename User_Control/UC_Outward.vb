@@ -6,6 +6,9 @@ Imports System.Text
 Imports System.Data.SqlClient
 Imports System.Data.SqlTypes
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox
+Imports System.DirectoryServices
+Imports System.ComponentModel
+Imports System.Globalization
 
 Public Class UC_Outward
     Private cmd As New OleDbCommand
@@ -44,46 +47,50 @@ Public Class UC_Outward
         Dim prpose As String = Purpose.Text
         Dim vehicle As String = Vhcle.Text
         Dim driver As String = Drivr.Text
-        conn.Open()
-        cmd = conn.CreateCommand()
-        cmd.CommandType = CommandType.Text
-        If GtePssType.SelectedItem.ToString() = "NRGP" Then
-            cmd.CommandText = "INSERT INTO NRGP_Outward ([GATE PASS TYPE], [GATE PASS NO], [DATE], [DEPT], [FROM],  [TO], [MATERIAL], [QUANTITY],  [SENDER'S NAME], [PURPOSE], [VEHICLE NUMBER], [DRIVER'S NAME]) 
+        If Datapresent(GatePassNo) Then
+            MessageBox.Show("Gate Pass Number Already Present")
+        Else
+            conn.Open()
+            cmd = conn.CreateCommand()
+            cmd.CommandType = CommandType.Text
+            If GtePssType.SelectedItem.ToString() = "NRGP" Then
+                cmd.CommandText = "INSERT INTO NRGP_Outward ([GATE PASS TYPE], [GATE PASS NO], [DATE], [DEPT], [FROM],  [TO], [MATERIAL], [QUANTITY],  [SENDER'S NAME], [PURPOSE], [VEHICLE NUMBER], [DRIVER'S NAME]) 
             VALUES (@GatePassType,@GatePassNo,@Date,@Dept,@From,@To,@Material,@Qty,@Sender,@Purpose,@Vehicle,@Driver)"
-            cmd.Parameters.AddWithValue("@GatePassType", OleDbType.VarChar).Value = GatePassType
-            cmd.Parameters.AddWithValue("@GatePassNo", OleDbType.Integer).Value = GatePassNo
-            cmd.Parameters.AddWithValue("@Date", OleDbType.Date).Value = Odate
-            cmd.Parameters.AddWithValue("@Dept", OleDbType.VarChar).Value = department
-            cmd.Parameters.AddWithValue("@From", OleDbType.VarChar).Value = Ofrom
-            cmd.Parameters.AddWithValue("@To", OleDbType.VarChar).Value = Oto
-            cmd.Parameters.AddWithValue("@Material", OleDbType.VarChar).Value = material
-            cmd.Parameters.AddWithValue("@Qty", OleDbType.Integer).Value = quantity
-            cmd.Parameters.AddWithValue("@Sender", OleDbType.VarChar).Value = osender
-            cmd.Parameters.AddWithValue("@Purpose", OleDbType.VarChar).Value = prpose
-            cmd.Parameters.AddWithValue("@Vehicle", OleDbType.VarChar).Value = vehicle
-            cmd.Parameters.AddWithValue("@Driver", OleDbType.VarChar).Value = driver
-            cmd.ExecuteNonQuery()
-            conn.Close()
-        ElseIf GtePssType.SelectedItem.ToString() = "RGP" Then
-            cmd.CommandText = "INSERT INTO OUTWARD_FORM ([GATE PASS TYPE], [GATE PASS NO], [DATE], [DEPT], [FROM],  [TO], [MATERIAL], [QUANTITY],  [SENDER'S NAME], [RETURN DATE], [PURPOSE], [VEHICLE], [DRIVER'S NAME]) 
+                cmd.Parameters.AddWithValue("@GatePassType", OleDbType.VarChar).Value = GatePassType
+                cmd.Parameters.AddWithValue("@GatePassNo", OleDbType.Integer).Value = GatePassNo
+                cmd.Parameters.AddWithValue("@Date", OleDbType.Date).Value = Odate
+                cmd.Parameters.AddWithValue("@Dept", OleDbType.VarChar).Value = department
+                cmd.Parameters.AddWithValue("@From", OleDbType.VarChar).Value = Ofrom
+                cmd.Parameters.AddWithValue("@To", OleDbType.VarChar).Value = Oto
+                cmd.Parameters.AddWithValue("@Material", OleDbType.VarChar).Value = material
+                cmd.Parameters.AddWithValue("@Qty", OleDbType.Integer).Value = quantity
+                cmd.Parameters.AddWithValue("@Sender", OleDbType.VarChar).Value = osender
+                cmd.Parameters.AddWithValue("@Purpose", OleDbType.VarChar).Value = prpose
+                cmd.Parameters.AddWithValue("@Vehicle", OleDbType.VarChar).Value = vehicle
+                cmd.Parameters.AddWithValue("@Driver", OleDbType.VarChar).Value = driver
+                cmd.ExecuteNonQuery()
+                conn.Close()
+            ElseIf GtePssType.SelectedItem.ToString() = "RGP" Then
+                cmd.CommandText = "INSERT INTO OUTWARD_FORM ([GATE PASS TYPE], [GATE PASS NO], [DATE], [DEPT], [FROM],  [TO], [MATERIAL], [QUANTITY],  [SENDER'S NAME], [RETURN DATE], [PURPOSE], [VEHICLE], [DRIVER'S NAME]) 
             VALUES (@GatePassType,@GatePassNo,@Date,@Dept,@From,@To,@Material,@Qty,@Sender,@ReturnDate,@Purpose,@Vehicle,@Driver)"
-            cmd.Parameters.AddWithValue("@GatePassType", OleDbType.VarChar).Value = GatePassType
-            cmd.Parameters.AddWithValue("@GatePassNo", OleDbType.Integer).Value = GatePassNo
-            cmd.Parameters.AddWithValue("@Date", OleDbType.Date).Value = Odate
-            cmd.Parameters.AddWithValue("@Dept", OleDbType.VarChar).Value = department
-            cmd.Parameters.AddWithValue("@From", OleDbType.VarChar).Value = Ofrom
-            cmd.Parameters.AddWithValue("@To", OleDbType.VarChar).Value = Oto
-            cmd.Parameters.AddWithValue("@Material", OleDbType.VarChar).Value = material
-            cmd.Parameters.AddWithValue("@Qty", OleDbType.Integer).Value = quantity
-            cmd.Parameters.AddWithValue("@Sender", OleDbType.VarChar).Value = osender
-            cmd.Parameters.AddWithValue("@ReturnDate", OleDbType.Date).Value = ReturnDate
-            cmd.Parameters.AddWithValue("@Purpose", OleDbType.VarChar).Value = prpose
-            cmd.Parameters.AddWithValue("@Vehicle", OleDbType.VarChar).Value = vehicle
-            cmd.Parameters.AddWithValue("@Driver", OleDbType.VarChar).Value = driver
-            cmd.ExecuteNonQuery()
-            conn.Close()
+                cmd.Parameters.AddWithValue("@GatePassType", OleDbType.VarChar).Value = GatePassType
+                cmd.Parameters.AddWithValue("@GatePassNo", OleDbType.Integer).Value = GatePassNo
+                cmd.Parameters.AddWithValue("@Date", OleDbType.Date).Value = Odate
+                cmd.Parameters.AddWithValue("@Dept", OleDbType.VarChar).Value = department
+                cmd.Parameters.AddWithValue("@From", OleDbType.VarChar).Value = Ofrom
+                cmd.Parameters.AddWithValue("@To", OleDbType.VarChar).Value = Oto
+                cmd.Parameters.AddWithValue("@Material", OleDbType.VarChar).Value = material
+                cmd.Parameters.AddWithValue("@Qty", OleDbType.Integer).Value = quantity
+                cmd.Parameters.AddWithValue("@Sender", OleDbType.VarChar).Value = osender
+                cmd.Parameters.AddWithValue("@ReturnDate", OleDbType.Date).Value = ReturnDate
+                cmd.Parameters.AddWithValue("@Purpose", OleDbType.VarChar).Value = prpose
+                cmd.Parameters.AddWithValue("@Vehicle", OleDbType.VarChar).Value = vehicle
+                cmd.Parameters.AddWithValue("@Driver", OleDbType.VarChar).Value = driver
+                cmd.ExecuteNonQuery()
+                conn.Close()
+            End If
+            MessageBox.Show("Data inserted successfully.")
         End If
-        MessageBox.Show("Data inserted successfully.")
         GtPss.Clear()
         Mtrl.Clear()
         Qty.Clear()
@@ -93,50 +100,78 @@ Public Class UC_Outward
         Fromtxt.Clear()
         GtePssType.Text = ""
         RtrnDte.Value = DateTime.Now()
-
+        Sendr.Clear()
+        Purpose.Clear()
+        Vhcle.Clear()
+        Drivr.Clear()
         RaiseEvent SaveButtonClick(Me, EventArgs.Empty)
     End Sub
+
     Private Function Datapresent(GatePassNo As Integer) As Boolean
         Dim Result As Boolean = False
         conn.Open()
-        Dim query As String = "SELECT * FROM OUTWARD_FORM WHERE [GATE PASS NO] = @GatePassNo"
-        Using command As New OleDbCommand(query, conn)
-            command.Parameters.AddWithValue("@GatePassNo", GatePassNo)
-            Dim reader As OleDbDataReader = command.ExecuteReader()
-            If reader.HasRows Then
-                Result = True
-            End If
-        End Using
+        If GtePssType.SelectedItem.ToString() = "NRGP" Then
+            Dim query As String = "SELECT * FROM NRGP_Outward WHERE [GATE PASS NO] = @GatePassNo"
+            Using command As New OleDbCommand(query, conn)
+                command.Parameters.AddWithValue("@GatePassNo", GatePassNo)
+                Dim reader As OleDbDataReader = command.ExecuteReader()
+                If reader.HasRows Then
+                    Result = True
+                End If
+            End Using
+        ElseIf GtePssType.SelectedItem.ToString() = "RGP" Then
+            Dim query As String = "SELECT * FROM OUTWARD_FORM WHERE [GATE PASS NO] = @GatePassNo"
+            Using command As New OleDbCommand(query, conn)
+                command.Parameters.AddWithValue("@GatePassNo", GatePassNo)
+                Dim reader As OleDbDataReader = command.ExecuteReader()
+                If reader.HasRows Then
+                    Result = True
+                End If
+            End Using
+        End If
+        conn.Close()
         Return Result
     End Function
-    ' Handle the Delete button click
+
     Private Sub BtnDlt_Click(sender As Object, e As EventArgs) Handles BtnDlt.Click
         Dim GatePassNo As Integer = GtPss.Text
         If Datapresent(GatePassNo) Then
-            If MessageBox.Show("Are you sure you want to delete this record?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
-                Try
+            Try
+                If MessageBox.Show("Are you sure you want to delete this record?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
                     conn.Open()
                     cmd = conn.CreateCommand()
                     cmd.CommandType = CommandType.Text
-                    cmd.CommandText = "DELETE FROM OUTWARD_FORM WHERE [GATE PASS NO] = " & GtPss.Text & ""
+                    If GtePssType.SelectedItem.ToString() = "NRGP" Then
+                        cmd.CommandText = "DELETE FROM NRGP_Outward WHERE [GATE PASS NO] = " & GtPss.Text & ""
+                    ElseIf GtePssType.SelectedItem.ToString() = "RGP" Then
+                        cmd.CommandText = "DELETE FROM OUTWARD_FORM WHERE [GATE PASS NO] = " & GtPss.Text & ""
+                    End If
                     cmd.ExecuteNonQuery()
                     conn.Close()
-
                     MessageBox.Show("Data deleted successfully.")
-                Catch ex As Exception
-                    MessageBox.Show("Error: " & ex.Message)
-
-
-                End Try
-            Else
-                MessageBox.Show("Data Not Deleted")
-            End If
+                    GtPss.Clear()
+                    Mtrl.Clear()
+                    Qty.Clear()
+                    Dpt.Clear()
+                    Dte.Value = DateTime.Now()
+                    Totext.Clear()
+                    Fromtxt.Clear()
+                    GtePssType.Text = ""
+                    RtrnDte.Value = DateTime.Now()
+                    Sendr.Clear()
+                    Purpose.Clear()
+                    Vhcle.Clear()
+                    Drivr.Clear()
+                Else
+                    MessageBox.Show("Data Not Deleted")
+                End If
+            Catch ex As Exception
+                MessageBox.Show("Error: " & ex.Message)
+            End Try
         Else
             MessageBox.Show("Gata Pass Number Not Found!")
         End If
         RaiseEvent DeleteButtonClick(Me, EventArgs.Empty)
-
-        ' Close the database connection
         conn.Close()
     End Sub
 
@@ -149,50 +184,59 @@ Public Class UC_Outward
                     conn.Open()
                     cmd = conn.CreateCommand()
                     cmd.CommandType = CommandType.Text
+                            Dim updateClauses As New List(Of String)
 
-                    Dim updateClauses As New List(Of String)
+                            If Not String.IsNullOrEmpty(GtPss.Text) Then
+                                updateClauses.Add("[GATE PASS NO] = " & GtPss.Text & "")
+                            End If
 
-                    If Not String.IsNullOrEmpty(GtPss.Text) Then
-                        updateClauses.Add("[GATE PASS NO] = " & GtPss.Text & "")
-                    End If
+                            If Not String.IsNullOrEmpty(Mtrl.Text) Then
+                                updateClauses.Add("[MATERIAL] = '" & Mtrl.Text & "'")
+                            End If
 
-                    If Not String.IsNullOrEmpty(Mtrl.Text) Then
-                        updateClauses.Add("[MATERIAL] = '" & Mtrl.Text & "'")
-                    End If
+                            If Not String.IsNullOrEmpty(Qty.Text) Then
+                                updateClauses.Add("[QUANTITY] = " & Qty.Text & "")
+                            End If
 
-                    If Not String.IsNullOrEmpty(Qty.Text) Then
-                        updateClauses.Add("[QUANTITY] = " & Qty.Text & "")
-                    End If
+                            If Not String.IsNullOrEmpty(Dpt.Text) Then
+                                updateClauses.Add("[DEPT] = '" & Dpt.Text & "'")
+                            End If
 
-                    If Not String.IsNullOrEmpty(Dpt.Text) Then
-                        updateClauses.Add("[DEPT] = '" & Dpt.Text & "'")
-                    End If
-
-                    If Not String.IsNullOrEmpty(Dte.Value) Then
-                        updateClauses.Add("[DATE] = '" & Dte.Value & "'")
-                    End If
+                            If Not String.IsNullOrEmpty(Dte.Value) Then
+                                updateClauses.Add("[DATE] = '" & Dte.Value & "'")
+                            End If
 
 
-                    If Not String.IsNullOrEmpty(Totext.Text) Then
-                        updateClauses.Add("[TO] = '" & Totext.Text & "'")
-                    End If
+                            If Not String.IsNullOrEmpty(Totext.Text) Then
+                                updateClauses.Add("[TO] = '" & Totext.Text & "'")
+                            End If
 
-                    If Not String.IsNullOrEmpty(Fromtxt.Text) Then
-                        updateClauses.Add("[FROM] = '" & Fromtxt.Text & "'")
-                    End If
+                            If Not String.IsNullOrEmpty(Fromtxt.Text) Then
+                                updateClauses.Add("[FROM] = '" & Fromtxt.Text & "'")
+                            End If
 
-                    If Not String.IsNullOrEmpty(GtePssType.SelectedItem) Then
-                        updateClauses.Add("[GATE PASS TYPE] = '" & GtePssType.SelectedItem & "'")
-                    End If
+                            If Not String.IsNullOrEmpty(GtePssType.SelectedItem) Then
+                                If GtePssType.SelectedItem.ToString() = "NRGP" Then
+                                    updateClauses.Add("[GATE PASS TYPE] = '" & GtePssType.SelectedItem & "'")
+                                ElseIf GtePssType.SelectedItem.ToString() = "RGP" Then
+                                    updateClauses.Add("[GATE PASS TYPE] = '" & GtePssType.SelectedItem & "'")
+                                End If
+                            End If
 
-                    If Not String.IsNullOrEmpty(RtrnDte.Value) Then
-                        updateClauses.Add("[RETURN DATE] = '" & RtrnDte.Value & "'")
-                    End If
+                            If Not String.IsNullOrEmpty(RtrnDte.Value) Then
+                                updateClauses.Add("[RETURN DATE] = '" & RtrnDte.Value & "'")
+                            End If
 
-                    Dim updateClause As String = String.Join(", ", updateClauses)
+                            Dim updateClause As String = String.Join(", ", updateClauses)
                     If updateClause <> "" Then
-                        cmd.CommandText = "UPDATE OUTWARD_FORM SET " & updateClause & " WHERE [GATE PASS NO] = " & GtPss.Text & ""
-                        cmd.ExecuteNonQuery()
+                        If GtePssType.SelectedItem.ToString() = "NRGP" Then
+                            cmd.CommandText = "UPDATE NRGP_Outward SET " & updateClause & " WHERE [GATE PASS NO] = " & GtPss.Text
+                            cmd.ExecuteNonQuery()
+                        ElseIf GtePssType.SelectedItem.ToString() = "RGP" Then
+                            cmd.CommandText = "UPDATE OUTWARD_FORM SET " & updateClause & " WHERE [GATE PASS NO] = " & GtPss.Text
+                            cmd.ExecuteNonQuery()
+                        End If
+                        conn.Close()
                         MessageBox.Show("Data updated successfully.")
                         GtPss.Clear()
                         Mtrl.Clear()
@@ -203,10 +247,13 @@ Public Class UC_Outward
                         Fromtxt.Clear()
                         GtePssType.Text = ""
                         RtrnDte.Value = DateTime.Now()
+                        Sendr.Clear()
+                        Purpose.Clear()
+                        Vhcle.Clear()
+                        Drivr.Clear()
                     Else
                         MessageBox.Show("No fields provided for update.")
                     End If
-
                 Catch ex As Exception
                     MessageBox.Show("Error: " & ex.Message)
                 End Try
@@ -216,9 +263,6 @@ Public Class UC_Outward
             MessageBox.Show("Gata Pass Number Not Found!")
         End If
         RaiseEvent UpdateButtonClick(Me, EventArgs.Empty)
-
-        ' Close the database connection
-        conn.Close()
     End Sub
 
     Private Sub GtePssType_SelectedIndexChanged(sender As Object, e As EventArgs) Handles GtePssType.SelectedIndexChanged
