@@ -522,7 +522,7 @@ Partial Class Uc_Visitors
         Panel1.Controls.Add(Qtty)
         Panel1.Controls.Add(Materl)
         Panel1.Controls.Add(IDNUM)
-        Panel1.Location = New Point(0, 0)
+        Panel1.Location = New Point(55, 13)
         Panel1.Name = "Panel1"
         Panel1.Size = New Size(1246, 735)
         Panel1.TabIndex = 1
@@ -576,7 +576,7 @@ Partial Class Uc_Visitors
         AutoScaleMode = AutoScaleMode.Font
         Controls.Add(Panel1)
         Name = "Uc_Visitors"
-        Size = New Size(1246, 735)
+        Size = New Size(1350, 760)
         Panel1.ResumeLayout(False)
         Panel1.PerformLayout()
         ResumeLayout(False)
