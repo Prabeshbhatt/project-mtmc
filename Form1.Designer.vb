@@ -23,7 +23,7 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         components = New ComponentModel.Container()
-        Dim resources As ComponentModel.ComponentResourceManager = New ComponentModel.ComponentResourceManager(GetType(Form1))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Dim CustomizableEdges1 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges2 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges3 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
@@ -232,7 +232,7 @@ Partial Class Form1
         MenuStrip1.Items.AddRange(New ToolStripItem() {MaterialMovementToolStripMenuItem})
         MenuStrip1.Location = New Point(857, 19)
         MenuStrip1.Name = "MenuStrip1"
-        MenuStrip1.Size = New Size(224, 31)
+        MenuStrip1.Size = New Size(404, 32)
         MenuStrip1.TabIndex = 4
         MenuStrip1.Text = "MenuStrip1"
         ' 
@@ -244,7 +244,7 @@ Partial Class Form1
         MaterialMovementToolStripMenuItem.Font = New Font("Century Gothic", 10F, FontStyle.Bold, GraphicsUnit.Point)
         MaterialMovementToolStripMenuItem.ForeColor = Color.White
         MaterialMovementToolStripMenuItem.Name = "MaterialMovementToolStripMenuItem"
-        MaterialMovementToolStripMenuItem.Size = New Size(216, 27)
+        MaterialMovementToolStripMenuItem.Size = New Size(216, 28)
         MaterialMovementToolStripMenuItem.Text = "Material Movement"
         ' 
         ' InwardToolStripMenuItem
@@ -252,7 +252,7 @@ Partial Class Form1
         InwardToolStripMenuItem.BackColor = Color.SlateBlue
         InwardToolStripMenuItem.ForeColor = Color.White
         InwardToolStripMenuItem.Name = "InwardToolStripMenuItem"
-        InwardToolStripMenuItem.Size = New Size(193, 34)
+        InwardToolStripMenuItem.Size = New Size(270, 34)
         InwardToolStripMenuItem.Text = "Inward"
         ' 
         ' OutwardToolStripMenuItem
@@ -260,7 +260,7 @@ Partial Class Form1
         OutwardToolStripMenuItem.BackColor = Color.SlateBlue
         OutwardToolStripMenuItem.ForeColor = Color.White
         OutwardToolStripMenuItem.Name = "OutwardToolStripMenuItem"
-        OutwardToolStripMenuItem.Size = New Size(193, 34)
+        OutwardToolStripMenuItem.Size = New Size(270, 34)
         OutwardToolStripMenuItem.Text = "Outward"
         ' 
         ' Panel3

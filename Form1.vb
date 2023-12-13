@@ -41,4 +41,9 @@
         Dim uc As New Uc_Visitors()
         AddUserControl(uc)
     End Sub
+
+    Private Sub InwardToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles InwardToolStripMenuItem.Click
+        Dim uc As New Uc_Inward()
+        AddUserControl(uc)
+    End Sub
 End Class
