@@ -9,8 +9,7 @@ Public Class Uc_lostandfound
     Private bitmap As Bitmap
     Private Sub Uc_lostandfound_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         conn.ConnectionString = ""
-        Me.VerticalScroll.Maximum = 621
-        Me.AutoScroll = True
+
     End Sub
 
 
@@ -60,11 +59,43 @@ VALUES (@SlNo, @MaterialDetail, @Location, @PersonFound, @Date, @Quantity, @Hand
         TextBox6.Clear()
         TextBox7.Clear()
         TextBox8.Clear()
+    End Sub
 
+    Private Function Datapresent(Slno As Integer) As Boolean
+        Dim Result As Boolean = False
+        conn.Open()
+        Dim query As String = "SELECT * FROM Lostnfound WHERE [Sl no] = @Slno"
+        Using command As New OleDbCommand(query, conn)
+            command.Parameters.AddWithValue("@Slno", TextBox1.Text)
+            Dim reader As OleDbDataReader = command.ExecuteReader()
+            If reader.HasRows Then
+                Result = True
+            End If
+        End Using
+        conn.Close()
+        Return Result
+    End Function
 
-
-
-
-
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Dim Slno = TextBox1.Text
+        If Datapresent(SlNo) Then
+            Try
+                If MessageBox.Show("Are you sure you want to delete this record?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
+                    conn.Open()
+                    cmd = conn.CreateCommand()
+                    cmd.CommandType = CommandType.Text
+                    cmd.CommandText = "DELETE FROM Lostnfound WHERE [Sl no] = " & TextBox1.Text & ""
+                    cmd.ExecuteNonQuery()
+                    conn.Close()
+                    MessageBox.Show("Data deleted successfully.")
+                Else
+                    MessageBox.Show("Data Not Deleted")
+                End If
+            Catch ex As Exception
+                MessageBox.Show("Error: " & ex.Message)
+            End Try
+        Else
+            MessageBox.Show("Sl no Number Not Found!")
+        End If
     End Sub
 End Class

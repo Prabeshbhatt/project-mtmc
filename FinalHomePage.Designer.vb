@@ -285,7 +285,7 @@ Partial Class FinalHomePage
         Panel3.Dock = DockStyle.Fill
         Panel3.Location = New Point(0, 0)
         Panel3.Name = "Panel3"
-        Panel3.Size = New Size(1096, 620)
+        Panel3.Size = New Size(1096, 610)
         Panel3.TabIndex = 5
         ' 
         ' Button3
@@ -301,7 +301,7 @@ Partial Class FinalHomePage
         ' 
         AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1096, 620)
+        ClientSize = New Size(1096, 610)
         Controls.Add(Panel1)
         Controls.Add(Panel2)
         Controls.Add(Panel3)
