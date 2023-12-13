@@ -1,4 +1,11 @@
 ﻿Imports System.Data.OleDb
+Imports System.DirectoryServices.ActiveDirectory
+Imports System.Windows.Forms.VisualStyles.VisualStyleElement
+Imports System.Configuration
+Imports System.Text
+Imports System.Data.SqlClient
+Imports System.Data.SqlTypes
+Imports System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox
 
 Public Class UC_Outward
     Private cmd As New OleDbCommand
@@ -19,7 +26,7 @@ Public Class UC_Outward
         InitializeComponent()
 
         ' Additional initialization if needed
-        conn.ConnectionString = ""
+        conn.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\MTMC PROJECT\DATABASES\OutwardDB.accdb"
     End Sub
 
     ' Handle the Save button click
@@ -33,27 +40,49 @@ Public Class UC_Outward
         Dim Ofrom As String = Fromtxt.Text
         Dim GatePassType As String = GtePssType.SelectedItem
         Dim ReturnDate As String = RtrnDte.Value
+        Dim osender As String = Sendr.Text
+        Dim prpose As String = Purpose.Text
+        Dim vehicle As String = Vhcle.Text
+        Dim driver As String = Drivr.Text
         conn.Open()
         cmd = conn.CreateCommand()
         cmd.CommandType = CommandType.Text
-        cmd.CommandText = "INSERT INTO OUTWARD_FORM ([GATE PASS NO], [MATERIAL], [QUANTITY], [DEPT], [DATE], [TO], [FROM], [GATE PASS TYPE], [RETURN DATE]) 
-            VALUES (@GatePassNo,@Material,@Qty,@Dept,@Date,@To,@From,@GatePassType,@ReturnDate)"
-        cmd.Parameters.AddWithValue("@GatePassNo", OleDbType.Integer).Value = GatePassNo
-        cmd.Parameters.AddWithValue("@Material", OleDbType.VarChar).Value = material
-        cmd.Parameters.AddWithValue("@Qty", OleDbType.Integer).Value = quantity
-        cmd.Parameters.AddWithValue("@Dept", OleDbType.VarChar).Value = department
-        cmd.Parameters.AddWithValue("@Date", OleDbType.Date).Value = Odate
-        cmd.Parameters.AddWithValue("@To", OleDbType.VarChar).Value = Oto
-        cmd.Parameters.AddWithValue("@From", OleDbType.VarChar).Value = Ofrom
-        cmd.Parameters.AddWithValue("@GatePassType", OleDbType.VarChar).Value = GatePassType
-        If GtePssType.SelectedItem = "NRGP" Then
-            cmd.Parameters.AddWithValue("@ReturnDate", DBNull.Value)
-        ElseIf GtePssType.SelectedItem = "RGP" Then
+        If GtePssType.SelectedItem.ToString() = "NRGP" Then
+            cmd.CommandText = "INSERT INTO NRGP_Outward ([GATE PASS TYPE], [GATE PASS NO], [DATE], [DEPT], [FROM],  [TO], [MATERIAL], [QUANTITY],  [SENDER'S NAME], [PURPOSE], [VEHICLE NUMBER], [DRIVER'S NAME]) 
+            VALUES (@GatePassType,@GatePassNo,@Date,@Dept,@From,@To,@Material,@Qty,@Sender,@Purpose,@Vehicle,@Driver)"
+            cmd.Parameters.AddWithValue("@GatePassType", OleDbType.VarChar).Value = GatePassType
+            cmd.Parameters.AddWithValue("@GatePassNo", OleDbType.Integer).Value = GatePassNo
+            cmd.Parameters.AddWithValue("@Date", OleDbType.Date).Value = Odate
+            cmd.Parameters.AddWithValue("@Dept", OleDbType.VarChar).Value = department
+            cmd.Parameters.AddWithValue("@From", OleDbType.VarChar).Value = Ofrom
+            cmd.Parameters.AddWithValue("@To", OleDbType.VarChar).Value = Oto
+            cmd.Parameters.AddWithValue("@Material", OleDbType.VarChar).Value = material
+            cmd.Parameters.AddWithValue("@Qty", OleDbType.Integer).Value = quantity
+            cmd.Parameters.AddWithValue("@Sender", OleDbType.VarChar).Value = osender
+            cmd.Parameters.AddWithValue("@Purpose", OleDbType.VarChar).Value = prpose
+            cmd.Parameters.AddWithValue("@Vehicle", OleDbType.VarChar).Value = vehicle
+            cmd.Parameters.AddWithValue("@Driver", OleDbType.VarChar).Value = driver
+            cmd.ExecuteNonQuery()
+            conn.Close()
+        ElseIf GtePssType.SelectedItem.ToString() = "RGP" Then
+            cmd.CommandText = "INSERT INTO OUTWARD_FORM ([GATE PASS TYPE], [GATE PASS NO], [DATE], [DEPT], [FROM],  [TO], [MATERIAL], [QUANTITY],  [SENDER'S NAME], [RETURN DATE], [PURPOSE], [VEHICLE], [DRIVER'S NAME]) 
+            VALUES (@GatePassType,@GatePassNo,@Date,@Dept,@From,@To,@Material,@Qty,@Sender,@ReturnDate,@Purpose,@Vehicle,@Driver)"
+            cmd.Parameters.AddWithValue("@GatePassType", OleDbType.VarChar).Value = GatePassType
+            cmd.Parameters.AddWithValue("@GatePassNo", OleDbType.Integer).Value = GatePassNo
+            cmd.Parameters.AddWithValue("@Date", OleDbType.Date).Value = Odate
+            cmd.Parameters.AddWithValue("@Dept", OleDbType.VarChar).Value = department
+            cmd.Parameters.AddWithValue("@From", OleDbType.VarChar).Value = Ofrom
+            cmd.Parameters.AddWithValue("@To", OleDbType.VarChar).Value = Oto
+            cmd.Parameters.AddWithValue("@Material", OleDbType.VarChar).Value = material
+            cmd.Parameters.AddWithValue("@Qty", OleDbType.Integer).Value = quantity
+            cmd.Parameters.AddWithValue("@Sender", OleDbType.VarChar).Value = osender
             cmd.Parameters.AddWithValue("@ReturnDate", OleDbType.Date).Value = ReturnDate
+            cmd.Parameters.AddWithValue("@Purpose", OleDbType.VarChar).Value = prpose
+            cmd.Parameters.AddWithValue("@Vehicle", OleDbType.VarChar).Value = vehicle
+            cmd.Parameters.AddWithValue("@Driver", OleDbType.VarChar).Value = driver
+            cmd.ExecuteNonQuery()
+            conn.Close()
         End If
-        cmd.ExecuteNonQuery()
-        conn.Close()
-
         MessageBox.Show("Data inserted successfully.")
         GtPss.Clear()
         Mtrl.Clear()
@@ -64,6 +93,7 @@ Public Class UC_Outward
         Fromtxt.Clear()
         GtePssType.Text = ""
         RtrnDte.Value = DateTime.Now()
+
         RaiseEvent SaveButtonClick(Me, EventArgs.Empty)
     End Sub
     Private Function Datapresent(GatePassNo As Integer) As Boolean
@@ -191,17 +221,89 @@ Public Class UC_Outward
         conn.Close()
     End Sub
 
-    Private Sub GtPssNo_Click(sender As Object, e As EventArgs) Handles GtPssNo.Click
-        If GtePssType.SelectedItem = "NRGP" Then
+    Private Sub GtePssType_SelectedIndexChanged(sender As Object, e As EventArgs) Handles GtePssType.SelectedIndexChanged
+        If GtePssType.SelectedItem.ToString() = "NRGP" Then
             RtrnDte.Hide()
             Label10.Hide()
-        ElseIf GtePssType.SelectedItem = "RGP" Then
+        ElseIf GtePssType.SelectedItem.ToString() = "RGP" Then
             RtrnDte.Show()
             Label10.Show()
         End If
     End Sub
 
-    Private Sub GtePssType_SelectedIndexChanged(sender As Object, e As EventArgs) Handles GtePssType.SelectedIndexChanged
+    Private Sub Fromtxt_TextChanged(sender As Object, e As EventArgs) Handles Fromtxt.TextChanged
+
+    End Sub
+
+    Private Sub DteLbl_Click(sender As Object, e As EventArgs) Handles DteLbl.Click
+
+    End Sub
+
+    Private Sub From_Click(sender As Object, e As EventArgs) Handles From.Click
+
+    End Sub
+
+    Private Sub GtPss_TextChanged(sender As Object, e As EventArgs) Handles GtPss.TextChanged
+
+    End Sub
+
+    Private Sub Dpt_TextChanged(sender As Object, e As EventArgs) Handles Dpt.TextChanged
+
+    End Sub
+
+    Private Sub Dte_ValueChanged(sender As Object, e As EventArgs) Handles Dte.ValueChanged
+
+    End Sub
+
+    Private Sub Totext_TextChanged(sender As Object, e As EventArgs) Handles Totext.TextChanged
+
+    End Sub
+
+    Private Sub Mtrl_TextChanged(sender As Object, e As EventArgs) Handles Mtrl.TextChanged
+
+    End Sub
+
+    Private Sub Qtty_Click(sender As Object, e As EventArgs) Handles Qtty.Click
+
+    End Sub
+
+    Private Sub Label10_Click(sender As Object, e As EventArgs) Handles Label10.Click
+
+    End Sub
+
+    Private Sub Purpose_TextChanged(sender As Object, e As EventArgs) Handles Purpose.TextChanged
+
+    End Sub
+
+    Private Sub Vhcle_TextChanged(sender As Object, e As EventArgs) Handles Vhcle.TextChanged
+
+    End Sub
+
+    Private Sub Drivr_TextChanged(sender As Object, e As EventArgs) Handles Drivr.TextChanged
+
+    End Sub
+
+    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
+
+    End Sub
+
+    Private Sub Sendr_TextChanged(sender As Object, e As EventArgs) Handles Sendr.TextChanged
+
+    End Sub
+
+    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
+
+    End Sub
+
+    Private Sub Label3_Click(sender As Object, e As EventArgs) Handles Label3.Click
+
+    End Sub
+
+    Private Sub Label4_Click(sender As Object, e As EventArgs) Handles Label4.Click
+
+    End Sub
+
+    Private Sub UC_Outward_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
 End Class
