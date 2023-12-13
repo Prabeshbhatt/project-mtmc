@@ -46,7 +46,6 @@ Partial Class Uc_Visitors
         Dim CustomizableEdges22 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges23 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges24 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Uc_Visitors))
         Dim CustomizableEdges25 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges26 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges27 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
@@ -525,8 +524,7 @@ Partial Class Uc_Visitors
         Panel1.Anchor = AnchorStyles.None
         Panel1.AutoSize = True
         Panel1.AutoSizeMode = AutoSizeMode.GrowAndShrink
-        Panel1.BackColor = Color.White
-        Panel1.BackgroundImage = CType(resources.GetObject("Panel1.BackgroundImage"), Image)
+        Panel1.BackColor = Color.FromArgb(CByte(255), CByte(90), CByte(71))
         Panel1.Controls.Add(Btndlt)
         Panel1.Controls.Add(Btnupd)
         Panel1.Controls.Add(DateTimePicker1)
@@ -613,7 +611,7 @@ Partial Class Uc_Visitors
         ' 
         AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
-        BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
+        BackColor = Color.Indigo
         Controls.Add(Panel1)
         Name = "Uc_Visitors"
         Size = New Size(1350, 760)
