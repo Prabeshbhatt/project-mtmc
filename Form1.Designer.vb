@@ -252,7 +252,7 @@ Partial Class Form1
         InwardToolStripMenuItem.BackColor = Color.SlateBlue
         InwardToolStripMenuItem.ForeColor = Color.White
         InwardToolStripMenuItem.Name = "InwardToolStripMenuItem"
-        InwardToolStripMenuItem.Size = New Size(270, 34)
+        InwardToolStripMenuItem.Size = New Size(193, 34)
         InwardToolStripMenuItem.Text = "Inward"
         ' 
         ' OutwardToolStripMenuItem
@@ -260,7 +260,7 @@ Partial Class Form1
         OutwardToolStripMenuItem.BackColor = Color.SlateBlue
         OutwardToolStripMenuItem.ForeColor = Color.White
         OutwardToolStripMenuItem.Name = "OutwardToolStripMenuItem"
-        OutwardToolStripMenuItem.Size = New Size(270, 34)
+        OutwardToolStripMenuItem.Size = New Size(193, 34)
         OutwardToolStripMenuItem.Text = "Outward"
         ' 
         ' Panel3
