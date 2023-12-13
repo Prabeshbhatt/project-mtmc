@@ -23,7 +23,7 @@ Partial Class FinalHomePage
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         components = New ComponentModel.Container()
-        Dim resources As ComponentModel.ComponentResourceManager = New ComponentModel.ComponentResourceManager(GetType(FinalHomePage))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FinalHomePage))
         Dim CustomizableEdges1 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges2 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges3 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
@@ -40,9 +40,9 @@ Partial Class FinalHomePage
         PictureBox1 = New PictureBox()
         Panel2 = New Panel()
         Guna2Button4 = New Guna.UI2.WinForms.Guna2Button()
+        Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
         Guna2Button3 = New Guna.UI2.WinForms.Guna2Button()
         Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
-        Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
         MenuStrip1 = New MenuStrip()
         MaterialMovementToolStripMenuItem = New ToolStripMenuItem()
         InwardToolStripMenuItem = New ToolStripMenuItem()
@@ -125,11 +125,11 @@ Partial Class FinalHomePage
         ' Panel2
         ' 
         Panel2.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
-        Panel2.BackColor = Color.SlateBlue
+        Panel2.BackColor = Color.Indigo
         Panel2.Controls.Add(Guna2Button4)
+        Panel2.Controls.Add(Guna2Button1)
         Panel2.Controls.Add(Guna2Button3)
         Panel2.Controls.Add(Guna2Button2)
-        Panel2.Controls.Add(Guna2Button1)
         Panel2.Controls.Add(MenuStrip1)
         Panel2.Location = New Point(0, 93)
         Panel2.Name = "Panel2"
@@ -149,7 +149,7 @@ Partial Class FinalHomePage
         Guna2Button4.DisabledState.CustomBorderColor = Color.DarkGray
         Guna2Button4.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
         Guna2Button4.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
-        Guna2Button4.FillColor = Color.SlateBlue
+        Guna2Button4.FillColor = Color.Transparent
         Guna2Button4.Font = New Font("Century Gothic", 10F, FontStyle.Bold, GraphicsUnit.Point)
         Guna2Button4.ForeColor = Color.White
         Guna2Button4.HoverState.CustomBorderColor = Color.Red
@@ -161,6 +161,32 @@ Partial Class FinalHomePage
         Guna2Button4.TabIndex = 3
         Guna2Button4.Text = "Lost and Found"
         ' 
+        ' Guna2Button1
+        ' 
+        Guna2Button1.Anchor = AnchorStyles.Top
+        Guna2Button1.Animated = True
+        Guna2Button1.AnimatedGIF = True
+        Guna2Button1.BackColor = Color.Transparent
+        Guna2Button1.BorderColor = Color.Transparent
+        Guna2Button1.CheckedState.CustomBorderColor = Color.Red
+        Guna2Button1.CustomBorderThickness = New Padding(0, 0, 0, 2)
+        Guna2Button1.CustomizableEdges = CustomizableEdges3
+        Guna2Button1.DisabledState.BorderColor = Color.DarkGray
+        Guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray
+        Guna2Button1.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
+        Guna2Button1.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
+        Guna2Button1.FillColor = Color.Transparent
+        Guna2Button1.Font = New Font("Century Gothic", 10F, FontStyle.Bold, GraphicsUnit.Point)
+        Guna2Button1.ForeColor = Color.White
+        Guna2Button1.HoverState.CustomBorderColor = Color.Red
+        Guna2Button1.Location = New Point(3, 2)
+        Guna2Button1.Name = "Guna2Button1"
+        Guna2Button1.PressedColor = Color.GhostWhite
+        Guna2Button1.ShadowDecoration.CustomizableEdges = CustomizableEdges4
+        Guna2Button1.Size = New Size(209, 68)
+        Guna2Button1.TabIndex = 0
+        Guna2Button1.Text = "Deployment"
+        ' 
         ' Guna2Button3
         ' 
         Guna2Button3.Anchor = AnchorStyles.Top
@@ -169,19 +195,19 @@ Partial Class FinalHomePage
         Guna2Button3.BorderColor = Color.SlateBlue
         Guna2Button3.CheckedState.CustomBorderColor = Color.Red
         Guna2Button3.CustomBorderThickness = New Padding(0, 0, 0, 2)
-        Guna2Button3.CustomizableEdges = CustomizableEdges3
+        Guna2Button3.CustomizableEdges = CustomizableEdges5
         Guna2Button3.DisabledState.BorderColor = Color.DarkGray
         Guna2Button3.DisabledState.CustomBorderColor = Color.DarkGray
         Guna2Button3.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
         Guna2Button3.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
-        Guna2Button3.FillColor = Color.SlateBlue
+        Guna2Button3.FillColor = Color.Transparent
         Guna2Button3.Font = New Font("Century Gothic", 10F, FontStyle.Bold, GraphicsUnit.Point)
         Guna2Button3.ForeColor = Color.White
         Guna2Button3.HoverState.CustomBorderColor = Color.Red
         Guna2Button3.Location = New Point(414, 3)
         Guna2Button3.Name = "Guna2Button3"
         Guna2Button3.PressedColor = Color.WhiteSmoke
-        Guna2Button3.ShadowDecoration.CustomizableEdges = CustomizableEdges4
+        Guna2Button3.ShadowDecoration.CustomizableEdges = CustomizableEdges6
         Guna2Button3.Size = New Size(209, 68)
         Guna2Button3.TabIndex = 2
         Guna2Button3.Text = "Courier"
@@ -191,55 +217,29 @@ Partial Class FinalHomePage
         Guna2Button2.Anchor = AnchorStyles.Top
         Guna2Button2.Animated = True
         Guna2Button2.AnimatedGIF = True
-        Guna2Button2.BorderColor = Color.SlateBlue
         Guna2Button2.CheckedState.CustomBorderColor = Color.Red
         Guna2Button2.CustomBorderThickness = New Padding(0, 0, 0, 2)
-        Guna2Button2.CustomizableEdges = CustomizableEdges5
+        Guna2Button2.CustomizableEdges = CustomizableEdges7
         Guna2Button2.DisabledState.BorderColor = Color.DarkGray
         Guna2Button2.DisabledState.CustomBorderColor = Color.DarkGray
         Guna2Button2.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
         Guna2Button2.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
-        Guna2Button2.FillColor = Color.SlateBlue
+        Guna2Button2.FillColor = Color.Transparent
         Guna2Button2.Font = New Font("Century Gothic", 10F, FontStyle.Bold, GraphicsUnit.Point)
         Guna2Button2.ForeColor = Color.White
         Guna2Button2.HoverState.CustomBorderColor = Color.Red
         Guna2Button2.Location = New Point(215, 3)
         Guna2Button2.Name = "Guna2Button2"
         Guna2Button2.PressedColor = Color.GhostWhite
-        Guna2Button2.ShadowDecoration.CustomizableEdges = CustomizableEdges6
+        Guna2Button2.ShadowDecoration.CustomizableEdges = CustomizableEdges8
         Guna2Button2.Size = New Size(209, 68)
         Guna2Button2.TabIndex = 1
         Guna2Button2.Text = "Visitors"
         ' 
-        ' Guna2Button1
-        ' 
-        Guna2Button1.Anchor = AnchorStyles.Top
-        Guna2Button1.Animated = True
-        Guna2Button1.AnimatedGIF = True
-        Guna2Button1.BorderColor = Color.SlateBlue
-        Guna2Button1.CheckedState.CustomBorderColor = Color.Red
-        Guna2Button1.CustomBorderThickness = New Padding(0, 0, 0, 2)
-        Guna2Button1.CustomizableEdges = CustomizableEdges7
-        Guna2Button1.DisabledState.BorderColor = Color.DarkGray
-        Guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray
-        Guna2Button1.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
-        Guna2Button1.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
-        Guna2Button1.FillColor = Color.SlateBlue
-        Guna2Button1.Font = New Font("Century Gothic", 10F, FontStyle.Bold, GraphicsUnit.Point)
-        Guna2Button1.ForeColor = Color.White
-        Guna2Button1.HoverState.CustomBorderColor = Color.Red
-        Guna2Button1.Location = New Point(0, 2)
-        Guna2Button1.Name = "Guna2Button1"
-        Guna2Button1.PressedColor = Color.GhostWhite
-        Guna2Button1.ShadowDecoration.CustomizableEdges = CustomizableEdges8
-        Guna2Button1.Size = New Size(209, 68)
-        Guna2Button1.TabIndex = 0
-        Guna2Button1.Text = "Deployment"
-        ' 
         ' MenuStrip1
         ' 
         MenuStrip1.Anchor = AnchorStyles.Top
-        MenuStrip1.BackColor = Color.SlateBlue
+        MenuStrip1.BackColor = Color.Transparent
         MenuStrip1.Dock = DockStyle.None
         MenuStrip1.Font = New Font("Century Gothic", 10F, FontStyle.Bold, GraphicsUnit.Point)
         MenuStrip1.ImageScalingSize = New Size(24, 24)
@@ -252,7 +252,7 @@ Partial Class FinalHomePage
         ' 
         ' MaterialMovementToolStripMenuItem
         ' 
-        MaterialMovementToolStripMenuItem.BackColor = Color.SlateBlue
+        MaterialMovementToolStripMenuItem.BackColor = Color.Indigo
         MaterialMovementToolStripMenuItem.BackgroundImageLayout = ImageLayout.None
         MaterialMovementToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {InwardToolStripMenuItem, OutwardToolStripMenuItem})
         MaterialMovementToolStripMenuItem.Font = New Font("Century Gothic", 10F, FontStyle.Bold, GraphicsUnit.Point)
@@ -263,7 +263,7 @@ Partial Class FinalHomePage
         ' 
         ' InwardToolStripMenuItem
         ' 
-        InwardToolStripMenuItem.BackColor = Color.SlateBlue
+        InwardToolStripMenuItem.BackColor = Color.Indigo
         InwardToolStripMenuItem.ForeColor = Color.White
         InwardToolStripMenuItem.Name = "InwardToolStripMenuItem"
         InwardToolStripMenuItem.Size = New Size(193, 34)
@@ -271,7 +271,7 @@ Partial Class FinalHomePage
         ' 
         ' OutwardToolStripMenuItem
         ' 
-        OutwardToolStripMenuItem.BackColor = Color.SlateBlue
+        OutwardToolStripMenuItem.BackColor = Color.Indigo
         OutwardToolStripMenuItem.ForeColor = Color.White
         OutwardToolStripMenuItem.Name = "OutwardToolStripMenuItem"
         OutwardToolStripMenuItem.Size = New Size(193, 34)
