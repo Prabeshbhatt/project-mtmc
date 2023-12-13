@@ -107,7 +107,7 @@ Partial Class UC_Outward
         From.Size = New Size(73, 32)
         From.TabIndex = 61
         From.Text = "From"
-        '
+        ' 
         ' Totext
         ' 
         Totext.Anchor = AnchorStyles.None
@@ -336,7 +336,7 @@ Partial Class UC_Outward
         Guna2Button1.FillColor = Color.SlateBlue
         Guna2Button1.Font = New Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point)
         Guna2Button1.ForeColor = Color.White
-        Guna2Button1.Location = New Point(146, 769)
+        Guna2Button1.Location = New Point(203, 917)
         Guna2Button1.Name = "Guna2Button1"
         Guna2Button1.PressedColor = Color.WhiteSmoke
         Guna2Button1.ShadowDecoration.CustomizableEdges = CustomizableEdges2
@@ -357,7 +357,7 @@ Partial Class UC_Outward
         Guna2Button2.FillColor = Color.SlateBlue
         Guna2Button2.Font = New Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point)
         Guna2Button2.ForeColor = Color.White
-        Guna2Button2.Location = New Point(440, 769)
+        Guna2Button2.Location = New Point(453, 917)
         Guna2Button2.Name = "Guna2Button2"
         Guna2Button2.PressedColor = Color.WhiteSmoke
         Guna2Button2.ShadowDecoration.CustomizableEdges = CustomizableEdges4
@@ -378,7 +378,7 @@ Partial Class UC_Outward
         Guna2Button3.FillColor = Color.SlateBlue
         Guna2Button3.Font = New Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point)
         Guna2Button3.ForeColor = Color.White
-        Guna2Button3.Location = New Point(711, 769)
+        Guna2Button3.Location = New Point(697, 917)
         Guna2Button3.Name = "Guna2Button3"
         Guna2Button3.PressedColor = Color.WhiteSmoke
         Guna2Button3.ShadowDecoration.CustomizableEdges = CustomizableEdges6
