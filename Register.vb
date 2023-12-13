@@ -89,5 +89,9 @@ Public Class Register
     Private Sub Label2_Click_1(sender As Object, e As EventArgs) Handles Label2.Click
 
     End Sub
+
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
+
+    End Sub
 End Class
 
