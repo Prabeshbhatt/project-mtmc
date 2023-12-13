@@ -109,7 +109,7 @@ Partial Class Uc_Visitors
         RadioButton2.CheckedState.InnerColor = Color.White
         RadioButton2.CheckedState.InnerOffset = -4
         RadioButton2.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
-        RadioButton2.Location = New Point(1058, 440)
+        RadioButton2.Location = New Point(898, 537)
         RadioButton2.Name = "RadioButton2"
         RadioButton2.Size = New Size(129, 36)
         RadioButton2.TabIndex = 115
@@ -128,7 +128,7 @@ Partial Class Uc_Visitors
         RadioButton1.CheckedState.InnerColor = Color.White
         RadioButton1.CheckedState.InnerOffset = -4
         RadioButton1.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
-        RadioButton1.Location = New Point(948, 440)
+        RadioButton1.Location = New Point(898, 486)
         RadioButton1.Name = "RadioButton1"
         RadioButton1.Size = New Size(104, 36)
         RadioButton1.TabIndex = 114
