@@ -22,14 +22,17 @@ Partial Class UC_Outward
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim CustomizableEdges1 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges2 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges3 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges4 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges5 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges6 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         GtePssType = New ComboBox()
         RtrnDte = New DateTimePicker()
         Dte = New DateTimePicker()
         Fromtxt = New TextBox()
         From = New Label()
-        BtnDlt = New Button()
-        Btnupdt = New Button()
-        Btnsave = New Button()
         Totext = New TextBox()
         Dpt = New TextBox()
         Qty = New TextBox()
@@ -51,6 +54,9 @@ Partial Class UC_Outward
         Label3 = New Label()
         Drivr = New TextBox()
         Label4 = New Label()
+        Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
+        Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
+        Guna2Button3 = New Guna.UI2.WinForms.Guna2Button()
         SuspendLayout()
         ' 
         ' GtePssType
@@ -101,39 +107,6 @@ Partial Class UC_Outward
         From.Size = New Size(73, 32)
         From.TabIndex = 61
         From.Text = "From"
-        ' 
-        ' BtnDlt
-        ' 
-        BtnDlt.Anchor = AnchorStyles.None
-        BtnDlt.Font = New Font("Times New Roman", 14F, FontStyle.Bold, GraphicsUnit.Point)
-        BtnDlt.Location = New Point(604, 762)
-        BtnDlt.Name = "BtnDlt"
-        BtnDlt.Size = New Size(140, 60)
-        BtnDlt.TabIndex = 60
-        BtnDlt.Text = "DELETE"
-        BtnDlt.UseVisualStyleBackColor = True
-        ' 
-        ' Btnupdt
-        ' 
-        Btnupdt.Anchor = AnchorStyles.None
-        Btnupdt.Font = New Font("Times New Roman", 14F, FontStyle.Bold, GraphicsUnit.Point)
-        Btnupdt.Location = New Point(424, 762)
-        Btnupdt.Name = "Btnupdt"
-        Btnupdt.Size = New Size(140, 60)
-        Btnupdt.TabIndex = 59
-        Btnupdt.Text = "UPDATE"
-        Btnupdt.UseVisualStyleBackColor = True
-        ' 
-        ' Btnsave
-        ' 
-        Btnsave.Anchor = AnchorStyles.None
-        Btnsave.Font = New Font("Times New Roman", 14F, FontStyle.Bold, GraphicsUnit.Point)
-        Btnsave.Location = New Point(240, 762)
-        Btnsave.Name = "Btnsave"
-        Btnsave.Size = New Size(140, 60)
-        Btnsave.TabIndex = 58
-        Btnsave.Text = "SAVE"
-        Btnsave.UseVisualStyleBackColor = True
         ' 
         ' Totext
         ' 
@@ -350,10 +323,76 @@ Partial Class UC_Outward
         Label4.TabIndex = 72
         Label4.Text = "Driver"
         ' 
+        ' Guna2Button1
+        ' 
+        Guna2Button1.Anchor = AnchorStyles.None
+        Guna2Button1.Animated = True
+        Guna2Button1.AnimatedGIF = True
+        Guna2Button1.CustomizableEdges = CustomizableEdges1
+        Guna2Button1.DisabledState.BorderColor = Color.DarkGray
+        Guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray
+        Guna2Button1.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
+        Guna2Button1.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
+        Guna2Button1.FillColor = Color.SlateBlue
+        Guna2Button1.Font = New Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point)
+        Guna2Button1.ForeColor = Color.White
+        Guna2Button1.Location = New Point(146, 769)
+        Guna2Button1.Name = "Guna2Button1"
+        Guna2Button1.PressedColor = Color.WhiteSmoke
+        Guna2Button1.ShadowDecoration.CustomizableEdges = CustomizableEdges2
+        Guna2Button1.Size = New Size(140, 60)
+        Guna2Button1.TabIndex = 74
+        Guna2Button1.Text = "Save"
+        ' 
+        ' Guna2Button2
+        ' 
+        Guna2Button2.Anchor = AnchorStyles.None
+        Guna2Button2.Animated = True
+        Guna2Button2.AnimatedGIF = True
+        Guna2Button2.CustomizableEdges = CustomizableEdges3
+        Guna2Button2.DisabledState.BorderColor = Color.DarkGray
+        Guna2Button2.DisabledState.CustomBorderColor = Color.DarkGray
+        Guna2Button2.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
+        Guna2Button2.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
+        Guna2Button2.FillColor = Color.SlateBlue
+        Guna2Button2.Font = New Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point)
+        Guna2Button2.ForeColor = Color.White
+        Guna2Button2.Location = New Point(440, 769)
+        Guna2Button2.Name = "Guna2Button2"
+        Guna2Button2.PressedColor = Color.WhiteSmoke
+        Guna2Button2.ShadowDecoration.CustomizableEdges = CustomizableEdges4
+        Guna2Button2.Size = New Size(140, 60)
+        Guna2Button2.TabIndex = 75
+        Guna2Button2.Text = "Update"
+        ' 
+        ' Guna2Button3
+        ' 
+        Guna2Button3.Anchor = AnchorStyles.None
+        Guna2Button3.Animated = True
+        Guna2Button3.AnimatedGIF = True
+        Guna2Button3.CustomizableEdges = CustomizableEdges5
+        Guna2Button3.DisabledState.BorderColor = Color.DarkGray
+        Guna2Button3.DisabledState.CustomBorderColor = Color.DarkGray
+        Guna2Button3.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
+        Guna2Button3.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
+        Guna2Button3.FillColor = Color.SlateBlue
+        Guna2Button3.Font = New Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point)
+        Guna2Button3.ForeColor = Color.White
+        Guna2Button3.Location = New Point(711, 769)
+        Guna2Button3.Name = "Guna2Button3"
+        Guna2Button3.PressedColor = Color.WhiteSmoke
+        Guna2Button3.ShadowDecoration.CustomizableEdges = CustomizableEdges6
+        Guna2Button3.Size = New Size(140, 60)
+        Guna2Button3.TabIndex = 76
+        Guna2Button3.Text = "Delete"
+        ' 
         ' UC_Outward
         ' 
         AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
+        Controls.Add(Guna2Button3)
+        Controls.Add(Guna2Button2)
+        Controls.Add(Guna2Button1)
         Controls.Add(Drivr)
         Controls.Add(Label4)
         Controls.Add(Vhcle)
@@ -368,9 +407,6 @@ Partial Class UC_Outward
         Controls.Add(Dte)
         Controls.Add(Fromtxt)
         Controls.Add(From)
-        Controls.Add(BtnDlt)
-        Controls.Add(Btnupdt)
-        Controls.Add(Btnsave)
         Controls.Add(Totext)
         Controls.Add(Dpt)
         Controls.Add(Qty)
@@ -393,9 +429,6 @@ Partial Class UC_Outward
     Friend WithEvents Dte As DateTimePicker
     Friend WithEvents Fromtxt As TextBox
     Friend WithEvents From As Label
-    Friend WithEvents BtnDlt As Button
-    Friend WithEvents Btnupdt As Button
-    Friend WithEvents Btnsave As Button
     Friend WithEvents Totext As TextBox
     Friend WithEvents Dpt As TextBox
     Friend WithEvents Qty As TextBox
@@ -417,5 +450,7 @@ Partial Class UC_Outward
     Friend WithEvents Label3 As Label
     Friend WithEvents Drivr As TextBox
     Friend WithEvents Label4 As Label
-
+    Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Guna2Button2 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Guna2Button3 As Guna.UI2.WinForms.Guna2Button
 End Class

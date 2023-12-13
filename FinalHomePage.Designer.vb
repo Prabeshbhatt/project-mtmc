@@ -23,7 +23,7 @@ Partial Class FinalHomePage
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         components = New ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FinalHomePage))
+        Dim resources As ComponentModel.ComponentResourceManager = New ComponentModel.ComponentResourceManager(GetType(FinalHomePage))
         Dim CustomizableEdges1 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges2 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges3 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
@@ -48,10 +48,12 @@ Partial Class FinalHomePage
         InwardToolStripMenuItem = New ToolStripMenuItem()
         OutwardToolStripMenuItem = New ToolStripMenuItem()
         Panel3 = New Panel()
+        Button3 = New Button()
         Panel1.SuspendLayout()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         Panel2.SuspendLayout()
         MenuStrip1.SuspendLayout()
+        Panel3.SuspendLayout()
         SuspendLayout()
         ' 
         ' Guna2BorderlessForm1
@@ -137,6 +139,8 @@ Partial Class FinalHomePage
         ' Guna2Button4
         ' 
         Guna2Button4.Anchor = AnchorStyles.Top
+        Guna2Button4.Animated = True
+        Guna2Button4.AnimatedGIF = True
         Guna2Button4.BorderColor = Color.SlateBlue
         Guna2Button4.CheckedState.CustomBorderColor = Color.Red
         Guna2Button4.CustomBorderThickness = New Padding(0, 0, 0, 2)
@@ -151,6 +155,7 @@ Partial Class FinalHomePage
         Guna2Button4.HoverState.CustomBorderColor = Color.Red
         Guna2Button4.Location = New Point(619, 2)
         Guna2Button4.Name = "Guna2Button4"
+        Guna2Button4.PressedColor = Color.WhiteSmoke
         Guna2Button4.ShadowDecoration.CustomizableEdges = CustomizableEdges2
         Guna2Button4.Size = New Size(209, 68)
         Guna2Button4.TabIndex = 3
@@ -159,6 +164,8 @@ Partial Class FinalHomePage
         ' Guna2Button3
         ' 
         Guna2Button3.Anchor = AnchorStyles.Top
+        Guna2Button3.Animated = True
+        Guna2Button3.AnimatedGIF = True
         Guna2Button3.BorderColor = Color.SlateBlue
         Guna2Button3.CheckedState.CustomBorderColor = Color.Red
         Guna2Button3.CustomBorderThickness = New Padding(0, 0, 0, 2)
@@ -173,6 +180,7 @@ Partial Class FinalHomePage
         Guna2Button3.HoverState.CustomBorderColor = Color.Red
         Guna2Button3.Location = New Point(414, 3)
         Guna2Button3.Name = "Guna2Button3"
+        Guna2Button3.PressedColor = Color.WhiteSmoke
         Guna2Button3.ShadowDecoration.CustomizableEdges = CustomizableEdges4
         Guna2Button3.Size = New Size(209, 68)
         Guna2Button3.TabIndex = 2
@@ -181,6 +189,8 @@ Partial Class FinalHomePage
         ' Guna2Button2
         ' 
         Guna2Button2.Anchor = AnchorStyles.Top
+        Guna2Button2.Animated = True
+        Guna2Button2.AnimatedGIF = True
         Guna2Button2.BorderColor = Color.SlateBlue
         Guna2Button2.CheckedState.CustomBorderColor = Color.Red
         Guna2Button2.CustomBorderThickness = New Padding(0, 0, 0, 2)
@@ -195,6 +205,7 @@ Partial Class FinalHomePage
         Guna2Button2.HoverState.CustomBorderColor = Color.Red
         Guna2Button2.Location = New Point(215, 3)
         Guna2Button2.Name = "Guna2Button2"
+        Guna2Button2.PressedColor = Color.GhostWhite
         Guna2Button2.ShadowDecoration.CustomizableEdges = CustomizableEdges6
         Guna2Button2.Size = New Size(209, 68)
         Guna2Button2.TabIndex = 1
@@ -203,6 +214,8 @@ Partial Class FinalHomePage
         ' Guna2Button1
         ' 
         Guna2Button1.Anchor = AnchorStyles.Top
+        Guna2Button1.Animated = True
+        Guna2Button1.AnimatedGIF = True
         Guna2Button1.BorderColor = Color.SlateBlue
         Guna2Button1.CheckedState.CustomBorderColor = Color.Red
         Guna2Button1.CustomBorderThickness = New Padding(0, 0, 0, 2)
@@ -217,6 +230,7 @@ Partial Class FinalHomePage
         Guna2Button1.HoverState.CustomBorderColor = Color.Red
         Guna2Button1.Location = New Point(0, 2)
         Guna2Button1.Name = "Guna2Button1"
+        Guna2Button1.PressedColor = Color.GhostWhite
         Guna2Button1.ShadowDecoration.CustomizableEdges = CustomizableEdges8
         Guna2Button1.Size = New Size(209, 68)
         Guna2Button1.TabIndex = 0
@@ -252,7 +266,7 @@ Partial Class FinalHomePage
         InwardToolStripMenuItem.BackColor = Color.SlateBlue
         InwardToolStripMenuItem.ForeColor = Color.White
         InwardToolStripMenuItem.Name = "InwardToolStripMenuItem"
-        InwardToolStripMenuItem.Size = New Size(193, 34)
+        InwardToolStripMenuItem.Size = New Size(270, 34)
         InwardToolStripMenuItem.Text = "Inward"
         ' 
         ' OutwardToolStripMenuItem
@@ -260,18 +274,28 @@ Partial Class FinalHomePage
         OutwardToolStripMenuItem.BackColor = Color.SlateBlue
         OutwardToolStripMenuItem.ForeColor = Color.White
         OutwardToolStripMenuItem.Name = "OutwardToolStripMenuItem"
-        OutwardToolStripMenuItem.Size = New Size(193, 34)
+        OutwardToolStripMenuItem.Size = New Size(270, 34)
         OutwardToolStripMenuItem.Text = "Outward"
         ' 
         ' Panel3
         ' 
-        Panel3.AccessibleRole = AccessibleRole.ScrollBar
+        Panel3.AutoScroll = True
         Panel3.BackColor = Color.White
+        Panel3.Controls.Add(Button3)
         Panel3.Dock = DockStyle.Fill
         Panel3.Location = New Point(0, 0)
         Panel3.Name = "Panel3"
         Panel3.Size = New Size(1096, 620)
         Panel3.TabIndex = 5
+        ' 
+        ' Button3
+        ' 
+        Button3.Location = New Point(0, 0)
+        Button3.Name = "Button3"
+        Button3.Size = New Size(112, 34)
+        Button3.TabIndex = 0
+        Button3.Text = "Button3"
+        Button3.UseVisualStyleBackColor = True
         ' 
         ' FinalHomePage
         ' 
@@ -292,6 +316,7 @@ Partial Class FinalHomePage
         Panel2.PerformLayout()
         MenuStrip1.ResumeLayout(False)
         MenuStrip1.PerformLayout()
+        Panel3.ResumeLayout(False)
         ResumeLayout(False)
     End Sub
 
@@ -311,4 +336,5 @@ Partial Class FinalHomePage
     Friend WithEvents InwardToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents OutwardToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Panel3 As Panel
+    Friend WithEvents Button3 As Button
 End Class
