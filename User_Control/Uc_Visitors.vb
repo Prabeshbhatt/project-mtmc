@@ -15,6 +15,9 @@ Public Class Uc_Visitors
     Dim connectionString As String = ""
 
     Dim connection As New OleDbConnection(connectionString)
+    Private Shared originalDateTimeValueStandard As DateTime
+    Private Shared originalContactNumber As String
+
     Private Sub save_Click(sender As Object, e As EventArgs) Handles save.Click
         Dim vid As Integer = If(Integer.TryParse(idno.Text, Nothing), Integer.Parse(idno.Text), 0)
         Dim dateTimeValueStandard As DateTime = DateTimePicker1.Value
@@ -256,6 +259,11 @@ Public Class Uc_Visitors
         End Try
     End Sub
 
+
+
+
+
+
     Private Sub Btnupd_Click(sender As Object, e As EventArgs) Handles Btnupd.Click
         Try
             ' Get the VISITORS ID from user input or another source during runtime
@@ -269,37 +277,31 @@ Public Class Uc_Visitors
                     Dim updatedName As String = InputBox("Enter updated name:")
                     Dim updatedNationalID As String = InputBox("Enter updated national ID:")
                     Dim updatedAddress As String = InputBox("Enter updated address:")
-                    Dim updatedContactNumber As Integer
-                    If Not Integer.TryParse(InputBox("Enter updated contact number:"), updatedContactNumber) Then
-                        MessageBox.Show("Invalid input for updated contact number.")
-                        Exit Sub
-                    End If
                     Dim updatedSex As String = InputBox("Enter updated sex:")
                     Dim updatedPersonToMeet As String = InputBox("Enter updated person to meet:")
-                    Dim updatedInTime As DateTime
-                    If Not DateTime.TryParse(InputBox("Enter updated in time:"), updatedInTime) Then
-                        MessageBox.Show("Invalid input for updated in time.")
-                        Exit Sub
-                    End If
-                    Dim updatedOutTime As DateTime
-                    If Not DateTime.TryParse(InputBox("Enter updated out time:"), updatedOutTime) Then
-                        MessageBox.Show("Invalid input for updated out time.")
-                        Exit Sub
-                    End If
+                    Dim updatedPurposeOfVisit As String = InputBox("Enter updated purpose of visit:")
+                    Dim updatedContactNumber As String = InputBox("Enter updated contact number (leave blank to keep it unchanged):")
+
+                    ' Use the class-level variables to store and retrieve the original values
+                    Dim updatedInTime As DateTime = If(originalDateTimeValueStandard = DateTime.MinValue, DateTimePicker1.Value, originalDateTimeValueStandard)
+                    Dim updatedOutTime As DateTime = If(originalDateTimeValueStandard = DateTime.MinValue, DateTimePicker1.Value, originalDateTimeValueStandard)
+
+                    ' Set updatedContactNumber to originalContactNumber if user doesn't want to change it
+                    updatedContactNumber = If(String.IsNullOrEmpty(updatedContactNumber), originalContactNumber, updatedContactNumber)
+
                     Dim updatedTotalPersons As Integer
-                    If Not Integer.TryParse(InputBox("Enter updated total persons:"), updatedTotalPersons) Then
-                        MessageBox.Show("Invalid input for updated total persons.")
-                        Exit Sub
+                    If Not Integer.TryParse(InputBox("Enter updated total persons (leave blank to keep it unchanged):"), updatedTotalPersons) Then
+                        ' Set it to a specific default value or leave it unchanged
+                        updatedTotalPersons = 0 ' Replace 0 with the value you want to set
                     End If
                     Dim updatedNoOfHours As Integer
-                    If Not Integer.TryParse(InputBox("Enter updated no of hours:"), updatedNoOfHours) Then
-                        MessageBox.Show("Invalid input for updated no of hours.")
-                        Exit Sub
+                    If Not Integer.TryParse(InputBox("Enter updated no of hours (leave blank to keep it unchanged):"), updatedNoOfHours) Then
+                        ' Set it to a specific default value or leave it unchanged
+                        updatedNoOfHours = 0 ' Replace 0 with the value you want to set
                     End If
-                    Dim updatedPurposeOfVisit As String = InputBox("Enter updated purpose of visit:")
 
                     ' Call the UpdateUser function with the collected data
-                    UpdateUser(vid, updatedName, updatedNationalID, updatedAddress, updatedContactNumber, updatedSex, updatedPersonToMeet, updatedInTime, updatedOutTime, updatedTotalPersons, updatedNoOfHours, updatedPurposeOfVisit)
+                    UpdateUser(vid, updatedName, updatedNationalID, updatedAddress, updatedSex, updatedPersonToMeet, updatedContactNumber, updatedInTime, updatedOutTime, updatedTotalPersons, updatedNoOfHours, updatedPurposeOfVisit)
                 Else
                     ' User does not exist
                     MessageBox.Show($"User with VISITORS ID {vid} does not exist.")
@@ -313,32 +315,31 @@ Public Class Uc_Visitors
         End Try
     End Sub
 
-    Private Sub UpdateUser(vid As Integer, name As String, nationalID As String, address As String, contactNumber As Integer, sex As String, personToMeet As String, inTime As DateTime, outTime As DateTime, totalPersons As Integer, noofhours As Integer, purposeOfVisit As String)
+    Private Sub UpdateUser(vid As Integer, name As String, nationalID As String, address As String, sex As String, personToMeet As String, contactNumber As String, inTime As DateTime, outTime As DateTime, totalPersons As Integer, noofhours As Integer, purposeOfVisit As String)
         Try
-            ' Use your actual database path and provider
             Dim connectionString As String = ""
 
             Using conn As New OleDbConnection(connectionString)
                 conn.Open()
 
-                Dim query As String = "UPDATE VISITORS SET [NAME] = @Name, [NATIONAL ID] = @NationalID, [ADDRESS] = @Address, [CONTACT NUMBER] = @ContactNumber, [SEX] = @Sex, [PERSON TO MEET] = @PersonToMeet, [IN TIME] = @InTime, [OUT TIME] = @OutTime, [TOTAL PERSON] = @TotalPersons, [NO OF HOURS] = @NoOfHours, [PURPOSE TO VISIT] = @PurposeOfVisit WHERE [VISITORS ID] = @VisitorID"
+                Dim query As String = "UPDATE VISITORS SET [NAME] = @Name, [NATIONAL ID] = @NationalID, [ADDRESS] = @Address, [SEX] = @Sex, [PERSON TO MEET] = @PersonToMeet, [CONTACT NUMBER] = @ContactNumber, [IN TIME] = @InTime, [OUT TIME] = @OutTime, [TOTAL PERSON] = @TotalPersons, [NO OF HOURS] = @NoOfHours, [PURPOSE TO VISIT] = @PurposeOfVisit WHERE [VISITORS ID] = @VisitorID"
 
                 Using command As New OleDbCommand(query, conn)
-                    ' Set parameters
+
                     command.Parameters.AddWithValue("@Name", OleDbType.WChar).Value = name
                     command.Parameters.AddWithValue("@NationalID", OleDbType.WChar).Value = nationalID
                     command.Parameters.AddWithValue("@Address", OleDbType.WChar).Value = address
-                    command.Parameters.AddWithValue("@ContactNumber", OleDbType.Integer).Value = contactNumber
                     command.Parameters.AddWithValue("@Sex", OleDbType.WChar).Value = sex
                     command.Parameters.AddWithValue("@PersonToMeet", OleDbType.WChar).Value = personToMeet
-                    command.Parameters.AddWithValue("@InTime", OleDbType.Date).Value = inTime
-                    command.Parameters.AddWithValue("@OutTime", OleDbType.Date).Value = outTime
+                    command.Parameters.AddWithValue("@ContactNumber", OleDbType.WChar).Value = contactNumber
+                    command.Parameters.AddWithValue("@InTime", OleDbType.DBTimeStamp).Value = If(inTime = DateTime.MinValue, DBNull.Value, CType(inTime, Object))
+                    command.Parameters.AddWithValue("@OutTime", OleDbType.DBTimeStamp).Value = If(outTime = DateTime.MinValue, DBNull.Value, CType(outTime, Object))
                     command.Parameters.AddWithValue("@TotalPersons", OleDbType.Integer).Value = totalPersons
                     command.Parameters.AddWithValue("@NoOfHours", OleDbType.Integer).Value = noofhours
                     command.Parameters.AddWithValue("@PurposeOfVisit", OleDbType.WChar).Value = purposeOfVisit
                     command.Parameters.AddWithValue("@VisitorID", OleDbType.Integer).Value = vid
 
-                    ' Execute the UPDATE query
+
                     command.ExecuteNonQuery()
                 End Using
             End Using
@@ -348,6 +349,8 @@ Public Class Uc_Visitors
             MessageBox.Show($"Error updating user: {ex.Message}")
         End Try
     End Sub
+
+
 
 
 
