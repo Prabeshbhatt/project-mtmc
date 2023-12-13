@@ -22,6 +22,7 @@ Partial Class ProfilePage
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ProfilePage))
         Panel1 = New Panel()
         LinkLabel1 = New LinkLabel()
         Label14 = New Label()
@@ -52,6 +53,7 @@ Partial Class ProfilePage
         EName = New TextBox()
         Label1 = New Label()
         TextBox1 = New TextBox()
+        Button1 = New Button()
         Panel1.SuspendLayout()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
@@ -60,6 +62,7 @@ Partial Class ProfilePage
         ' 
         Panel1.Anchor = AnchorStyles.None
         Panel1.BackColor = Color.SkyBlue
+        Panel1.Controls.Add(Button1)
         Panel1.Controls.Add(LinkLabel1)
         Panel1.Controls.Add(Label14)
         Panel1.Controls.Add(Label13)
@@ -326,7 +329,7 @@ Partial Class ProfilePage
         ' Display
         ' 
         Display.Anchor = AnchorStyles.None
-        Display.Location = New Point(357, 34)
+        Display.Location = New Point(372, 76)
         Display.Name = "Display"
         Display.Size = New Size(112, 34)
         Display.TabIndex = 18
@@ -368,7 +371,7 @@ Partial Class ProfilePage
         ' 
         Label1.Anchor = AnchorStyles.None
         Label1.AutoSize = True
-        Label1.Location = New Point(40, 39)
+        Label1.Location = New Point(55, 81)
         Label1.Name = "Label1"
         Label1.Size = New Size(135, 25)
         Label1.TabIndex = 10
@@ -377,10 +380,23 @@ Partial Class ProfilePage
         ' TextBox1
         ' 
         TextBox1.Anchor = AnchorStyles.None
-        TextBox1.Location = New Point(181, 36)
+        TextBox1.Location = New Point(196, 78)
         TextBox1.Name = "TextBox1"
         TextBox1.Size = New Size(150, 31)
         TextBox1.TabIndex = 9
+        ' 
+        ' Button1
+        ' 
+        Button1.Anchor = AnchorStyles.Top Or AnchorStyles.Right
+        Button1.BackColor = Color.White
+        Button1.BackgroundImage = CType(resources.GetObject("Button1.BackgroundImage"), Image)
+        Button1.BackgroundImageLayout = ImageLayout.Zoom
+        Button1.FlatStyle = FlatStyle.Flat
+        Button1.Location = New Point(13, 9)
+        Button1.Name = "Button1"
+        Button1.Size = New Size(49, 46)
+        Button1.TabIndex = 6
+        Button1.UseVisualStyleBackColor = False
         ' 
         ' ProfilePage
         ' 
@@ -391,6 +407,7 @@ Partial Class ProfilePage
         Controls.Add(Panel1)
         FormBorderStyle = FormBorderStyle.None
         Name = "ProfilePage"
+        StartPosition = FormStartPosition.CenterScreen
         Text = "ProfilePage"
         Panel1.ResumeLayout(False)
         Panel1.PerformLayout()
@@ -428,4 +445,5 @@ Partial Class ProfilePage
     Friend WithEvents EDate As TextBox
     Friend WithEvents Label14 As Label
     Friend WithEvents LinkLabel1 As LinkLabel
+    Friend WithEvents Button1 As Button
 End Class

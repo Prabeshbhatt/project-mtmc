@@ -126,6 +126,7 @@ Partial Class Login
         Controls.Add(pass)
         Controls.Add(RegNo)
         Controls.Add(PictureBox1)
+        FormBorderStyle = FormBorderStyle.SizableToolWindow
         Name = "Login"
         StartPosition = FormStartPosition.CenterScreen
         Text = "LOGIN"

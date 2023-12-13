@@ -51,9 +51,9 @@ Partial Class Uc_Inward
         upd.BackColor = Color.SlateBlue
         upd.Font = New Font("Times New Roman", 14F, FontStyle.Bold, GraphicsUnit.Point)
         upd.ForeColor = Color.White
-        upd.Location = New Point(370, 559)
+        upd.Location = New Point(503, 559)
         upd.Name = "upd"
-        upd.Size = New Size(121, 46)
+        upd.Size = New Size(140, 60)
         upd.TabIndex = 60
         upd.Text = "Update"
         upd.UseVisualStyleBackColor = False
@@ -73,11 +73,11 @@ Partial Class Uc_Inward
         Button2.BackColor = Color.SlateBlue
         Button2.Font = New Font("Times New Roman", 14F, FontStyle.Bold, GraphicsUnit.Point)
         Button2.ForeColor = Color.White
-        Button2.Location = New Point(648, 559)
+        Button2.Location = New Point(671, 559)
         Button2.Name = "Button2"
-        Button2.Size = New Size(111, 46)
+        Button2.Size = New Size(140, 60)
         Button2.TabIndex = 58
-        Button2.Text = "View"
+        Button2.Text = "Delete"
         Button2.UseVisualStyleBackColor = False
         ' 
         ' btnsve
@@ -86,9 +86,9 @@ Partial Class Uc_Inward
         btnsve.BackColor = Color.SlateBlue
         btnsve.Font = New Font("Times New Roman", 14F, FontStyle.Bold, GraphicsUnit.Point)
         btnsve.ForeColor = Color.White
-        btnsve.Location = New Point(514, 559)
+        btnsve.Location = New Point(331, 559)
         btnsve.Name = "btnsve"
-        btnsve.Size = New Size(114, 46)
+        btnsve.Size = New Size(140, 60)
         btnsve.TabIndex = 57
         btnsve.Text = "Save"
         btnsve.UseVisualStyleBackColor = False
