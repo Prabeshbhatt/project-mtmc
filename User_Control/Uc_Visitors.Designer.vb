@@ -22,6 +22,8 @@ Partial Class Uc_Visitors
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim CustomizableEdges29 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges30 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges1 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges2 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges3 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
@@ -50,6 +52,11 @@ Partial Class Uc_Visitors
         Dim CustomizableEdges26 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges27 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges28 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Panel1 = New Panel()
+        Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
+        Btndlt = New Guna.UI2.WinForms.Guna2Button()
+        Btnupd = New Guna.UI2.WinForms.Guna2Button()
+        DateTimePicker1 = New DateTimePicker()
         save = New Guna.UI2.WinForms.Guna2Button()
         RadioButton2 = New Guna.UI2.WinForms.Guna2RadioButton()
         RadioButton1 = New Guna.UI2.WinForms.Guna2RadioButton()
@@ -76,33 +83,139 @@ Partial Class Uc_Visitors
         Qtty = New Label()
         Materl = New Label()
         IDNUM = New Label()
-        Panel1 = New Panel()
-        Btndlt = New Guna.UI2.WinForms.Guna2Button()
-        Btnupd = New Guna.UI2.WinForms.Guna2Button()
-        DateTimePicker1 = New DateTimePicker()
-        Panel1.SuspendLayout()
+        Guna2Panel1.SuspendLayout()
         SuspendLayout()
+        ' 
+        ' Panel1
+        ' 
+        Panel1.Anchor = AnchorStyles.None
+        Panel1.AutoSize = True
+        Panel1.AutoSizeMode = AutoSizeMode.GrowAndShrink
+        Panel1.BackColor = Color.FromArgb(CByte(255), CByte(90), CByte(71))
+        Panel1.Location = New Point(55, 97)
+        Panel1.Name = "Panel1"
+        Panel1.Size = New Size(0, 0)
+        Panel1.TabIndex = 1
+        ' 
+        ' Guna2Panel1
+        ' 
+        Guna2Panel1.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        Guna2Panel1.BackColor = Color.GhostWhite
+        Guna2Panel1.Controls.Add(Btndlt)
+        Guna2Panel1.Controls.Add(Btnupd)
+        Guna2Panel1.Controls.Add(DateTimePicker1)
+        Guna2Panel1.Controls.Add(save)
+        Guna2Panel1.Controls.Add(RadioButton2)
+        Guna2Panel1.Controls.Add(RadioButton1)
+        Guna2Panel1.Controls.Add(addd)
+        Guna2Panel1.Controls.Add(prsnn)
+        Guna2Panel1.Controls.Add(pov)
+        Guna2Panel1.Controls.Add(nhrs)
+        Guna2Panel1.Controls.Add(tper)
+        Guna2Panel1.Controls.Add(outtme)
+        Guna2Panel1.Controls.Add(intme)
+        Guna2Panel1.Controls.Add(cntt)
+        Guna2Panel1.Controls.Add(NID)
+        Guna2Panel1.Controls.Add(nmme)
+        Guna2Panel1.Controls.Add(idno)
+        Guna2Panel1.Controls.Add(Label1)
+        Guna2Panel1.Controls.Add(Label3)
+        Guna2Panel1.Controls.Add(Label2)
+        Guna2Panel1.Controls.Add(From)
+        Guna2Panel1.Controls.Add(Label10)
+        Guna2Panel1.Controls.Add(PType)
+        Guna2Panel1.Controls.Add(tolbl)
+        Guna2Panel1.Controls.Add(DteLbl)
+        Guna2Panel1.Controls.Add(Dept)
+        Guna2Panel1.Controls.Add(Qtty)
+        Guna2Panel1.Controls.Add(Materl)
+        Guna2Panel1.Controls.Add(IDNUM)
+        Guna2Panel1.CustomizableEdges = CustomizableEdges29
+        Guna2Panel1.Location = New Point(55, 15)
+        Guna2Panel1.Name = "Guna2Panel1"
+        Guna2Panel1.ShadowDecoration.CustomizableEdges = CustomizableEdges30
+        Guna2Panel1.Size = New Size(1220, 900)
+        Guna2Panel1.TabIndex = 2
+        ' 
+        ' Btndlt
+        ' 
+        Btndlt.Anchor = AnchorStyles.None
+        Btndlt.Animated = True
+        Btndlt.AnimatedGIF = True
+        Btndlt.CustomizableEdges = CustomizableEdges1
+        Btndlt.DisabledState.BorderColor = Color.DarkGray
+        Btndlt.DisabledState.CustomBorderColor = Color.DarkGray
+        Btndlt.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
+        Btndlt.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
+        Btndlt.FillColor = Color.SlateBlue
+        Btndlt.Font = New Font("Times New Roman", 14F, FontStyle.Bold, GraphicsUnit.Point)
+        Btndlt.ForeColor = Color.White
+        Btndlt.Location = New Point(645, 720)
+        Btndlt.Name = "Btndlt"
+        Btndlt.PressedColor = Color.GhostWhite
+        Btndlt.ShadowDecoration.CustomizableEdges = CustomizableEdges2
+        Btndlt.Size = New Size(168, 60)
+        Btndlt.TabIndex = 177
+        Btndlt.Text = "DELETE"
+        ' 
+        ' Btnupd
+        ' 
+        Btnupd.Anchor = AnchorStyles.None
+        Btnupd.Animated = True
+        Btnupd.AnimatedGIF = True
+        Btnupd.CustomizableEdges = CustomizableEdges3
+        Btnupd.DisabledState.BorderColor = Color.DarkGray
+        Btnupd.DisabledState.CustomBorderColor = Color.DarkGray
+        Btnupd.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
+        Btnupd.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
+        Btnupd.FillColor = Color.SlateBlue
+        Btnupd.Font = New Font("Times New Roman", 14F, FontStyle.Bold, GraphicsUnit.Point)
+        Btnupd.ForeColor = Color.White
+        Btnupd.Location = New Point(841, 720)
+        Btnupd.Name = "Btnupd"
+        Btnupd.PressedColor = Color.GhostWhite
+        Btnupd.ShadowDecoration.CustomizableEdges = CustomizableEdges4
+        Btnupd.Size = New Size(156, 60)
+        Btnupd.TabIndex = 176
+        Btnupd.Text = "UPDATE"
+        ' 
+        ' DateTimePicker1
+        ' 
+        DateTimePicker1.Anchor = AnchorStyles.None
+        DateTimePicker1.CalendarForeColor = Color.White
+        DateTimePicker1.CalendarMonthBackground = Color.Transparent
+        DateTimePicker1.CalendarTitleBackColor = Color.Transparent
+        DateTimePicker1.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        DateTimePicker1.Location = New Point(862, 183)
+        DateTimePicker1.Name = "DateTimePicker1"
+        DateTimePicker1.Size = New Size(300, 39)
+        DateTimePicker1.TabIndex = 175
+        DateTimePicker1.Value = New Date(2023, 12, 12, 0, 0, 0, 0)
         ' 
         ' save
         ' 
-        save.CustomizableEdges = CustomizableEdges1
+        save.Anchor = AnchorStyles.None
+        save.Animated = True
+        save.AnimatedGIF = True
+        save.CustomizableEdges = CustomizableEdges5
         save.DisabledState.BorderColor = Color.DarkGray
         save.DisabledState.CustomBorderColor = Color.DarkGray
         save.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
         save.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
         save.FillColor = Color.SlateBlue
-        save.Font = New Font("Times New Roman", 11F, FontStyle.Bold, GraphicsUnit.Point)
+        save.Font = New Font("Times New Roman", 14F, FontStyle.Bold, GraphicsUnit.Point)
         save.ForeColor = Color.White
-        save.Location = New Point(1081, 637)
+        save.Location = New Point(1022, 720)
         save.Name = "save"
         save.PressedColor = Color.GhostWhite
-        save.ShadowDecoration.CustomizableEdges = CustomizableEdges2
+        save.ShadowDecoration.CustomizableEdges = CustomizableEdges6
         save.Size = New Size(140, 60)
-        save.TabIndex = 116
+        save.TabIndex = 174
         save.Text = "SAVE"
         ' 
         ' RadioButton2
         ' 
+        RadioButton2.Anchor = AnchorStyles.None
         RadioButton2.AutoSize = True
         RadioButton2.BackColor = Color.Transparent
         RadioButton2.CheckedState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
@@ -111,11 +224,11 @@ Partial Class Uc_Visitors
         RadioButton2.CheckedState.InnerColor = Color.White
         RadioButton2.CheckedState.InnerOffset = -4
         RadioButton2.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
-        RadioButton2.ForeColor = Color.White
-        RadioButton2.Location = New Point(898, 537)
+        RadioButton2.ForeColor = Color.Black
+        RadioButton2.Location = New Point(862, 560)
         RadioButton2.Name = "RadioButton2"
         RadioButton2.Size = New Size(129, 36)
-        RadioButton2.TabIndex = 115
+        RadioButton2.TabIndex = 173
         RadioButton2.Text = "FEMALE"
         RadioButton2.UncheckedState.BorderColor = Color.FromArgb(CByte(125), CByte(137), CByte(149))
         RadioButton2.UncheckedState.BorderThickness = 2
@@ -125,6 +238,7 @@ Partial Class Uc_Visitors
         ' 
         ' RadioButton1
         ' 
+        RadioButton1.Anchor = AnchorStyles.None
         RadioButton1.AutoSize = True
         RadioButton1.BackColor = Color.Transparent
         RadioButton1.CheckedState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
@@ -133,11 +247,11 @@ Partial Class Uc_Visitors
         RadioButton1.CheckedState.InnerColor = Color.White
         RadioButton1.CheckedState.InnerOffset = -4
         RadioButton1.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
-        RadioButton1.ForeColor = Color.White
-        RadioButton1.Location = New Point(898, 486)
+        RadioButton1.ForeColor = Color.Black
+        RadioButton1.Location = New Point(862, 518)
         RadioButton1.Name = "RadioButton1"
         RadioButton1.Size = New Size(104, 36)
-        RadioButton1.TabIndex = 114
+        RadioButton1.TabIndex = 172
         RadioButton1.Text = "MALE"
         RadioButton1.UncheckedState.BorderColor = Color.FromArgb(CByte(125), CByte(137), CByte(149))
         RadioButton1.UncheckedState.BorderThickness = 2
@@ -147,7 +261,8 @@ Partial Class Uc_Visitors
         ' 
         ' addd
         ' 
-        addd.CustomizableEdges = CustomizableEdges3
+        addd.Anchor = AnchorStyles.None
+        addd.CustomizableEdges = CustomizableEdges7
         addd.DefaultText = ""
         addd.DisabledState.BorderColor = Color.FromArgb(CByte(208), CByte(208), CByte(208))
         addd.DisabledState.FillColor = Color.FromArgb(CByte(226), CByte(226), CByte(226))
@@ -156,19 +271,20 @@ Partial Class Uc_Visitors
         addd.FocusedState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
         addd.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point)
         addd.HoverState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
-        addd.Location = New Point(888, 272)
+        addd.Location = New Point(862, 291)
         addd.Name = "addd"
         addd.PasswordChar = ChrW(0)
         addd.PlaceholderText = ""
         addd.ScrollBars = ScrollBars.Both
         addd.SelectedText = ""
-        addd.ShadowDecoration.CustomizableEdges = CustomizableEdges4
+        addd.ShadowDecoration.CustomizableEdges = CustomizableEdges8
         addd.Size = New Size(310, 140)
-        addd.TabIndex = 112
+        addd.TabIndex = 171
         ' 
         ' prsnn
         ' 
-        prsnn.CustomizableEdges = CustomizableEdges5
+        prsnn.Anchor = AnchorStyles.None
+        prsnn.CustomizableEdges = CustomizableEdges9
         prsnn.DefaultText = ""
         prsnn.DisabledState.BorderColor = Color.FromArgb(CByte(208), CByte(208), CByte(208))
         prsnn.DisabledState.FillColor = Color.FromArgb(CByte(226), CByte(226), CByte(226))
@@ -177,19 +293,20 @@ Partial Class Uc_Visitors
         prsnn.FocusedState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
         prsnn.Font = New Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point)
         prsnn.HoverState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
-        prsnn.Location = New Point(490, 562)
+        prsnn.Location = New Point(454, 616)
         prsnn.Margin = New Padding(4, 4, 4, 4)
         prsnn.Name = "prsnn"
         prsnn.PasswordChar = ChrW(0)
         prsnn.PlaceholderText = ""
         prsnn.SelectedText = ""
-        prsnn.ShadowDecoration.CustomizableEdges = CustomizableEdges6
+        prsnn.ShadowDecoration.CustomizableEdges = CustomizableEdges10
         prsnn.Size = New Size(310, 40)
-        prsnn.TabIndex = 111
+        prsnn.TabIndex = 170
         ' 
         ' pov
         ' 
-        pov.CustomizableEdges = CustomizableEdges7
+        pov.Anchor = AnchorStyles.None
+        pov.CustomizableEdges = CustomizableEdges11
         pov.DefaultText = ""
         pov.DisabledState.BorderColor = Color.FromArgb(CByte(208), CByte(208), CByte(208))
         pov.DisabledState.FillColor = Color.FromArgb(CByte(226), CByte(226), CByte(226))
@@ -198,19 +315,20 @@ Partial Class Uc_Visitors
         pov.FocusedState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
         pov.Font = New Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point)
         pov.HoverState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
-        pov.Location = New Point(71, 562)
+        pov.Location = New Point(35, 616)
         pov.Margin = New Padding(4, 4, 4, 4)
         pov.Name = "pov"
         pov.PasswordChar = ChrW(0)
         pov.PlaceholderText = ""
         pov.SelectedText = ""
-        pov.ShadowDecoration.CustomizableEdges = CustomizableEdges8
+        pov.ShadowDecoration.CustomizableEdges = CustomizableEdges12
         pov.Size = New Size(310, 40)
-        pov.TabIndex = 110
+        pov.TabIndex = 169
         ' 
         ' nhrs
         ' 
-        nhrs.CustomizableEdges = CustomizableEdges9
+        nhrs.Anchor = AnchorStyles.None
+        nhrs.CustomizableEdges = CustomizableEdges13
         nhrs.DefaultText = ""
         nhrs.DisabledState.BorderColor = Color.FromArgb(CByte(208), CByte(208), CByte(208))
         nhrs.DisabledState.FillColor = Color.FromArgb(CByte(226), CByte(226), CByte(226))
@@ -219,19 +337,20 @@ Partial Class Uc_Visitors
         nhrs.FocusedState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
         nhrs.Font = New Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point)
         nhrs.HoverState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
-        nhrs.Location = New Point(490, 444)
+        nhrs.Location = New Point(454, 514)
         nhrs.Margin = New Padding(4, 4, 4, 4)
         nhrs.Name = "nhrs"
         nhrs.PasswordChar = ChrW(0)
         nhrs.PlaceholderText = ""
         nhrs.SelectedText = ""
-        nhrs.ShadowDecoration.CustomizableEdges = CustomizableEdges10
+        nhrs.ShadowDecoration.CustomizableEdges = CustomizableEdges14
         nhrs.Size = New Size(310, 40)
-        nhrs.TabIndex = 109
+        nhrs.TabIndex = 168
         ' 
         ' tper
         ' 
-        tper.CustomizableEdges = CustomizableEdges11
+        tper.Anchor = AnchorStyles.None
+        tper.CustomizableEdges = CustomizableEdges15
         tper.DefaultText = ""
         tper.DisabledState.BorderColor = Color.FromArgb(CByte(208), CByte(208), CByte(208))
         tper.DisabledState.FillColor = Color.FromArgb(CByte(226), CByte(226), CByte(226))
@@ -240,19 +359,20 @@ Partial Class Uc_Visitors
         tper.FocusedState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
         tper.Font = New Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point)
         tper.HoverState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
-        tper.Location = New Point(71, 444)
+        tper.Location = New Point(35, 514)
         tper.Margin = New Padding(4, 4, 4, 4)
         tper.Name = "tper"
         tper.PasswordChar = ChrW(0)
         tper.PlaceholderText = ""
         tper.SelectedText = ""
-        tper.ShadowDecoration.CustomizableEdges = CustomizableEdges12
+        tper.ShadowDecoration.CustomizableEdges = CustomizableEdges16
         tper.Size = New Size(310, 40)
-        tper.TabIndex = 108
+        tper.TabIndex = 167
         ' 
         ' outtme
         ' 
-        outtme.CustomizableEdges = CustomizableEdges13
+        outtme.Anchor = AnchorStyles.None
+        outtme.CustomizableEdges = CustomizableEdges17
         outtme.DefaultText = ""
         outtme.DisabledState.BorderColor = Color.FromArgb(CByte(208), CByte(208), CByte(208))
         outtme.DisabledState.FillColor = Color.FromArgb(CByte(226), CByte(226), CByte(226))
@@ -261,19 +381,20 @@ Partial Class Uc_Visitors
         outtme.FocusedState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
         outtme.Font = New Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point)
         outtme.HoverState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
-        outtme.Location = New Point(490, 327)
+        outtme.Location = New Point(454, 392)
         outtme.Margin = New Padding(4, 4, 4, 4)
         outtme.Name = "outtme"
         outtme.PasswordChar = ChrW(0)
         outtme.PlaceholderText = ""
         outtme.SelectedText = ""
-        outtme.ShadowDecoration.CustomizableEdges = CustomizableEdges14
+        outtme.ShadowDecoration.CustomizableEdges = CustomizableEdges18
         outtme.Size = New Size(310, 44)
-        outtme.TabIndex = 107
+        outtme.TabIndex = 166
         ' 
         ' intme
         ' 
-        intme.CustomizableEdges = CustomizableEdges15
+        intme.Anchor = AnchorStyles.None
+        intme.CustomizableEdges = CustomizableEdges19
         intme.DefaultText = ""
         intme.DisabledState.BorderColor = Color.FromArgb(CByte(208), CByte(208), CByte(208))
         intme.DisabledState.FillColor = Color.FromArgb(CByte(226), CByte(226), CByte(226))
@@ -282,19 +403,20 @@ Partial Class Uc_Visitors
         intme.FocusedState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
         intme.Font = New Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point)
         intme.HoverState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
-        intme.Location = New Point(71, 318)
+        intme.Location = New Point(35, 392)
         intme.Margin = New Padding(4, 4, 4, 4)
         intme.Name = "intme"
         intme.PasswordChar = ChrW(0)
         intme.PlaceholderText = ""
         intme.SelectedText = ""
-        intme.ShadowDecoration.CustomizableEdges = CustomizableEdges16
+        intme.ShadowDecoration.CustomizableEdges = CustomizableEdges20
         intme.Size = New Size(310, 44)
-        intme.TabIndex = 106
+        intme.TabIndex = 165
         ' 
         ' cntt
         ' 
-        cntt.CustomizableEdges = CustomizableEdges17
+        cntt.Anchor = AnchorStyles.None
+        cntt.CustomizableEdges = CustomizableEdges21
         cntt.DefaultText = ""
         cntt.DisabledState.BorderColor = Color.FromArgb(CByte(208), CByte(208), CByte(208))
         cntt.DisabledState.FillColor = Color.FromArgb(CByte(226), CByte(226), CByte(226))
@@ -303,19 +425,20 @@ Partial Class Uc_Visitors
         cntt.FocusedState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
         cntt.Font = New Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point)
         cntt.HoverState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
-        cntt.Location = New Point(490, 217)
+        cntt.Location = New Point(454, 291)
         cntt.Margin = New Padding(4, 4, 4, 4)
         cntt.Name = "cntt"
         cntt.PasswordChar = ChrW(0)
         cntt.PlaceholderText = ""
         cntt.SelectedText = ""
-        cntt.ShadowDecoration.CustomizableEdges = CustomizableEdges18
+        cntt.ShadowDecoration.CustomizableEdges = CustomizableEdges22
         cntt.Size = New Size(310, 40)
-        cntt.TabIndex = 105
+        cntt.TabIndex = 164
         ' 
         ' NID
         ' 
-        NID.CustomizableEdges = CustomizableEdges19
+        NID.Anchor = AnchorStyles.None
+        NID.CustomizableEdges = CustomizableEdges23
         NID.DefaultText = ""
         NID.DisabledState.BorderColor = Color.FromArgb(CByte(208), CByte(208), CByte(208))
         NID.DisabledState.FillColor = Color.FromArgb(CByte(226), CByte(226), CByte(226))
@@ -324,19 +447,20 @@ Partial Class Uc_Visitors
         NID.FocusedState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
         NID.Font = New Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point)
         NID.HoverState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
-        NID.Location = New Point(71, 217)
+        NID.Location = New Point(35, 291)
         NID.Margin = New Padding(4, 4, 4, 4)
         NID.Name = "NID"
         NID.PasswordChar = ChrW(0)
         NID.PlaceholderText = ""
         NID.SelectedText = ""
-        NID.ShadowDecoration.CustomizableEdges = CustomizableEdges20
+        NID.ShadowDecoration.CustomizableEdges = CustomizableEdges24
         NID.Size = New Size(310, 40)
-        NID.TabIndex = 104
+        NID.TabIndex = 163
         ' 
         ' nmme
         ' 
-        nmme.CustomizableEdges = CustomizableEdges21
+        nmme.Anchor = AnchorStyles.None
+        nmme.CustomizableEdges = CustomizableEdges25
         nmme.DefaultText = ""
         nmme.DisabledState.BorderColor = Color.FromArgb(CByte(208), CByte(208), CByte(208))
         nmme.DisabledState.FillColor = Color.FromArgb(CByte(226), CByte(226), CByte(226))
@@ -345,19 +469,21 @@ Partial Class Uc_Visitors
         nmme.FocusedState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
         nmme.Font = New Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point)
         nmme.HoverState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
-        nmme.Location = New Point(490, 109)
+        nmme.Location = New Point(454, 183)
         nmme.Margin = New Padding(4, 4, 4, 4)
         nmme.Name = "nmme"
         nmme.PasswordChar = ChrW(0)
         nmme.PlaceholderText = ""
         nmme.SelectedText = ""
-        nmme.ShadowDecoration.CustomizableEdges = CustomizableEdges22
+        nmme.ShadowDecoration.CustomizableEdges = CustomizableEdges26
         nmme.Size = New Size(310, 40)
-        nmme.TabIndex = 103
+        nmme.TabIndex = 162
         ' 
         ' idno
         ' 
-        idno.CustomizableEdges = CustomizableEdges23
+        idno.Anchor = AnchorStyles.None
+        idno.Animated = True
+        idno.CustomizableEdges = CustomizableEdges27
         idno.DefaultText = ""
         idno.DisabledState.BorderColor = Color.FromArgb(CByte(208), CByte(208), CByte(208))
         idno.DisabledState.FillColor = Color.FromArgb(CByte(226), CByte(226), CByte(226))
@@ -366,261 +492,188 @@ Partial Class Uc_Visitors
         idno.FocusedState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
         idno.Font = New Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point)
         idno.HoverState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
-        idno.Location = New Point(71, 109)
+        idno.Location = New Point(35, 183)
         idno.Margin = New Padding(4, 4, 4, 4)
         idno.Name = "idno"
         idno.PasswordChar = ChrW(0)
         idno.PlaceholderText = ""
         idno.SelectedText = ""
-        idno.ShadowDecoration.CustomizableEdges = CustomizableEdges24
+        idno.ShadowDecoration.CustomizableEdges = CustomizableEdges28
         idno.Size = New Size(310, 40)
-        idno.TabIndex = 102
+        idno.TabIndex = 161
         ' 
         ' Label1
         ' 
+        Label1.Anchor = AnchorStyles.None
         Label1.AutoSize = True
         Label1.BackColor = Color.Transparent
         Label1.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
-        Label1.ForeColor = Color.White
-        Label1.Location = New Point(888, 440)
+        Label1.ForeColor = Color.Black
+        Label1.Location = New Point(862, 473)
         Label1.Name = "Label1"
         Label1.Size = New Size(56, 32)
-        Label1.TabIndex = 99
+        Label1.TabIndex = 160
         Label1.Text = "SEX"
         ' 
         ' Label3
         ' 
+        Label3.Anchor = AnchorStyles.None
         Label3.AutoSize = True
         Label3.BackColor = Color.Transparent
         Label3.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
-        Label3.ForeColor = Color.White
-        Label3.Location = New Point(72, 506)
+        Label3.ForeColor = Color.Black
+        Label3.Location = New Point(36, 580)
         Label3.Name = "Label3"
         Label3.Size = New Size(224, 32)
-        Label3.TabIndex = 97
+        Label3.TabIndex = 159
         Label3.Text = "PURPOSE OF VISIT"
         ' 
         ' Label2
         ' 
+        Label2.Anchor = AnchorStyles.None
         Label2.AutoSize = True
         Label2.BackColor = Color.Transparent
         Label2.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
-        Label2.ForeColor = Color.White
-        Label2.Location = New Point(72, 167)
+        Label2.ForeColor = Color.Black
+        Label2.Location = New Point(36, 255)
         Label2.Name = "Label2"
         Label2.Size = New Size(169, 32)
-        Label2.TabIndex = 95
+        Label2.TabIndex = 158
         Label2.Text = "NATIONAL ID"
         ' 
         ' From
         ' 
+        From.Anchor = AnchorStyles.None
         From.AutoSize = True
         From.BackColor = Color.Transparent
         From.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
-        From.ForeColor = Color.White
-        From.Location = New Point(490, 272)
+        From.ForeColor = Color.Black
+        From.Location = New Point(454, 356)
         From.Name = "From"
         From.Size = New Size(128, 32)
-        From.TabIndex = 90
+        From.TabIndex = 157
         From.Text = "OUT TIME"
         ' 
         ' Label10
         ' 
+        Label10.Anchor = AnchorStyles.None
         Label10.AutoSize = True
         Label10.BackColor = Color.Transparent
         Label10.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
-        Label10.ForeColor = Color.White
-        Label10.Location = New Point(490, 399)
+        Label10.ForeColor = Color.Black
+        Label10.Location = New Point(454, 473)
         Label10.Name = "Label10"
         Label10.Size = New Size(184, 32)
-        Label10.TabIndex = 78
+        Label10.TabIndex = 156
         Label10.Text = "NO OF HOUR'S"
         ' 
         ' PType
         ' 
+        PType.Anchor = AnchorStyles.None
         PType.AutoSize = True
         PType.BackColor = Color.Transparent
         PType.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
-        PType.ForeColor = Color.White
-        PType.Location = New Point(72, 399)
+        PType.ForeColor = Color.Black
+        PType.Location = New Point(36, 473)
         PType.Name = "PType"
         PType.Size = New Size(186, 32)
-        PType.TabIndex = 77
+        PType.TabIndex = 155
         PType.Text = "TOTAL PERSON"
         ' 
         ' tolbl
         ' 
+        tolbl.Anchor = AnchorStyles.None
         tolbl.AutoSize = True
         tolbl.BackColor = Color.Transparent
         tolbl.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
-        tolbl.ForeColor = Color.Transparent
-        tolbl.Location = New Point(72, 272)
+        tolbl.ForeColor = Color.Black
+        tolbl.Location = New Point(36, 356)
         tolbl.Name = "tolbl"
         tolbl.Size = New Size(106, 32)
-        tolbl.TabIndex = 76
+        tolbl.TabIndex = 154
         tolbl.Text = "IN TIME"
         ' 
         ' DteLbl
         ' 
+        DteLbl.Anchor = AnchorStyles.None
         DteLbl.BackColor = Color.Transparent
         DteLbl.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
-        DteLbl.ForeColor = Color.White
-        DteLbl.Location = New Point(490, 510)
+        DteLbl.ForeColor = Color.Black
+        DteLbl.Location = New Point(454, 584)
         DteLbl.Name = "DteLbl"
         DteLbl.Size = New Size(243, 28)
-        DteLbl.TabIndex = 75
+        DteLbl.TabIndex = 153
         DteLbl.Text = "PERSON TO MEET"
         ' 
         ' Dept
         ' 
+        Dept.Anchor = AnchorStyles.None
         Dept.BackColor = Color.Transparent
         Dept.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
-        Dept.ForeColor = Color.White
-        Dept.Location = New Point(490, 168)
+        Dept.ForeColor = Color.Black
+        Dept.Location = New Point(454, 256)
         Dept.Name = "Dept"
         Dept.Size = New Size(259, 31)
-        Dept.TabIndex = 74
+        Dept.TabIndex = 152
         Dept.Text = "CONTACT NUMBER"
         ' 
         ' Qtty
         ' 
+        Qtty.Anchor = AnchorStyles.None
         Qtty.AutoSize = True
         Qtty.BackColor = Color.Transparent
         Qtty.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
-        Qtty.ForeColor = Color.Transparent
-        Qtty.Location = New Point(888, 223)
+        Qtty.ForeColor = Color.Black
+        Qtty.Location = New Point(852, 255)
         Qtty.Name = "Qtty"
         Qtty.Size = New Size(122, 32)
-        Qtty.TabIndex = 73
+        Qtty.TabIndex = 151
         Qtty.Text = "ADDRESS"
         ' 
         ' Materl
         ' 
-        Materl.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        Materl.Anchor = AnchorStyles.None
         Materl.BackColor = Color.Transparent
         Materl.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
-        Materl.ForeColor = Color.White
-        Materl.Location = New Point(490, 60)
+        Materl.ForeColor = Color.Black
+        Materl.Location = New Point(454, 145)
         Materl.Name = "Materl"
         Materl.Size = New Size(115, 34)
-        Materl.TabIndex = 72
+        Materl.TabIndex = 150
         Materl.Text = "NAME"
         ' 
         ' IDNUM
         ' 
         IDNUM.AccessibleRole = AccessibleRole.IpAddress
-        IDNUM.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        IDNUM.Anchor = AnchorStyles.None
         IDNUM.BackColor = Color.Transparent
         IDNUM.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
-        IDNUM.ForeColor = Color.White
-        IDNUM.Location = New Point(71, 55)
+        IDNUM.ForeColor = Color.Black
+        IDNUM.Location = New Point(35, 140)
         IDNUM.Name = "IDNUM"
         IDNUM.Size = New Size(170, 31)
-        IDNUM.TabIndex = 70
+        IDNUM.TabIndex = 149
         IDNUM.Text = "VISITORS ID"
-        ' 
-        ' Panel1
-        ' 
-        Panel1.Anchor = AnchorStyles.None
-        Panel1.AutoSize = True
-        Panel1.AutoSizeMode = AutoSizeMode.GrowAndShrink
-        Panel1.BackColor = Color.FromArgb(CByte(255), CByte(90), CByte(71))
-        Panel1.Controls.Add(Btndlt)
-        Panel1.Controls.Add(Btnupd)
-        Panel1.Controls.Add(DateTimePicker1)
-        Panel1.Controls.Add(save)
-        Panel1.Controls.Add(RadioButton2)
-        Panel1.Controls.Add(RadioButton1)
-        Panel1.Controls.Add(addd)
-        Panel1.Controls.Add(prsnn)
-        Panel1.Controls.Add(pov)
-        Panel1.Controls.Add(nhrs)
-        Panel1.Controls.Add(tper)
-        Panel1.Controls.Add(outtme)
-        Panel1.Controls.Add(intme)
-        Panel1.Controls.Add(cntt)
-        Panel1.Controls.Add(NID)
-        Panel1.Controls.Add(nmme)
-        Panel1.Controls.Add(idno)
-        Panel1.Controls.Add(Label1)
-        Panel1.Controls.Add(Label3)
-        Panel1.Controls.Add(Label2)
-        Panel1.Controls.Add(From)
-        Panel1.Controls.Add(Label10)
-        Panel1.Controls.Add(PType)
-        Panel1.Controls.Add(tolbl)
-        Panel1.Controls.Add(DteLbl)
-        Panel1.Controls.Add(Dept)
-        Panel1.Controls.Add(Qtty)
-        Panel1.Controls.Add(Materl)
-        Panel1.Controls.Add(IDNUM)
-        Panel1.Location = New Point(55, 13)
-        Panel1.Name = "Panel1"
-        Panel1.Size = New Size(1246, 735)
-        Panel1.TabIndex = 1
-        ' 
-        ' Btndlt
-        ' 
-        Btndlt.CustomizableEdges = CustomizableEdges25
-        Btndlt.DisabledState.BorderColor = Color.DarkGray
-        Btndlt.DisabledState.CustomBorderColor = Color.DarkGray
-        Btndlt.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
-        Btndlt.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
-        Btndlt.FillColor = Color.SlateBlue
-        Btndlt.Font = New Font("Times New Roman", 11F, FontStyle.Bold, GraphicsUnit.Point)
-        Btndlt.ForeColor = Color.White
-        Btndlt.Location = New Point(760, 637)
-        Btndlt.Name = "Btndlt"
-        Btndlt.PressedColor = Color.GhostWhite
-        Btndlt.ShadowDecoration.CustomizableEdges = CustomizableEdges26
-        Btndlt.Size = New Size(140, 60)
-        Btndlt.TabIndex = 119
-        Btndlt.Text = "DELETE"
-        ' 
-        ' Btnupd
-        ' 
-        Btnupd.CustomizableEdges = CustomizableEdges27
-        Btnupd.DisabledState.BorderColor = Color.DarkGray
-        Btnupd.DisabledState.CustomBorderColor = Color.DarkGray
-        Btnupd.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
-        Btnupd.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
-        Btnupd.FillColor = Color.SlateBlue
-        Btnupd.Font = New Font("Times New Roman", 11F, FontStyle.Bold, GraphicsUnit.Point)
-        Btnupd.ForeColor = Color.White
-        Btnupd.Location = New Point(921, 637)
-        Btnupd.Name = "Btnupd"
-        Btnupd.PressedColor = Color.GhostWhite
-        Btnupd.ShadowDecoration.CustomizableEdges = CustomizableEdges28
-        Btnupd.Size = New Size(140, 60)
-        Btnupd.TabIndex = 118
-        Btnupd.Text = "UPDATE"
-        ' 
-        ' DateTimePicker1
-        ' 
-        DateTimePicker1.CalendarForeColor = Color.White
-        DateTimePicker1.CalendarMonthBackground = Color.Transparent
-        DateTimePicker1.CalendarTitleBackColor = Color.Transparent
-        DateTimePicker1.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
-        DateTimePicker1.Location = New Point(898, 110)
-        DateTimePicker1.Name = "DateTimePicker1"
-        DateTimePicker1.Size = New Size(300, 39)
-        DateTimePicker1.TabIndex = 117
-        DateTimePicker1.Value = New Date(2023, 12, 12, 0, 0, 0, 0)
         ' 
         ' Uc_Visitors
         ' 
         AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
-        BackColor = Color.Indigo
+        BackColor = Color.SlateBlue
+        Controls.Add(Guna2Panel1)
         Controls.Add(Panel1)
         Name = "Uc_Visitors"
-        Size = New Size(1350, 760)
-        Panel1.ResumeLayout(False)
-        Panel1.PerformLayout()
+        Size = New Size(1350, 929)
+        Guna2Panel1.ResumeLayout(False)
+        Guna2Panel1.PerformLayout()
         ResumeLayout(False)
         PerformLayout()
     End Sub
-
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents Btndlt As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Btnupd As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents DateTimePicker1 As DateTimePicker
     Friend WithEvents save As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents RadioButton2 As Guna.UI2.WinForms.Guna2RadioButton
     Friend WithEvents RadioButton1 As Guna.UI2.WinForms.Guna2RadioButton
@@ -647,9 +700,5 @@ Partial Class Uc_Visitors
     Friend WithEvents Qtty As Label
     Friend WithEvents Materl As Label
     Friend WithEvents IDNUM As Label
-    Friend WithEvents Panel1 As Panel
-    Friend WithEvents DateTimePicker1 As DateTimePicker
-    Friend WithEvents Btnupd As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Btndlt As Guna.UI2.WinForms.Guna2Button
 
 End Class

@@ -18,20 +18,20 @@ Public Class Uc_Visitors
     Private Shared originalDateTimeValueStandard As DateTime
     Private Shared originalContactNumber As String
 
-    Private Sub save_Click(sender As Object, e As EventArgs) Handles save.Click
-        Dim vid As Integer = If(Integer.TryParse(idno.Text, Nothing), Integer.Parse(idno.Text), 0)
-        Dim dateTimeValueStandard As DateTime = DateTimePicker1.Value
-        Dim name As String = nmme.Text
-        Dim nationalID As String = NID.Text
-        Dim contactNumber As Integer = If(Integer.TryParse(cntt.Text, Nothing), Integer.Parse(cntt.Text), 0)
-        Dim inTime As DateTime = DateTime.Parse(intme.Text)
-        Dim outTime As DateTime = DateTime.Parse(outtme.Text)
-        Dim totalPersons As Integer = If(Integer.TryParse(tper.Text, Nothing), Integer.Parse(tper.Text), 0)
-        Dim noofhours As Integer = If(Integer.TryParse(nhrs.Text, Nothing), Integer.Parse(nhrs.Text), 0)
-        Dim purposeOfVisit As String = pov.Text
-        Dim personToMeet As String = prsnn.Text
-        Dim address As String = addd.Text
-        Dim sex As String = GetSelectedRadioButtonText()
+    Private Sub save_Click(sender As Object, e As EventArgs)
+        Dim vid = If(Integer.TryParse(idno.Text, Nothing), Integer.Parse(idno.Text), 0)
+        Dim dateTimeValueStandard = DateTimePicker1.Value
+        Dim name = nmme.Text
+        Dim nationalID = NID.Text
+        Dim contactNumber = If(Integer.TryParse(cntt.Text, Nothing), Integer.Parse(cntt.Text), 0)
+        Dim inTime = Date.Parse(intme.Text)
+        Dim outTime = Date.Parse(outtme.Text)
+        Dim totalPersons = If(Integer.TryParse(tper.Text, Nothing), Integer.Parse(tper.Text), 0)
+        Dim noofhours = If(Integer.TryParse(nhrs.Text, Nothing), Integer.Parse(nhrs.Text), 0)
+        Dim purposeOfVisit = pov.Text
+        Dim personToMeet = prsnn.Text
+        Dim address = addd.Text
+        Dim sex = GetSelectedRadioButtonText
 
 
 
@@ -44,12 +44,12 @@ Public Class Uc_Visitors
                 MessageBox.Show("New user created successfully.")
             Else
                 ' Duplicate existing user data and save as a new user
-                Dim existingUserData As DataTable = GetExistingUserData(nationalID, address, contactNumber, sex)
+                Dim existingUserData = GetExistingUserData(nationalID, address, contactNumber, sex)
 
                 If existingUserData.Rows.Count > 0 Then
                     ' Duplicate existing user data and save as a new user
-                    Dim existingRow As DataRow = existingUserData.Rows(0)
-                    SaveNewUser(vid, dateTimeValueStandard, name, existingRow("NATIONAL ID").ToString(), existingRow("ADDRESS").ToString(), Convert.ToInt32(existingRow("CONTACT NUMBER")), existingRow("SEX").ToString(), personToMeet, inTime, outTime, totalPersons, noofhours, purposeOfVisit)
+                    Dim existingRow = existingUserData.Rows(0)
+                    SaveNewUser(vid, dateTimeValueStandard, name, existingRow("NATIONAL ID").ToString, existingRow("ADDRESS").ToString, Convert.ToInt32(existingRow("CONTACT NUMBER")), existingRow("SEX").ToString, personToMeet, inTime, outTime, totalPersons, noofhours, purposeOfVisit)
                     MessageBox.Show("Existing user data saved as a new user successfully.")
                 End If
             End If
@@ -171,22 +171,11 @@ Public Class Uc_Visitors
         End If
     End Function
 
-
-
-
-
-
-
-
-
-
-
-
-    Private Sub Btndlt_Click(sender As Object, e As EventArgs) Handles Btndlt.Click
+    Private Sub Btndlt_Click(sender As Object, e As EventArgs)
         Try
             ' Get the VISITORS ID from user input or another source during runtime
             Dim vid As Integer
-            Dim input As String = InputBox("Enter VISITORS ID to delete:")
+            Dim input = InputBox("Enter VISITORS ID to delete:")
 
             If Not String.IsNullOrEmpty(input) AndAlso Integer.TryParse(input, vid) Then
                 ' Check if the user with the specified VISITORS ID exists
@@ -264,27 +253,27 @@ Public Class Uc_Visitors
 
 
 
-    Private Sub Btnupd_Click(sender As Object, e As EventArgs) Handles Btnupd.Click
+    Private Sub Btnupd_Click(sender As Object, e As EventArgs)
         Try
             ' Get the VISITORS ID from user input or another source during runtime
             Dim vid As Integer
-            Dim input As String = InputBox("Enter VISITORS ID to update:")
+            Dim input = InputBox("Enter VISITORS ID to update:")
 
             If Not String.IsNullOrEmpty(input) AndAlso Integer.TryParse(input, vid) Then
                 ' Check if the user with the specified VISITORS ID exists
                 If UserExists(vid) Then
                     ' Collect updated data from user input or other sources
-                    Dim updatedName As String = InputBox("Enter updated name:")
-                    Dim updatedNationalID As String = InputBox("Enter updated national ID:")
-                    Dim updatedAddress As String = InputBox("Enter updated address:")
-                    Dim updatedSex As String = InputBox("Enter updated sex:")
-                    Dim updatedPersonToMeet As String = InputBox("Enter updated person to meet:")
-                    Dim updatedPurposeOfVisit As String = InputBox("Enter updated purpose of visit:")
-                    Dim updatedContactNumber As String = InputBox("Enter updated contact number (leave blank to keep it unchanged):")
+                    Dim updatedName = InputBox("Enter updated name:")
+                    Dim updatedNationalID = InputBox("Enter updated national ID:")
+                    Dim updatedAddress = InputBox("Enter updated address:")
+                    Dim updatedSex = InputBox("Enter updated sex:")
+                    Dim updatedPersonToMeet = InputBox("Enter updated person to meet:")
+                    Dim updatedPurposeOfVisit = InputBox("Enter updated purpose of visit:")
+                    Dim updatedContactNumber = InputBox("Enter updated contact number (leave blank to keep it unchanged):")
 
                     ' Use the class-level variables to store and retrieve the original values
-                    Dim updatedInTime As DateTime = If(originalDateTimeValueStandard = DateTime.MinValue, DateTimePicker1.Value, originalDateTimeValueStandard)
-                    Dim updatedOutTime As DateTime = If(originalDateTimeValueStandard = DateTime.MinValue, DateTimePicker1.Value, originalDateTimeValueStandard)
+                    Dim updatedInTime = If(originalDateTimeValueStandard = Date.MinValue, DateTimePicker1.Value, originalDateTimeValueStandard)
+                    Dim updatedOutTime = If(originalDateTimeValueStandard = Date.MinValue, DateTimePicker1.Value, originalDateTimeValueStandard)
 
                     ' Set updatedContactNumber to originalContactNumber if user doesn't want to change it
                     updatedContactNumber = If(String.IsNullOrEmpty(updatedContactNumber), originalContactNumber, updatedContactNumber)
@@ -351,6 +340,26 @@ Public Class Uc_Visitors
     End Sub
 
     Private Sub Uc_Visitors_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
+    Private Sub save_Click_1(sender As Object, e As EventArgs) Handles save.Click
+
+    End Sub
+
+    Private Sub Btndlt_Click_1(sender As Object, e As EventArgs) Handles Btndlt.Click
+
+    End Sub
+
+    Private Sub Btnupd_Click_1(sender As Object, e As EventArgs) Handles Btnupd.Click
+
+    End Sub
+
+    Private Sub idno_TextChanged(sender As Object, e As EventArgs) Handles idno.TextChanged
+
+    End Sub
+
+    Private Sub Guna2Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Guna2Panel1.Paint
 
     End Sub
 End Class
