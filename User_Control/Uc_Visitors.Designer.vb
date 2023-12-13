@@ -46,6 +46,7 @@ Partial Class Uc_Visitors
         Dim CustomizableEdges22 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges23 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges24 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Uc_Visitors))
         Dim CustomizableEdges25 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges26 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges27 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
@@ -104,12 +105,14 @@ Partial Class Uc_Visitors
         ' RadioButton2
         ' 
         RadioButton2.AutoSize = True
+        RadioButton2.BackColor = Color.Transparent
         RadioButton2.CheckedState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
         RadioButton2.CheckedState.BorderThickness = 0
         RadioButton2.CheckedState.FillColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
         RadioButton2.CheckedState.InnerColor = Color.White
         RadioButton2.CheckedState.InnerOffset = -4
         RadioButton2.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        RadioButton2.ForeColor = Color.White
         RadioButton2.Location = New Point(898, 537)
         RadioButton2.Name = "RadioButton2"
         RadioButton2.Size = New Size(129, 36)
@@ -119,16 +122,19 @@ Partial Class Uc_Visitors
         RadioButton2.UncheckedState.BorderThickness = 2
         RadioButton2.UncheckedState.FillColor = Color.Transparent
         RadioButton2.UncheckedState.InnerColor = Color.Transparent
+        RadioButton2.UseVisualStyleBackColor = False
         ' 
         ' RadioButton1
         ' 
         RadioButton1.AutoSize = True
+        RadioButton1.BackColor = Color.Transparent
         RadioButton1.CheckedState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
         RadioButton1.CheckedState.BorderThickness = 0
         RadioButton1.CheckedState.FillColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
         RadioButton1.CheckedState.InnerColor = Color.White
         RadioButton1.CheckedState.InnerOffset = -4
         RadioButton1.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        RadioButton1.ForeColor = Color.White
         RadioButton1.Location = New Point(898, 486)
         RadioButton1.Name = "RadioButton1"
         RadioButton1.Size = New Size(104, 36)
@@ -138,6 +144,7 @@ Partial Class Uc_Visitors
         RadioButton1.UncheckedState.BorderThickness = 2
         RadioButton1.UncheckedState.FillColor = Color.Transparent
         RadioButton1.UncheckedState.InnerColor = Color.Transparent
+        RadioButton1.UseVisualStyleBackColor = False
         ' 
         ' addd
         ' 
@@ -154,6 +161,7 @@ Partial Class Uc_Visitors
         addd.Name = "addd"
         addd.PasswordChar = ChrW(0)
         addd.PlaceholderText = ""
+        addd.ScrollBars = ScrollBars.Both
         addd.SelectedText = ""
         addd.ShadowDecoration.CustomizableEdges = CustomizableEdges4
         addd.Size = New Size(310, 140)
@@ -372,7 +380,9 @@ Partial Class Uc_Visitors
         ' Label1
         ' 
         Label1.AutoSize = True
+        Label1.BackColor = Color.Transparent
         Label1.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        Label1.ForeColor = Color.White
         Label1.Location = New Point(888, 440)
         Label1.Name = "Label1"
         Label1.Size = New Size(56, 32)
@@ -382,7 +392,9 @@ Partial Class Uc_Visitors
         ' Label3
         ' 
         Label3.AutoSize = True
+        Label3.BackColor = Color.Transparent
         Label3.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        Label3.ForeColor = Color.White
         Label3.Location = New Point(72, 506)
         Label3.Name = "Label3"
         Label3.Size = New Size(224, 32)
@@ -392,7 +404,9 @@ Partial Class Uc_Visitors
         ' Label2
         ' 
         Label2.AutoSize = True
+        Label2.BackColor = Color.Transparent
         Label2.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        Label2.ForeColor = Color.White
         Label2.Location = New Point(72, 167)
         Label2.Name = "Label2"
         Label2.Size = New Size(169, 32)
@@ -402,7 +416,9 @@ Partial Class Uc_Visitors
         ' From
         ' 
         From.AutoSize = True
+        From.BackColor = Color.Transparent
         From.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        From.ForeColor = Color.White
         From.Location = New Point(490, 272)
         From.Name = "From"
         From.Size = New Size(128, 32)
@@ -412,7 +428,9 @@ Partial Class Uc_Visitors
         ' Label10
         ' 
         Label10.AutoSize = True
+        Label10.BackColor = Color.Transparent
         Label10.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        Label10.ForeColor = Color.White
         Label10.Location = New Point(490, 399)
         Label10.Name = "Label10"
         Label10.Size = New Size(184, 32)
@@ -422,7 +440,9 @@ Partial Class Uc_Visitors
         ' PType
         ' 
         PType.AutoSize = True
+        PType.BackColor = Color.Transparent
         PType.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        PType.ForeColor = Color.White
         PType.Location = New Point(72, 399)
         PType.Name = "PType"
         PType.Size = New Size(186, 32)
@@ -432,7 +452,9 @@ Partial Class Uc_Visitors
         ' tolbl
         ' 
         tolbl.AutoSize = True
+        tolbl.BackColor = Color.Transparent
         tolbl.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        tolbl.ForeColor = Color.Transparent
         tolbl.Location = New Point(72, 272)
         tolbl.Name = "tolbl"
         tolbl.Size = New Size(106, 32)
@@ -441,7 +463,9 @@ Partial Class Uc_Visitors
         ' 
         ' DteLbl
         ' 
+        DteLbl.BackColor = Color.Transparent
         DteLbl.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        DteLbl.ForeColor = Color.White
         DteLbl.Location = New Point(490, 510)
         DteLbl.Name = "DteLbl"
         DteLbl.Size = New Size(243, 28)
@@ -450,7 +474,9 @@ Partial Class Uc_Visitors
         ' 
         ' Dept
         ' 
+        Dept.BackColor = Color.Transparent
         Dept.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        Dept.ForeColor = Color.White
         Dept.Location = New Point(490, 168)
         Dept.Name = "Dept"
         Dept.Size = New Size(259, 31)
@@ -460,7 +486,9 @@ Partial Class Uc_Visitors
         ' Qtty
         ' 
         Qtty.AutoSize = True
+        Qtty.BackColor = Color.Transparent
         Qtty.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        Qtty.ForeColor = Color.Transparent
         Qtty.Location = New Point(888, 223)
         Qtty.Name = "Qtty"
         Qtty.Size = New Size(122, 32)
@@ -470,7 +498,9 @@ Partial Class Uc_Visitors
         ' Materl
         ' 
         Materl.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        Materl.BackColor = Color.Transparent
         Materl.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        Materl.ForeColor = Color.White
         Materl.Location = New Point(490, 60)
         Materl.Name = "Materl"
         Materl.Size = New Size(115, 34)
@@ -481,7 +511,9 @@ Partial Class Uc_Visitors
         ' 
         IDNUM.AccessibleRole = AccessibleRole.IpAddress
         IDNUM.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        IDNUM.BackColor = Color.Transparent
         IDNUM.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        IDNUM.ForeColor = Color.White
         IDNUM.Location = New Point(71, 55)
         IDNUM.Name = "IDNUM"
         IDNUM.Size = New Size(170, 31)
@@ -494,6 +526,7 @@ Partial Class Uc_Visitors
         Panel1.AutoSize = True
         Panel1.AutoSizeMode = AutoSizeMode.GrowAndShrink
         Panel1.BackColor = Color.White
+        Panel1.BackgroundImage = CType(resources.GetObject("Panel1.BackgroundImage"), Image)
         Panel1.Controls.Add(Btndlt)
         Panel1.Controls.Add(Btnupd)
         Panel1.Controls.Add(DateTimePicker1)
@@ -566,6 +599,9 @@ Partial Class Uc_Visitors
         ' 
         ' DateTimePicker1
         ' 
+        DateTimePicker1.CalendarForeColor = Color.White
+        DateTimePicker1.CalendarMonthBackground = Color.Transparent
+        DateTimePicker1.CalendarTitleBackColor = Color.Transparent
         DateTimePicker1.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
         DateTimePicker1.Location = New Point(898, 110)
         DateTimePicker1.Name = "DateTimePicker1"
@@ -577,6 +613,7 @@ Partial Class Uc_Visitors
         ' 
         AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
+        BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
         Controls.Add(Panel1)
         Name = "Uc_Visitors"
         Size = New Size(1350, 760)
