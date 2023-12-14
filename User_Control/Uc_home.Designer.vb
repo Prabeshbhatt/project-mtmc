@@ -53,15 +53,15 @@ Partial Class Uc_home
         ' 
         ' Label2
         ' 
-        Label2.Anchor = AnchorStyles.None
+        Label2.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         Label2.BackColor = Color.Transparent
         Label2.Font = New Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point)
         Label2.ForeColor = SystemColors.ButtonHighlight
-        Label2.Location = New Point(3, 472)
+        Label2.Location = New Point(3, 463)
         Label2.Name = "Label2"
         Label2.Size = New Size(285, 55)
         Label2.TabIndex = 0
-        Label2.Text = "MTMC Jamsedhpur"
+        Label2.Text = "MTMC Jamshedpur"
         ' 
         ' Timer1
         ' 
@@ -73,10 +73,10 @@ Partial Class Uc_home
         Guna2Panel1.BackColor = Color.White
         Guna2Panel1.Controls.Add(Label1)
         Guna2Panel1.CustomizableEdges = CustomizableEdges3
-        Guna2Panel1.Location = New Point(65, 576)
+        Guna2Panel1.Location = New Point(65, 550)
         Guna2Panel1.Name = "Guna2Panel1"
         Guna2Panel1.ShadowDecoration.CustomizableEdges = CustomizableEdges4
-        Guna2Panel1.Size = New Size(1208, 352)
+        Guna2Panel1.Size = New Size(1208, 378)
         Guna2Panel1.TabIndex = 1
         ' 
         ' Label1
@@ -84,7 +84,7 @@ Partial Class Uc_home
         Label1.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         Label1.Location = New Point(19, 16)
         Label1.Name = "Label1"
-        Label1.Size = New Size(1169, 324)
+        Label1.Size = New Size(1169, 350)
         Label1.TabIndex = 0
         Label1.Text = resources.GetString("Label1.Text")
         ' 
