@@ -32,6 +32,8 @@ Partial Class FinalHomePage
         Dim CustomizableEdges6 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges7 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges8 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges9 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges10 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Guna2BorderlessForm1 = New Guna.UI2.WinForms.Guna2BorderlessForm(components)
         Panel1 = New Panel()
         Button2 = New Button()
@@ -48,6 +50,7 @@ Partial Class FinalHomePage
         InwardToolStripMenuItem = New ToolStripMenuItem()
         OutwardToolStripMenuItem = New ToolStripMenuItem()
         Panel3 = New Panel()
+        Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
         Button3 = New Button()
         Panel1.SuspendLayout()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
@@ -281,12 +284,22 @@ Partial Class FinalHomePage
         ' 
         Panel3.AutoScroll = True
         Panel3.BackColor = Color.White
+        Panel3.Controls.Add(Guna2Panel1)
         Panel3.Controls.Add(Button3)
         Panel3.Dock = DockStyle.Fill
         Panel3.Location = New Point(0, 0)
         Panel3.Name = "Panel3"
         Panel3.Size = New Size(1096, 610)
         Panel3.TabIndex = 5
+        ' 
+        ' Guna2Panel1
+        ' 
+        Guna2Panel1.CustomizableEdges = CustomizableEdges9
+        Guna2Panel1.Location = New Point(2, 167)
+        Guna2Panel1.Name = "Guna2Panel1"
+        Guna2Panel1.ShadowDecoration.CustomizableEdges = CustomizableEdges10
+        Guna2Panel1.Size = New Size(1091, 440)
+        Guna2Panel1.TabIndex = 1
         ' 
         ' Button3
         ' 
@@ -337,4 +350,5 @@ Partial Class FinalHomePage
     Friend WithEvents OutwardToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Button3 As Button
+    Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
 End Class
