@@ -13,22 +13,22 @@ Public Class Uc_lostandfound
     End Sub
 
 
-    Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
+    Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs)
         OpenFileDialog.Title = "Open Picture"
         OpenFileDialog.FileName = ".png"
         OpenFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif;*.bmp"
-        OpenFileDialog.ShowDialog()
+        OpenFileDialog.ShowDialog
         PictureBox1.Image = Image.FromFile(OpenFileDialog.FileName)
     End Sub
 
-    Private Sub OpenFileDialog1_FileOk(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles OpenFileDialog.FileOk
+    Private Sub OpenFileDialog1_FileOk(sender As Object, e As System.ComponentModel.CancelEventArgs)
 
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub GunaSave_Click(sender As Object, e As EventArgs) Handles GunaSave.Click
         Try
             conn.Open()
-            cmd = conn.CreateCommand()
+            cmd = conn.CreateCommand
             cmd.CommandType = CommandType.Text
             cmd.CommandText = "INSERT INTO Lostnfound ([Sl no],[Material Detail],[Location],[Person Found],[Date],[Quantity],[Handover],[Recieved],[Signature],[Picture]) 
 VALUES (@SlNo, @MaterialDetail, @Location, @PersonFound, @Date, @Quantity, @Handover, @Received, @Signature, @Picture)"
@@ -41,7 +41,7 @@ VALUES (@SlNo, @MaterialDetail, @Location, @PersonFound, @Date, @Quantity, @Hand
             cmd.Parameters.Add("@Handover", OleDbType.VarChar).Value = TextBox6.Text
             cmd.Parameters.Add("@Received", OleDbType.VarChar).Value = TextBox7.Text
             cmd.Parameters.Add("@Signature", OleDbType.VarChar).Value = TextBox8.Text
-            Dim profilePictureData As Byte() = File.ReadAllBytes(OpenFileDialog.FileName)
+            Dim profilePictureData = File.ReadAllBytes(OpenFileDialog.FileName)
             cmd.Parameters.Add("@Picture", OleDbType.VarBinary).Value = profilePictureData
             cmd.ExecuteNonQuery()
             conn.Close()
@@ -76,13 +76,13 @@ VALUES (@SlNo, @MaterialDetail, @Location, @PersonFound, @Date, @Quantity, @Hand
         Return Result
     End Function
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub GunaDelete_Click(sender As Object, e As EventArgs) Handles GunaDelete.Click
         Dim Slno = TextBox1.Text
-        If Datapresent(SlNo) Then
+        If Datapresent(Slno) Then
             Try
                 If MessageBox.Show("Are you sure you want to delete this record?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
                     conn.Open()
-                    cmd = conn.CreateCommand()
+                    cmd = conn.CreateCommand
                     cmd.CommandType = CommandType.Text
                     cmd.CommandText = "DELETE FROM Lostnfound WHERE [Sl no] = " & TextBox1.Text & ""
                     cmd.ExecuteNonQuery()
@@ -97,5 +97,9 @@ VALUES (@SlNo, @MaterialDetail, @Location, @PersonFound, @Date, @Quantity, @Hand
         Else
             MessageBox.Show("Sl no Number Not Found!")
         End If
+    End Sub
+
+    Private Sub GunaUpdate_Click(sender As Object, e As EventArgs) Handles GunaUpdate.Click
+
     End Sub
 End Class
