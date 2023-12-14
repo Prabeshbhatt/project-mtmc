@@ -22,14 +22,14 @@ Partial Class Uc_Inward
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim CustomizableEdges15 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges16 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges9 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges10 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges11 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges12 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges13 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges14 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges7 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges8 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges1 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges2 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges3 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges4 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges5 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges6 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
         GunaUpdate = New Guna.UI2.WinForms.Guna2Button()
         GunaDelete = New Guna.UI2.WinForms.Guna2Button()
@@ -80,10 +80,10 @@ Partial Class Uc_Inward
         Guna2Panel1.Controls.Add(Label3)
         Guna2Panel1.Controls.Add(Label2)
         Guna2Panel1.Controls.Add(Label1)
-        Guna2Panel1.CustomizableEdges = CustomizableEdges15
+        Guna2Panel1.CustomizableEdges = CustomizableEdges7
         Guna2Panel1.Location = New Point(86, 34)
         Guna2Panel1.Name = "Guna2Panel1"
-        Guna2Panel1.ShadowDecoration.CustomizableEdges = CustomizableEdges16
+        Guna2Panel1.ShadowDecoration.CustomizableEdges = CustomizableEdges8
         Guna2Panel1.Size = New Size(870, 900)
         Guna2Panel1.TabIndex = 0
         ' 
@@ -92,7 +92,7 @@ Partial Class Uc_Inward
         GunaUpdate.Anchor = AnchorStyles.None
         GunaUpdate.Animated = True
         GunaUpdate.AnimatedGIF = True
-        GunaUpdate.CustomizableEdges = CustomizableEdges9
+        GunaUpdate.CustomizableEdges = CustomizableEdges1
         GunaUpdate.DisabledState.BorderColor = Color.DarkGray
         GunaUpdate.DisabledState.CustomBorderColor = Color.DarkGray
         GunaUpdate.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
@@ -103,7 +103,7 @@ Partial Class Uc_Inward
         GunaUpdate.Location = New Point(365, 715)
         GunaUpdate.Name = "GunaUpdate"
         GunaUpdate.PressedColor = Color.GhostWhite
-        GunaUpdate.ShadowDecoration.CustomizableEdges = CustomizableEdges10
+        GunaUpdate.ShadowDecoration.CustomizableEdges = CustomizableEdges2
         GunaUpdate.Size = New Size(140, 60)
         GunaUpdate.TabIndex = 83
         GunaUpdate.Text = "Update"
@@ -113,7 +113,7 @@ Partial Class Uc_Inward
         GunaDelete.Anchor = AnchorStyles.None
         GunaDelete.Animated = True
         GunaDelete.AnimatedGIF = True
-        GunaDelete.CustomizableEdges = CustomizableEdges11
+        GunaDelete.CustomizableEdges = CustomizableEdges3
         GunaDelete.DisabledState.BorderColor = Color.DarkGray
         GunaDelete.DisabledState.CustomBorderColor = Color.DarkGray
         GunaDelete.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
@@ -121,10 +121,10 @@ Partial Class Uc_Inward
         GunaDelete.FillColor = Color.SlateBlue
         GunaDelete.Font = New Font("Times New Roman", 14F, FontStyle.Bold, GraphicsUnit.Point)
         GunaDelete.ForeColor = Color.White
-        GunaDelete.Location = New Point(553, 715)
+        GunaDelete.Location = New Point(585, 715)
         GunaDelete.Name = "GunaDelete"
         GunaDelete.PressedColor = Color.GhostWhite
-        GunaDelete.ShadowDecoration.CustomizableEdges = CustomizableEdges12
+        GunaDelete.ShadowDecoration.CustomizableEdges = CustomizableEdges4
         GunaDelete.Size = New Size(140, 60)
         GunaDelete.TabIndex = 82
         GunaDelete.Text = "Delete"
@@ -134,7 +134,7 @@ Partial Class Uc_Inward
         GunaSave.Anchor = AnchorStyles.None
         GunaSave.Animated = True
         GunaSave.AnimatedGIF = True
-        GunaSave.CustomizableEdges = CustomizableEdges13
+        GunaSave.CustomizableEdges = CustomizableEdges5
         GunaSave.DisabledState.BorderColor = Color.DarkGray
         GunaSave.DisabledState.CustomBorderColor = Color.DarkGray
         GunaSave.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
@@ -142,10 +142,10 @@ Partial Class Uc_Inward
         GunaSave.FillColor = Color.SlateBlue
         GunaSave.Font = New Font("Times New Roman", 14F, FontStyle.Bold, GraphicsUnit.Point)
         GunaSave.ForeColor = Color.White
-        GunaSave.Location = New Point(172, 715)
+        GunaSave.Location = New Point(146, 715)
         GunaSave.Name = "GunaSave"
         GunaSave.PressedColor = Color.GhostWhite
-        GunaSave.ShadowDecoration.CustomizableEdges = CustomizableEdges14
+        GunaSave.ShadowDecoration.CustomizableEdges = CustomizableEdges6
         GunaSave.Size = New Size(140, 60)
         GunaSave.TabIndex = 1
         GunaSave.Text = "Save"
