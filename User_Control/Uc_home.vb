@@ -1,7 +1,5 @@
 ﻿Public Class Uc_home
-    Private Sub Guna2CustomGradientPanel1_Paint(sender As Object, e As PaintEventArgs) Handles Guna2CustomGradientPanel1.Paint
-        Timer1.Start()
-    End Sub
+
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         ' Scroll the content
@@ -25,5 +23,9 @@
 
     Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
 
+    End Sub
+
+    Private Sub Guna2Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Guna2Panel1.Paint
+        Timer1.Start()
     End Sub
 End Class
