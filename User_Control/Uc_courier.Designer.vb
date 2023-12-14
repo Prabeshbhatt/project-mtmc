@@ -22,19 +22,22 @@ Partial Class Uc_courier
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim CustomizableEdges3 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges4 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges7 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges8 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges1 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges2 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges3 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges4 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges5 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges6 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
-        Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
-        Button5 = New Button()
-        Button4 = New Button()
+        GunaUpdate = New Guna.UI2.WinForms.Guna2Button()
+        GunaDelete = New Guna.UI2.WinForms.Guna2Button()
+        GunaSave = New Guna.UI2.WinForms.Guna2Button()
         TextBox7 = New TextBox()
         DateTimePicker1 = New DateTimePicker()
         Label1 = New Label()
         Label2 = New Label()
-        Button1 = New Button()
         Label3 = New Label()
         TextBox10 = New TextBox()
         Label4 = New Label()
@@ -58,14 +61,13 @@ Partial Class Uc_courier
         ' 
         Guna2Panel1.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         Guna2Panel1.BackColor = Color.GhostWhite
-        Guna2Panel1.Controls.Add(Guna2Button1)
-        Guna2Panel1.Controls.Add(Button5)
-        Guna2Panel1.Controls.Add(Button4)
+        Guna2Panel1.Controls.Add(GunaUpdate)
+        Guna2Panel1.Controls.Add(GunaDelete)
+        Guna2Panel1.Controls.Add(GunaSave)
         Guna2Panel1.Controls.Add(TextBox7)
         Guna2Panel1.Controls.Add(DateTimePicker1)
         Guna2Panel1.Controls.Add(Label1)
         Guna2Panel1.Controls.Add(Label2)
-        Guna2Panel1.Controls.Add(Button1)
         Guna2Panel1.Controls.Add(Label3)
         Guna2Panel1.Controls.Add(TextBox10)
         Guna2Panel1.Controls.Add(Label4)
@@ -82,57 +84,75 @@ Partial Class Uc_courier
         Guna2Panel1.Controls.Add(Label10)
         Guna2Panel1.Controls.Add(TextBox2)
         Guna2Panel1.Controls.Add(TextBox1)
-        Guna2Panel1.CustomizableEdges = CustomizableEdges3
+        Guna2Panel1.CustomizableEdges = CustomizableEdges7
         Guna2Panel1.Location = New Point(117, 43)
         Guna2Panel1.Name = "Guna2Panel1"
-        Guna2Panel1.ShadowDecoration.CustomizableEdges = CustomizableEdges4
+        Guna2Panel1.ShadowDecoration.CustomizableEdges = CustomizableEdges8
         Guna2Panel1.Size = New Size(960, 900)
         Guna2Panel1.TabIndex = 0
         ' 
-        ' Guna2Button1
+        ' GunaUpdate
         ' 
-        Guna2Button1.CustomizableEdges = CustomizableEdges1
-        Guna2Button1.DisabledState.BorderColor = Color.DarkGray
-        Guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray
-        Guna2Button1.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
-        Guna2Button1.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
-        Guna2Button1.FillColor = Color.SlateBlue
-        Guna2Button1.Font = New Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point)
-        Guna2Button1.ForeColor = Color.White
-        Guna2Button1.Location = New Point(183, 762)
-        Guna2Button1.Name = "Guna2Button1"
-        Guna2Button1.ShadowDecoration.CustomizableEdges = CustomizableEdges2
-        Guna2Button1.Size = New Size(140, 60)
-        Guna2Button1.TabIndex = 97
-        Guna2Button1.Text = "UPDATE"
+        GunaUpdate.Anchor = AnchorStyles.None
+        GunaUpdate.Animated = True
+        GunaUpdate.AnimatedGIF = True
+        GunaUpdate.CustomizableEdges = CustomizableEdges1
+        GunaUpdate.DisabledState.BorderColor = Color.DarkGray
+        GunaUpdate.DisabledState.CustomBorderColor = Color.DarkGray
+        GunaUpdate.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
+        GunaUpdate.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
+        GunaUpdate.FillColor = Color.SlateBlue
+        GunaUpdate.Font = New Font("Times New Roman", 14F, FontStyle.Bold, GraphicsUnit.Point)
+        GunaUpdate.ForeColor = Color.White
+        GunaUpdate.Location = New Point(410, 762)
+        GunaUpdate.Name = "GunaUpdate"
+        GunaUpdate.PressedColor = Color.GhostWhite
+        GunaUpdate.ShadowDecoration.CustomizableEdges = CustomizableEdges2
+        GunaUpdate.Size = New Size(140, 60)
+        GunaUpdate.TabIndex = 99
+        GunaUpdate.Text = "Update"
         ' 
-        ' Button5
+        ' GunaDelete
         ' 
-        Button5.Anchor = AnchorStyles.None
-        Button5.BackColor = Color.SlateBlue
-        Button5.FlatStyle = FlatStyle.Flat
-        Button5.Font = New Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point)
-        Button5.ForeColor = Color.White
-        Button5.Location = New Point(183, 696)
-        Button5.Name = "Button5"
-        Button5.Size = New Size(140, 60)
-        Button5.TabIndex = 96
-        Button5.Text = "Update"
-        Button5.UseVisualStyleBackColor = False
+        GunaDelete.Anchor = AnchorStyles.None
+        GunaDelete.Animated = True
+        GunaDelete.AnimatedGIF = True
+        GunaDelete.CustomizableEdges = CustomizableEdges3
+        GunaDelete.DisabledState.BorderColor = Color.DarkGray
+        GunaDelete.DisabledState.CustomBorderColor = Color.DarkGray
+        GunaDelete.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
+        GunaDelete.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
+        GunaDelete.FillColor = Color.SlateBlue
+        GunaDelete.Font = New Font("Times New Roman", 14F, FontStyle.Bold, GraphicsUnit.Point)
+        GunaDelete.ForeColor = Color.White
+        GunaDelete.Location = New Point(619, 762)
+        GunaDelete.Name = "GunaDelete"
+        GunaDelete.PressedColor = Color.GhostWhite
+        GunaDelete.ShadowDecoration.CustomizableEdges = CustomizableEdges4
+        GunaDelete.Size = New Size(140, 60)
+        GunaDelete.TabIndex = 98
+        GunaDelete.Text = "Delete"
         ' 
-        ' Button4
+        ' GunaSave
         ' 
-        Button4.Anchor = AnchorStyles.None
-        Button4.BackColor = Color.SlateBlue
-        Button4.FlatStyle = FlatStyle.Flat
-        Button4.Font = New Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point)
-        Button4.ForeColor = Color.White
-        Button4.Location = New Point(400, 696)
-        Button4.Name = "Button4"
-        Button4.Size = New Size(140, 60)
-        Button4.TabIndex = 95
-        Button4.Text = "Delete"
-        Button4.UseVisualStyleBackColor = False
+        GunaSave.Anchor = AnchorStyles.None
+        GunaSave.Animated = True
+        GunaSave.AnimatedGIF = True
+        GunaSave.CustomizableEdges = CustomizableEdges5
+        GunaSave.DisabledState.BorderColor = Color.DarkGray
+        GunaSave.DisabledState.CustomBorderColor = Color.DarkGray
+        GunaSave.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
+        GunaSave.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
+        GunaSave.FillColor = Color.SlateBlue
+        GunaSave.Font = New Font("Times New Roman", 14F, FontStyle.Bold, GraphicsUnit.Point)
+        GunaSave.ForeColor = Color.White
+        GunaSave.Location = New Point(197, 762)
+        GunaSave.Name = "GunaSave"
+        GunaSave.PressedColor = Color.GhostWhite
+        GunaSave.ShadowDecoration.CustomizableEdges = CustomizableEdges6
+        GunaSave.Size = New Size(140, 60)
+        GunaSave.TabIndex = 97
+        GunaSave.Text = "Save"
         ' 
         ' TextBox7
         ' 
@@ -171,20 +191,6 @@ Partial Class Uc_courier
         Label2.Size = New Size(94, 38)
         Label2.TabIndex = 75
         Label2.Text = "To"
-        ' 
-        ' Button1
-        ' 
-        Button1.Anchor = AnchorStyles.None
-        Button1.BackColor = Color.SlateBlue
-        Button1.FlatStyle = FlatStyle.Flat
-        Button1.Font = New Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point)
-        Button1.ForeColor = Color.White
-        Button1.Location = New Point(621, 696)
-        Button1.Name = "Button1"
-        Button1.Size = New Size(140, 60)
-        Button1.TabIndex = 93
-        Button1.Text = "Save"
-        Button1.UseVisualStyleBackColor = False
         ' 
         ' Label3
         ' 
@@ -374,6 +380,8 @@ Partial Class Uc_courier
     Friend WithEvents Label10 As Label
     Friend WithEvents TextBox2 As TextBox
     Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents GunaSave As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents GunaUpdate As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents GunaDelete As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Button5 As Button
 End Class
