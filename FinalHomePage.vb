@@ -52,9 +52,8 @@
     End Sub
 
     Private Sub Button2_click(sender As Object, e As EventArgs) Handles Button2.Click
-        Dim profilepage As New ProfilePage
-        profilepage.Show()
-        Me.Hide()
+        Dim uc As New UC_ProfilePage()
+        AddUserControl(uc)
     End Sub
 
     Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles Guna2Button1.Click
