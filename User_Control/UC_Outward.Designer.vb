@@ -22,12 +22,12 @@ Partial Class UC_Outward
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim CustomizableEdges7 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges8 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges9 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges10 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges11 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges12 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges1 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges2 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges3 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges4 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges5 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges6 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Guna2ShadowPanel1 = New Guna.UI2.WinForms.Guna2ShadowPanel()
         Guna2Button3 = New Guna.UI2.WinForms.Guna2Button()
         Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
@@ -107,7 +107,7 @@ Partial Class UC_Outward
         Guna2Button3.Anchor = AnchorStyles.None
         Guna2Button3.Animated = True
         Guna2Button3.AnimatedGIF = True
-        Guna2Button3.CustomizableEdges = CustomizableEdges7
+        Guna2Button3.CustomizableEdges = CustomizableEdges1
         Guna2Button3.DisabledState.BorderColor = Color.DarkGray
         Guna2Button3.DisabledState.CustomBorderColor = Color.DarkGray
         Guna2Button3.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
@@ -118,7 +118,7 @@ Partial Class UC_Outward
         Guna2Button3.Location = New Point(616, 787)
         Guna2Button3.Name = "Guna2Button3"
         Guna2Button3.PressedColor = Color.WhiteSmoke
-        Guna2Button3.ShadowDecoration.CustomizableEdges = CustomizableEdges8
+        Guna2Button3.ShadowDecoration.CustomizableEdges = CustomizableEdges2
         Guna2Button3.Size = New Size(140, 60)
         Guna2Button3.TabIndex = 105
         Guna2Button3.Text = "Delete"
@@ -128,7 +128,7 @@ Partial Class UC_Outward
         Guna2Button2.Anchor = AnchorStyles.None
         Guna2Button2.Animated = True
         Guna2Button2.AnimatedGIF = True
-        Guna2Button2.CustomizableEdges = CustomizableEdges9
+        Guna2Button2.CustomizableEdges = CustomizableEdges3
         Guna2Button2.DisabledState.BorderColor = Color.DarkGray
         Guna2Button2.DisabledState.CustomBorderColor = Color.DarkGray
         Guna2Button2.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
@@ -139,7 +139,7 @@ Partial Class UC_Outward
         Guna2Button2.Location = New Point(372, 787)
         Guna2Button2.Name = "Guna2Button2"
         Guna2Button2.PressedColor = Color.WhiteSmoke
-        Guna2Button2.ShadowDecoration.CustomizableEdges = CustomizableEdges10
+        Guna2Button2.ShadowDecoration.CustomizableEdges = CustomizableEdges4
         Guna2Button2.Size = New Size(140, 60)
         Guna2Button2.TabIndex = 104
         Guna2Button2.Text = "Update"
@@ -149,7 +149,7 @@ Partial Class UC_Outward
         Guna2Button1.Anchor = AnchorStyles.None
         Guna2Button1.Animated = True
         Guna2Button1.AnimatedGIF = True
-        Guna2Button1.CustomizableEdges = CustomizableEdges11
+        Guna2Button1.CustomizableEdges = CustomizableEdges5
         Guna2Button1.DisabledState.BorderColor = Color.DarkGray
         Guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray
         Guna2Button1.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
@@ -160,7 +160,7 @@ Partial Class UC_Outward
         Guna2Button1.Location = New Point(122, 787)
         Guna2Button1.Name = "Guna2Button1"
         Guna2Button1.PressedColor = Color.WhiteSmoke
-        Guna2Button1.ShadowDecoration.CustomizableEdges = CustomizableEdges12
+        Guna2Button1.ShadowDecoration.CustomizableEdges = CustomizableEdges6
         Guna2Button1.Size = New Size(140, 60)
         Guna2Button1.TabIndex = 103
         Guna2Button1.Text = "Save"
