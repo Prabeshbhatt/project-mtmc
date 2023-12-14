@@ -23,7 +23,7 @@ Partial Class Uc_home
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         components = New ComponentModel.Container()
-        Dim resources As ComponentModel.ComponentResourceManager = New ComponentModel.ComponentResourceManager(GetType(Uc_home))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Uc_home))
         Dim CustomizableEdges3 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges4 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges1 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
@@ -68,10 +68,10 @@ Partial Class Uc_home
         ' 
         ' Label1
         ' 
-        Label1.Anchor = AnchorStyles.None
+        Label1.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         Label1.BackColor = Color.Transparent
-        Label1.Font = New Font("Segoe UI", 10.0F, FontStyle.Regular, GraphicsUnit.Point)
-        Label1.Location = New Point(3, 546)
+        Label1.Font = New Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point)
+        Label1.Location = New Point(14, 547)
         Label1.Name = "Label1"
         Label1.Size = New Size(1178, 401)
         Label1.TabIndex = 0
@@ -79,7 +79,7 @@ Partial Class Uc_home
         ' 
         ' Guna2GradientPanel1
         ' 
-        Guna2GradientPanel1.Anchor = AnchorStyles.None
+        Guna2GradientPanel1.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         Guna2GradientPanel1.BackColor = Color.White
         Guna2GradientPanel1.BackgroundImage = CType(resources.GetObject("Guna2GradientPanel1.BackgroundImage"), Image)
         Guna2GradientPanel1.BackgroundImageLayout = ImageLayout.Stretch
@@ -95,7 +95,7 @@ Partial Class Uc_home
         ' 
         Label2.Anchor = AnchorStyles.None
         Label2.BackColor = Color.Transparent
-        Label2.Font = New Font("Segoe UI", 14.0F, FontStyle.Bold, GraphicsUnit.Point)
+        Label2.Font = New Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point)
         Label2.ForeColor = SystemColors.ButtonHighlight
         Label2.Location = New Point(3, 472)
         Label2.Name = "Label2"
@@ -109,7 +109,7 @@ Partial Class Uc_home
         ' 
         ' Uc_home
         ' 
-        AutoScaleDimensions = New SizeF(10.0F, 25.0F)
+        AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.SlateBlue
         Controls.Add(Guna2GradientPanel1)
