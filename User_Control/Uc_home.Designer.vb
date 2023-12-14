@@ -61,7 +61,7 @@ Partial Class Uc_home
         Label2.Name = "Label2"
         Label2.Size = New Size(285, 55)
         Label2.TabIndex = 0
-        Label2.Text = "MTMC Jamsedhpur"
+        Label2.Text = "MTMC Jamshedpur"
         ' 
         ' Timer1
         ' 
