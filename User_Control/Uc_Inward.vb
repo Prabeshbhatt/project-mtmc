@@ -25,57 +25,42 @@ Public Class Uc_Inward
         Return Result
     End Function
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs)
-        Dim ChallanNo = TextBox5.Text
-        If Datapresent(ChallanNo) Then
-            Try
-                If MessageBox.Show("Are you sure you want to delete this record?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
-                    conn.Open
-                    cmd = conn.CreateCommand
-                    cmd.CommandType = CommandType.Text
-                    cmd.CommandText = "DELETE FROM Table1 WHERE [Challan_No] = " & TextBox5.Text & ""
-                    cmd.ExecuteNonQuery
-                    conn.Close
-                    MessageBox.Show("Data deleted successfully.")
-                Else
-                    MessageBox.Show("Data Not Deleted")
-                End If
-            Catch ex As Exception
-                MessageBox.Show("Error: " & ex.Message)
-            End Try
-        Else
-            MessageBox.Show("Challan Number Not Found!")
-        End If
+    Private Sub Uc_Inward_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        conn.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\MTMC PROJECT\DATABASES\Inward_Formdb.accdb"
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs)
+    Private Sub TextBox5_TextChanged(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub GunaSave_Click(sender As Object, e As EventArgs) Handles GunaSave.Click
         Try
-            conn.Open
+            conn.Open()
             cmd = conn.CreateCommand
             cmd.CommandType = CommandType.Text
             cmd.CommandText = "INSERT INTO Table1 ([Sl no],[Party Name],[Material],[Quantity],[Challan_No],[Date],[In Time],[Remark],[Signature]) VALUES (" & TextBox1.Text & ", '" & TextBox2.Text & "', '" & TextBox3.Text & "'," & TextBox4.Text & "," & TextBox5.Text & ",'" & DateTimePicker1.Text & "','" & TextBox7.Text & "','" & TextBox8.Text & "','" & TextBox9.Text & "' )"
-            cmd.ExecuteNonQuery
-            conn.Close
+            cmd.ExecuteNonQuery()
+            conn.Close()
 
             MessageBox.Show("Data inserted successfully.")
         Catch ex As Exception
             MessageBox.Show("Error: " & ex.Message)
-            conn.Close
+            conn.Close()
         End Try
-        TextBox1.Clear
-        TextBox2.Clear
-        TextBox3.Clear
-        TextBox4.Clear
-        TextBox5.Clear
-        TextBox7.Clear
-        TextBox8.Clear
-        TextBox9.Clear
+        TextBox1.Clear()
+        TextBox2.Clear()
+        TextBox3.Clear()
+        TextBox4.Clear()
+        TextBox5.Clear()
+        TextBox7.Clear()
+        TextBox8.Clear()
+        TextBox9.Clear()
     End Sub
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs)
+    Private Sub GunaUpdate_Click(sender As Object, e As EventArgs) Handles GunaUpdate.Click
         If MessageBox.Show("Are you sure you want to Update this record?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
             Try
-                conn.Open
+                conn.Open()
                 cmd = conn.CreateCommand
                 cmd.CommandType = CommandType.Text
 
@@ -121,7 +106,7 @@ Public Class Uc_Inward
                 Dim updateClause = String.Join(", ", updateClauses)
                 If updateClause <> "" Then
                     cmd.CommandText = "UPDATE Table1 SET " & updateClause & " WHERE [Challan_No] = " & TextBox5.Text & ""
-                    cmd.ExecuteNonQuery
+                    cmd.ExecuteNonQuery()
                     MessageBox.Show("Data updated successfully.")
                 Else
                     MessageBox.Show("No fields provided for update.")
@@ -130,25 +115,33 @@ Public Class Uc_Inward
             Catch ex As Exception
                 MessageBox.Show("Error: " & ex.Message)
             Finally
-                conn.Close
+                conn.Close()
             End Try
         Else MessageBox.Show("Data Update Rejected")
         End If
     End Sub
 
-    Private Sub Uc_Inward_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        conn.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\MTMC PROJECT\DATABASES\Inward_Formdb.accdb"
+    Private Sub GunaDelete_Click(sender As Object, e As EventArgs) Handles GunaDelete.Click
+        Dim ChallanNo = TextBox5.Text
+        If Datapresent(ChallanNo) Then
+            Try
+                If MessageBox.Show("Are you sure you want to delete this record?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
+                    conn.Open()
+                    cmd = conn.CreateCommand
+                    cmd.CommandType = CommandType.Text
+                    cmd.CommandText = "DELETE FROM Table1 WHERE [Challan_No] = " & TextBox5.Text & ""
+                    cmd.ExecuteNonQuery()
+                    conn.Close()
+                    MessageBox.Show("Data deleted successfully.")
+                Else
+                    MessageBox.Show("Data Not Deleted")
+                End If
+            Catch ex As Exception
+                MessageBox.Show("Error: " & ex.Message)
+            End Try
+        Else
+            MessageBox.Show("Challan Number Not Found!")
+        End If
     End Sub
 
-    Private Sub TextBox5_TextChanged(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub Button2_Click_1(sender As Object, e As EventArgs) Handles Button2.Click
-
-    End Sub
-
-    Private Sub upd_Click(sender As Object, e As EventArgs) Handles upd.Click
-
-    End Sub
 End Class
