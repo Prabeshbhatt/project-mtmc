@@ -20,9 +20,30 @@ Public Class Uc_Visitors
 
 
 
+
+
     Private Sub Uc_Visitors_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
+
+    Private Sub ClearForm()
+        ' Clear all input fields and reset the form
+        idno.Text = String.Empty
+        DateTimePicker1.Value = DateTime.Now
+        nmme.Text = String.Empty
+        NID.Text = String.Empty
+        cntt.Text = String.Empty
+        intme.Text = String.Empty
+        outtme.Text = String.Empty
+        tper.Text = String.Empty
+        nhrs.Text = String.Empty
+        pov.Text = String.Empty
+        prsnn.Text = String.Empty
+        addd.Text = String.Empty
+        RadioButton1.Checked = False
+        RadioButton2.Checked = False
+    End Sub
+
 
     Private Sub save_Click_1(sender As Object, e As EventArgs) Handles Save.Click
         Dim vid = If(Integer.TryParse(idno.Text, Nothing), Integer.Parse(idno.Text), 0)
@@ -38,6 +59,8 @@ Public Class Uc_Visitors
         Dim personToMeet = prsnn.Text
         Dim address = addd.Text
         Dim sex = GetSelectedRadioButtonText()
+
+
 
 
 
@@ -60,6 +83,7 @@ Public Class Uc_Visitors
                 End If
             End If
         End If
+        ClearForm()
     End Sub
 
     Private Function ValidateData(name As String, nationalID As String) As Boolean
@@ -264,6 +288,7 @@ Public Class Uc_Visitors
             MessageBox.Show($"User with VISITORS ID {vid} updated successfully.")
         Catch ex As Exception
             MessageBox.Show($"Error updating user: {ex.Message}")
+
         End Try
     End Sub
 
