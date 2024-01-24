@@ -30,7 +30,7 @@ Partial Class uc_lostandfound
         Dim CustomizableEdges4 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges5 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges6 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Uc_lostandfound))
+        Dim resources As ComponentModel.ComponentResourceManager = New ComponentModel.ComponentResourceManager(GetType(Uc_lostandfound))
         Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
         GunaUpdate = New Guna.UI2.WinForms.Guna2Button()
         GunaDelete = New Guna.UI2.WinForms.Guna2Button()

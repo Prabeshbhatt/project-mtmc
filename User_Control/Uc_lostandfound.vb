@@ -8,18 +8,10 @@ Public Class Uc_lostandfound
 
     Private bitmap As Bitmap
     Private Sub Uc_lostandfound_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        conn.ConnectionString = ""
+        conn.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\new clone\DATABASES\Lost and found_DB.accdb"
 
     End Sub
 
-
-    Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs)
-        OpenFileDialog.Title = "Open Picture"
-        OpenFileDialog.FileName = ".png"
-        OpenFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif;*.bmp"
-        OpenFileDialog.ShowDialog
-        PictureBox1.Image = Image.FromFile(OpenFileDialog.FileName)
-    End Sub
 
     Private Sub OpenFileDialog1_FileOk(sender As Object, e As System.ComponentModel.CancelEventArgs)
 
@@ -59,6 +51,7 @@ VALUES (@SlNo, @MaterialDetail, @Location, @PersonFound, @Date, @Quantity, @Hand
         TextBox6.Clear()
         TextBox7.Clear()
         TextBox8.Clear()
+        PictureBox1.Image = Nothing
     End Sub
 
     Private Function Datapresent(Slno As Integer) As Boolean
@@ -99,7 +92,11 @@ VALUES (@SlNo, @MaterialDetail, @Location, @PersonFound, @Date, @Quantity, @Hand
         End If
     End Sub
 
-    Private Sub GunaUpdate_Click(sender As Object, e As EventArgs) Handles GunaUpdate.Click
-
+    Private Sub LinkLabel1_LinkClicked_1(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
+        OpenFileDialog.Title = "Open Picture"
+        OpenFileDialog.FileName = ".png"
+        OpenFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif;*.bmp"
+        OpenFileDialog.ShowDialog()
+        PictureBox1.Image = Image.FromFile(OpenFileDialog.FileName)
     End Sub
 End Class
